@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		534177442567314300EB2D11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177432567314300EB2D11 /* AppDelegate.swift */; };
-		534177462567314300EB2D11 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177452567314300EB2D11 /* SceneDelegate.swift */; };
 		534177482567314300EB2D11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177472567314300EB2D11 /* ViewController.swift */; };
-		5341774B2567314300EB2D11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 534177492567314300EB2D11 /* Main.storyboard */; };
 		5341774D2567314400EB2D11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5341774C2567314400EB2D11 /* Assets.xcassets */; };
 		534177502567314400EB2D11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5341774E2567314400EB2D11 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -18,9 +16,7 @@
 /* Begin PBXFileReference section */
 		534177402567314300EB2D11 /* CleanAir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanAir.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		534177432567314300EB2D11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		534177452567314300EB2D11 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		534177472567314300EB2D11 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5341774A2567314300EB2D11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5341774C2567314400EB2D11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5341774F2567314400EB2D11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		534177512567314400EB2D11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -43,7 +39,10 @@
 				534177422567314300EB2D11 /* CleanAir */,
 				534177412567314300EB2D11 /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
+			usesTabs = 0;
 		};
 		534177412567314300EB2D11 /* Products */ = {
 			isa = PBXGroup;
@@ -57,9 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				534177432567314300EB2D11 /* AppDelegate.swift */,
-				534177452567314300EB2D11 /* SceneDelegate.swift */,
 				534177472567314300EB2D11 /* ViewController.swift */,
-				534177492567314300EB2D11 /* Main.storyboard */,
 				5341774C2567314400EB2D11 /* Assets.xcassets */,
 				5341774E2567314400EB2D11 /* LaunchScreen.storyboard */,
 				534177512567314400EB2D11 /* Info.plist */,
@@ -126,7 +123,6 @@
 			files = (
 				534177502567314400EB2D11 /* LaunchScreen.storyboard in Resources */,
 				5341774D2567314400EB2D11 /* Assets.xcassets in Resources */,
-				5341774B2567314300EB2D11 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,21 +135,12 @@
 			files = (
 				534177482567314300EB2D11 /* ViewController.swift in Sources */,
 				534177442567314300EB2D11 /* AppDelegate.swift in Sources */,
-				534177462567314300EB2D11 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		534177492567314300EB2D11 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5341774A2567314300EB2D11 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5341774E2567314400EB2D11 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -289,6 +276,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54PNV7AZ7G;
 				INFOPLIST_FILE = CleanAir/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,7 +284,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.markoengelman.eonet.CleanAir;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -308,6 +296,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54PNV7AZ7G;
 				INFOPLIST_FILE = CleanAir/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +304,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.markoengelman.eonet.CleanAir;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
