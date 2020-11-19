@@ -12,6 +12,7 @@
 		5341774D2567314400EB2D11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5341774C2567314400EB2D11 /* Assets.xcassets */; };
 		534177502567314400EB2D11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5341774E2567314400EB2D11 /* LaunchScreen.storyboard */; };
 		5341775F256733C200EB2D11 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341775E256733C200EB2D11 /* HTTPClient.swift */; };
+		53417765256734E500EB2D11 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53417764256734E500EB2D11 /* URLSessionHTTPClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		5341774F2567314400EB2D11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		534177512567314400EB2D11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5341775E256733C200EB2D11 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		53417764256734E500EB2D11 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +73,17 @@
 			isa = PBXGroup;
 			children = (
 				5341775E256733C200EB2D11 /* HTTPClient.swift */,
+				53417767256734E800EB2D11 /* Infra */,
 			);
 			path = HTTPClient;
+			sourceTree = "<group>";
+		};
+		53417767256734E800EB2D11 /* Infra */ = {
+			isa = PBXGroup;
+			children = (
+				53417764256734E500EB2D11 /* URLSessionHTTPClient.swift */,
+			);
+			path = Infra;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +158,7 @@
 				534177482567314300EB2D11 /* ViewController.swift in Sources */,
 				534177442567314300EB2D11 /* AppDelegate.swift in Sources */,
 				5341775F256733C200EB2D11 /* HTTPClient.swift in Sources */,
+				53417765256734E500EB2D11 /* URLSessionHTTPClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
