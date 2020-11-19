@@ -14,6 +14,7 @@
 		5341775F256733C200EB2D11 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341775E256733C200EB2D11 /* HTTPClient.swift */; };
 		53417765256734E500EB2D11 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53417764256734E500EB2D11 /* URLSessionHTTPClient.swift */; };
 		5341776A2567354100EB2D11 /* ResourceLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177692567354100EB2D11 /* ResourceLoader.swift */; };
+		53417775256737F300EB2D11 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53417774256737F300EB2D11 /* City.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		5341775E256733C200EB2D11 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		53417764256734E500EB2D11 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		534177692567354100EB2D11 /* ResourceLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoader.swift; sourceTree = "<group>"; };
+		53417774256737F300EB2D11 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			children = (
 				53417762256734B500EB2D11 /* HTTPClient */,
 				5341776C2567354F00EB2D11 /* ResourceLoader */,
+				53417777256737FA00EB2D11 /* CitiesLoader */,
 				534177432567314300EB2D11 /* AppDelegate.swift */,
 				534177472567314300EB2D11 /* ViewController.swift */,
 				5341774C2567314400EB2D11 /* Assets.xcassets */,
@@ -95,6 +98,14 @@
 				534177692567354100EB2D11 /* ResourceLoader.swift */,
 			);
 			path = ResourceLoader;
+			sourceTree = "<group>";
+		};
+		53417777256737FA00EB2D11 /* CitiesLoader */ = {
+			isa = PBXGroup;
+			children = (
+				53417774256737F300EB2D11 /* City.swift */,
+			);
+			path = CitiesLoader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +179,7 @@
 			files = (
 				534177482567314300EB2D11 /* ViewController.swift in Sources */,
 				534177442567314300EB2D11 /* AppDelegate.swift in Sources */,
+				53417775256737F300EB2D11 /* City.swift in Sources */,
 				5341776A2567354100EB2D11 /* ResourceLoader.swift in Sources */,
 				5341775F256733C200EB2D11 /* HTTPClient.swift in Sources */,
 				53417765256734E500EB2D11 /* URLSessionHTTPClient.swift in Sources */,
