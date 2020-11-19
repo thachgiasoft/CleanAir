@@ -20,6 +20,7 @@
 		5341778625673A6300EB2D11 /* CountryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341778525673A6300EB2D11 /* CountryMapper.swift */; };
 		5341778B25673AE800EB2D11 /* ResourceMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341778A25673AE800EB2D11 /* ResourceMapper.swift */; };
 		5341779725673CBE00EB2D11 /* CountriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341779625673CBE00EB2D11 /* CountriesPresenter.swift */; };
+		5341779E25673D0900EB2D11 /* CountriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341779D25673D0900EB2D11 /* CountriesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		5341778525673A6300EB2D11 /* CountryMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryMapper.swift; sourceTree = "<group>"; };
 		5341778A25673AE800EB2D11 /* ResourceMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceMapper.swift; sourceTree = "<group>"; };
 		5341779625673CBE00EB2D11 /* CountriesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesPresenter.swift; sourceTree = "<group>"; };
+		5341779D25673D0900EB2D11 /* CountriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				5341779625673CBE00EB2D11 /* CountriesPresenter.swift */,
+				5341779D25673D0900EB2D11 /* CountriesView.swift */,
 			);
 			path = Countries;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				5341777A2567386400EB2D11 /* CityMapper.swift in Sources */,
 				53417775256737F300EB2D11 /* City.swift in Sources */,
 				5341778B25673AE800EB2D11 /* ResourceMapper.swift in Sources */,
+				5341779E25673D0900EB2D11 /* CountriesView.swift in Sources */,
 				5341778625673A6300EB2D11 /* CountryMapper.swift in Sources */,
 				5341779725673CBE00EB2D11 /* CountriesPresenter.swift in Sources */,
 				53417781256739E500EB2D11 /* Country.swift in Sources */,
