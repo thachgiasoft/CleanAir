@@ -71,10 +71,7 @@
 		534177422567314300EB2D11 /* CleanAir */ = {
 			isa = PBXGroup;
 			children = (
-				53417762256734B500EB2D11 /* HTTPClient */,
-				5341776C2567354F00EB2D11 /* ResourceLoader */,
-				53417777256737FA00EB2D11 /* CitiesLoader */,
-				53417783256739ED00EB2D11 /* CountriesLoader */,
+				5341779225673C7600EB2D11 /* Modules */,
 				534177432567314300EB2D11 /* AppDelegate.swift */,
 				534177472567314300EB2D11 /* ViewController.swift */,
 				5341774C2567314400EB2D11 /* Assets.xcassets */,
@@ -142,6 +139,25 @@
 				5341778525673A6300EB2D11 /* CountryMapper.swift */,
 			);
 			path = CoutriesAPI;
+			sourceTree = "<group>";
+		};
+		5341779225673C7600EB2D11 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				5341779425673C8200EB2D11 /* Shared */,
+				53417777256737FA00EB2D11 /* CitiesLoader */,
+				53417783256739ED00EB2D11 /* CountriesLoader */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		5341779425673C8200EB2D11 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				53417762256734B500EB2D11 /* HTTPClient */,
+				5341776C2567354F00EB2D11 /* ResourceLoader */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
