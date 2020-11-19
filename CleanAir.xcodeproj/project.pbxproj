@@ -19,6 +19,7 @@
 		53417781256739E500EB2D11 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53417780256739E500EB2D11 /* Country.swift */; };
 		5341778625673A6300EB2D11 /* CountryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341778525673A6300EB2D11 /* CountryMapper.swift */; };
 		5341778B25673AE800EB2D11 /* ResourceMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341778A25673AE800EB2D11 /* ResourceMapper.swift */; };
+		5341779725673CBE00EB2D11 /* CountriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341779625673CBE00EB2D11 /* CountriesPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		53417780256739E500EB2D11 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		5341778525673A6300EB2D11 /* CountryMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryMapper.swift; sourceTree = "<group>"; };
 		5341778A25673AE800EB2D11 /* ResourceMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceMapper.swift; sourceTree = "<group>"; };
+		5341779625673CBE00EB2D11 /* CountriesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				5341779225673C7600EB2D11 /* Modules */,
+				5341779925673CCC00EB2D11 /* Presentation */,
 				534177432567314300EB2D11 /* AppDelegate.swift */,
 				534177472567314300EB2D11 /* ViewController.swift */,
 				5341774C2567314400EB2D11 /* Assets.xcassets */,
@@ -160,6 +163,22 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
+		5341779925673CCC00EB2D11 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				5341779B25673CD200EB2D11 /* Countries */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		5341779B25673CD200EB2D11 /* Countries */ = {
+			isa = PBXGroup;
+			children = (
+				5341779625673CBE00EB2D11 /* CountriesPresenter.swift */,
+			);
+			path = Countries;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -235,6 +254,7 @@
 				53417775256737F300EB2D11 /* City.swift in Sources */,
 				5341778B25673AE800EB2D11 /* ResourceMapper.swift in Sources */,
 				5341778625673A6300EB2D11 /* CountryMapper.swift in Sources */,
+				5341779725673CBE00EB2D11 /* CountriesPresenter.swift in Sources */,
 				53417781256739E500EB2D11 /* Country.swift in Sources */,
 				5341776A2567354100EB2D11 /* ResourceLoader.swift in Sources */,
 				5341775F256733C200EB2D11 /* HTTPClient.swift in Sources */,
