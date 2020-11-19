@@ -16,6 +16,7 @@
 		5341776A2567354100EB2D11 /* ResourceLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177692567354100EB2D11 /* ResourceLoader.swift */; };
 		53417775256737F300EB2D11 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53417774256737F300EB2D11 /* City.swift */; };
 		5341777A2567386400EB2D11 /* CityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177792567386400EB2D11 /* CityMapper.swift */; };
+		53417781256739E500EB2D11 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53417780256739E500EB2D11 /* Country.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		534177692567354100EB2D11 /* ResourceLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoader.swift; sourceTree = "<group>"; };
 		53417774256737F300EB2D11 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		534177792567386400EB2D11 /* CityMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityMapper.swift; sourceTree = "<group>"; };
+		53417780256739E500EB2D11 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				53417762256734B500EB2D11 /* HTTPClient */,
 				5341776C2567354F00EB2D11 /* ResourceLoader */,
 				53417777256737FA00EB2D11 /* CitiesLoader */,
+				53417783256739ED00EB2D11 /* CountryiesLoader */,
 				534177432567314300EB2D11 /* AppDelegate.swift */,
 				534177472567314300EB2D11 /* ViewController.swift */,
 				5341774C2567314400EB2D11 /* Assets.xcassets */,
@@ -117,6 +120,14 @@
 				534177792567386400EB2D11 /* CityMapper.swift */,
 			);
 			path = CitiesAPI;
+			sourceTree = "<group>";
+		};
+		53417783256739ED00EB2D11 /* CountryiesLoader */ = {
+			isa = PBXGroup;
+			children = (
+				53417780256739E500EB2D11 /* Country.swift */,
+			);
+			path = CountryiesLoader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +203,7 @@
 				534177442567314300EB2D11 /* AppDelegate.swift in Sources */,
 				5341777A2567386400EB2D11 /* CityMapper.swift in Sources */,
 				53417775256737F300EB2D11 /* City.swift in Sources */,
+				53417781256739E500EB2D11 /* Country.swift in Sources */,
 				5341776A2567354100EB2D11 /* ResourceLoader.swift in Sources */,
 				5341775F256733C200EB2D11 /* HTTPClient.swift in Sources */,
 				53417765256734E500EB2D11 /* URLSessionHTTPClient.swift in Sources */,
