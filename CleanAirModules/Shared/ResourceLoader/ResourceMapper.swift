@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class ResourceMapper<T: Decodable, Z> {
+public  final class ResourceMapper<T: Decodable, Z> {
   private struct Root<T: Decodable>: Decodable {
     let results: T
   }
@@ -15,11 +15,11 @@ final class ResourceMapper<T: Decodable, Z> {
   private let modelMapper: (T) -> Z
   private struct InvalidData: Error { }
   
-  init(_ modelMapper: @escaping (T) -> Z) {
+  public init(_ modelMapper: @escaping (T) -> Z) {
     self.modelMapper = modelMapper
   }
   
-  func map(_ data: Data, from response: HTTPURLResponse) throws -> Z {
+  public func map(_ data: Data, from response: HTTPURLResponse) throws -> Z {
     guard response.statusCode == 200, let result = try? JSONDecoder().decode(Root<T>.self, from: data) else { throw InvalidData() }
     return modelMapper(result.results)
   }

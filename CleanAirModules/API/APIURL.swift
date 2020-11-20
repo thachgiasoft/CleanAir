@@ -7,12 +7,13 @@
 
 import Foundation
 
-struct APIURL {
+public struct APIURL {
   private static let base = "https://api.openaq.org"
   private static let version = "v1"
-  static let countries = URL(string: "\(base)/\(version)/countries")!
   
-  static func cities(for country: String) -> URL {
+  public static let countries = URL(string: "\(base)/\(version)/countries")!
+  
+  public static func cities(for country: String) -> URL {
     return URL(string: "\(base)/\(version)/cities?country=\(country)")!
   }
 }

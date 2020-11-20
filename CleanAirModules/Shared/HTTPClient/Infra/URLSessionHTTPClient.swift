@@ -7,19 +7,19 @@
 
 import Foundation
 
-class URLSessionHTTPClient {
+public class URLSessionHTTPClient {
   let session: URLSession
   
   private struct UnexpectedValuesRepresentation: Error {}
   
-  init(session: URLSession) {
+  public init(session: URLSession) {
     self.session = session
   }
 }
 
 // MARK: - HTTPClient
 extension URLSessionHTTPClient: HTTPClient {
-  func execute(request: URLRequest, completion: @escaping (HTTPClient.Result) -> Void) {
+  public func execute(request: URLRequest, completion: @escaping (HTTPClient.Result) -> Void) {
     let result = clientResult
     let task = session.dataTask(with: request) { completion(result($0, $1, $2)) }
     task.resume()

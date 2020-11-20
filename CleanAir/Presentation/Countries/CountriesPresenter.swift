@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CleanAirModules
 
 final class CountriesPresenter {
   static func viewModel(for countries: [Country]) -> [Country] {

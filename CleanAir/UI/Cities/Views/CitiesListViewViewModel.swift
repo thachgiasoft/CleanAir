@@ -6,5 +6,6 @@
 //
 
 import Foundation
+import CleanAirModules
 
 typealias CitiesListViewViewModel = ResourceListViewViewModel<City>

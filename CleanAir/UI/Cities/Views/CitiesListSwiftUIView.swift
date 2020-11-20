@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CleanAirModules
 
 struct CitiesListSwiftUIView: View {
   var onAppear: () -> Void

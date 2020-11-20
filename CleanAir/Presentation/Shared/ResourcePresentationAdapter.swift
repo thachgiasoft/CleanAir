@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CleanAirModules
 
 class ResourcePresentationAdapter<Resource, View> where View: ResourceView {
   let loader: ResourceLoader<Resource>

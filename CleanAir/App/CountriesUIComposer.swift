@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import CleanAirModules
 
 final class CountriesUIComposer {
   static func makeView(with loader: CountriesLoader, selection: @escaping (Country) -> Void) -> UIViewController {

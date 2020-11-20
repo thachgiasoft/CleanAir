@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CleanAirModules
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
