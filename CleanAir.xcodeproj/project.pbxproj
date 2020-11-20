@@ -23,6 +23,7 @@
 		5341779E25673D0900EB2D11 /* CountriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341779D25673D0900EB2D11 /* CountriesView.swift */; };
 		534177A125673D2C00EB2D11 /* CountriesLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177A025673D2C00EB2D11 /* CountriesLoadingView.swift */; };
 		534177A525673D9700EB2D11 /* CountriesErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177A425673D9700EB2D11 /* CountriesErrorView.swift */; };
+		534177C12567426D00EB2D11 /* CountriesPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177C02567426D00EB2D11 /* CountriesPresentationAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		5341779D25673D0900EB2D11 /* CountriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesView.swift; sourceTree = "<group>"; };
 		534177A025673D2C00EB2D11 /* CountriesLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesLoadingView.swift; sourceTree = "<group>"; };
 		534177A425673D9700EB2D11 /* CountriesErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesErrorView.swift; sourceTree = "<group>"; };
+		534177C02567426D00EB2D11 /* CountriesPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesPresentationAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 		5341779B25673CD200EB2D11 /* Countries */ = {
 			isa = PBXGroup;
 			children = (
+				534177C02567426D00EB2D11 /* CountriesPresentationAdapter.swift */,
 				5341779625673CBE00EB2D11 /* CountriesPresenter.swift */,
 				5341779D25673D0900EB2D11 /* CountriesView.swift */,
 				534177A425673D9700EB2D11 /* CountriesErrorView.swift */,
@@ -270,6 +273,7 @@
 				53417781256739E500EB2D11 /* Country.swift in Sources */,
 				5341776A2567354100EB2D11 /* ResourceLoader.swift in Sources */,
 				5341775F256733C200EB2D11 /* HTTPClient.swift in Sources */,
+				534177C12567426D00EB2D11 /* CountriesPresentationAdapter.swift in Sources */,
 				53417765256734E500EB2D11 /* URLSessionHTTPClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
