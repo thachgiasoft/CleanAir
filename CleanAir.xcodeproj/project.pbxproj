@@ -29,6 +29,7 @@
 		534177E52567C0D900EB2D11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177E42567C0D900EB2D11 /* AppDelegate.swift */; };
 		534177F12567C1D300EB2D11 /* CountriesListSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177F02567C1D300EB2D11 /* CountriesListSwiftUIView.swift */; };
 		534177FB2567D12400EB2D11 /* CountriesListSwiftUIViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177FA2567D12400EB2D11 /* CountriesListSwiftUIViewAdapter.swift */; };
+		534178012567D7AC00EB2D11 /* APIURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534178002567D7AC00EB2D11 /* APIURL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		534177E42567C0D900EB2D11 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		534177F02567C1D300EB2D11 /* CountriesListSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListSwiftUIView.swift; sourceTree = "<group>"; };
 		534177FA2567D12400EB2D11 /* CountriesListSwiftUIViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListSwiftUIViewAdapter.swift; sourceTree = "<group>"; };
+		534178002567D7AC00EB2D11 /* APIURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIURL.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 		5341779225673C7600EB2D11 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				534178032567D7B100EB2D11 /* API */,
 				5341779425673C8200EB2D11 /* Shared */,
 				53417777256737FA00EB2D11 /* CitiesLoader */,
 				53417783256739ED00EB2D11 /* CountriesLoader */,
@@ -244,6 +247,14 @@
 				534177F02567C1D300EB2D11 /* CountriesListSwiftUIView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		534178032567D7B100EB2D11 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				534178002567D7AC00EB2D11 /* APIURL.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,6 +339,7 @@
 				53417781256739E500EB2D11 /* Country.swift in Sources */,
 				5341776A2567354100EB2D11 /* ResourceLoader.swift in Sources */,
 				5341775F256733C200EB2D11 /* HTTPClient.swift in Sources */,
+				534178012567D7AC00EB2D11 /* APIURL.swift in Sources */,
 				534177C12567426D00EB2D11 /* CountriesPresentationAdapter.swift in Sources */,
 				534177C52567428C00EB2D11 /* CountriesLoader.swift in Sources */,
 				534177FB2567D12400EB2D11 /* CountriesListSwiftUIViewAdapter.swift in Sources */,
