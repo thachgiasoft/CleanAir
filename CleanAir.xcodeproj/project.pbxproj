@@ -48,6 +48,7 @@
 		5341797125680A3600EB2D11 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341797025680A3600EB2D11 /* Storage.swift */; };
 		5341797D25680DDF00EB2D11 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5341797C25680DDF00EB2D11 /* RealmSwift */; };
 		5341797F25680DDF00EB2D11 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 5341797E25680DDF00EB2D11 /* Realm */; };
+		5341798325680E1200EB2D11 /* RealmStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341798225680E1200EB2D11 /* RealmStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +125,7 @@
 		53417953256807D500EB2D11 /* CityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModel.swift; sourceTree = "<group>"; };
 		53417969256809B000EB2D11 /* ResourceCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCache.swift; sourceTree = "<group>"; };
 		5341797025680A3600EB2D11 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		5341798225680E1200EB2D11 /* RealmStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -457,8 +459,17 @@
 			isa = PBXGroup;
 			children = (
 				5341797025680A3600EB2D11 /* Storage.swift */,
+				5341798625680E1500EB2D11 /* Infra */,
 			);
 			path = Storage;
+			sourceTree = "<group>";
+		};
+		5341798625680E1500EB2D11 /* Infra */ = {
+			isa = PBXGroup;
+			children = (
+				5341798225680E1200EB2D11 /* RealmStorage.swift */,
+			);
+			path = Infra;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -643,6 +654,7 @@
 				5341796A256809B000EB2D11 /* ResourceCache.swift in Sources */,
 				534178DC2568013900EB2D11 /* City.swift in Sources */,
 				534178D92568013000EB2D11 /* ResourceLoader.swift in Sources */,
+				5341798325680E1200EB2D11 /* RealmStorage.swift in Sources */,
 				534178C5256800D300EB2D11 /* APIURL.swift in Sources */,
 				5341797125680A3600EB2D11 /* Storage.swift in Sources */,
 				534178F02568017F00EB2D11 /* Country.swift in Sources */,
