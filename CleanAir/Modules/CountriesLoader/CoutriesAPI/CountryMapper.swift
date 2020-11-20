@@ -10,13 +10,16 @@ import Foundation
 final class CountryMapper {
   struct RemoteCountry: Decodable {
     let code: String
-    let name: String
+    let name: String?
     let count: Int
     let cities: Int
     let locations: Int
   }
   
-  func map(_ remoteModels: [RemoteCountry]) -> [Country] {
-    return remoteModels.map { Country(name: $0.name, totalNumberOfMeasurements: $0.count, numberOfMeasuredCities: $0.cities, numberOfMeasuringLocations: $0.locations) }
+  static func map(_ remoteModels: [RemoteCountry]) -> [Country] {
+    return remoteModels.compactMap {
+      guard let name = $0.name else { return nil }
+      return Country(name: name, totalNumberOfMeasurements: $0.count, numberOfMeasuredCities: $0.cities, numberOfMeasuringLocations: $0.locations)
+    }
   }
 }

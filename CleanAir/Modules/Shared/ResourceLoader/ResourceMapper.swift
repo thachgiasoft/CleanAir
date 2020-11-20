@@ -8,6 +8,10 @@
 import Foundation
 
 final class ResourceMapper<T: Decodable, Z> {
+  private struct Root<T: Decodable>: Decodable {
+    let results: T
+  }
+  
   private let modelMapper: (T) -> Z
   private struct InvalidData: Error { }
   
@@ -16,7 +20,7 @@ final class ResourceMapper<T: Decodable, Z> {
   }
   
   func map(_ data: Data, from response: HTTPURLResponse) throws -> Z {
-    guard response.statusCode == 200, let result = try? JSONDecoder().decode(T.self, from: data) else { throw InvalidData() }
-    return modelMapper(result)
+    guard response.statusCode == 200, let result = try? JSONDecoder().decode(Root<T>.self, from: data) else { throw InvalidData() }
+    return modelMapper(result.results)
   }
 }
