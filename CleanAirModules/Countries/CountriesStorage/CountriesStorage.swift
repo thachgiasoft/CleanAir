@@ -7,4 +7,4 @@
 
 import Foundation
 
-public typealias CountriesStorage = RealmStorage<[Country], LocalCountry>
+public typealias CountriesStorage = RealmStorage<ResourceCache<[Country]>, LocalCountryCache>
