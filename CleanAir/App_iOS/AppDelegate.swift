@@ -39,3 +39,4 @@ private extension AppDelegate {
   }
 }
 
+extension ResourceLoader: CountriesLoader where Resource == [Country] { }
