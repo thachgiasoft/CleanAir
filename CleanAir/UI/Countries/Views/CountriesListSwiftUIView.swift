@@ -13,19 +13,23 @@ struct CountriesListSwiftUIView: View {
   
   var body: some View {
     NavigationView {
-      List(viewModel.countries, id: \.self.name) { country in
-        VStack(alignment: .leading, spacing: 10, content: {
-          Text(country.name)
-            .font(.title)
-          Text("Cities: \(country.numberOfMeasuredCities)")
-            .font(.body)
-          Text("Mesausrements: \(country.numberOfMeasuringLocations)")
-            .font(.body)
+      if let error = viewModel.error {
+        Text(error)
+      } else {
+        List(viewModel.countries, id: \.self.name) { country in
+          VStack(alignment: .leading, spacing: 10, content: {
+            Text(country.name)
+              .font(.title)
+            Text("Cities: \(country.numberOfMeasuredCities)")
+              .font(.body)
+            Text("Mesausrements: \(country.numberOfMeasuringLocations)")
+              .font(.body)
+          })
+        }.onAppear(perform: {
+          onAppear()
         })
-      }.onAppear(perform: {
-        onAppear()
-      })
-      .navigationBarTitle(Text(viewModel.isLoading ? "Loading countries" : "Countries"))
+        .navigationBarTitle(Text(viewModel.isLoading ? "Loading countries" : "Countries"))
+      }
     }
   }
 }

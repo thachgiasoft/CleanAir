@@ -13,6 +13,7 @@ class CountriesListSwiftUIViewAdapter: ObservableObject {
   let onAppear: () -> Void
   @Published var countries: [Country]
   @Published var isLoading: Bool = false
+  @Published var error: String?
   
   init(onAppear: @escaping () -> Void, countries: [Country] = []) {
     self.onAppear = onAppear
@@ -37,6 +38,6 @@ extension CountriesListSwiftUIViewAdapter: CountriesLoadingView {
 // MARK: - CountriesView
 extension CountriesListSwiftUIViewAdapter: CountriesErrorView {
   func show(errorViewModel: CountriesErrorViewModel) {
-    
+    error = errorViewModel.error
   }
 }
