@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		534177442567314300EB2D11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177432567314300EB2D11 /* AppDelegate.swift */; };
 		534177482567314300EB2D11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177472567314300EB2D11 /* ViewController.swift */; };
 		5341774D2567314400EB2D11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5341774C2567314400EB2D11 /* Assets.xcassets */; };
 		534177502567314400EB2D11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5341774E2567314400EB2D11 /* LaunchScreen.storyboard */; };
@@ -25,11 +24,11 @@
 		534177A525673D9700EB2D11 /* CountriesErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177A425673D9700EB2D11 /* CountriesErrorView.swift */; };
 		534177C12567426D00EB2D11 /* CountriesPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177C02567426D00EB2D11 /* CountriesPresentationAdapter.swift */; };
 		534177C52567428C00EB2D11 /* CountriesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177C42567428C00EB2D11 /* CountriesLoader.swift */; };
+		534177E52567C0D900EB2D11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177E42567C0D900EB2D11 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		534177402567314300EB2D11 /* CleanAir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanAir.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		534177432567314300EB2D11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		534177472567314300EB2D11 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5341774C2567314400EB2D11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5341774F2567314400EB2D11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,6 +47,7 @@
 		534177A425673D9700EB2D11 /* CountriesErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesErrorView.swift; sourceTree = "<group>"; };
 		534177C02567426D00EB2D11 /* CountriesPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesPresentationAdapter.swift; sourceTree = "<group>"; };
 		534177C42567428C00EB2D11 /* CountriesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesLoader.swift; sourceTree = "<group>"; };
+		534177E42567C0D900EB2D11 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +85,7 @@
 			children = (
 				5341779225673C7600EB2D11 /* Modules */,
 				5341779925673CCC00EB2D11 /* Presentation */,
-				534177432567314300EB2D11 /* AppDelegate.swift */,
+				534177C82567447D00EB2D11 /* App */,
 				534177472567314300EB2D11 /* ViewController.swift */,
 				5341774C2567314400EB2D11 /* Assets.xcassets */,
 				5341774E2567314400EB2D11 /* LaunchScreen.storyboard */,
@@ -194,6 +194,14 @@
 			path = Countries;
 			sourceTree = "<group>";
 		};
+		534177C82567447D00EB2D11 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				534177E42567C0D900EB2D11 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -265,13 +273,13 @@
 			files = (
 				534177482567314300EB2D11 /* ViewController.swift in Sources */,
 				534177A125673D2C00EB2D11 /* CountriesLoadingView.swift in Sources */,
-				534177442567314300EB2D11 /* AppDelegate.swift in Sources */,
 				5341777A2567386400EB2D11 /* CityMapper.swift in Sources */,
 				534177A525673D9700EB2D11 /* CountriesErrorView.swift in Sources */,
 				53417775256737F300EB2D11 /* City.swift in Sources */,
 				5341778B25673AE800EB2D11 /* ResourceMapper.swift in Sources */,
 				5341779E25673D0900EB2D11 /* CountriesView.swift in Sources */,
 				5341778625673A6300EB2D11 /* CountryMapper.swift in Sources */,
+				534177E52567C0D900EB2D11 /* AppDelegate.swift in Sources */,
 				5341779725673CBE00EB2D11 /* CountriesPresenter.swift in Sources */,
 				53417781256739E500EB2D11 /* Country.swift in Sources */,
 				5341776A2567354100EB2D11 /* ResourceLoader.swift in Sources */,
