@@ -175,7 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				534177EC2567C19D00EB2D11 /* UI */,
-				534177C82567447D00EB2D11 /* App */,
+				534177C82567447D00EB2D11 /* App_iOS */,
 				534177472567314300EB2D11 /* ViewController.swift */,
 				5341774C2567314400EB2D11 /* Assets.xcassets */,
 				5341774E2567314400EB2D11 /* LaunchScreen.storyboard */,
@@ -255,7 +255,7 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
-		534177C82567447D00EB2D11 /* App */ = {
+		534177C82567447D00EB2D11 /* App_iOS */ = {
 			isa = PBXGroup;
 			children = (
 				534177E42567C0D900EB2D11 /* AppDelegate.swift */,
@@ -263,7 +263,7 @@
 				534177CF256744F100EB2D11 /* CountriesUIComposer.swift */,
 				5341782C2567EEC500EB2D11 /* CitiesUIComposer.swift */,
 			);
-			path = App;
+			path = App_iOS;
 			sourceTree = "<group>";
 		};
 		534177CD256744C200EB2D11 /* Helpers */ = {
