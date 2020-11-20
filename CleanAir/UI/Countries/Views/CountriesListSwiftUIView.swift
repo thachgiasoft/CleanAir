@@ -25,7 +25,7 @@ struct CountriesListSwiftUIView: View {
       }.onAppear(perform: {
         onAppear()
       })
-      .navigationBarTitle(Text("Countries"))
+      .navigationBarTitle(Text(viewModel.isLoading ? "Loading countries" : "Countries"))
     }
   }
 }

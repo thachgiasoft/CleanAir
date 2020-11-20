@@ -12,6 +12,7 @@ typealias CountriesListViewViewModel = CountriesListSwiftUIViewAdapter
 class CountriesListSwiftUIViewAdapter: ObservableObject {
   let onAppear: () -> Void
   @Published var countries: [Country]
+  @Published var isLoading: Bool = false
   
   init(onAppear: @escaping () -> Void, countries: [Country] = []) {
     self.onAppear = onAppear
@@ -29,7 +30,7 @@ extension CountriesListSwiftUIViewAdapter: CountriesView {
 // MARK: - CountriesLoadingView
 extension CountriesListSwiftUIViewAdapter: CountriesLoadingView {
   func show(loadingViewModel: CountriesLoadingViewModel) {
-    
+    self.isLoading = loadingViewModel.isLoading
   }
 }
 
