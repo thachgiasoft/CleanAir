@@ -12,18 +12,21 @@ struct CountriesListSwiftUIView: View {
   @ObservedObject var viewModel: CountriesListViewViewModel
   
   var body: some View {
-    List(viewModel.countries, id: \.self.name) { country in
-      VStack(alignment: .leading, spacing: 10, content: {
-        Text(country.name)
-          .font(.title)
-        Text("Cities: \(country.numberOfMeasuredCities)")
-          .font(.body)
-        Text("Mesausrements: \(country.numberOfMeasuringLocations)")
-          .font(.body)
+    NavigationView {
+      List(viewModel.countries, id: \.self.name) { country in
+        VStack(alignment: .leading, spacing: 10, content: {
+          Text(country.name)
+            .font(.title)
+          Text("Cities: \(country.numberOfMeasuredCities)")
+            .font(.body)
+          Text("Mesausrements: \(country.numberOfMeasuringLocations)")
+            .font(.body)
+        })
+      }.onAppear(perform: {
+        onAppear()
       })
-    }.onAppear(perform: {
-      onAppear()
-    })
+      .navigationBarTitle(Text("Countries"))
+    }
   }
 }
 
