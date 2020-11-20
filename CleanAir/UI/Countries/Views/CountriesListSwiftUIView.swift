@@ -24,7 +24,9 @@ struct CountriesListSwiftUIView: View {
               .font(.body)
             Text("Mesausrements: \(country.numberOfMeasuringLocations)")
               .font(.body)
-          })
+          }).onTapGesture {
+            viewModel.selection(country)
+          }
         }.onAppear(perform: {
           onAppear()
         })
