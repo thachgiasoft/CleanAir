@@ -9,10 +9,10 @@ import Foundation
 import RealmSwift
 
 public class RealmStorage<StoringObject, RealmObject> where RealmObject: Object {
-  let storeMapper: (StoringObject) -> [RealmObject]
-  let loadMapper: (Results<RealmObject>) -> StoringObject
+  let storeMapper: (StoringObject) -> RealmObject
+  let loadMapper: (Results<RealmObject>) throws -> StoringObject
   
-  public init(storeMapper: @escaping (StoringObject) -> [RealmObject], loadMapper: @escaping (Results<RealmObject>) -> StoringObject) {
+  public init(storeMapper: @escaping (StoringObject) -> RealmObject, loadMapper: @escaping (Results<RealmObject>) throws -> StoringObject) {
     self.storeMapper = storeMapper
     self.loadMapper = loadMapper
   }
@@ -24,7 +24,7 @@ extension RealmStorage: Storage {
     do {
       let realm = try Realm()
       try realm.write {
-        realm.add(storeMapper(object), update: .modified)
+        realm.add(storeMapper(object), update: .all)
       }
       return .success(())
     } catch {
@@ -36,7 +36,7 @@ extension RealmStorage: Storage {
     do {
       let realm = try Realm()
       let result = realm.objects(RealmObject.self)
-      let loadResult = loadMapper(result)
+      let loadResult = try loadMapper(result)
       return .success(loadResult)
     } catch {
       return .failure(error)
