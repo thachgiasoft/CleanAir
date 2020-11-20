@@ -10,6 +10,7 @@
 		5329887E25681A8200813C7A /* CleanAirModules.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 534178B52567FFCB00EB2D11 /* CleanAirModules.framework */; };
 		5329887F25681A8200813C7A /* CleanAirModules.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 534178B52567FFCB00EB2D11 /* CleanAirModules.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		532988A025681CB000813C7A /* CountriesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177C42567428C00EB2D11 /* CountriesLoader.swift */; };
+		532988A92568206100813C7A /* CountriesLoaderWithCaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532988A82568206100813C7A /* CountriesLoaderWithCaching.swift */; };
 		534177482567314300EB2D11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177472567314300EB2D11 /* ViewController.swift */; };
 		5341774D2567314400EB2D11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5341774C2567314400EB2D11 /* Assets.xcassets */; };
 		534177502567314400EB2D11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5341774E2567314400EB2D11 /* LaunchScreen.storyboard */; };
@@ -107,6 +108,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		532988A82568206100813C7A /* CountriesLoaderWithCaching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesLoaderWithCaching.swift; sourceTree = "<group>"; };
 		534177402567314300EB2D11 /* CleanAir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanAir.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		534177472567314300EB2D11 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5341774C2567314400EB2D11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -511,6 +513,7 @@
 			isa = PBXGroup;
 			children = (
 				53417780256739E500EB2D11 /* Country.swift */,
+				532988A82568206100813C7A /* CountriesLoaderWithCaching.swift */,
 				53417783256739ED00EB2D11 /* CountriesLoader */,
 				534179CE2568153100EB2D11 /* CountriesStorage */,
 			);
@@ -713,6 +716,7 @@
 				534178D92568013000EB2D11 /* ResourceLoader.swift in Sources */,
 				5341798325680E1200EB2D11 /* RealmStorage.swift in Sources */,
 				534178C5256800D300EB2D11 /* APIURL.swift in Sources */,
+				532988A92568206100813C7A /* CountriesLoaderWithCaching.swift in Sources */,
 				5341797125680A3600EB2D11 /* Storage.swift in Sources */,
 				534179D4256815F300EB2D11 /* CountriesStorageMapper.swift in Sources */,
 				534178F02568017F00EB2D11 /* Country.swift in Sources */,
