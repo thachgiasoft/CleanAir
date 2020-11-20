@@ -7,4 +7,6 @@
 
 import Foundation
 
-public typealias CountriesLoader = ResourceLoader<[Country]>
+public protocol CountriesLoader {
+  func load(completion: @escaping (Swift.Result<[Country], Error>) -> Void)
+}

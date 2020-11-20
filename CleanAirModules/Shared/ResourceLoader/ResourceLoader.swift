@@ -19,7 +19,7 @@ public class ResourceLoader<Resource> {
     case connectivity
   }
   
-  public  init(client: HTTPClient, url: URL, mapper: @escaping Mapper) {
+  public init(client: HTTPClient, url: URL, mapper: @escaping Mapper) {
     self.client = client
     self.url = url
     self.mapper = mapper
