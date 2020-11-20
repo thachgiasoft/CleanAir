@@ -40,6 +40,8 @@
 		53417926256803C300EB2D11 /* CountriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534178342567F4F900EB2D11 /* CountriesPresenter.swift */; };
 		5341792B2568040300EB2D11 /* CleanAirPresentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53417906256802E000EB2D11 /* CleanAirPresentation.framework */; };
 		5341792C2568040300EB2D11 /* CleanAirPresentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 53417906256802E000EB2D11 /* CleanAirPresentation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		534179342568056900EB2D11 /* CountriesListSwiftUIViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534179332568056900EB2D11 /* CountriesListSwiftUIViewPreview.swift */; };
+		53417938256805B000EB2D11 /* CitiesListSwiftUIViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53417937256805B000EB2D11 /* CitiesListSwiftUIViewPreview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +112,8 @@
 		534178B82567FFCB00EB2D11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53417906256802E000EB2D11 /* CleanAirPresentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CleanAirPresentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53417909256802E000EB2D11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		534179332568056900EB2D11 /* CountriesListSwiftUIViewPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListSwiftUIViewPreview.swift; sourceTree = "<group>"; };
+		53417937256805B000EB2D11 /* CitiesListSwiftUIViewPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesListSwiftUIViewPreview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,7 +283,9 @@
 		534177ED2567C1A400EB2D11 /* Countries */ = {
 			isa = PBXGroup;
 			children = (
+				534179472568068B00EB2D11 /* ViewModels */,
 				534177F32567C2CC00EB2D11 /* Views */,
+				5341793E256805F600EB2D11 /* Previews */,
 			);
 			path = Countries;
 			sourceTree = "<group>";
@@ -287,7 +293,6 @@
 		534177F32567C2CC00EB2D11 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				534177FA2567D12400EB2D11 /* CountriesListViewViewModel.swift */,
 				534177F02567C1D300EB2D11 /* CountriesListSwiftUIView.swift */,
 			);
 			path = Views;
@@ -332,7 +337,9 @@
 		534178212567EA0100EB2D11 /* Cities */ = {
 			isa = PBXGroup;
 			children = (
+				5341794A2568069800EB2D11 /* ViewModels */,
 				534178232567EA1600EB2D11 /* Views */,
+				5341793B256805C900EB2D11 /* Previews */,
 			);
 			path = Cities;
 			sourceTree = "<group>";
@@ -340,7 +347,6 @@
 		534178232567EA1600EB2D11 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				534178252567EA3100EB2D11 /* CitiesListViewViewModel.swift */,
 				5341781E2567E9F900EB2D11 /* CitiesListSwiftUIView.swift */,
 			);
 			path = Views;
@@ -381,6 +387,38 @@
 				53417909256802E000EB2D11 /* Info.plist */,
 			);
 			path = CleanAirPresentation;
+			sourceTree = "<group>";
+		};
+		5341793B256805C900EB2D11 /* Previews */ = {
+			isa = PBXGroup;
+			children = (
+				53417937256805B000EB2D11 /* CitiesListSwiftUIViewPreview.swift */,
+			);
+			path = Previews;
+			sourceTree = "<group>";
+		};
+		5341793E256805F600EB2D11 /* Previews */ = {
+			isa = PBXGroup;
+			children = (
+				534179332568056900EB2D11 /* CountriesListSwiftUIViewPreview.swift */,
+			);
+			path = Previews;
+			sourceTree = "<group>";
+		};
+		534179472568068B00EB2D11 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				534177FA2567D12400EB2D11 /* CountriesListViewViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5341794A2568069800EB2D11 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				534178252567EA3100EB2D11 /* CitiesListViewViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -532,12 +570,14 @@
 			files = (
 				534177482567314300EB2D11 /* ViewController.swift in Sources */,
 				534178262567EA3100EB2D11 /* CitiesListViewViewModel.swift in Sources */,
+				53417938256805B000EB2D11 /* CitiesListSwiftUIViewPreview.swift in Sources */,
 				5341781F2567E9FA00EB2D11 /* CitiesListSwiftUIView.swift in Sources */,
 				534177E52567C0D900EB2D11 /* AppDelegate.swift in Sources */,
 				534178142567E4CA00EB2D11 /* ResourceListSwiftUIViewAdapter.swift in Sources */,
 				534177FB2567D12400EB2D11 /* CountriesListViewViewModel.swift in Sources */,
 				5341782D2567EEC500EB2D11 /* CitiesUIComposer.swift in Sources */,
 				534177D0256744F100EB2D11 /* CountriesUIComposer.swift in Sources */,
+				534179342568056900EB2D11 /* CountriesListSwiftUIViewPreview.swift in Sources */,
 				534177F12567C1D300EB2D11 /* CountriesListSwiftUIView.swift in Sources */,
 				534177CB2567449900EB2D11 /* WeakRef.swift in Sources */,
 			);
