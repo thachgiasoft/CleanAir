@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let loaderWithCaching = CountriesLoaderWithCaching(
       loader: loader,
-      cache: ResourceCacheLoader(
+      cacher: ResourceCacher(
         storage: RealmStorage(
           storeMapper: CountriesStorageMapper.map,
           loadMapper: CountriesStorageMapper.map

@@ -1,5 +1,5 @@
 //
-//  ResourceCacheLoader.swift
+//  ResourceCacher.swift
 //  CleanAirModules
 //
 //  Created by Marko Engelman on 20/11/2020.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class ResourceCacheLoader<Resource, ResourceStorage> where ResourceStorage: Storage {
+public class ResourceCacher<Resource, ResourceStorage> where ResourceStorage: Storage {
   let storage: ResourceStorage
   let date: () -> Date
   let policy: (_ timeStamp: TimeInterval) -> Bool
