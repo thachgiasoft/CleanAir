@@ -12,10 +12,14 @@ public protocol Storage {
   
   typealias StoreResult = Swift.Result<Void, Error>
   typealias LoadResult = Swift.Result<StorableObject, Error>
+  typealias RemoveResult = Swift.Result<Void, Error>
   
   @discardableResult
   func store(_ object: StorableObject) -> StoreResult
   
   @discardableResult
   func load() -> LoadResult
+  
+  @discardableResult
+  func remove(_ object: StorableObject) -> RemoveResult
 }

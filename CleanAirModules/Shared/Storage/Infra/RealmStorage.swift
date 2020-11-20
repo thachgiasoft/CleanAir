@@ -42,4 +42,16 @@ extension RealmStorage: Storage {
       return .failure(error)
     }
   }
+  
+  public func remove(_ object: StoringObject) -> Storage.RemoveResult {
+    do {
+      let realm = try Realm()
+      try realm.write {
+        realm.delete(storeMapper(object))
+      }
+      return .success(())
+    } catch {
+      return .failure(error)
+    }
+  }
 }
