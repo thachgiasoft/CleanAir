@@ -16,6 +16,12 @@ public struct RemoteCity: Decodable {
 
 public final class CityMapper {
   public static func map(_ remoteModels: [RemoteCity]) -> [City] {
-    return remoteModels.map { City(name: $0.name, country: $0.country, measurementsCount: $0.count, availableLocationsCount: $0.locations)}
+    return remoteModels.map { City(
+      name: $0.name,
+      country: $0.country,
+      measurementsCount: $0.count,
+      availableLocationsCount: $0.locations,
+      isFavourite: false)
+    }
   }
 }
