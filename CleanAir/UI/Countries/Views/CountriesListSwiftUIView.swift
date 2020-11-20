@@ -16,7 +16,7 @@ struct CountriesListSwiftUIView: View {
       if let error = viewModel.error {
         Text(error)
       } else {
-        List(viewModel.countries, id: \.self.name) { country in
+        List(viewModel.resource, id: \.self.name) { country in
           VStack(alignment: .leading, spacing: 10, content: {
             Text(country.name)
               .font(.title)
@@ -24,7 +24,9 @@ struct CountriesListSwiftUIView: View {
               .font(.body)
             Text("Mesausrements: \(country.numberOfMeasuringLocations)")
               .font(.body)
-          })
+          }).onTapGesture {
+            viewModel.selection(country)
+          }
         }.onAppear(perform: {
           onAppear()
         })
@@ -38,31 +40,37 @@ struct CountriesListSwiftUIView_Previews: PreviewProvider {
   static var previews: some View {
     let countries = [
       Country(
+        code: "1",
         name: "Short name country",
         totalNumberOfMeasurements: 1,
         numberOfMeasuredCities: 1,
         numberOfMeasuringLocations: 1),
       Country(
+        code: "2",
         name: "Country",
         totalNumberOfMeasurements: 1,
         numberOfMeasuredCities: 1,
         numberOfMeasuringLocations: 1),
       Country(
+        code: "3",
         name: "Long long long name counrty",
         totalNumberOfMeasurements: 1,
         numberOfMeasuredCities: 1,
         numberOfMeasuringLocations: 1),
       Country(
+        code: "4",
         name: "Short name country 2",
         totalNumberOfMeasurements: 1,
         numberOfMeasuredCities: 1,
         numberOfMeasuringLocations: 1),
       Country(
+        code: "5",
         name: "Country 2",
         totalNumberOfMeasurements: 1,
         numberOfMeasuredCities: 1,
         numberOfMeasuringLocations: 1),
       Country(
+        code: "6",
         name: "Long long long name counrty 2",
         totalNumberOfMeasurements: 1,
         numberOfMeasuredCities: 1,
@@ -70,7 +78,9 @@ struct CountriesListSwiftUIView_Previews: PreviewProvider {
     ]
     CountriesListSwiftUIView(
       onAppear: { },
-      viewModel: CountriesListViewViewModel(onAppear: { }, countries: countries)
+      viewModel: CountriesListViewViewModel(
+        onAppear: { }, onSelect: { _ in },
+        resource: countries)
     )
   }
 }

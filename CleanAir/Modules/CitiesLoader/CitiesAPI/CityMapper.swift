@@ -15,7 +15,7 @@ final class CityMapper {
     let locations: Int
   }
   
-  func map(_ remoteModels: [RemoteCity]) -> [City] {
+  static func map(_ remoteModels: [RemoteCity]) -> [City] {
     return remoteModels.map { City(name: $0.name, country: $0.country, measurementsCount: $0.count, availableLocationsCount: $0.locations)}
   }
 }
