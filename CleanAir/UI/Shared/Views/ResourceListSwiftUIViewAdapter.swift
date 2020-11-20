@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CleanAirPresentation
 
 typealias ResourceListViewViewModel = ResourceListSwiftUIViewAdapter
 class ResourceListSwiftUIViewAdapter<ResourceViewModel>: ObservableObject {
