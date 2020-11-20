@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CountriesListSwiftUIView: View {
+  var onAppear: () -> Void
   var countries: [Country] = []
   
   var body: some View {
@@ -20,7 +21,9 @@ struct CountriesListSwiftUIView: View {
         Text("Mesausrements: \(country.numberOfMeasuringLocations)")
           .font(.body)
       })
-    }
+    }.onAppear(perform: {
+      onAppear()
+    })
   }
 }
 
@@ -58,6 +61,6 @@ struct CountriesListSwiftUIView_Previews: PreviewProvider {
         numberOfMeasuredCities: 1,
         numberOfMeasuringLocations: 1)
     ]
-    CountriesListSwiftUIView(countries: countries)
+    CountriesListSwiftUIView(onAppear: { }, countries: countries)
   }
 }
