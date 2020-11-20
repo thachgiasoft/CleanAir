@@ -35,6 +35,7 @@
 		534178262567EA3100EB2D11 /* CitiesListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534178252567EA3100EB2D11 /* CitiesListViewViewModel.swift */; };
 		5341782A2567EE2300EB2D11 /* CitiesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534178292567EE2300EB2D11 /* CitiesLoader.swift */; };
 		5341782D2567EEC500EB2D11 /* CitiesUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341782C2567EEC500EB2D11 /* CitiesUIComposer.swift */; };
+		534178352567F4F900EB2D11 /* CountriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534178342567F4F900EB2D11 /* CountriesPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		534178252567EA3100EB2D11 /* CitiesListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesListViewViewModel.swift; sourceTree = "<group>"; };
 		534178292567EE2300EB2D11 /* CitiesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesLoader.swift; sourceTree = "<group>"; };
 		5341782C2567EEC500EB2D11 /* CitiesUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesUIComposer.swift; sourceTree = "<group>"; };
+		534178342567F4F900EB2D11 /* CountriesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				534178112567E41A00EB2D11 /* Shared */,
+				534178372567F4FD00EB2D11 /* Countries */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -304,6 +307,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		534178372567F4FD00EB2D11 /* Countries */ = {
+			isa = PBXGroup;
+			children = (
+				534178342567F4F900EB2D11 /* CountriesPresenter.swift */,
+			);
+			path = Countries;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -379,6 +390,7 @@
 				534177A525673D9700EB2D11 /* ResourceErrorView.swift in Sources */,
 				534178262567EA3100EB2D11 /* CitiesListViewViewModel.swift in Sources */,
 				53417775256737F300EB2D11 /* City.swift in Sources */,
+				534178352567F4F900EB2D11 /* CountriesPresenter.swift in Sources */,
 				5341778B25673AE800EB2D11 /* ResourceMapper.swift in Sources */,
 				5341779E25673D0900EB2D11 /* ResourceView.swift in Sources */,
 				5341781F2567E9FA00EB2D11 /* CitiesListSwiftUIView.swift in Sources */,
