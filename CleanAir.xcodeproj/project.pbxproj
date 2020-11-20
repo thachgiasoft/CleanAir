@@ -44,6 +44,7 @@
 		53417938256805B000EB2D11 /* CitiesListSwiftUIViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53417937256805B000EB2D11 /* CitiesListSwiftUIViewPreview.swift */; };
 		5341794E256807AE00EB2D11 /* CoutryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341794D256807AE00EB2D11 /* CoutryViewModel.swift */; };
 		53417954256807D500EB2D11 /* CityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53417953256807D500EB2D11 /* CityViewModel.swift */; };
+		5341796A256809B000EB2D11 /* ResourceCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53417969256809B000EB2D11 /* ResourceCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +119,7 @@
 		53417937256805B000EB2D11 /* CitiesListSwiftUIViewPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesListSwiftUIViewPreview.swift; sourceTree = "<group>"; };
 		5341794D256807AE00EB2D11 /* CoutryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoutryViewModel.swift; sourceTree = "<group>"; };
 		53417953256807D500EB2D11 /* CityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModel.swift; sourceTree = "<group>"; };
+		53417969256809B000EB2D11 /* ResourceCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +253,7 @@
 			children = (
 				53417762256734B500EB2D11 /* HTTPClient */,
 				5341776C2567354F00EB2D11 /* ResourceLoader */,
+				5341796D256809B300EB2D11 /* ResourceCache */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -435,6 +438,14 @@
 			path = Cities;
 			sourceTree = "<group>";
 		};
+		5341796D256809B300EB2D11 /* ResourceCache */ = {
+			isa = PBXGroup;
+			children = (
+				53417969256809B000EB2D11 /* ResourceCache.swift */,
+			);
+			path = ResourceCache;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -607,6 +618,7 @@
 				534178E32568014700EB2D11 /* CitiesLoader.swift in Sources */,
 				534178EB2568017900EB2D11 /* CountriesLoader.swift in Sources */,
 				534178CA256800D900EB2D11 /* HTTPClient.swift in Sources */,
+				5341796A256809B000EB2D11 /* ResourceCache.swift in Sources */,
 				534178DC2568013900EB2D11 /* City.swift in Sources */,
 				534178D92568013000EB2D11 /* ResourceLoader.swift in Sources */,
 				534178C5256800D300EB2D11 /* APIURL.swift in Sources */,
