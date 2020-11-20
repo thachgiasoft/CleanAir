@@ -6,7 +6,36 @@
 //
 
 import Foundation
+import SwiftUI
 
-class CountriesListSwiftUIViewAdapter {
+typealias CountriesListViewViewModel = CountriesListSwiftUIViewAdapter
+class CountriesListSwiftUIViewAdapter: ObservableObject {
+  let onAppear: () -> Void
+  @Published var countries: [Country]
   
+  init(onAppear: @escaping () -> Void, countries: [Country] = []) {
+    self.onAppear = onAppear
+    self.countries = countries
+  }
+}
+
+// MARK: - CountriesView
+extension CountriesListSwiftUIViewAdapter: CountriesView {
+  func show(countriesViewModel: CountriesViewModel) {
+    self.countries = countriesViewModel.countries
+  }
+}
+
+// MARK: - CountriesLoadingView
+extension CountriesListSwiftUIViewAdapter: CountriesLoadingView {
+  func show(loadingViewModel: CountriesLoadingViewModel) {
+    
+  }
+}
+
+// MARK: - CountriesView
+extension CountriesListSwiftUIViewAdapter: CountriesErrorView {
+  func show(errorViewModel: CountriesErrorViewModel) {
+    
+  }
 }
