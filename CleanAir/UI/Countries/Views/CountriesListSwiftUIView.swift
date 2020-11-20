@@ -9,10 +9,10 @@ import SwiftUI
 
 struct CountriesListSwiftUIView: View {
   var onAppear: () -> Void
-  var countries: [Country] = []
+  @ObservedObject var viewModel: CountriesListViewViewModel
   
   var body: some View {
-    List(countries, id: \.self.name) { country in
+    List(viewModel.countries, id: \.self.name) { country in
       VStack(alignment: .leading, spacing: 10, content: {
         Text(country.name)
           .font(.title)
@@ -61,6 +61,9 @@ struct CountriesListSwiftUIView_Previews: PreviewProvider {
         numberOfMeasuredCities: 1,
         numberOfMeasuringLocations: 1)
     ]
-    CountriesListSwiftUIView(onAppear: { }, countries: countries)
+    CountriesListSwiftUIView(
+      onAppear: { },
+      viewModel: CountriesListViewViewModel(onAppear: { }, countries: countries)
+    )
   }
 }
