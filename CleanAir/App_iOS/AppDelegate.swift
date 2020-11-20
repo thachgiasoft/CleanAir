@@ -24,8 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       loader: loader,
       cacher: ResourceCacher(
         storage: RealmStorage(
-          storeMapper: CountriesStorageMapper.map,
-          loadMapper: CountriesStorageMapper.map
+          storeMapper: CountriesCasheMapper.map,
+          loadMapper: CountriesCasheMapper.map
         ),
         policy: CountriesCachePolicy.validate
       )
