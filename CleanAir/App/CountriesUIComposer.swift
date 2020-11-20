@@ -11,7 +11,7 @@ import SwiftUI
 final class CountriesUIComposer {
   static func makeView(with loader: CountriesLoader) -> UIViewController {
     let adapter = ResourcePresentationAdapter<[Country], WeakRef<CountriesListViewViewModel>>(loader: loader)
-    let viewModel = CountriesListViewViewModel(onAppear: adapter.load)
+    let viewModel = ResourceListViewViewModel<[Country]>(onAppear: adapter.load, resource: [])
     var view = CountriesListSwiftUIView(onAppear: { }, viewModel: viewModel)
     let presenter = ResourcePresenter<[Country], WeakRef<CountriesListViewViewModel>>(
       view: WeakRef(viewModel),

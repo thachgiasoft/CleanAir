@@ -16,7 +16,7 @@ struct CountriesListSwiftUIView: View {
       if let error = viewModel.error {
         Text(error)
       } else {
-        List(viewModel.countries, id: \.self.name) { country in
+        List(viewModel.resource, id: \.self.name) { country in
           VStack(alignment: .leading, spacing: 10, content: {
             Text(country.name)
               .font(.title)
@@ -70,7 +70,7 @@ struct CountriesListSwiftUIView_Previews: PreviewProvider {
     ]
     CountriesListSwiftUIView(
       onAppear: { },
-      viewModel: CountriesListViewViewModel(onAppear: { }, countries: countries)
+      viewModel: CountriesListViewViewModel(onAppear: { }, resource: countries)
     )
   }
 }
