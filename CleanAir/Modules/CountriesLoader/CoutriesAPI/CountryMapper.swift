@@ -19,7 +19,7 @@ final class CountryMapper {
   static func map(_ remoteModels: [RemoteCountry]) -> [Country] {
     return remoteModels.compactMap {
       guard let name = $0.name else { return nil }
-      return Country(name: name, totalNumberOfMeasurements: $0.count, numberOfMeasuredCities: $0.cities, numberOfMeasuringLocations: $0.locations)
+      return Country(code: $0.code, name: name, totalNumberOfMeasurements: $0.count, numberOfMeasuredCities: $0.cities, numberOfMeasuringLocations: $0.locations)
     }
   }
 }

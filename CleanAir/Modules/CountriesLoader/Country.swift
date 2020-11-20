@@ -8,6 +8,7 @@
 import Foundation
 
 struct Country {
+  let code: String
   let name: String
   let totalNumberOfMeasurements: Int
   let numberOfMeasuredCities: Int
