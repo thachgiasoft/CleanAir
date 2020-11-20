@@ -49,6 +49,7 @@
 		5341797D25680DDF00EB2D11 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5341797C25680DDF00EB2D11 /* RealmSwift */; };
 		5341797F25680DDF00EB2D11 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 5341797E25680DDF00EB2D11 /* Realm */; };
 		5341798325680E1200EB2D11 /* RealmStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341798225680E1200EB2D11 /* RealmStorage.swift */; };
+		534179CB2568152A00EB2D11 /* RealmCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534179CA2568152A00EB2D11 /* RealmCountry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,7 @@
 		53417969256809B000EB2D11 /* ResourceCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCache.swift; sourceTree = "<group>"; };
 		5341797025680A3600EB2D11 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		5341798225680E1200EB2D11 /* RealmStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorage.swift; sourceTree = "<group>"; };
+		534179CA2568152A00EB2D11 /* RealmCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCountry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -384,6 +386,7 @@
 				5341779425673C8200EB2D11 /* Shared */,
 				53417777256737FA00EB2D11 /* CitiesLoader */,
 				53417783256739ED00EB2D11 /* CountriesLoader */,
+				534179CE2568153100EB2D11 /* CountriesStorage */,
 				534178B82567FFCB00EB2D11 /* Info.plist */,
 			);
 			path = CleanAirModules;
@@ -470,6 +473,14 @@
 				5341798225680E1200EB2D11 /* RealmStorage.swift */,
 			);
 			path = Infra;
+			sourceTree = "<group>";
+		};
+		534179CE2568153100EB2D11 /* CountriesStorage */ = {
+			isa = PBXGroup;
+			children = (
+				534179CA2568152A00EB2D11 /* RealmCountry.swift */,
+			);
+			path = CountriesStorage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -652,6 +663,7 @@
 				534178EB2568017900EB2D11 /* CountriesLoader.swift in Sources */,
 				534178CA256800D900EB2D11 /* HTTPClient.swift in Sources */,
 				5341796A256809B000EB2D11 /* ResourceCache.swift in Sources */,
+				534179CB2568152A00EB2D11 /* RealmCountry.swift in Sources */,
 				534178DC2568013900EB2D11 /* City.swift in Sources */,
 				534178D92568013000EB2D11 /* ResourceLoader.swift in Sources */,
 				5341798325680E1200EB2D11 /* RealmStorage.swift in Sources */,
