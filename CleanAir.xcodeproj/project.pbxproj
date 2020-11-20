@@ -32,6 +32,7 @@
 		534178012567D7AC00EB2D11 /* APIURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534178002567D7AC00EB2D11 /* APIURL.swift */; };
 		534178142567E4CA00EB2D11 /* ResourceListSwiftUIViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534178132567E4CA00EB2D11 /* ResourceListSwiftUIViewAdapter.swift */; };
 		5341781F2567E9FA00EB2D11 /* CitiesListSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341781E2567E9F900EB2D11 /* CitiesListSwiftUIView.swift */; };
+		534178262567EA3100EB2D11 /* CitiesListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534178252567EA3100EB2D11 /* CitiesListViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		534178002567D7AC00EB2D11 /* APIURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIURL.swift; sourceTree = "<group>"; };
 		534178132567E4CA00EB2D11 /* ResourceListSwiftUIViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceListSwiftUIViewAdapter.swift; sourceTree = "<group>"; };
 		5341781E2567E9F900EB2D11 /* CitiesListSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesListSwiftUIView.swift; sourceTree = "<group>"; };
+		534178252567EA3100EB2D11 /* CitiesListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesListViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +292,7 @@
 		534178232567EA1600EB2D11 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				534178252567EA3100EB2D11 /* CitiesListViewViewModel.swift */,
 				5341781E2567E9F900EB2D11 /* CitiesListSwiftUIView.swift */,
 			);
 			path = Views;
@@ -368,6 +371,7 @@
 				534177A125673D2C00EB2D11 /* ResourceLoadingView.swift in Sources */,
 				5341777A2567386400EB2D11 /* CityMapper.swift in Sources */,
 				534177A525673D9700EB2D11 /* ResourceErrorView.swift in Sources */,
+				534178262567EA3100EB2D11 /* CitiesListViewViewModel.swift in Sources */,
 				53417775256737F300EB2D11 /* City.swift in Sources */,
 				5341778B25673AE800EB2D11 /* ResourceMapper.swift in Sources */,
 				5341779E25673D0900EB2D11 /* ResourceView.swift in Sources */,
