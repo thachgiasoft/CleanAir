@@ -26,7 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         storage: RealmStorage(
           storeMapper: CountriesStorageMapper.map,
           loadMapper: CountriesStorageMapper.map
-        )
+        ),
+        policy: CountriesCachePolicy.validate
       )
     )
     
