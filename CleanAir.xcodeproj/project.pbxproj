@@ -213,6 +213,7 @@
 		531E450A25687BB900388852 /* Cities */ = {
 			isa = PBXGroup;
 			children = (
+				53417774256737F300EB2D11 /* City.swift */,
 				531E450825687BAE00388852 /* CitiesStorage */,
 				53417777256737FA00EB2D11 /* CitiesLoader */,
 			);
@@ -285,7 +286,6 @@
 		53417777256737FA00EB2D11 /* CitiesLoader */ = {
 			isa = PBXGroup;
 			children = (
-				53417774256737F300EB2D11 /* City.swift */,
 				534178292567EE2300EB2D11 /* CitiesLoader.swift */,
 				5341777C2567386A00EB2D11 /* CitiesAPI */,
 			);
