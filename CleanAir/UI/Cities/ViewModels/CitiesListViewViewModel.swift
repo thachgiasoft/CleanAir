@@ -6,6 +6,6 @@
 //
 
 import Foundation
-import CleanAirModules
+import CleanAirPresentation
 
-typealias CitiesListViewViewModel = ResourceListViewViewModel<City>
+typealias CitiesListViewViewModel = ResourceListViewViewModel<CityViewModel>
