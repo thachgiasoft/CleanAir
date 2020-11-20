@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CleanAirModules
+import CleanAirPresentation
 
 final class CitiesUIComposer {
   static func makeView(with loader: CitiesLoader, selection: @escaping (City) -> Void) -> UIViewController {

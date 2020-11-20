@@ -8,8 +8,8 @@
 import Foundation
 import CleanAirModules
 
-final class CountriesPresenter {
-  static func viewModel(for countries: [Country]) -> [Country] {
+public final class CountriesPresenter {
+  public static func viewModel(for countries: [Country]) -> [Country] {
     return countries.sorted { $0.name < $1.name }
   }
 }

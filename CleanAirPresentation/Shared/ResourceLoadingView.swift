@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct ResourceLoadingViewModel {
-  let isLoading: Bool
+public struct ResourceLoadingViewModel {
+  public let isLoading: Bool
 }
 
-protocol ResourceLoadingView {
+public protocol ResourceLoadingView {
   func show(loadingViewModel: ResourceLoadingViewModel)
 }

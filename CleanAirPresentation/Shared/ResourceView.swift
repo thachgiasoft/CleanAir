@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol ResourceView {
+public protocol ResourceView {
   associatedtype ResourceViewModel
   
   func show(resourceViewModel: ResourceViewModel)

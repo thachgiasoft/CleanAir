@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct ResourceErrorViewModel {
-  let error: String
+public struct ResourceErrorViewModel {
+  public let error: String
 }
 
-protocol ResourceErrorView {
+public protocol ResourceErrorView {
   func show(errorViewModel: ResourceErrorViewModel)
 }

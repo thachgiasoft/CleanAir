@@ -8,15 +8,15 @@
 import Foundation
 import CleanAirModules
 
-class ResourcePresentationAdapter<Resource, View> where View: ResourceView {
+public class ResourcePresentationAdapter<Resource, View> where View: ResourceView {
   let loader: ResourceLoader<Resource>
-  var presenter: ResourcePresenter<Resource, View>?
+  public var presenter: ResourcePresenter<Resource, View>?
   
-  init(loader: ResourceLoader<Resource>) {
+  public init(loader: ResourceLoader<Resource>) {
     self.loader = loader
   }
   
-  func load() where Resource == View.ResourceViewModel {
+  public func load() where Resource == View.ResourceViewModel {
     presenter?.didStartLoading()
     loader.load { [weak self] result in
       DispatchQueue.main.async {
