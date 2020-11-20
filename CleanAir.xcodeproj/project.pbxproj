@@ -56,6 +56,7 @@
 		534179CB2568152A00EB2D11 /* LocalCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534179CA2568152A00EB2D11 /* LocalCountry.swift */; };
 		534179D4256815F300EB2D11 /* CountriesStorageMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534179D3256815F300EB2D11 /* CountriesStorageMapper.swift */; };
 		534179E9256816D600EB2D11 /* CountriesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534179E8256816D600EB2D11 /* CountriesStorage.swift */; };
+		5361E5DF25685D5700731693 /* CountriesCachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5361E5DE25685D5700731693 /* CountriesCachePolicy.swift */; };
 		53C0478D25684A290026F0FB /* ResourceCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C0478C25684A290026F0FB /* ResourceCache.swift */; };
 /* End PBXBuildFile section */
 
@@ -157,6 +158,7 @@
 		534179CA2568152A00EB2D11 /* LocalCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCountry.swift; sourceTree = "<group>"; };
 		534179D3256815F300EB2D11 /* CountriesStorageMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesStorageMapper.swift; sourceTree = "<group>"; };
 		534179E8256816D600EB2D11 /* CountriesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesStorage.swift; sourceTree = "<group>"; };
+		5361E5DE25685D5700731693 /* CountriesCachePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesCachePolicy.swift; sourceTree = "<group>"; };
 		53C0478C25684A290026F0FB /* ResourceCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -510,6 +512,7 @@
 			children = (
 				534179E8256816D600EB2D11 /* CountriesStorage.swift */,
 				534179D3256815F300EB2D11 /* CountriesStorageMapper.swift */,
+				5361E5DE25685D5700731693 /* CountriesCachePolicy.swift */,
 				534179CA2568152A00EB2D11 /* LocalCountry.swift */,
 				532988AE2568327300813C7A /* LocalCountryCache.swift */,
 			);
@@ -718,6 +721,7 @@
 				534178C5256800D300EB2D11 /* APIURL.swift in Sources */,
 				532988A92568206100813C7A /* CountriesLoaderWithCaching.swift in Sources */,
 				5341797125680A3600EB2D11 /* Storage.swift in Sources */,
+				5361E5DF25685D5700731693 /* CountriesCachePolicy.swift in Sources */,
 				534179D4256815F300EB2D11 /* CountriesStorageMapper.swift in Sources */,
 				534178F02568017F00EB2D11 /* Country.swift in Sources */,
 				532988A025681CB000813C7A /* CountriesLoader.swift in Sources */,
