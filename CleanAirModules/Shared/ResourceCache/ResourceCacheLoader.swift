@@ -1,5 +1,5 @@
 //
-//  ResourceCache.swift
+//  ResourceCacheLoader.swift
 //  CleanAirModules
 //
 //  Created by Marko Engelman on 20/11/2020.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class ResourceCache<Resource, ResourceStorage> where ResourceStorage: Storage, ResourceStorage.StorableObject == Resource {
+public class ResourceCacheLoader<Resource, ResourceStorage> where ResourceStorage: Storage, ResourceStorage.StorableObject == Resource {
   let storage: ResourceStorage
   
   enum ResourceCacheError: Swift.Error {
