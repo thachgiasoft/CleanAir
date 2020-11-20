@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5329887E25681A8200813C7A /* CleanAirModules.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 534178B52567FFCB00EB2D11 /* CleanAirModules.framework */; };
+		5329887F25681A8200813C7A /* CleanAirModules.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 534178B52567FFCB00EB2D11 /* CleanAirModules.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		532988A025681CB000813C7A /* CountriesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177C42567428C00EB2D11 /* CountriesLoader.swift */; };
 		534177482567314300EB2D11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177472567314300EB2D11 /* ViewController.swift */; };
 		5341774D2567314400EB2D11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5341774C2567314400EB2D11 /* Assets.xcassets */; };
 		534177502567314400EB2D11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5341774E2567314400EB2D11 /* LaunchScreen.storyboard */; };
@@ -27,7 +30,6 @@
 		534178DC2568013900EB2D11 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53417774256737F300EB2D11 /* City.swift */; };
 		534178E32568014700EB2D11 /* CitiesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534178292567EE2300EB2D11 /* CitiesLoader.swift */; };
 		534178E62568015100EB2D11 /* CityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177792567386400EB2D11 /* CityMapper.swift */; };
-		534178EB2568017900EB2D11 /* CountriesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177C42567428C00EB2D11 /* CountriesLoader.swift */; };
 		534178F02568017F00EB2D11 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53417780256739E500EB2D11 /* Country.swift */; };
 		534178F52568018D00EB2D11 /* CountryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341778525673A6300EB2D11 /* CountryMapper.swift */; };
 		534178FB256801CB00EB2D11 /* CleanAirModules.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 534178B52567FFCB00EB2D11 /* CleanAirModules.framework */; };
@@ -55,6 +57,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5329888025681A8200813C7A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 534177382567314300EB2D11 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 534178B42567FFCB00EB2D11;
+			remoteInfo = CleanAirModules;
+		};
 		534178FD256801CB00EB2D11 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 534177382567314300EB2D11 /* Project object */;
@@ -72,6 +81,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		5329888225681A8200813C7A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5329887F25681A8200813C7A /* CleanAirModules.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		534178FF256801CB00EB2D11 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -157,6 +177,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5329887E25681A8200813C7A /* CleanAirModules.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,10 +596,12 @@
 				53417902256802E000EB2D11 /* Sources */,
 				53417903256802E000EB2D11 /* Frameworks */,
 				53417904256802E000EB2D11 /* Resources */,
+				5329888225681A8200813C7A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5329888125681A8200813C7A /* PBXTargetDependency */,
 			);
 			name = CleanAirPresentation;
 			productName = CleanAirPresentation;
@@ -682,7 +705,6 @@
 				534178E62568015100EB2D11 /* CityMapper.swift in Sources */,
 				534178F52568018D00EB2D11 /* CountryMapper.swift in Sources */,
 				534178E32568014700EB2D11 /* CitiesLoader.swift in Sources */,
-				534178EB2568017900EB2D11 /* CountriesLoader.swift in Sources */,
 				534178CA256800D900EB2D11 /* HTTPClient.swift in Sources */,
 				534179E9256816D600EB2D11 /* CountriesStorage.swift in Sources */,
 				5341796A256809B000EB2D11 /* ResourceCache.swift in Sources */,
@@ -694,6 +716,7 @@
 				5341797125680A3600EB2D11 /* Storage.swift in Sources */,
 				534179D4256815F300EB2D11 /* CountriesStorageMapper.swift in Sources */,
 				534178F02568017F00EB2D11 /* Country.swift in Sources */,
+				532988A025681CB000813C7A /* CountriesLoader.swift in Sources */,
 				534178CD256800EC00EB2D11 /* URLSessionHTTPClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -716,6 +739,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5329888125681A8200813C7A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 534178B42567FFCB00EB2D11 /* CleanAirModules */;
+			targetProxy = 5329888025681A8200813C7A /* PBXContainerItemProxy */;
+		};
 		534178FE256801CB00EB2D11 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 534178B42567FFCB00EB2D11 /* CleanAirModules */;
