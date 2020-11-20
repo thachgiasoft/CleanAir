@@ -9,9 +9,9 @@ import Foundation
 import RealmSwift
 
 public final class CountriesStorageMapper {
-  public static func map(_ models: [Country]) -> [RealmCountry] {
+  public static func map(_ models: [Country]) -> [LocalCountry] {
     return models.compactMap { model in
-      let rlmModel = RealmCountry()
+      let rlmModel = LocalCountry()
       rlmModel.code = model.code
       rlmModel.name = model.name
       rlmModel.count = model.totalNumberOfMeasurements
@@ -21,7 +21,7 @@ public final class CountriesStorageMapper {
     }
   }
   
-  public static func map(_ local: Results<RealmCountry>) -> [Country] {
+  public static func map(_ local: Results<LocalCountry>) -> [Country] {
     return local.compactMap {
       guard let name = $0.name else { return nil }
       return Country(code: $0.code, name: name, totalNumberOfMeasurements: $0.count, numberOfMeasuredCities: $0.cities, numberOfMeasuringLocations: $0.locations)
