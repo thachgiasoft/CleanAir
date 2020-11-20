@@ -19,7 +19,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       url: APIURL.countries,
       mapper: ResourceMapper(CountryMapper.map).map
     )
-    window?.rootViewController = CountriesUIComposer.makeView(with: loader, selection: { [weak self] in self?.showCities(for: $0) })
+    
+    let loaderWithCaching = CountriesLoaderWithCaching(
+      loader: loader,
+      cache: ResourceCacheLoader(
+        storage: RealmStorage(
+          storeMapper: CountriesStorageMapper.map,
+          loadMapper: CountriesStorageMapper.map
+        )
+      )
+    )
+    
+    window?.rootViewController = CountriesUIComposer.makeView(with: loaderWithCaching, selection: { [weak self] in self?.showCities(for: $0) })
     rootController = window?.rootViewController
     window?.makeKeyAndVisible()
     return true
