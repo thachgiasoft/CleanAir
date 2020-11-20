@@ -33,7 +33,8 @@ public class ResourceCacheLoader<Resource, ResourceStorage> where ResourceStorag
     case let .success(cache) where policy(cache.timestamp):
       return cache.resource
       
-    case .success:
+    case let .success(cache):
+      storage.remove(cache)
       throw ResourceCacheError.cacheExpired
       
     case .failure:
