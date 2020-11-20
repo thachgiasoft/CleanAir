@@ -18,8 +18,16 @@ struct CitiesListSwiftUIView: View {
       } else {
         List(viewModel.resource, id: \.self.name) { city in
           VStack(alignment: .leading, spacing: 10, content: {
-            Text(city.name)
-              .font(.body)
+            HStack {
+              Text(city.name)
+                .font(.body)
+              Spacer()
+              Button(action: {
+                
+              }) {
+                Image(systemName: city.isFavourite ? "star.fill" : "star")
+              }
+            }
           })
         }.onAppear(perform: {
           onAppear()
