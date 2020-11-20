@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       url: APIURL.countries,
       mapper: ResourceMapper(CountryMapper.map).map
     )
-    window?.rootViewController = CountriesUIComposer.makeView(with: loader)
+    window?.rootViewController = CountriesUIComposer.makeView(with: loader, selection: { _ in })
     window?.makeKeyAndVisible()
     return true
   }

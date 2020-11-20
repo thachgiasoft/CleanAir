@@ -9,9 +9,14 @@ import Foundation
 import SwiftUI
 
 final class CountriesUIComposer {
-  static func makeView(with loader: CountriesLoader) -> UIViewController {
+  static func makeView(with loader: CountriesLoader, selection: @escaping (Country) -> Void) -> UIViewController {
     let adapter = ResourcePresentationAdapter<[Country], WeakRef<CountriesListViewViewModel>>(loader: loader)
-    let viewModel = ResourceListViewViewModel<[Country]>(onAppear: adapter.load, resource: [])
+    let viewModel = ResourceListViewViewModel<Country>(
+      onAppear: adapter.load,
+      onSelect: selection,
+      resource: []
+    )
+    
     var view = CountriesListSwiftUIView(onAppear: { }, viewModel: viewModel)
     let presenter = ResourcePresenter<[Country], WeakRef<CountriesListViewViewModel>>(
       view: WeakRef(viewModel),

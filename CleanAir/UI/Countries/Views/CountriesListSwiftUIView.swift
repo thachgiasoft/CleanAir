@@ -70,7 +70,9 @@ struct CountriesListSwiftUIView_Previews: PreviewProvider {
     ]
     CountriesListSwiftUIView(
       onAppear: { },
-      viewModel: CountriesListViewViewModel(onAppear: { }, resource: countries)
+      viewModel: CountriesListViewViewModel(
+        onAppear: { }, onSelect: { _ in },
+        resource: countries)
     )
   }
 }

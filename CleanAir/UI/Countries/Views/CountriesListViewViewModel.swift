@@ -7,4 +7,4 @@
 
 import Foundation
 
-typealias CountriesListViewViewModel = ResourceListViewViewModel<[Country]>
+typealias CountriesListViewViewModel = ResourceListViewViewModel<Country>

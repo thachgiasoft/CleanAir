@@ -52,7 +52,10 @@ struct CitiesListSwiftUIView_Previews: PreviewProvider {
     ]
     CitiesListSwiftUIView(
       onAppear: { },
-      viewModel: ResourceListViewViewModel(onAppear: { }, resource: cities)
+      viewModel: ResourceListViewViewModel(
+        onAppear: { },
+        onSelect: { _ in },
+        resource: cities)
     )
   }
 }
