@@ -21,23 +21,23 @@ class CountriesListSwiftUIViewAdapter: ObservableObject {
   }
 }
 
-// MARK: - CountriesView
-extension CountriesListSwiftUIViewAdapter: CountriesView {
-  func show(countriesViewModel: CountriesViewModel) {
-    self.countries = countriesViewModel.countries
+// MARK: - ResourceView
+extension CountriesListSwiftUIViewAdapter: ResourceView {
+  func show(resourceViewModel: [Country]) {
+    countries = resourceViewModel
   }
 }
 
-// MARK: - CountriesLoadingView
-extension CountriesListSwiftUIViewAdapter: CountriesLoadingView {
-  func show(loadingViewModel: CountriesLoadingViewModel) {
+// MARK: - ResourceLoadingView
+extension CountriesListSwiftUIViewAdapter: ResourceLoadingView {
+  func show(loadingViewModel: ResourceLoadingViewModel) {
     self.isLoading = loadingViewModel.isLoading
   }
 }
 
-// MARK: - CountriesView
-extension CountriesListSwiftUIViewAdapter: CountriesErrorView {
-  func show(errorViewModel: CountriesErrorViewModel) {
+// MARK: - ResourceErrorView
+extension CountriesListSwiftUIViewAdapter: ResourceErrorView {
+  func show(errorViewModel: ResourceErrorViewModel) {
     error = errorViewModel.error
   }
 }

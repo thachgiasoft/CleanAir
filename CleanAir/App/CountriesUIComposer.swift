@@ -10,10 +10,10 @@ import SwiftUI
 
 final class CountriesUIComposer {
   static func makeView(with loader: CountriesLoader) -> UIViewController {
-    let adapter = CountriesPresentationAdapter(loader: loader)
+    let adapter = ResourcePresentationAdapter<[Country], WeakRef<CountriesListViewViewModel>>(loader: loader)
     let viewModel = CountriesListViewViewModel(onAppear: adapter.load)
     var view = CountriesListSwiftUIView(onAppear: { }, viewModel: viewModel)
-    let presenter = CountriesPresenter(
+    let presenter = ResourcePresenter<[Country], WeakRef<CountriesListViewViewModel>>(
       view: WeakRef(viewModel),
       loadingView: WeakRef(viewModel),
       errorView: WeakRef(viewModel)
@@ -25,20 +25,20 @@ final class CountriesUIComposer {
   }
 }
 
-extension WeakRef: CountriesView where T: CountriesView {
-  func show(countriesViewModel: CountriesViewModel) {
-    object?.show(countriesViewModel: countriesViewModel)
+extension WeakRef: ResourceView where T: ResourceView {
+  func show(resourceViewModel: T.ResourceViewModel) {
+    object?.show(resourceViewModel: resourceViewModel)
   }
 }
 
-extension WeakRef: CountriesLoadingView where T: CountriesLoadingView {
-  func show(loadingViewModel: CountriesLoadingViewModel) {
+extension WeakRef: ResourceLoadingView where T: ResourceLoadingView {
+  func show(loadingViewModel: ResourceLoadingViewModel) {
     object?.show(loadingViewModel: loadingViewModel)
   }
 }
 
-extension WeakRef: CountriesErrorView where T: CountriesErrorView {
-  func show(errorViewModel: CountriesErrorViewModel) {
+extension WeakRef: ResourceErrorView where T: ResourceErrorView {
+  func show(errorViewModel: ResourceErrorViewModel) {
     object?.show(errorViewModel: errorViewModel)
   }
 }

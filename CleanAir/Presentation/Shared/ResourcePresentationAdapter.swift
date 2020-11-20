@@ -1,5 +1,5 @@
 //
-//  CountriesPresentationAdapter.swift
+//  ResourcePresentationAdapter.swift
 //  CleanAir
 //
 //  Created by Marko Engelman on 20/11/2020.
@@ -7,15 +7,15 @@
 
 import Foundation
 
-class CountriesPresentationAdapter {
-  let loader: CountriesLoader
-  var presenter: CountriesPresenter?
+class ResourcePresentationAdapter<Resource, View> where View: ResourceView {
+  let loader: ResourceLoader<Resource>
+  var presenter: ResourcePresenter<Resource, View>?
   
-  init(loader: CountriesLoader) {
+  init(loader: ResourceLoader<Resource>) {
     self.loader = loader
   }
   
-  func load() {
+  func load() where Resource == View.ResourceViewModel {
     presenter?.didStartLoading()
     loader.load { [weak self] result in
       DispatchQueue.main.async {

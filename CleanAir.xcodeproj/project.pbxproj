@@ -18,11 +18,11 @@
 		53417781256739E500EB2D11 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53417780256739E500EB2D11 /* Country.swift */; };
 		5341778625673A6300EB2D11 /* CountryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341778525673A6300EB2D11 /* CountryMapper.swift */; };
 		5341778B25673AE800EB2D11 /* ResourceMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341778A25673AE800EB2D11 /* ResourceMapper.swift */; };
-		5341779725673CBE00EB2D11 /* CountriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341779625673CBE00EB2D11 /* CountriesPresenter.swift */; };
-		5341779E25673D0900EB2D11 /* CountriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341779D25673D0900EB2D11 /* CountriesView.swift */; };
-		534177A125673D2C00EB2D11 /* CountriesLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177A025673D2C00EB2D11 /* CountriesLoadingView.swift */; };
-		534177A525673D9700EB2D11 /* CountriesErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177A425673D9700EB2D11 /* CountriesErrorView.swift */; };
-		534177C12567426D00EB2D11 /* CountriesPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177C02567426D00EB2D11 /* CountriesPresentationAdapter.swift */; };
+		5341779725673CBE00EB2D11 /* ResourcePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341779625673CBE00EB2D11 /* ResourcePresenter.swift */; };
+		5341779E25673D0900EB2D11 /* ResourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341779D25673D0900EB2D11 /* ResourceView.swift */; };
+		534177A125673D2C00EB2D11 /* ResourceLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177A025673D2C00EB2D11 /* ResourceLoadingView.swift */; };
+		534177A525673D9700EB2D11 /* ResourceErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177A425673D9700EB2D11 /* ResourceErrorView.swift */; };
+		534177C12567426D00EB2D11 /* ResourcePresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177C02567426D00EB2D11 /* ResourcePresentationAdapter.swift */; };
 		534177C52567428C00EB2D11 /* CountriesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177C42567428C00EB2D11 /* CountriesLoader.swift */; };
 		534177CB2567449900EB2D11 /* WeakRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177CA2567449900EB2D11 /* WeakRef.swift */; };
 		534177D0256744F100EB2D11 /* CountriesUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177CF256744F100EB2D11 /* CountriesUIComposer.swift */; };
@@ -46,11 +46,11 @@
 		53417780256739E500EB2D11 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		5341778525673A6300EB2D11 /* CountryMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryMapper.swift; sourceTree = "<group>"; };
 		5341778A25673AE800EB2D11 /* ResourceMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceMapper.swift; sourceTree = "<group>"; };
-		5341779625673CBE00EB2D11 /* CountriesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesPresenter.swift; sourceTree = "<group>"; };
-		5341779D25673D0900EB2D11 /* CountriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesView.swift; sourceTree = "<group>"; };
-		534177A025673D2C00EB2D11 /* CountriesLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesLoadingView.swift; sourceTree = "<group>"; };
-		534177A425673D9700EB2D11 /* CountriesErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesErrorView.swift; sourceTree = "<group>"; };
-		534177C02567426D00EB2D11 /* CountriesPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesPresentationAdapter.swift; sourceTree = "<group>"; };
+		5341779625673CBE00EB2D11 /* ResourcePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcePresenter.swift; sourceTree = "<group>"; };
+		5341779D25673D0900EB2D11 /* ResourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceView.swift; sourceTree = "<group>"; };
+		534177A025673D2C00EB2D11 /* ResourceLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoadingView.swift; sourceTree = "<group>"; };
+		534177A425673D9700EB2D11 /* ResourceErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceErrorView.swift; sourceTree = "<group>"; };
+		534177C02567426D00EB2D11 /* ResourcePresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcePresentationAdapter.swift; sourceTree = "<group>"; };
 		534177C42567428C00EB2D11 /* CountriesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesLoader.swift; sourceTree = "<group>"; };
 		534177CA2567449900EB2D11 /* WeakRef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakRef.swift; sourceTree = "<group>"; };
 		534177CF256744F100EB2D11 /* CountriesUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesUIComposer.swift; sourceTree = "<group>"; };
@@ -189,21 +189,9 @@
 		5341779925673CCC00EB2D11 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				5341779B25673CD200EB2D11 /* Countries */,
+				534178112567E41A00EB2D11 /* Shared */,
 			);
 			path = Presentation;
-			sourceTree = "<group>";
-		};
-		5341779B25673CD200EB2D11 /* Countries */ = {
-			isa = PBXGroup;
-			children = (
-				534177C02567426D00EB2D11 /* CountriesPresentationAdapter.swift */,
-				5341779625673CBE00EB2D11 /* CountriesPresenter.swift */,
-				5341779D25673D0900EB2D11 /* CountriesView.swift */,
-				534177A425673D9700EB2D11 /* CountriesErrorView.swift */,
-				534177A025673D2C00EB2D11 /* CountriesLoadingView.swift */,
-			);
-			path = Countries;
 			sourceTree = "<group>";
 		};
 		534177C82567447D00EB2D11 /* App */ = {
@@ -255,6 +243,18 @@
 				534178002567D7AC00EB2D11 /* APIURL.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		534178112567E41A00EB2D11 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				534177C02567426D00EB2D11 /* ResourcePresentationAdapter.swift */,
+				5341779625673CBE00EB2D11 /* ResourcePresenter.swift */,
+				5341779D25673D0900EB2D11 /* ResourceView.swift */,
+				534177A425673D9700EB2D11 /* ResourceErrorView.swift */,
+				534177A025673D2C00EB2D11 /* ResourceLoadingView.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,20 +327,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				534177482567314300EB2D11 /* ViewController.swift in Sources */,
-				534177A125673D2C00EB2D11 /* CountriesLoadingView.swift in Sources */,
+				534177A125673D2C00EB2D11 /* ResourceLoadingView.swift in Sources */,
 				5341777A2567386400EB2D11 /* CityMapper.swift in Sources */,
-				534177A525673D9700EB2D11 /* CountriesErrorView.swift in Sources */,
+				534177A525673D9700EB2D11 /* ResourceErrorView.swift in Sources */,
 				53417775256737F300EB2D11 /* City.swift in Sources */,
 				5341778B25673AE800EB2D11 /* ResourceMapper.swift in Sources */,
-				5341779E25673D0900EB2D11 /* CountriesView.swift in Sources */,
+				5341779E25673D0900EB2D11 /* ResourceView.swift in Sources */,
 				5341778625673A6300EB2D11 /* CountryMapper.swift in Sources */,
 				534177E52567C0D900EB2D11 /* AppDelegate.swift in Sources */,
-				5341779725673CBE00EB2D11 /* CountriesPresenter.swift in Sources */,
+				5341779725673CBE00EB2D11 /* ResourcePresenter.swift in Sources */,
 				53417781256739E500EB2D11 /* Country.swift in Sources */,
 				5341776A2567354100EB2D11 /* ResourceLoader.swift in Sources */,
 				5341775F256733C200EB2D11 /* HTTPClient.swift in Sources */,
 				534178012567D7AC00EB2D11 /* APIURL.swift in Sources */,
-				534177C12567426D00EB2D11 /* CountriesPresentationAdapter.swift in Sources */,
+				534177C12567426D00EB2D11 /* ResourcePresentationAdapter.swift in Sources */,
 				534177C52567428C00EB2D11 /* CountriesLoader.swift in Sources */,
 				534177FB2567D12400EB2D11 /* CountriesListSwiftUIViewAdapter.swift in Sources */,
 				534177D0256744F100EB2D11 /* CountriesUIComposer.swift in Sources */,
