@@ -70,10 +70,19 @@
 		534178292567EE2300EB2D11 /* CitiesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesLoader.swift; sourceTree = "<group>"; };
 		5341782C2567EEC500EB2D11 /* CitiesUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesUIComposer.swift; sourceTree = "<group>"; };
 		534178342567F4F900EB2D11 /* CountriesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesPresenter.swift; sourceTree = "<group>"; };
+		534178B52567FFCB00EB2D11 /* CleanAirModules.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CleanAirModules.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		534178B82567FFCB00EB2D11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		5341773D2567314300EB2D11 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		534178B22567FFCB00EB2D11 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -87,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				534177422567314300EB2D11 /* CleanAir */,
+				534178B62567FFCB00EB2D11 /* CleanAirModules */,
 				534177412567314300EB2D11 /* Products */,
 			);
 			indentWidth = 2;
@@ -98,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				534177402567314300EB2D11 /* CleanAir.app */,
+				534178B52567FFCB00EB2D11 /* CleanAirModules.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -315,7 +326,25 @@
 			path = Countries;
 			sourceTree = "<group>";
 		};
+		534178B62567FFCB00EB2D11 /* CleanAirModules */ = {
+			isa = PBXGroup;
+			children = (
+				534178B82567FFCB00EB2D11 /* Info.plist */,
+			);
+			path = CleanAirModules;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		534178B02567FFCB00EB2D11 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		5341773F2567314300EB2D11 /* CleanAir */ = {
@@ -335,6 +364,24 @@
 			productReference = 534177402567314300EB2D11 /* CleanAir.app */;
 			productType = "com.apple.product-type.application";
 		};
+		534178B42567FFCB00EB2D11 /* CleanAirModules */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 534178BA2567FFCB00EB2D11 /* Build configuration list for PBXNativeTarget "CleanAirModules" */;
+			buildPhases = (
+				534178B02567FFCB00EB2D11 /* Headers */,
+				534178B12567FFCB00EB2D11 /* Sources */,
+				534178B22567FFCB00EB2D11 /* Frameworks */,
+				534178B32567FFCB00EB2D11 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CleanAirModules;
+			productName = CleanAirModules;
+			productReference = 534178B52567FFCB00EB2D11 /* CleanAirModules.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -345,6 +392,9 @@
 				LastUpgradeCheck = 1220;
 				TargetAttributes = {
 					5341773F2567314300EB2D11 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					534178B42567FFCB00EB2D11 = {
 						CreatedOnToolsVersion = 12.2;
 					};
 				};
@@ -363,6 +413,7 @@
 			projectRoot = "";
 			targets = (
 				5341773F2567314300EB2D11 /* CleanAir */,
+				534178B42567FFCB00EB2D11 /* CleanAirModules */,
 			);
 		};
 /* End PBXProject section */
@@ -374,6 +425,13 @@
 			files = (
 				534177502567314400EB2D11 /* LaunchScreen.storyboard in Resources */,
 				5341774D2567314400EB2D11 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		534178B32567FFCB00EB2D11 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +469,13 @@
 				5341782A2567EE2300EB2D11 /* CitiesLoader.swift in Sources */,
 				534177F12567C1D300EB2D11 /* CountriesListSwiftUIView.swift in Sources */,
 				534177CB2567449900EB2D11 /* WeakRef.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		534178B12567FFCB00EB2D11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,6 +649,64 @@
 			};
 			name = Release;
 		};
+		534178BB2567FFCB00EB2D11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 54PNV7AZ7G;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CleanAirModules/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.markoengelman.cleanAir.CleanAirModules;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		534178BC2567FFCB00EB2D11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 54PNV7AZ7G;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CleanAirModules/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.markoengelman.cleanAir.CleanAirModules;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -601,6 +724,15 @@
 			buildConfigurations = (
 				534177552567314400EB2D11 /* Debug */,
 				534177562567314400EB2D11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		534178BA2567FFCB00EB2D11 /* Build configuration list for PBXNativeTarget "CleanAirModules" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				534178BB2567FFCB00EB2D11 /* Debug */,
+				534178BC2567FFCB00EB2D11 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
