@@ -26,6 +26,7 @@
 		534177C52567428C00EB2D11 /* CountriesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177C42567428C00EB2D11 /* CountriesLoader.swift */; };
 		534177E52567C0D900EB2D11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177E42567C0D900EB2D11 /* AppDelegate.swift */; };
 		534177CB2567449900EB2D11 /* WeakRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177CA2567449900EB2D11 /* WeakRef.swift */; };
+		534177D0256744F100EB2D11 /* CountriesUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177CF256744F100EB2D11 /* CountriesUIComposer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		534177C42567428C00EB2D11 /* CountriesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesLoader.swift; sourceTree = "<group>"; };
 		534177E42567C0D900EB2D11 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		534177CA2567449900EB2D11 /* WeakRef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakRef.swift; sourceTree = "<group>"; };
+		534177CF256744F100EB2D11 /* CountriesUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesUIComposer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 			children = (
 				534177E42567C0D900EB2D11 /* AppDelegate.swift */,
 				534177CD256744C200EB2D11 /* Helpers */,
+				534177CF256744F100EB2D11 /* CountriesUIComposer.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				5341775F256733C200EB2D11 /* HTTPClient.swift in Sources */,
 				534177C12567426D00EB2D11 /* CountriesPresentationAdapter.swift in Sources */,
 				534177C52567428C00EB2D11 /* CountriesLoader.swift in Sources */,
+				534177D0256744F100EB2D11 /* CountriesUIComposer.swift in Sources */,
 				53417765256734E500EB2D11 /* URLSessionHTTPClient.swift in Sources */,
 				534177CB2567449900EB2D11 /* WeakRef.swift in Sources */,
 			);
