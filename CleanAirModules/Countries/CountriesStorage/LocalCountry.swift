@@ -10,7 +10,7 @@ import RealmSwift
 
 public class LocalCountry: Object {
   @objc dynamic var code: String = ""
-  @objc dynamic var name: String? = nil
+  @objc dynamic var name: String = ""
   @objc dynamic var count: Int = 0
   @objc dynamic var cities: Int = 0
   @objc dynamic var locations: Int = 0
