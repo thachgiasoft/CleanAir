@@ -693,11 +693,27 @@
 		53BFC7662569C73E00630261 /* CleanAirModulesTests */ = {
 			isa = PBXGroup;
 			children = (
-				53BFC7672569C73E00630261 /* APITests.swift */,
-				53BFC79C2569C98C00630261 /* HTTPClientTests.swift */,
+				53BFC7A42569CA2E00630261 /* API */,
+				53BFC7AB2569CA3200630261 /* HTTPClient */,
 				53BFC7692569C73E00630261 /* Info.plist */,
 			);
 			path = CleanAirModulesTests;
+			sourceTree = "<group>";
+		};
+		53BFC7A42569CA2E00630261 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				53BFC7672569C73E00630261 /* APITests.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		53BFC7AB2569CA3200630261 /* HTTPClient */ = {
+			isa = PBXGroup;
+			children = (
+				53BFC79C2569C98C00630261 /* HTTPClientTests.swift */,
+			);
+			path = HTTPClient;
 			sourceTree = "<group>";
 		};
 		53C0B0C0256870D000D7A8F3 /* CountriesCache */ = {
