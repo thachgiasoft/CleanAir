@@ -46,7 +46,15 @@ private extension AppDelegate {
       url: APIURL.cities(for: country.code),
       mapper: ResourceMapper(CityMapper.map).map
     )
-    let controller = CitiesUIComposer.makeView(with: loader, selection: { _ in })
+    
+    let service = FavouriteCityService(
+      storage: RealmStorage(
+        storeMapper: CitiesStorageMapper.map,
+        objectMapper:  CitiesStorageMapper.map
+      )
+    )
+
+    let controller = CitiesUIComposer.makeView(with: loader, service: service, selection: { _ in })
     rootController?.show(controller, sender: self)
   }
 }

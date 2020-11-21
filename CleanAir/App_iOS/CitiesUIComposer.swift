@@ -10,7 +10,7 @@ import CleanAirModules
 import CleanAirPresentation
 
 final class CitiesUIComposer {
-  static func makeView(with loader: CitiesLoader, selection: @escaping (City) -> Void) -> UIViewController {
+  static func makeView(with loader: CitiesLoader, service: FavouriteCityService, selection: @escaping (City) -> Void) -> UIViewController {
     let adapter = ResourcePresentationAdapter<[City], WeakRef<CitiesListViewViewModel>>(loader: loader.load)
     let viewModel = CitiesListViewViewModel(
       onAppear: adapter.load,
