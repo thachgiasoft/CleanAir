@@ -15,5 +15,6 @@ public protocol HTTPClient {
   typealias Result = Swift.Result<(Data, HTTPURLResponse), Error>
   
   /// Clients are responsible to dispatch to appropriate threads, if needed.
-  func execute(request: URLRequest, completion: @escaping (Result) -> Void)
+  @discardableResult
+  func execute(request: URLRequest, completion: @escaping (Result) -> Void) -> HTTPClientTask
 }
