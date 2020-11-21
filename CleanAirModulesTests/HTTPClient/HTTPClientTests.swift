@@ -73,6 +73,13 @@ class HTTPClientTests: XCTestCase {
     let result = sut.clientResult(for: nil, response: response, error: NSError(domain: "", code: 1, userInfo: [:]))
     XCTAssertThrowsError(try result.get())
   }
+  
+  func test_executeAnyRequest_deliversErrorOnNonHTTPURLResponse() {
+    let sut = makeSUT()
+    let response = URLResponse(url: anyURL, mimeType: nil, expectedContentLength: 1, textEncodingName: nil)
+    let result = sut.clientResult(for: Data(), response: response, error: nil)
+    XCTAssertThrowsError(try result.get())
+  }
 }
 
 // MARK: - Private
