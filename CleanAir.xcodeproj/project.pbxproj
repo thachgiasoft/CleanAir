@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5318224D25690BBF00731A3E /* CityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5318224C25690BBF00731A3E /* CityViewModel.swift */; };
 		5318225025690D0400731A3E /* CityViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5318224F25690D0400731A3E /* CityViewModelMapper.swift */; };
+		53182253256914FE00731A3E /* CityPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53182252256914FE00731A3E /* CityPresentationAdapter.swift */; };
 		531E450F25687BF600388852 /* LocalCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531E450E25687BF600388852 /* LocalCity.swift */; };
 		531E451325687C5600388852 /* CitiesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531E451225687C5600388852 /* CitiesStorage.swift */; };
 		531E451725687CB700388852 /* CitiesStorageMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531E451625687CB700388852 /* CitiesStorageMapper.swift */; };
@@ -119,6 +120,7 @@
 /* Begin PBXFileReference section */
 		5318224C25690BBF00731A3E /* CityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModel.swift; sourceTree = "<group>"; };
 		5318224F25690D0400731A3E /* CityViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModelMapper.swift; sourceTree = "<group>"; };
+		53182252256914FE00731A3E /* CityPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityPresentationAdapter.swift; sourceTree = "<group>"; };
 		531E450E25687BF600388852 /* LocalCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCity.swift; sourceTree = "<group>"; };
 		531E451225687C5600388852 /* CitiesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesStorage.swift; sourceTree = "<group>"; };
 		531E451625687CB700388852 /* CitiesStorageMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesStorageMapper.swift; sourceTree = "<group>"; };
@@ -518,6 +520,7 @@
 		53417957256807D800EB2D11 /* Cities */ = {
 			isa = PBXGroup;
 			children = (
+				53182252256914FE00731A3E /* CityPresentationAdapter.swift */,
 			);
 			path = Cities;
 			sourceTree = "<group>";
@@ -796,6 +799,7 @@
 				53417924256803C000EB2D11 /* ResourceLoadingView.swift in Sources */,
 				5341791E256803B900EB2D11 /* ResourceView.swift in Sources */,
 				53417921256803BC00EB2D11 /* ResourceErrorView.swift in Sources */,
+				53182253256914FE00731A3E /* CityPresentationAdapter.swift in Sources */,
 				53417926256803C300EB2D11 /* CountriesPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
