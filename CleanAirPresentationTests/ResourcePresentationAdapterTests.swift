@@ -1,5 +1,5 @@
 //
-//  CleanAirPresentationTests.swift
+//  ResourcePresentationAdapterTests.swift
 //  CleanAirPresentationTests
 //
 //  Created by Marko Engelman on 21/11/2020.
@@ -8,7 +8,7 @@
 import XCTest
 @testable import CleanAirPresentation
 
-class CleanAirPresentationTests: XCTestCase {
+class ResourcePresentationAdapterTests: XCTestCase {
   func test_init_doesntTriggerLoader() {
     let (_, _, loader) = makeSUT()
     XCTAssertEqual(loader.loadCount, 0)
@@ -57,7 +57,7 @@ class CleanAirPresentationTests: XCTestCase {
 }
 
 // MARK: - Private
-private extension CleanAirPresentationTests {
+private extension ResourcePresentationAdapterTests {
   typealias AnyType = String
   typealias AnyView = AnyResourceView<AnyType>
   typealias AnyLoader = AnyResourceLoader<AnyType>
