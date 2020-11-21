@@ -21,6 +21,12 @@ class ResourcePresenterTests: XCTestCase {
     sut.didStartLoading()
     XCTAssertTrue(view.receivedResourceLoadingViewModel!.isLoading)
   }
+  
+  func test_didFinishLoadingWithResource_stopsLoading() {
+    let (sut, view) = makeSUT()
+    sut.didFinishLoading(with: "")
+    XCTAssertFalse(view.receivedResourceLoadingViewModel!.isLoading)
+  }
 }
 
 // MARK: - Private
