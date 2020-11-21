@@ -43,7 +43,7 @@ private extension CitiesUIComposer {
       errorView: WeakRef(viewModel),
       viewModelMapper: CityViewModelMapper.map
     )
-    viewModel.togglFavourite = adapter.togglFavourite
+    viewModel.toggleFavourite = adapter.toggleFavourite
     return viewModel
   }
 }

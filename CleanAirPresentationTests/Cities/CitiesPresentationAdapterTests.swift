@@ -17,9 +17,9 @@ class CitiesPresentationAdapterTests: XCTestCase {
   
   func test_toggle_triggersService() {
     let (sut, _, service) = makeSUT(city: anyCity())
-    sut.togglFavourite()
+    sut.toggleFavourite()
     XCTAssertEqual(service.callCount, 1)
-    sut.togglFavourite()
+    sut.toggleFavourite()
     XCTAssertEqual(service.callCount, 2)
   }
 }
