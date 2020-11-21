@@ -74,6 +74,7 @@
 		53BFC72625699E1600630261 /* XCTest+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BFC72525699E1600630261 /* XCTest+Helpers.swift */; };
 		53BFC7372569B70F00630261 /* CountriesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BFC7362569B70F00630261 /* CountriesPresenterTests.swift */; };
 		53BFC7562569BA1D00630261 /* CitiesPresentationAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BFC7552569BA1D00630261 /* CitiesPresentationAdapterTests.swift */; };
+		53BFC75A2569BC1800630261 /* FavouriteCityServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BFC7592569BC1800630261 /* FavouriteCityServiceMock.swift */; };
 		53C0478D25684A290026F0FB /* ResourceCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C0478C25684A290026F0FB /* ResourceCache.swift */; };
 		53C0B0C3256870F300D7A8F3 /* CountriesCacheMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C0B0C2256870F300D7A8F3 /* CountriesCacheMapper.swift */; };
 /* End PBXBuildFile section */
@@ -202,6 +203,7 @@
 		53BFC72525699E1600630261 /* XCTest+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+Helpers.swift"; sourceTree = "<group>"; };
 		53BFC7362569B70F00630261 /* CountriesPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesPresenterTests.swift; sourceTree = "<group>"; };
 		53BFC7552569BA1D00630261 /* CitiesPresentationAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesPresentationAdapterTests.swift; sourceTree = "<group>"; };
+		53BFC7592569BC1800630261 /* FavouriteCityServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCityServiceMock.swift; sourceTree = "<group>"; };
 		53C0478C25684A290026F0FB /* ResourceCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCache.swift; sourceTree = "<group>"; };
 		53C0B0C2256870F300D7A8F3 /* CountriesCacheMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesCacheMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -634,6 +636,7 @@
 				53714CD82569773300109B16 /* AnyResourceView.swift */,
 				53714CE525697C9700109B16 /* AnyResourcePresenterStub.swift */,
 				53714CE12569792F00109B16 /* AnyResourceLoader.swift */,
+				53BFC7592569BC1800630261 /* FavouriteCityServiceMock.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -934,6 +937,7 @@
 				53714CE22569792F00109B16 /* AnyResourceLoader.swift in Sources */,
 				53714CE625697C9700109B16 /* AnyResourcePresenterStub.swift in Sources */,
 				53BFC72625699E1600630261 /* XCTest+Helpers.swift in Sources */,
+				53BFC75A2569BC1800630261 /* FavouriteCityServiceMock.swift in Sources */,
 				53714CCA2569758A00109B16 /* ResourcePresentationAdapterTests.swift in Sources */,
 				53714CD92569773400109B16 /* AnyResourceView.swift in Sources */,
 				53BFC7372569B70F00630261 /* CountriesPresenterTests.swift in Sources */,
