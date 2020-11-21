@@ -47,6 +47,14 @@ private extension AppDelegate {
       mapper: ResourceMapper(CityMapper.map).map
     )
     
+    let loaderWithValidation = CitiesLoaderWithLocalValidation(
+      loader: loader,
+      storage: RealmStorage(
+        storeMapper: CitiesStorageMapper.map,
+        objectMapper:  CitiesStorageMapper.map
+      )
+    )
+    
     let service = FavouriteCityService(
       storage: RealmStorage(
         storeMapper: CitiesStorageMapper.map,
@@ -54,7 +62,7 @@ private extension AppDelegate {
       )
     )
 
-    let controller = CitiesUIComposer.makeView(with: loader, service: service, selection: { _ in })
+    let controller = CitiesUIComposer.makeView(with: loaderWithValidation, service: service, selection: { _ in })
     rootController?.show(controller, sender: self)
   }
 }
