@@ -9,7 +9,19 @@ import Foundation
 import CleanAirPresentation
 
 class AnyResourceView<T>: ResourceView, ResourceLoadingView, ResourceErrorView where T: Any {
-  func show(resourceViewModel: T) { }
-  func show(loadingViewModel: ResourceLoadingViewModel) { }
-  func show(errorViewModel: ResourceErrorViewModel) { }
+  var receivedResourceViewModel: T?
+  var receivedResourceLoadingViewModel: ResourceLoadingViewModel?
+  var receivedResourceErrorViewModel: ResourceErrorViewModel?
+  
+  func show(resourceViewModel: T) {
+    receivedResourceViewModel = resourceViewModel
+    
+  }
+  func show(loadingViewModel: ResourceLoadingViewModel) {
+    receivedResourceLoadingViewModel = loadingViewModel
+  }
+  
+  func show(errorViewModel: ResourceErrorViewModel) {
+    receivedResourceErrorViewModel = errorViewModel
+  }
 }
