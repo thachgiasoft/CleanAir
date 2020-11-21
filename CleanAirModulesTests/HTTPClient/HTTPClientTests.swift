@@ -10,19 +10,14 @@ import XCTest
 
 class HTTPClientTests: XCTestCase {
   func test_init_storesSession() {
-    let configuration = URLSessionConfiguration.ephemeral
-    let session = URLSession(configuration: configuration)
+    let session = anySession
     let sut = makeSUT(session: session)
     XCTAssertEqual(sut.session, session)
   }
   
   func test_returns_cancelableTask() {
-    let configuration = URLSessionConfiguration.ephemeral
-    let session = URLSession(configuration: configuration)
+    let session = anySession
     let sut = makeSUT(session: session)
-    let anyURL = URL(string: "https://anyURL.com")!
-    let anyRequest = URLRequest(url: anyURL)
-    
     
     let exp1 = expectation(description: "Wating for running tasks")
     let task = sut.execute(request: anyRequest) { _ in }
@@ -45,10 +40,35 @@ class HTTPClientTests: XCTestCase {
     
     wait(for: [exp2], timeout: 1.0)
   }
+  
+  func test_executeAnyRequest_deliversResult() {
+    let sut = makeSUT()
+    let exp = expectation(description: "Wating for response")
+    var receivedResult: (HTTPClient.Result)?
+    _ = sut.execute(request: anyRequest) { result in
+      receivedResult = result
+      exp.fulfill()
+    }
+    
+    wait(for: [exp], timeout: 1.0)
+    XCTAssertNotNil(receivedResult)
+  }
 }
 
 // MARK: - Private
 private extension HTTPClientTests {
+  var anySession: URLSession {
+    URLSession(configuration: .ephemeral)
+  }
+  
+  var anyURL: URL {
+    URL(string: "https://anyURL.com")!
+  }
+  
+  var anyRequest: URLRequest {
+    URLRequest(url: anyURL)
+  }
+  
   func makeSUT(session: URLSession = .shared) -> URLSessionHTTPClient {
     return URLSessionHTTPClient(session: session)
   }
