@@ -77,6 +77,7 @@
 		53BFC75A2569BC1800630261 /* FavouriteCityServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BFC7592569BC1800630261 /* FavouriteCityServiceMock.swift */; };
 		53BFC7682569C73E00630261 /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BFC7672569C73E00630261 /* APITests.swift */; };
 		53BFC76A2569C73E00630261 /* CleanAirModules.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 534178B52567FFCB00EB2D11 /* CleanAirModules.framework */; };
+		53BFC79D2569C98C00630261 /* HTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BFC79C2569C98C00630261 /* HTTPClientTests.swift */; };
 		53C0478D25684A290026F0FB /* ResourceCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C0478C25684A290026F0FB /* ResourceCache.swift */; };
 		53C0B0C3256870F300D7A8F3 /* CountriesCacheMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C0B0C2256870F300D7A8F3 /* CountriesCacheMapper.swift */; };
 /* End PBXBuildFile section */
@@ -216,6 +217,7 @@
 		53BFC7652569C73E00630261 /* CleanAirModulesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanAirModulesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		53BFC7672569C73E00630261 /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
 		53BFC7692569C73E00630261 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53BFC79C2569C98C00630261 /* HTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientTests.swift; sourceTree = "<group>"; };
 		53C0478C25684A290026F0FB /* ResourceCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCache.swift; sourceTree = "<group>"; };
 		53C0B0C2256870F300D7A8F3 /* CountriesCacheMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesCacheMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -691,10 +693,27 @@
 		53BFC7662569C73E00630261 /* CleanAirModulesTests */ = {
 			isa = PBXGroup;
 			children = (
-				53BFC7672569C73E00630261 /* APITests.swift */,
+				53BFC7A42569CA2E00630261 /* API */,
+				53BFC7AB2569CA3200630261 /* HTTPClient */,
 				53BFC7692569C73E00630261 /* Info.plist */,
 			);
 			path = CleanAirModulesTests;
+			sourceTree = "<group>";
+		};
+		53BFC7A42569CA2E00630261 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				53BFC7672569C73E00630261 /* APITests.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		53BFC7AB2569CA3200630261 /* HTTPClient */ = {
+			isa = PBXGroup;
+			children = (
+				53BFC79C2569C98C00630261 /* HTTPClientTests.swift */,
+			);
+			path = HTTPClient;
 			sourceTree = "<group>";
 		};
 		53C0B0C0256870D000D7A8F3 /* CountriesCache */ = {
@@ -1008,6 +1027,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53BFC79D2569C98C00630261 /* HTTPClientTests.swift in Sources */,
 				53BFC7682569C73E00630261 /* APITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
