@@ -8,7 +8,12 @@
 import XCTest
 
 class ResourcePresenterTests: XCTestCase {
-  
+  func test_init_doesnt_callView() {
+    let (_, view) = makeSUT()
+    XCTAssertNil(view.receivedResourceViewModel)
+    XCTAssertNil(view.receivedResourceLoadingViewModel)
+    XCTAssertNil(view.receivedResourceErrorViewModel)
+  }
 }
 
 // MARK: - Private
