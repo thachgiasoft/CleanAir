@@ -59,6 +59,13 @@ class HTTPClientTests: XCTestCase {
     let result = sut.clientResult(for: nil, response: nil, error: nil)
     XCTAssertThrowsError(try result.get())
   }
+  
+  func test_executeAnyRequest_deliversNoErrorOnSuccessfulResponse() {
+    let sut = makeSUT()
+    let response = HTTPURLResponse(url: anyURL, statusCode: 1, httpVersion: nil, headerFields: nil)
+    let result = sut.clientResult(for: Data(), response: response, error: nil)
+    XCTAssertNoThrow(try result.get())
+  }
 }
 
 // MARK: - Private
