@@ -71,6 +71,7 @@
 		53716AC1256924850032A245 /* CityListSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53716AC0256924850032A245 /* CityListSwiftUIView.swift */; };
 		53716AC525694B180032A245 /* CitiesLoaderWithLocalValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53716AC425694B180032A245 /* CitiesLoaderWithLocalValidation.swift */; };
 		53BFC72225698F2C00630261 /* ResourcePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BFC72125698F2C00630261 /* ResourcePresenterTests.swift */; };
+		53BFC72625699E1600630261 /* XCTest+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BFC72525699E1600630261 /* XCTest+Helpers.swift */; };
 		53C0478D25684A290026F0FB /* ResourceCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C0478C25684A290026F0FB /* ResourceCache.swift */; };
 		53C0B0C3256870F300D7A8F3 /* CountriesCacheMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C0B0C2256870F300D7A8F3 /* CountriesCacheMapper.swift */; };
 /* End PBXBuildFile section */
@@ -196,6 +197,7 @@
 		53716AC0256924850032A245 /* CityListSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListSwiftUIView.swift; sourceTree = "<group>"; };
 		53716AC425694B180032A245 /* CitiesLoaderWithLocalValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesLoaderWithLocalValidation.swift; sourceTree = "<group>"; };
 		53BFC72125698F2C00630261 /* ResourcePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcePresenterTests.swift; sourceTree = "<group>"; };
+		53BFC72525699E1600630261 /* XCTest+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+Helpers.swift"; sourceTree = "<group>"; };
 		53C0478C25684A290026F0FB /* ResourceCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCache.swift; sourceTree = "<group>"; };
 		53C0B0C2256870F300D7A8F3 /* CountriesCacheMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesCacheMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -623,6 +625,7 @@
 		53714CDC2569773700109B16 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				53BFC72525699E1600630261 /* XCTest+Helpers.swift */,
 				53714CD82569773300109B16 /* AnyResourceView.swift */,
 				53714CE525697C9700109B16 /* AnyResourcePresenterStub.swift */,
 				53714CE12569792F00109B16 /* AnyResourceLoader.swift */,
@@ -899,6 +902,7 @@
 				53BFC72225698F2C00630261 /* ResourcePresenterTests.swift in Sources */,
 				53714CE22569792F00109B16 /* AnyResourceLoader.swift in Sources */,
 				53714CE625697C9700109B16 /* AnyResourcePresenterStub.swift in Sources */,
+				53BFC72625699E1600630261 /* XCTest+Helpers.swift in Sources */,
 				53714CCA2569758A00109B16 /* ResourcePresentationAdapterTests.swift in Sources */,
 				53714CD92569773400109B16 /* AnyResourceView.swift in Sources */,
 			);
