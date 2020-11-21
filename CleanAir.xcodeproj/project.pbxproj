@@ -75,6 +75,8 @@
 		53BFC7372569B70F00630261 /* CountriesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BFC7362569B70F00630261 /* CountriesPresenterTests.swift */; };
 		53BFC7562569BA1D00630261 /* CitiesPresentationAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BFC7552569BA1D00630261 /* CitiesPresentationAdapterTests.swift */; };
 		53BFC75A2569BC1800630261 /* FavouriteCityServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BFC7592569BC1800630261 /* FavouriteCityServiceMock.swift */; };
+		53BFC7682569C73E00630261 /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BFC7672569C73E00630261 /* APITests.swift */; };
+		53BFC76A2569C73E00630261 /* CleanAirModules.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 534178B52567FFCB00EB2D11 /* CleanAirModules.framework */; };
 		53C0478D25684A290026F0FB /* ResourceCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C0478C25684A290026F0FB /* ResourceCache.swift */; };
 		53C0B0C3256870F300D7A8F3 /* CountriesCacheMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C0B0C2256870F300D7A8F3 /* CountriesCacheMapper.swift */; };
 /* End PBXBuildFile section */
@@ -107,6 +109,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 53417905256802E000EB2D11;
 			remoteInfo = CleanAirPresentation;
+		};
+		53BFC76B2569C73E00630261 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 534177382567314300EB2D11 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 534178B42567FFCB00EB2D11;
+			remoteInfo = CleanAirModules;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -204,6 +213,9 @@
 		53BFC7362569B70F00630261 /* CountriesPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesPresenterTests.swift; sourceTree = "<group>"; };
 		53BFC7552569BA1D00630261 /* CitiesPresentationAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesPresentationAdapterTests.swift; sourceTree = "<group>"; };
 		53BFC7592569BC1800630261 /* FavouriteCityServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCityServiceMock.swift; sourceTree = "<group>"; };
+		53BFC7652569C73E00630261 /* CleanAirModulesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanAirModulesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		53BFC7672569C73E00630261 /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
+		53BFC7692569C73E00630261 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53C0478C25684A290026F0FB /* ResourceCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCache.swift; sourceTree = "<group>"; };
 		53C0B0C2256870F300D7A8F3 /* CountriesCacheMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesCacheMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -240,6 +252,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				53714CCC2569758A00109B16 /* CleanAirPresentation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53BFC7622569C73E00630261 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53BFC76A2569C73E00630261 /* CleanAirModules.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +301,7 @@
 				534178B62567FFCB00EB2D11 /* CleanAirModules */,
 				53417907256802E000EB2D11 /* CleanAirPresentation */,
 				534177422567314300EB2D11 /* CleanAir */,
+				53BFC7662569C73E00630261 /* CleanAirModulesTests */,
 				53714CC82569758A00109B16 /* CleanAirPresentationTests */,
 				534177412567314300EB2D11 /* Products */,
 				534178FA256801CB00EB2D11 /* Frameworks */,
@@ -297,6 +318,7 @@
 				534178B52567FFCB00EB2D11 /* CleanAirModules.framework */,
 				53417906256802E000EB2D11 /* CleanAirPresentation.framework */,
 				53714CC72569758A00109B16 /* CleanAirPresentationTests.xctest */,
+				53BFC7652569C73E00630261 /* CleanAirModulesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -666,6 +688,15 @@
 			path = Cities;
 			sourceTree = "<group>";
 		};
+		53BFC7662569C73E00630261 /* CleanAirModulesTests */ = {
+			isa = PBXGroup;
+			children = (
+				53BFC7672569C73E00630261 /* APITests.swift */,
+				53BFC7692569C73E00630261 /* Info.plist */,
+			);
+			path = CleanAirModulesTests;
+			sourceTree = "<group>";
+		};
 		53C0B0C0256870D000D7A8F3 /* CountriesCache */ = {
 			isa = PBXGroup;
 			children = (
@@ -776,6 +807,24 @@
 			productReference = 53714CC72569758A00109B16 /* CleanAirPresentationTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		53BFC7642569C73E00630261 /* CleanAirModulesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53BFC76F2569C73E00630261 /* Build configuration list for PBXNativeTarget "CleanAirModulesTests" */;
+			buildPhases = (
+				53BFC7612569C73E00630261 /* Sources */,
+				53BFC7622569C73E00630261 /* Frameworks */,
+				53BFC7632569C73E00630261 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				53BFC76C2569C73E00630261 /* PBXTargetDependency */,
+			);
+			name = CleanAirModulesTests;
+			productName = CleanAirModulesTests;
+			productReference = 53BFC7652569C73E00630261 /* CleanAirModulesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -795,6 +844,9 @@
 						CreatedOnToolsVersion = 12.2;
 					};
 					53714CC62569758A00109B16 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					53BFC7642569C73E00630261 = {
 						CreatedOnToolsVersion = 12.2;
 					};
 				};
@@ -819,6 +871,7 @@
 				534178B42567FFCB00EB2D11 /* CleanAirModules */,
 				53417905256802E000EB2D11 /* CleanAirPresentation */,
 				53714CC62569758A00109B16 /* CleanAirPresentationTests */,
+				53BFC7642569C73E00630261 /* CleanAirModulesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -848,6 +901,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		53714CC52569758A00109B16 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53BFC7632569C73E00630261 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -944,6 +1004,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		53BFC7612569C73E00630261 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53BFC7682569C73E00630261 /* APITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -966,6 +1034,11 @@
 			isa = PBXTargetDependency;
 			target = 53417905256802E000EB2D11 /* CleanAirPresentation */;
 			targetProxy = 53714CCD2569758A00109B16 /* PBXContainerItemProxy */;
+		};
+		53BFC76C2569C73E00630261 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 534178B42567FFCB00EB2D11 /* CleanAirModules */;
+			targetProxy = 53BFC76B2569C73E00630261 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1305,6 +1378,48 @@
 			};
 			name = Release;
 		};
+		53BFC76D2569C73E00630261 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 54PNV7AZ7G;
+				INFOPLIST_FILE = CleanAirModulesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.markoengelman.cleanAir.CleanAirModulesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		53BFC76E2569C73E00630261 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 54PNV7AZ7G;
+				INFOPLIST_FILE = CleanAirModulesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.markoengelman.cleanAir.CleanAirModulesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1349,6 +1464,15 @@
 			buildConfigurations = (
 				53714CCF2569758A00109B16 /* Debug */,
 				53714CD02569758A00109B16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53BFC76F2569C73E00630261 /* Build configuration list for PBXNativeTarget "CleanAirModulesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53BFC76D2569C73E00630261 /* Debug */,
+				53BFC76E2569C73E00630261 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
