@@ -10,3 +10,16 @@ import XCTest
 class ResourcePresenterTests: XCTestCase {
   
 }
+
+// MARK: - Private
+private extension ResourcePresenterTests {
+  typealias AnyType = String
+  typealias AnyView = AnyResourceView<AnyType>
+  typealias AnyPresenter = AnyResourcePresenterStub<AnyType, AnyView>
+  
+  func makeSUT() -> (AnyPresenter, AnyView) {
+    let view = AnyView()
+    let presenter = AnyPresenter(view: view, loadingView: view, errorView: view)
+    return (presenter, view)
+  }
+}
