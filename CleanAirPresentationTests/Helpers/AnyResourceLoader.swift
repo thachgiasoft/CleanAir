@@ -8,8 +8,18 @@
 import Foundation
 
 class AnyResourceLoader<T> where T: Any {
-  var loadCount = 0
-  func load(completion: @escaping (Swift.Result<T, Error>) -> Void) {
-    loadCount += 1
+  typealias Result = Swift.Result<T, Error>
+  typealias Completion = (Result) -> Void
+  
+  private var completions: [Completion] = []
+  var loadCount: Int { completions.count }
+  
+  func load(completion: @escaping Completion) {
+    completions.append(completion)
+  }
+  
+  func complete(at: Int, with result: Result) {
+    let completion = completions[at - 1]
+    completion(result)
   }
 }

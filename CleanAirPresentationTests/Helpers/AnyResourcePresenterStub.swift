@@ -10,13 +10,14 @@ import Foundation
 
 class AnyResourcePresenterStub<Resource, View>: ResourcePresenter<Resource, View> where View: AnyResourceView<Resource> {
   var didStartLoadingCount = 0
+  var receivedResource: Resource?
   
   override func didStartLoading() {
     didStartLoadingCount += 1
   }
   
   override func didFinishLoading(with resource: Resource) {
-    
+    receivedResource = resource
   }
   
   override func didFinishLoading(with error: Error) {

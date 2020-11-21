@@ -29,6 +29,19 @@ class CleanAirPresentationTests: XCTestCase {
     sut.load()
     XCTAssertEqual(presenter.didStartLoadingCount, 2)
   }
+  
+  func test_load_onSuccess_deliversResourceToPresenter() {
+    let queue = DispatchQueue.main
+    let (sut, presenter, loader) = makeSUT(queue: queue)
+    sut.load()
+    let one = 1
+    let oneString = "\(one)"
+    let exp = expectation(description: "Waiting for deliver completion")
+    loader.complete(at: one, with: .success(oneString))
+    queue.async { exp.fulfill() }
+    wait(for: [exp], timeout: 1.0)
+    XCTAssertEqual(presenter.receivedResource, oneString)
+  }
 }
 
 // MARK: - Private
@@ -39,7 +52,7 @@ private extension CleanAirPresentationTests {
   typealias AnyPresenter = AnyResourcePresenterStub<AnyType, AnyView>
   typealias AnyPresentationAdapter = ResourcePresentationAdapter<AnyType, AnyView>
   
-  func makeSUT() -> (AnyPresentationAdapter, AnyPresenter, AnyLoader) {
+  func makeSUT(queue: DispatchQueue = .main) -> (AnyPresentationAdapter, AnyPresenter, AnyLoader) {
     let view = AnyView()
     let loader = AnyLoader()
     let sut = AnyPresentationAdapter(loader: loader.load)
