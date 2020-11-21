@@ -6,7 +6,11 @@
 //
 
 import XCTest
+@testable import CleanAirModules
 
 class APITests: XCTestCase {
-
+  func test_doesnt_crash() {
+    _ = APIURL.countries
+    _ = APIURL.cities(for: "anyCityName")
+  }
 }
