@@ -28,6 +28,15 @@ class CitiesPresentationAdapterTests: XCTestCase {
     sut.toggleFavourite()
     XCTAssertEqual(presenter.didStartLoadingCount, 1)
   }
+  
+  func test_toggle_onSuccess_deliversResourceToPresenter() {
+    let city = anyCity()
+    let (sut, presenter, service) = makeSUT(city: city)
+    
+    expect(sut: sut, presenter: presenter, toComplete: .success(city), when: {
+      service.complete(at: 1, with: .success(city))
+    })
+  }
 }
 
 // MARK: - Private
@@ -44,5 +53,26 @@ private extension CitiesPresentationAdapterTests {
     let presenter = Presenter(view: view, loadingView: view, errorView: view)
     sut.presenter = presenter
     return (sut, presenter, service)
+  }
+  
+  func expect(sut: Adapter, presenter: Presenter, toComplete result: Swift.Result<City, Error>, when: () -> Void) {
+    let exp = expectation(description: "Waiting for deliver completion")
+    
+    sut.toggleFavourite()
+    when()
+    
+    DispatchQueue.main.async {
+      switch result {
+      case let .success(resource):
+        XCTAssertEqual(presenter.receivedResource, resource)
+        
+      case let .failure(error):
+        XCTAssertEqual(presenter.receivedError as NSError?, error as NSError?)
+      }
+      
+      exp.fulfill()
+    }
+    
+    wait(for: [exp], timeout: 2.0)
   }
 }

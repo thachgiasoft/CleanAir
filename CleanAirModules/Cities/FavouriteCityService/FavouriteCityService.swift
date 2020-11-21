@@ -14,7 +14,7 @@ public class FavouriteCityService {
     self.storage = storage
   }
   
-  public func toggl(for city: City, completion: (Swift.Result<City, Error>) -> Void) {
+  public func toggl(for city: City, completion: @escaping (Swift.Result<City, Error>) -> Void) {
     let isFavourite = !city.isFavourite
     let updatedCity = City(name: city.name, country: city.country, measurementsCount: city.measurementsCount, availableLocationsCount: city.availableLocationsCount, isFavourite: isFavourite)
     

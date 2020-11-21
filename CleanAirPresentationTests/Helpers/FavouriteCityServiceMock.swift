@@ -9,14 +9,24 @@ import Foundation
 @testable import CleanAirModules
 
 class FavouriteCityServiceMock: FavouriteCityService {
-  var callCount = 0
+  typealias Result = Swift.Result<City, Error>
+  typealias Completion = (Result) -> Void
+  
+  private var completions: [Completion] = []
+  
+  var callCount: Int { completions.count }
   
   init() {
     super.init(storage: CityStorageMock())
   }
   
-  override func toggl(for city: City, completion: (Result<City, Error>) -> Void) {
-    callCount += 1
+  override func toggl(for city: City, completion: @escaping Completion) {
+    completions.append(completion)
+  }
+  
+  func complete(at: Int, with result: Result) {
+    let completion = completions[at - 1]
+    completion(result)
   }
 }
 
