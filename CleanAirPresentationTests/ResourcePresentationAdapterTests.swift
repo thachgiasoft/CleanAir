@@ -31,28 +31,21 @@ class ResourcePresentationAdapterTests: XCTestCase {
   }
   
   func test_load_onSuccess_deliversResourceToPresenter() {
-    let queue = DispatchQueue.main
-    let (sut, presenter, loader) = makeSUT(queue: queue)
-    sut.load()
+    let (sut, presenter, loader) = makeSUT()
     let one = 1
     let oneString = "\(one)"
-    let exp = expectation(description: "Waiting for deliver completion")
-    loader.complete(at: one, with: .success(oneString))
-    queue.async { exp.fulfill() }
-    wait(for: [exp], timeout: 1.0)
-    XCTAssertEqual(presenter.receivedResource, oneString)
+    
+    expect(sut: sut, presenter: presenter, toComplete: .success(oneString), when: {
+      loader.complete(at: one, with: .success(oneString))
+    })
   }
   
   func test_load_onFailure_deliversErrorToPresenter() {
-    let queue = DispatchQueue.main
-    let (sut, presenter, loader) = makeSUT(queue: queue)
-    sut.load()
+    let (sut, presenter, loader) = makeSUT()
     let error = NSError(domain: "1", code: 1, userInfo: [:])
-    let exp = expectation(description: "Waiting for deliver completion")
-    loader.complete(at: 1, with: .failure(error))
-    queue.async { exp.fulfill() }
-    wait(for: [exp], timeout: 1.0)
-    XCTAssertEqual(presenter.receivedError as NSError?, error)
+    expect(sut: sut, presenter: presenter, toComplete: .failure(error), when: {
+      loader.complete(at: 1, with: .failure(error))
+    })
   }
 }
 
@@ -71,5 +64,26 @@ private extension ResourcePresentationAdapterTests {
     let presenter = AnyPresenter(view: view, loadingView: view, errorView: view)
     sut.presenter = presenter
     return (sut, presenter, loader)
+  }
+  
+  func expect(sut: AnyPresentationAdapter, presenter: AnyPresenter, toComplete result: Swift.Result<AnyType, Error>, when: () -> Void) {
+    let exp = expectation(description: "Waiting for deliver completion")
+    
+    sut.load()
+    when()
+    
+    DispatchQueue.main.async {
+      switch result {
+      case let .success(resource):
+        XCTAssertEqual(presenter.receivedResource, resource)
+        
+      case let .failure(error):
+        XCTAssertEqual(presenter.receivedError as NSError?, error as NSError?)
+      }
+      
+      exp.fulfill()
+    }
+    
+    wait(for: [exp], timeout: 2.0)
   }
 }
