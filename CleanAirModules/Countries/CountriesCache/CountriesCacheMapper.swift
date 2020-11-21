@@ -20,11 +20,10 @@ public final class CountriesCasheMapper {
     return localCache
   }
   
-  public static func map(_ localCache: Results<LocalCountryCache>) throws -> ResourceCache<[Country]> {
-    guard let cache = localCache.first, localCache.count == 1 else { throw CacheError.invalidCacheResult }
-    return ResourceCache(
-      timestamp: cache.timeStamp,
-      resource: cache.countries.map(CountriesStorageMapper.map)
+  public static func map(_ localCache: LocalCountryCache) -> ResourceCache<[Country]> {
+    ResourceCache(
+      timestamp: localCache.timeStamp,
+      resource: localCache.countries.map(CountriesStorageMapper.map)
     )
   }
 }

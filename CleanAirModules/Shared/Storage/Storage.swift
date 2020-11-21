@@ -21,5 +21,11 @@ public protocol Storage {
   func load() -> LoadResult
   
   @discardableResult
+  func load(objectId: Any) -> LoadResult
+  
+  @discardableResult
   func remove(_ object: StorableObject) -> RemoveResult
+  
+  @discardableResult
+  func remove(objectId: Any) -> RemoveResult
 }
