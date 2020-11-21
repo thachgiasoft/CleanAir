@@ -19,7 +19,7 @@ public class CityPresentationAdapter<CityView> where CityView: ResourceView {
     self.service = service
   }
   
-  public func togglFavourite() {
+  public func toggleFavourite() {
     presenter?.didStartLoading()
     service.toggl(for: city) { [weak self] result in
       DispatchQueue.main.async {

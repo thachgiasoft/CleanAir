@@ -35,11 +35,12 @@ class ResourcePresenterTests: XCTestCase {
   }
   
   func test_didFinishLoadingWithResource_deliversResourceViewModel() {
-    var didMap = false
-    let mapper: (String) -> String = { resource in didMap = true; return resource }
-    let (sut, _) = makeSUT(mapper: mapper)
-    sut.didFinishLoading(with: anyResource)
-    XCTAssertTrue(didMap)
+    let mappedResource = anyResource
+    let resource = anyResource
+    let view = AnyView()
+    let sut = Presenter(view: view, loadingView: view, errorView: view)
+    sut.didFinishLoading(with: resource)
+    XCTAssertEqual(view.receivedResourceViewModel, mappedResource)
   }
   
   func test_didFinishLoadingWithError_stopsLoading() {

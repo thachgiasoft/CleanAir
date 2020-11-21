@@ -17,7 +17,7 @@ struct CityListSwiftUIView: View {
           .font(.body)
         Spacer()
         Button(action: {
-          viewModel.togglFavourite?()
+          viewModel.toggleFavourite?()
         }) {
           Image(systemName: viewModel.isFavourite ? "star.fill" : "star")
         }
