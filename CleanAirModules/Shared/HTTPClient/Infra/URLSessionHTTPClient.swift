@@ -27,20 +27,7 @@ public class URLSessionHTTPClient {
   public init(session: URLSession) {
     self.session = session
   }
-}
-
-// MARK: - HTTPClient
-extension URLSessionHTTPClient: HTTPClient {
-  public func execute(request: URLRequest, completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
-    let result = clientResult
-    let task = session.dataTask(with: request) { completion(result($0, $1, $2)) }
-    task.resume()
-    return WrappedTask(task)
-  }
-}
-
-// MARK: - Private
-private extension URLSessionHTTPClient {
+  
   func clientResult(for data: Data?, response: URLResponse?, error: Error?) -> HTTPClient.Result {
     let result = Result {
       if let error = error {
@@ -52,5 +39,15 @@ private extension URLSessionHTTPClient {
       }
     }
     return result
+  }
+}
+
+// MARK: - HTTPClient
+extension URLSessionHTTPClient: HTTPClient {
+  public func execute(request: URLRequest, completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
+    let result = clientResult
+    let task = session.dataTask(with: request) { completion(result($0, $1, $2)) }
+    task.resume()
+    return WrappedTask(task)
   }
 }

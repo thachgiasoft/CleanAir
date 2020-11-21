@@ -53,6 +53,12 @@ class HTTPClientTests: XCTestCase {
     wait(for: [exp], timeout: 1.0)
     XCTAssertNotNil(receivedResult)
   }
+  
+  func test_executeAnyRequest_deliversErrorOnNonExpectedResponse() {
+    let sut = makeSUT()
+    let result = sut.clientResult(for: nil, response: nil, error: nil)
+    XCTAssertThrowsError(try result.get())
+  }
 }
 
 // MARK: - Private
