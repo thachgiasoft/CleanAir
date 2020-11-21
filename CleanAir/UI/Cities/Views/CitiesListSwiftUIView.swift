@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CitiesListSwiftUIView: View {
   var onAppear: () -> Void
+  
   @ObservedObject var viewModel: CitiesListViewViewModel
   
   var body: some View {
@@ -17,10 +18,7 @@ struct CitiesListSwiftUIView: View {
         Text(error)
       } else {
         List(viewModel.resource, id: \.self.name) { city in
-          VStack(alignment: .leading, spacing: 10, content: {
-            Text(city.name)
-              .font(.body)
-          })
+          CityListSwiftUIView(viewModel: city)
         }.onAppear(perform: {
           onAppear()
         })

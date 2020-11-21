@@ -7,4 +7,6 @@
 
 import Foundation
 
-public typealias CitiesLoader = ResourceLoader<[City]>
+public protocol CitiesLoader {
+  func load(completion: @escaping (Swift.Result<[City], Error>) -> Void)
+}

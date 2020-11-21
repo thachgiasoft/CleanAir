@@ -14,26 +14,31 @@ struct CitiesListSwiftUIView_Previews: PreviewProvider {
       City(
         name: "Short name city",
         country: "country",
-        measurementsCount: 1, availableLocationsCount: 1),
+        measurementsCount: 1, availableLocationsCount: 1,
+        isFavourite: true),
       City(
         name: "Name city",
         country: "country",
-        measurementsCount: 1, availableLocationsCount: 1),
+        measurementsCount: 1, availableLocationsCount: 1,
+        isFavourite: false),
       City(
         name: "Long name city",
         country: "country",
-        measurementsCount: 1, availableLocationsCount: 1),
+        measurementsCount: 1, availableLocationsCount: 1,
+        isFavourite: false),
       City(
         name: "Long long name city",
         country: "country",
-        measurementsCount: 1, availableLocationsCount: 1)
+        measurementsCount: 1, availableLocationsCount: 1,
+        isFavourite: false)
     ]
     CitiesListSwiftUIView(
       onAppear: { },
-      viewModel: ResourceListViewViewModel(
+      viewModel: ResourceListViewViewModel<City, CityViewModel>(
         onAppear: { },
         onSelect: { _ in },
-        resource: cities)
+        mapper: CityViewModelMapper.map,
+        resource: CityViewModelMapper.map(models: cities))
     )
   }
 }

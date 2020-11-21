@@ -10,11 +10,23 @@ import RealmSwift
 
 public class RealmStorage<StoringObject, RealmObject> where RealmObject: Object {
   let storeMapper: (StoringObject) -> RealmObject
-  let loadMapper: (Results<RealmObject>) throws -> StoringObject
+  let resultMapper: (Results<RealmObject>) throws -> StoringObject
+  let objectMapper: (RealmObject) throws -> StoringObject
   
-  public init(storeMapper: @escaping (StoringObject) -> RealmObject, loadMapper: @escaping (Results<RealmObject>) throws -> StoringObject) {
+  enum StorageError: Swift.Error {
+    case objectNotFound
+  }
+  
+  public init(storeMapper: @escaping (StoringObject) -> RealmObject, resultMapper: @escaping (Results<RealmObject>) -> StoringObject) {
     self.storeMapper = storeMapper
-    self.loadMapper = loadMapper
+    self.resultMapper = resultMapper
+    self.objectMapper = { _ in throw StorageError.objectNotFound }
+  }
+  
+  public init(storeMapper: @escaping (StoringObject) -> RealmObject, objectMapper: @escaping (RealmObject) -> StoringObject) {
+    self.storeMapper = storeMapper
+    self.resultMapper = { _ in throw StorageError.objectNotFound }
+    self.objectMapper = objectMapper
   }
 }
 
@@ -36,7 +48,18 @@ extension RealmStorage: Storage {
     do {
       let realm = try Realm()
       let result = realm.objects(RealmObject.self)
-      let loadResult = try loadMapper(result)
+      let objects = try resultMapper(result)
+      return .success(objects)
+    } catch {
+      return .failure(error)
+    }
+  }
+  
+  public func load(objectId: Any) -> Swift.Result<StoringObject, Error> {
+    do {
+      let realm = try Realm()
+      guard let result = realm.object(ofType: RealmObject.self, forPrimaryKey: objectId) else { return .failure(StorageError.objectNotFound) }
+      let loadResult = try objectMapper(result)
       return .success(loadResult)
     } catch {
       return .failure(error)
@@ -48,6 +71,19 @@ extension RealmStorage: Storage {
       let realm = try Realm()
       try realm.write {
         realm.delete(storeMapper(object))
+      }
+      return .success(())
+    } catch {
+      return .failure(error)
+    }
+  }
+  
+  public func remove(objectId: Any) -> Storage.RemoveResult {
+    do {
+      let realm = try Realm()
+      guard let result = realm.object(ofType: RealmObject.self, forPrimaryKey: objectId) else { return .failure(StorageError.objectNotFound) }
+      try realm.write {
+        realm.delete(result)
       }
       return .success(())
     } catch {

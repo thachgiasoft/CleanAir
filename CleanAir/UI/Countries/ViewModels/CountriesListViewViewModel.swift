@@ -8,4 +8,4 @@
 import Foundation
 import CleanAirPresentation
 
-typealias CountriesListViewViewModel = ResourceListViewViewModel<CountryViewModel>
+typealias CountriesListViewViewModel = ResourceListViewViewModel<CountryViewModel, CountryViewModel>
