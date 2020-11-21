@@ -9,24 +9,41 @@ import Foundation
 import CleanAirPresentation
 
 typealias ResourceListViewViewModel = ResourceListSwiftUIViewAdapter
-class ResourceListSwiftUIViewAdapter<ResourceViewModel>: ObservableObject {
+
+class ResourceListSwiftUIViewAdapter<Resource, ResourceViewModel>: ObservableObject {
+  typealias ViewModelMapper = (Resource) -> ResourceViewModel
   let onAppear: () -> Void
-  let selection: (ResourceViewModel) -> Void
+  let selection: (Resource) -> Void
+  let mapper: ViewModelMapper
+  
   @Published var resource: [ResourceViewModel]
   @Published var isLoading: Bool = false
   @Published var error: String?
   
-  init(onAppear: @escaping () -> Void, onSelect: @escaping (_ resource: ResourceViewModel) -> Void, resource: [ResourceViewModel]) {
+  init(onAppear: @escaping () -> Void,
+       onSelect: @escaping (_ resource: Resource) -> Void,
+       resource: [ResourceViewModel]) where Resource == ResourceViewModel {
     self.onAppear = onAppear
     self.resource = resource
     self.selection = onSelect
+    self.mapper = { $0 }
+  }
+  
+  init(onAppear: @escaping () -> Void,
+       onSelect: @escaping (_ resource: Resource) -> Void,
+       mapper: @escaping ViewModelMapper,
+       resource: [ResourceViewModel] = []) {
+    self.onAppear = onAppear
+    self.resource = resource
+    self.selection = onSelect
+    self.mapper = mapper
   }
 }
 
 // MARK: - ResourceView
 extension ResourceListSwiftUIViewAdapter: ResourceView {
-  func show(resourceViewModel: [ResourceViewModel]) {
-    self.resource = resourceViewModel
+  func show(resourceViewModel: [Resource]) {
+    self.resource = resourceViewModel.map { mapper($0) }
   }
 }
 
