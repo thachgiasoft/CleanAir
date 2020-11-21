@@ -13,6 +13,14 @@ class CleanAirPresentationTests: XCTestCase {
     let (_, loader) = makeSUT()
     XCTAssertEqual(loader.loadCount, 0)
   }
+  
+  func test_load_triggersLoader() {
+    let (sut, loader) = makeSUT()
+    sut.load()
+    XCTAssertEqual(loader.loadCount, 1)
+    sut.load()
+    XCTAssertEqual(loader.loadCount, 2)
+  }
 }
 
 // MARK: - Private
