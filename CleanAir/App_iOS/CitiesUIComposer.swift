@@ -15,6 +15,7 @@ final class CitiesUIComposer {
     let viewModel = CitiesListViewViewModel(
       onAppear: adapter.load,
       onSelect: selection,
+      mapper: CityViewModelMapper.map,
       resource: []
     )
     

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CitiesListSwiftUIView: View {
   var onAppear: () -> Void
+  
   @ObservedObject var viewModel: CitiesListViewViewModel
   
   var body: some View {
