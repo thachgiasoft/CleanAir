@@ -16,6 +16,8 @@ public class CityViewModel: ObservableObject {
   public let availableLocationsCount: Int
   @Published var isFavourite: Bool
   
+  var togglFavourite: (() -> Void)?
+  
   public init(name: String, country: String, measurementsCount: Int, availableLocationsCount: Int, isFavourite: Bool) {
     self.name = name
     self.country = country
