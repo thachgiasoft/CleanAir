@@ -42,6 +42,18 @@ class CleanAirPresentationTests: XCTestCase {
     wait(for: [exp], timeout: 1.0)
     XCTAssertEqual(presenter.receivedResource, oneString)
   }
+  
+  func test_load_onFailure_deliversErrorToPresenter() {
+    let queue = DispatchQueue.main
+    let (sut, presenter, loader) = makeSUT(queue: queue)
+    sut.load()
+    let error = NSError(domain: "1", code: 1, userInfo: [:])
+    let exp = expectation(description: "Waiting for deliver completion")
+    loader.complete(at: 1, with: .failure(error))
+    queue.async { exp.fulfill() }
+    wait(for: [exp], timeout: 1.0)
+    XCTAssertEqual(presenter.receivedError as NSError?, error)
+  }
 }
 
 // MARK: - Private
