@@ -37,6 +37,14 @@ class CitiesPresentationAdapterTests: XCTestCase {
       service.complete(at: 1, with: .success(city))
     })
   }
+  
+  func test_toggle_onFailure_deliversErrorToPresenter() {
+    let (sut, presenter, service) = makeSUT(city: anyCity())
+    let error = NSError(domain: "1", code: 1, userInfo: [:])
+    expect(sut: sut, presenter: presenter, toComplete: .failure(error), when: {
+      service.complete(at: 1, with: .failure(error))
+    })
+  }
 }
 
 // MARK: - Private
