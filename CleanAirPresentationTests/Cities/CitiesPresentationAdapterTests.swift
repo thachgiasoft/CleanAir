@@ -14,6 +14,14 @@ class CitiesPresentationAdapterTests: XCTestCase {
     let (_, _, service) = makeSUT(city: anyCity())
     XCTAssertEqual(service.callCount, 0)
   }
+  
+  func test_toggle_triggersService() {
+    let (sut, _, service) = makeSUT(city: anyCity())
+    sut.togglFavourite()
+    XCTAssertEqual(service.callCount, 1)
+    sut.togglFavourite()
+    XCTAssertEqual(service.callCount, 2)
+  }
 }
 
 // MARK: - Private
