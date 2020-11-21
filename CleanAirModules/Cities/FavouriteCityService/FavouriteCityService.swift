@@ -17,7 +17,13 @@ public class FavouriteCityService {
   public func toggl(for city: City, completion: (Swift.Result<City, Error>) -> Void) {
     let isFavourite = !city.isFavourite
     let updatedCity = City(name: city.name, country: city.country, measurementsCount: city.measurementsCount, availableLocationsCount: city.availableLocationsCount, isFavourite: isFavourite)
-    let result = storage.store(updatedCity)
+    
+    let result: Result<Void, Error>
+    if isFavourite {
+      result = storage.store(updatedCity)
+    } else {
+      result = storage.remove(objectId: city.name)
+    }
     completion(result.map { updatedCity })
   }
 }
