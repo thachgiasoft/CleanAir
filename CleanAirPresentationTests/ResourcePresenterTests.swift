@@ -40,6 +40,12 @@ class ResourcePresenterTests: XCTestCase {
     sut.didFinishLoading(with: NSError(domain: "anyError", code: 1, userInfo: [:]))
     XCTAssertFalse(view.receivedResourceLoadingViewModel!.isLoading)
   }
+  
+  func test_didFinishLoadingWithError_deliversError() {
+    let (sut, view) = makeSUT()
+    sut.didFinishLoading(with: NSError(domain: "anyError", code: 1, userInfo: [:]))
+    XCTAssertNotNil(view.receivedResourceErrorViewModel)
+  }
 }
 
 // MARK: - Private
