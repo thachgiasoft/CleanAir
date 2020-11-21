@@ -22,7 +22,7 @@ public class FavouriteCityService {
     if isFavourite {
       result = storage.store(updatedCity)
     } else {
-      result = storage.remove(objectId: city.name)
+      result = storage.remove(objectId: city.id)
     }
     completion(result.map { updatedCity })
   }
