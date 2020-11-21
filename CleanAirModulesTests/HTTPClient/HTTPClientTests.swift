@@ -54,31 +54,41 @@ class HTTPClientTests: XCTestCase {
     XCTAssertNotNil(receivedResult)
   }
   
-  func test_executeAnyRequest_deliversErrorOnNonExpectedResponse() {
+  func test_clientResult_deliversErrorOnNonExpectedResponse() {
     let sut = makeSUT()
     let result = sut.clientResult(for: nil, response: nil, error: nil)
     XCTAssertThrowsError(try result.get())
   }
   
-  func test_executeAnyRequest_deliversNoErrorOnSuccessfulResponse() {
+  func test_clientResult_deliversNoErrorOnSuccessfulResponse() {
     let sut = makeSUT()
     let response = HTTPURLResponse(url: anyURL, statusCode: 1, httpVersion: nil, headerFields: nil)
     let result = sut.clientResult(for: Data(), response: response, error: nil)
     XCTAssertNoThrow(try result.get())
   }
   
-  func test_executeAnyRequest_deliversErrorOnErrorResponse() {
+  func test_clientResultt_deliversErrorOnErrorResponse() {
     let sut = makeSUT()
     let response = HTTPURLResponse(url: anyURL, statusCode: 1, httpVersion: nil, headerFields: nil)
     let result = sut.clientResult(for: nil, response: response, error: NSError(domain: "", code: 1, userInfo: [:]))
     XCTAssertThrowsError(try result.get())
   }
   
-  func test_executeAnyRequest_deliversErrorOnNonHTTPURLResponse() {
+  func test_clientResult_deliversErrorOnNonHTTPURLResponse() {
     let sut = makeSUT()
     let response = URLResponse(url: anyURL, mimeType: nil, expectedContentLength: 1, textEncodingName: nil)
     let result = sut.clientResult(for: Data(), response: response, error: nil)
     XCTAssertThrowsError(try result.get())
+  }
+  
+  func test_clientResult_deliversResponseWithoutSideEfects() throws {
+    let sut = makeSUT()
+    let response = HTTPURLResponse(url: anyURL, statusCode: 1, httpVersion: nil, headerFields: nil)
+    let data = Data()
+    let result = sut.clientResult(for: data, response: response, error: nil)
+    let (receivedData, receivedResponse) = try result.get()
+    XCTAssertEqual(receivedData, data)
+    XCTAssertEqual(receivedResponse, response)
   }
 }
 
