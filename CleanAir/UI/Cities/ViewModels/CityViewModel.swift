@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import CleanAirPresentation
 
 public class CityViewModel: ObservableObject {
   public let name: String
@@ -21,5 +22,26 @@ public class CityViewModel: ObservableObject {
     self.measurementsCount = measurementsCount
     self.availableLocationsCount = availableLocationsCount
     self.isFavourite = isFavourite
+  }
+}
+
+// MARK: - ResourceView
+extension CityViewModel: ResourceView {
+  public func show(resourceViewModel: CityViewModel) {
+    isFavourite = resourceViewModel.isFavourite
+  }
+}
+
+// MARK: - ResourceLoadingView
+extension CityViewModel: ResourceLoadingView {
+  public func show(loadingViewModel: ResourceLoadingViewModel) {
+    
+  }
+}
+
+// MARK: - ResourceErrorView
+extension CityViewModel: ResourceErrorView {
+  public func show(errorViewModel: ResourceErrorViewModel) {
+    
   }
 }
