@@ -28,6 +28,13 @@ class ResourcePresenterTests: XCTestCase {
     XCTAssertFalse(view.receivedResourceLoadingViewModel!.isLoading)
   }
   
+  func test_didFinishLoadingWithResource_deliversResource() {
+    let (sut, view) = makeSUT()
+    let anyString = "anyString"
+    sut.didFinishLoading(with: anyString)
+    XCTAssertEqual(view.receivedResourceViewModel, anyString)
+  }
+  
   func test_didFinishLoadingWithError_stopsLoading() {
     let (sut, view) = makeSUT()
     sut.didFinishLoading(with: NSError(domain: "anyError", code: 1, userInfo: [:]))
