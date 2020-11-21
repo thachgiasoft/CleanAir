@@ -90,6 +90,35 @@ class HTTPClientTests: XCTestCase {
     XCTAssertEqual(receivedData, data)
     XCTAssertEqual(receivedResponse, response)
   }
+  
+  func test_clientResult_throwsCorrectError() {
+    let sut = makeSUT()
+    let response = URLResponse(url: anyURL, mimeType: nil, expectedContentLength: 1, textEncodingName: nil)
+    let valuesResult = sut.clientResult(for: Data(), response: response, error: nil)
+    do {
+      let _ = try valuesResult.get()
+    } catch {
+      let expectedError = error as? URLSessionHTTPClient.UnexpectedValuesRepresentation
+      XCTAssertNotNil(expectedError)
+    }
+    
+    let nsError = NSError(domain: "", code: 1, userInfo: [:])
+    let validRresponse = HTTPURLResponse(url: anyURL, statusCode: 1, httpVersion: nil, headerFields: nil)
+    let nsErrorResult = sut.clientResult(for: Data(), response: validRresponse, error: nsError)
+    do {
+      let _ = try nsErrorResult.get()
+    } catch {
+      XCTAssertEqual(error as NSError, nsError)
+    }
+    
+    let inValidRresponse = URLResponse(url: anyURL, mimeType: nil, expectedContentLength: 1, textEncodingName: nil)
+    let invalidResult = sut.clientResult(for: Data(), response: inValidRresponse, error: nsError)
+    do {
+      let _ = try invalidResult.get()
+    } catch {
+      XCTAssertEqual(error as NSError, nsError)
+    }
+  }
 }
 
 // MARK: - Private

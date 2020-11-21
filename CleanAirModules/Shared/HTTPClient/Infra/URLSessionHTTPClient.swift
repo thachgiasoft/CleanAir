@@ -8,6 +8,7 @@
 import Foundation
 
 public class URLSessionHTTPClient {
+  struct UnexpectedValuesRepresentation: Error { }
   class WrappedTask: HTTPClientTask {
     weak var task: URLSessionTask?
     
@@ -21,8 +22,6 @@ public class URLSessionHTTPClient {
   }
   
   let session: URLSession
-  
-  private struct UnexpectedValuesRepresentation: Error {}
   
   public init(session: URLSession) {
     self.session = session
