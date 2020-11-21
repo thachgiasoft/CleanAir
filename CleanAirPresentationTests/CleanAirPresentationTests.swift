@@ -9,6 +9,10 @@ import XCTest
 @testable import CleanAirPresentation
 
 class CleanAirPresentationTests: XCTestCase {
+  func test_init_doesntTriggerLoader() {
+    let (_, loader) = makeSUT()
+    XCTAssertEqual(loader.loadCount, 0)
+  }
 }
 
 // MARK: - Private
@@ -19,10 +23,11 @@ private extension CleanAirPresentationTests {
   typealias AnyPresenter = ResourcePresenter<AnyType, AnyView>
   typealias AnyPresentationAdapter = ResourcePresentationAdapter<AnyType, AnyView>
   
-  func makeSUT() -> AnyPresentationAdapter {
+  func makeSUT() -> (AnyPresentationAdapter, AnyLoader) {
     let view = AnyView()
-    let sut = AnyPresentationAdapter(loader: AnyLoader().load)
+    let loader = AnyLoader()
+    let sut = AnyPresentationAdapter(loader: loader.load)
     sut.presenter = AnyPresenter(view: view, loadingView: view, errorView: view)
-    return sut
+    return (sut, loader)
   }
 }
