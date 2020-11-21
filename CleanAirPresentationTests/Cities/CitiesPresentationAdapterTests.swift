@@ -22,12 +22,18 @@ class CitiesPresentationAdapterTests: XCTestCase {
     sut.toggleFavourite()
     XCTAssertEqual(service.callCount, 2)
   }
+  
+  func test_toggle_triggersPresenter() {
+    let (sut, presenter, _) = makeSUT(city: anyCity())
+    sut.toggleFavourite()
+    XCTAssertEqual(presenter.didStartLoadingCount, 1)
+  }
 }
 
 // MARK: - Private
 private extension CitiesPresentationAdapterTests {
   typealias View = AnyResourceView<City>
-  typealias Presenter = ResourcePresenter<City, View>
+  typealias Presenter = AnyResourcePresenterStub<City, View>
   typealias Adapter = CityPresentationAdapter<View>
   typealias Service = FavouriteCityServiceMock
   
