@@ -34,6 +34,14 @@ class ResourcePresenterTests: XCTestCase {
     XCTAssertEqual(view.receivedResourceViewModel, anyResource)
   }
   
+  func test_didFinishLoadingWithResource_deliversResourceViewModel() {
+    var didMap = false
+    let mapper: (String) -> String = { resource in didMap = true; return resource }
+    let (sut, _) = makeSUT(mapper: mapper)
+    sut.didFinishLoading(with: anyResource)
+    XCTAssertTrue(didMap)
+  }
+  
   func test_didFinishLoadingWithError_stopsLoading() {
     let (sut, view) = makeSUT()
     sut.didFinishLoading(with: anyError)
@@ -53,9 +61,9 @@ private extension ResourcePresenterTests {
   typealias AnyView = AnyResourceView<AnyType>
   typealias Presenter = ResourcePresenter<AnyType, AnyView>
   
-  func makeSUT() -> (Presenter, AnyView) {
+  func makeSUT(mapper: @escaping (AnyType) -> (AnyType) = { $0 }) -> (Presenter, AnyView) {
     let view = AnyView()
-    let presenter = Presenter(view: view, loadingView: view, errorView: view)
+    let presenter = Presenter(view: view, loadingView: view, errorView: view, viewModelMapper: mapper)
     return (presenter, view)
   }
 }
