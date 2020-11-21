@@ -63,6 +63,8 @@
 		534179D4256815F300EB2D11 /* CountriesStorageMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534179D3256815F300EB2D11 /* CountriesStorageMapper.swift */; };
 		534179E9256816D600EB2D11 /* CountriesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534179E8256816D600EB2D11 /* CountriesStorage.swift */; };
 		5361E5DF25685D5700731693 /* CountriesCachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5361E5DE25685D5700731693 /* CountriesCachePolicy.swift */; };
+		53714CCA2569758A00109B16 /* CleanAirPresentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53714CC92569758A00109B16 /* CleanAirPresentationTests.swift */; };
+		53714CCC2569758A00109B16 /* CleanAirPresentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53417906256802E000EB2D11 /* CleanAirPresentation.framework */; };
 		53716AC1256924850032A245 /* CityListSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53716AC0256924850032A245 /* CityListSwiftUIView.swift */; };
 		53716AC525694B180032A245 /* CitiesLoaderWithLocalValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53716AC425694B180032A245 /* CitiesLoaderWithLocalValidation.swift */; };
 		53C0478D25684A290026F0FB /* ResourceCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C0478C25684A290026F0FB /* ResourceCache.swift */; };
@@ -85,6 +87,13 @@
 			remoteInfo = CleanAirModules;
 		};
 		5341792D2568040300EB2D11 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 534177382567314300EB2D11 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53417905256802E000EB2D11;
+			remoteInfo = CleanAirPresentation;
+		};
+		53714CCD2569758A00109B16 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 534177382567314300EB2D11 /* Project object */;
 			proxyType = 1;
@@ -174,6 +183,9 @@
 		534179D3256815F300EB2D11 /* CountriesStorageMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesStorageMapper.swift; sourceTree = "<group>"; };
 		534179E8256816D600EB2D11 /* CountriesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesStorage.swift; sourceTree = "<group>"; };
 		5361E5DE25685D5700731693 /* CountriesCachePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesCachePolicy.swift; sourceTree = "<group>"; };
+		53714CC72569758A00109B16 /* CleanAirPresentationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanAirPresentationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		53714CC92569758A00109B16 /* CleanAirPresentationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanAirPresentationTests.swift; sourceTree = "<group>"; };
+		53714CCB2569758A00109B16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53716AC0256924850032A245 /* CityListSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListSwiftUIView.swift; sourceTree = "<group>"; };
 		53716AC425694B180032A245 /* CitiesLoaderWithLocalValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesLoaderWithLocalValidation.swift; sourceTree = "<group>"; };
 		53C0478C25684A290026F0FB /* ResourceCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCache.swift; sourceTree = "<group>"; };
@@ -204,6 +216,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5329887E25681A8200813C7A /* CleanAirModules.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53714CC42569758A00109B16 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53714CCC2569758A00109B16 /* CleanAirPresentation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +265,7 @@
 				534178B62567FFCB00EB2D11 /* CleanAirModules */,
 				53417907256802E000EB2D11 /* CleanAirPresentation */,
 				534177422567314300EB2D11 /* CleanAir */,
+				53714CC82569758A00109B16 /* CleanAirPresentationTests */,
 				534177412567314300EB2D11 /* Products */,
 				534178FA256801CB00EB2D11 /* Frameworks */,
 			);
@@ -259,6 +280,7 @@
 				534177402567314300EB2D11 /* CleanAir.app */,
 				534178B52567FFCB00EB2D11 /* CleanAirModules.framework */,
 				53417906256802E000EB2D11 /* CleanAirPresentation.framework */,
+				53714CC72569758A00109B16 /* CleanAirPresentationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -579,6 +601,15 @@
 			path = Countries;
 			sourceTree = "<group>";
 		};
+		53714CC82569758A00109B16 /* CleanAirPresentationTests */ = {
+			isa = PBXGroup;
+			children = (
+				53714CC92569758A00109B16 /* CleanAirPresentationTests.swift */,
+				53714CCB2569758A00109B16 /* Info.plist */,
+			);
+			path = CleanAirPresentationTests;
+			sourceTree = "<group>";
+		};
 		53C0B0C0256870D000D7A8F3 /* CountriesCache */ = {
 			isa = PBXGroup;
 			children = (
@@ -671,6 +702,24 @@
 			productReference = 53417906256802E000EB2D11 /* CleanAirPresentation.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		53714CC62569758A00109B16 /* CleanAirPresentationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53714CD12569758A00109B16 /* Build configuration list for PBXNativeTarget "CleanAirPresentationTests" */;
+			buildPhases = (
+				53714CC32569758A00109B16 /* Sources */,
+				53714CC42569758A00109B16 /* Frameworks */,
+				53714CC52569758A00109B16 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				53714CCE2569758A00109B16 /* PBXTargetDependency */,
+			);
+			name = CleanAirPresentationTests;
+			productName = CleanAirPresentationTests;
+			productReference = 53714CC72569758A00109B16 /* CleanAirPresentationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -687,6 +736,9 @@
 						CreatedOnToolsVersion = 12.2;
 					};
 					53417905256802E000EB2D11 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					53714CC62569758A00109B16 = {
 						CreatedOnToolsVersion = 12.2;
 					};
 				};
@@ -710,6 +762,7 @@
 				5341773F2567314300EB2D11 /* CleanAir */,
 				534178B42567FFCB00EB2D11 /* CleanAirModules */,
 				53417905256802E000EB2D11 /* CleanAirPresentation */,
+				53714CC62569758A00109B16 /* CleanAirPresentationTests */,
 			);
 		};
 /* End PBXProject section */
@@ -732,6 +785,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		53417904256802E000EB2D11 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53714CC52569758A00109B16 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -812,6 +872,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		53714CC32569758A00109B16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53714CCA2569758A00109B16 /* CleanAirPresentationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -829,6 +897,11 @@
 			isa = PBXTargetDependency;
 			target = 53417905256802E000EB2D11 /* CleanAirPresentation */;
 			targetProxy = 5341792D2568040300EB2D11 /* PBXContainerItemProxy */;
+		};
+		53714CCE2569758A00109B16 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53417905256802E000EB2D11 /* CleanAirPresentation */;
+			targetProxy = 53714CCD2569758A00109B16 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1124,6 +1197,50 @@
 			};
 			name = Release;
 		};
+		53714CCF2569758A00109B16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 54PNV7AZ7G;
+				EXCLUDED_ARCHS = "";
+				INFOPLIST_FILE = CleanAirPresentationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.markoengelman.cleanAir.CleanAirPresentationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		53714CD02569758A00109B16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 54PNV7AZ7G;
+				EXCLUDED_ARCHS = "";
+				INFOPLIST_FILE = CleanAirPresentationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.markoengelman.cleanAir.CleanAirPresentationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1159,6 +1276,15 @@
 			buildConfigurations = (
 				5341790C256802E000EB2D11 /* Debug */,
 				5341790D256802E000EB2D11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53714CD12569758A00109B16 /* Build configuration list for PBXNativeTarget "CleanAirPresentationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53714CCF2569758A00109B16 /* Debug */,
+				53714CD02569758A00109B16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
