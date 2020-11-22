@@ -66,6 +66,14 @@ class ResourceLoaderTests: XCTestCase {
     wait(for: [exp], timeout: 1.0)
     XCTAssertNil(result)
   }
+  
+  func test_load_cancelsTask_whenDeallocated() {
+    let (sut, client) = makeSUT()
+    var loader: AnyResourceLoder? = AnyResourceLoder(client: client, url: sut.url, mapper: sut.mapper)
+    loader?.load { _ in }
+    loader = nil
+    XCTAssertTrue(client.completions[0].2.isCanceled)
+  }
 }
 
 // MARK: - Private
@@ -85,22 +93,26 @@ private extension ResourceLoaderTests {
   }
   
   class HTTPClientStub: HTTPClient {
-    var completions: [(((HTTPClient.Result) -> Void), URLRequest)] = []
+    var completions: [(((HTTPClient.Result) -> Void), URLRequest, HTTPClientTaskMock)] = []
     var executeCount: Int { completions.count }
     
     class HTTPClientTaskMock: HTTPClientTask {
       let request: URLRequest
-      
+      var isCanceled = false
+     
       init(_ request: URLRequest) {
         self.request = request
       }
       
-      func cancel() { }
+      func cancel() {
+        isCanceled = true
+      }
     }
     
     func execute(request: URLRequest, completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
-      completions.append((completion, request))
-      return HTTPClientTaskMock(request)
+      let task = HTTPClientTaskMock(request)
+      completions.append((completion, request, task))
+      return task
     }
     
     func complete(at: Int) {

@@ -11,6 +11,7 @@ public class ResourceLoader<Resource> {
   let client: HTTPClient
   let url: URL
   let mapper: Mapper
+  var task: HTTPClientTask?
   
   public typealias Mapper = (Data, HTTPURLResponse) throws -> Resource
   public typealias Result = Swift.Result<Resource, Error>
@@ -25,8 +26,12 @@ public class ResourceLoader<Resource> {
     self.mapper = mapper
   }
   
+  deinit {
+    task?.cancel()
+  }
+  
   public func load(completion: @escaping (Result) -> Void) {
-    client.execute(request: getRequest()) { [weak self] response in
+    task = client.execute(request: getRequest()) { [weak self] response in
       guard let self = self else { return }
       switch response {
       case let .success((data, response)):
