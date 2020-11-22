@@ -23,18 +23,18 @@ public class ResourceCacher<Resource, ResourceStorage> where ResourceStorage: St
     self.policy = policy
   }
   
-  public func cache(resource: Resource) where ResourceStorage.StorableObject == ResourceCache<Resource> {
+  public func cache(resource: Resource) where ResourceStorage.StorageObject == ResourceCache<Resource> {
     try? storage.store(ResourceCache(timestamp: date().timeIntervalSince1970, resource: resource))
   }
   
-  public func load() -> Resource? where ResourceStorage.StorableObject == ResourceCache<Resource>, ResourceStorage.LoadableObject == ResourceCache<Resource> {
+  public func load() -> Resource? where ResourceStorage.StorageObject == ResourceCache<Resource> {
     let cacheLoad = storage.load()?.first
     switch cacheLoad {
     case let .some(cache) where policy(cache.timestamp):
       return cache.resource
       
     case let .some(cache):
-      storage.remove(cache)
+      try? storage.remove(cache)
       return nil
       
     case .none:

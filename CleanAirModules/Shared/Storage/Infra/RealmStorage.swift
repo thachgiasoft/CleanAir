@@ -8,10 +8,10 @@
 import Foundation
 import RealmSwift
 
-public class RealmStorage<StoringObject, LoadingObject, RealmObject> where RealmObject: Object {
-  public typealias StoreMapper = (StoringObject) -> RealmObject
-  public typealias ResultMappper = (Results<RealmObject>) -> [LoadingObject]
-  public typealias ObjectMapper = (RealmObject) -> LoadingObject
+public class RealmStorage<LocalObject, RealmObject> where RealmObject: Object {
+  public typealias StoreMapper = (LocalObject) -> RealmObject
+  public typealias ResultMappper = (Results<RealmObject>) -> [LocalObject]
+  public typealias ObjectMapper = (RealmObject) -> LocalObject
   
   let realm: Realm
   let storeMapper: StoreMapper
@@ -24,7 +24,7 @@ public class RealmStorage<StoringObject, LoadingObject, RealmObject> where Realm
   
   public init(realm: Realm,
               storeMapper: @escaping StoreMapper,
-              objectMapper: @escaping ObjectMapper) where StoringObject == LoadingObject {
+              objectMapper: @escaping ObjectMapper) {
     self.realm = realm
     self.storeMapper = storeMapper
     self.resultMapper = { result in return result.map { objectMapper($0) } }
@@ -34,23 +34,23 @@ public class RealmStorage<StoringObject, LoadingObject, RealmObject> where Realm
 
 // MARK: - Storage
 extension RealmStorage: Storage {
-  public func store(_ object: StoringObject) throws {
+  public func store(_ object: LocalObject) throws {
     try realm.write {
       realm.add(storeMapper(object), update: .all)
     }
   }
   
-  public func load() -> [LoadingObject]? {
+  public func load() -> [LocalObject]? {
     let result = realm.objects(RealmObject.self)
     return resultMapper(result)
   }
   
-  public func load(objectId: Any) -> LoadingObject? {
+  public func load(objectId: Any) -> LocalObject? {
     guard let result = realm.object(ofType: RealmObject.self, forPrimaryKey: objectId) else { return .none }
     return objectMapper(result)
   }
   
-  public func remove(_ object: StoringObject) -> Storage.RemoveResult {
+  public func remove(_ object: LocalObject) -> Storage.RemoveResult {
     do {
       try realm.write {
         realm.delete(storeMapper(object))

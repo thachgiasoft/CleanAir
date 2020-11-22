@@ -7,5 +7,5 @@
 
 import Foundation
 
-public typealias CityStorage = RealmStorage<City, City, LocalCity>
-public typealias CitiesStorage = RealmStorage<City, City, LocalCity>
+public typealias CityStorage = RealmStorage<City, LocalCity>
+public typealias CitiesStorage = RealmStorage<City, LocalCity>
