@@ -36,15 +36,7 @@ private class CityStorageMock: CityStorage {
     super.init(
       realm: try! Realm(),
       storeMapper: { _ in LocalCity() },
-      resultMapper: { _ in
-        [City(
-          name: "",
-          country: "",
-          measurementsCount: 0,
-          availableLocationsCount: 0,
-          isFavourite: false
-        )]
-      }, objectMapper: { _ in City(
+      objectMapper: { _ in City(
         name: "",
         country: "",
         measurementsCount: 0,
