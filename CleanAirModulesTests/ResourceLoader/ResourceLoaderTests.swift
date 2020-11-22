@@ -74,6 +74,22 @@ class ResourceLoaderTests: XCTestCase {
     loader = nil
     XCTAssertTrue(client.completions[0].2.isCanceled)
   }
+  
+  func test_load_delivers_error_whenClientFails() {
+    let (sut, client) = makeSUT()
+    var result: AnyResourceLoder.Result?
+    let exp = expectation(description: "Waiting for deliver")
+    
+    sut.load { loadedResult in
+      result = loadedResult
+      exp.fulfill()
+    }
+    
+    client.complete(at: 0, with: .failure(NSError(domain: "", code: 0, userInfo: nil)))
+    
+    wait(for: [exp], timeout: 1.0)
+    XCTAssertThrowsError(try result!.get())
+  }
 }
 
 // MARK: - Private
@@ -115,8 +131,8 @@ private extension ResourceLoaderTests {
       return task
     }
     
-    func complete(at: Int) {
-      completions[at].0(.failure(NSError(domain: "", code: 0, userInfo: nil)))
+    func complete(at: Int, with result: HTTPClient.Result = .failure(NSError(domain: "", code: 0, userInfo: nil))) {
+      completions[at].0(result)
     }
   }
 }
