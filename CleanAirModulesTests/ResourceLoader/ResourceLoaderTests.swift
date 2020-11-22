@@ -25,6 +25,13 @@ class ResourceLoaderTests: XCTestCase {
     let request = sut.getRequest()
     XCTAssertEqual(request.httpMethod, "GET")
   }
+  
+  func test_multipleLoadCalls_triggers_clientEqualTimes() {
+    let multipleCallsCount = 5
+    let (sut, client) = makeSUT()
+    for _ in 0..<multipleCallsCount { sut.load { _ in } }
+    XCTAssertEqual(client.executeCount, multipleCallsCount)
+  }
 }
 
 // MARK: - Private
