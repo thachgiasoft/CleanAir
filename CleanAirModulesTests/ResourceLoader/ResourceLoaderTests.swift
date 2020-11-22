@@ -13,15 +13,21 @@ class ResourceLoaderTests: XCTestCase {
     let (_, client) = makeSUT()
     XCTAssertEqual(client.executeCount, .zero)
   }
+  
+  func test_init_doesntHaveSideEffectOnURL() {
+    let url = anyURL
+    let (sut, _) = makeSUT(url: url)
+    XCTAssertEqual(sut.url, url)
+  }
 }
 
 // MARK: - Private
 private extension ResourceLoaderTests {
   typealias AnyResource = String
   typealias AnyResourceLoder = ResourceLoader<AnyResource>
+  var anyURL: URL { URL(string: "https://www.anyURL.com")! }
   
-  func makeSUT() -> (AnyResourceLoder, HTTPClientStub) {
-    let url = URL(string: "https://www.anyURL.com")!
+  func makeSUT(url: URL =  URL(string: "https://www.anyURL.com")!) -> (AnyResourceLoder, HTTPClientStub) {
     let client = HTTPClientStub()
     let loader = AnyResourceLoder(
       client: client,
