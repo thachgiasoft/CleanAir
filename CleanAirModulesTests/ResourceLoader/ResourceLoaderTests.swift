@@ -9,7 +9,7 @@ import XCTest
 @testable import CleanAirModules
 
 class ResourceLoaderTests: XCTestCase {
-  func test_map_throwsError_onNoOkStatusCode() {
+  func test_map_throwsInvalidStatusError_onNoOkStatusCode() {
     let sut = makeSUT()
     let anyData = Data()
     let anyURL = URL(string: "https://www.anyURL.com")!
@@ -19,6 +19,19 @@ class ResourceLoaderTests: XCTestCase {
       try _ = sut.map(anyData, from: noOkResponse)
     } catch {
       XCTAssertEqual(error as NSError, Mapper.InvalidStatusCode() as NSError)
+    }
+  }
+  
+  func test_map_throwsInvalidDataError_onInvalidData() {
+    let sut = makeSUT()
+    let anyData = Data()
+    let anyURL = URL(string: "https://www.anyURL.com")!
+    let okCode = 200
+    let okResponse = HTTPURLResponse(url: anyURL, statusCode: okCode, httpVersion: nil, headerFields: nil)!
+    do {
+      try _ = sut.map(anyData, from: okResponse)
+    } catch {
+      XCTAssertEqual(error as NSError, Mapper.InvalidData() as NSError)
     }
   }
 }
