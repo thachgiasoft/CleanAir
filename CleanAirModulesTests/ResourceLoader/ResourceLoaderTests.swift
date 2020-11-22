@@ -48,6 +48,24 @@ class ResourceLoaderTests: XCTestCase {
     wait(for: [exp], timeout: 1.0)
     XCTAssertNotNil(result)
   }
+  
+  func test_load_fails_to_deliver_whenDeallocated() {
+    let (sut, client) = makeSUT()
+    var loader: AnyResourceLoder? = AnyResourceLoder(client: client, url: sut.url, mapper: sut.mapper)
+    var result: AnyResourceLoder.Result?
+    let exp = expectation(description: "Waiting for deliver")
+    exp.isInverted = true
+    loader?.load { loadedResult in
+      result = loadedResult
+      exp.fulfill()
+    }
+    
+    loader = nil
+    client.complete(at: 0)
+    
+    wait(for: [exp], timeout: 1.0)
+    XCTAssertNil(result)
+  }
 }
 
 // MARK: - Private
