@@ -15,6 +15,20 @@ class ResourceCacherTests: XCTestCase {
     XCTAssertEqual(store.cacheLoadCalls, .zero)
     XCTAssertEqual(store.cacheRemoveCalls, .zero)
   }
+  
+  func test_cache_insertsCacheIntoStore() {
+    let (sut, store) = makeSUT()
+    let anyResource: AnyType = "AnyType"
+    XCTAssertEqual(store.cacheCalls, .zero)
+    let exp = expectation(description: "Waiting to cache")
+    sut.cache(resource: anyResource) { _ in
+      exp.fulfill()
+    }
+    
+    wait(for: [exp], timeout: 1.0)
+    XCTAssertEqual(store.cacheCalls, 1)
+    XCTAssertEqual(store.caches.first?.value.resource, anyResource)
+  }
 }
 
 // MARK: - Private
