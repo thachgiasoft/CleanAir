@@ -1,5 +1,5 @@
 //
-//  ResourceLoaderTests.swift
+//  ResourceResultsMapperTests.swift
 //  CleanAirModulesTests
 //
 //  Created by Marko Engelman on 22/11/2020.
@@ -8,7 +8,7 @@
 import XCTest
 @testable import CleanAirModules
 
-class ResourceLoaderTests: XCTestCase {
+class ResourceResultsMapperTests: XCTestCase {
   func test_map_throwsInvalidStatusError_onNoOkStatusCode() {
     let sut = makeSUT()
     let anyData = Data()
@@ -47,7 +47,7 @@ class ResourceLoaderTests: XCTestCase {
 }
 
 // MARK: - Private
-private extension ResourceLoaderTests {
+private extension ResourceResultsMapperTests {
   class AnyDecodableResource: Codable {
     let resource: AnyResource
     

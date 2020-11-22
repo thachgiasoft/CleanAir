@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5317B8A4256A866400FE6D4F /* ResourceLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5317B8A3256A866400FE6D4F /* ResourceLoaderTests.swift */; };
+		5317B8A4256A866400FE6D4F /* ResourceResultsMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5317B8A3256A866400FE6D4F /* ResourceResultsMapperTests.swift */; };
 		5318224D25690BBF00731A3E /* CityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5318224C25690BBF00731A3E /* CityViewModel.swift */; };
 		5318225025690D0400731A3E /* CityViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5318224F25690D0400731A3E /* CityViewModelMapper.swift */; };
 		53182253256914FE00731A3E /* CityPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53182252256914FE00731A3E /* CityPresentationAdapter.swift */; };
@@ -149,7 +149,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5317B8A3256A866400FE6D4F /* ResourceLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoaderTests.swift; sourceTree = "<group>"; };
+		5317B8A3256A866400FE6D4F /* ResourceResultsMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceResultsMapperTests.swift; sourceTree = "<group>"; };
 		5318224C25690BBF00731A3E /* CityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModel.swift; sourceTree = "<group>"; };
 		5318224F25690D0400731A3E /* CityViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModelMapper.swift; sourceTree = "<group>"; };
 		53182252256914FE00731A3E /* CityPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityPresentationAdapter.swift; sourceTree = "<group>"; };
@@ -275,7 +275,7 @@
 		5317B8A8256A866900FE6D4F /* ResourceLoader */ = {
 			isa = PBXGroup;
 			children = (
-				5317B8A3256A866400FE6D4F /* ResourceLoaderTests.swift */,
+				5317B8A3256A866400FE6D4F /* ResourceResultsMapperTests.swift */,
 			);
 			path = ResourceLoader;
 			sourceTree = "<group>";
@@ -1051,7 +1051,7 @@
 			files = (
 				53BE4B95256A589B00475FAE /* StorageTests.swift in Sources */,
 				53BFC79D2569C98C00630261 /* HTTPClientTests.swift in Sources */,
-				5317B8A4256A866400FE6D4F /* ResourceLoaderTests.swift in Sources */,
+				5317B8A4256A866400FE6D4F /* ResourceResultsMapperTests.swift in Sources */,
 				53BFC7682569C73E00630261 /* APITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
