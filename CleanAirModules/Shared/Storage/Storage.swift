@@ -11,15 +11,13 @@ public protocol Storage {
   associatedtype StorageObject
   
   typealias StoreResult = Swift.Result<Void, Error>
-  typealias LoadResult = Swift.Result<StorageObject, Error>
-  
   typealias RemoveResult = Swift.Result<Void, Error>
   
-  func store(_ object: StorageObject) throws
+  func store(_ object: StorageObject, completion: @escaping (StoreResult) -> Void)
   func load() -> [StorageObject]?
   
   @discardableResult
   func load(objectId: Any) -> StorageObject?
   
-  func remove(objectId: Any) throws
+  func remove(objectId: Any, completion: @escaping (RemoveResult) -> Void)
 }

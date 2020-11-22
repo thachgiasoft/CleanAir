@@ -24,7 +24,8 @@ public class ResourceCacher<Resource, ResourceStorage> where ResourceStorage: St
   }
   
   public func cache(resource: Resource) where ResourceStorage.StorageObject == ResourceCache<Resource> {
-    try? storage.store(ResourceCache(timestamp: date().timeIntervalSince1970, resource: resource))
+    let cache = ResourceCache(timestamp: date().timeIntervalSince1970, resource: resource)
+    storage.store(cache, completion: { _ in })
   }
   
   public func load() -> Resource? where ResourceStorage.StorageObject == ResourceCache<Resource> {
@@ -34,7 +35,7 @@ public class ResourceCacher<Resource, ResourceStorage> where ResourceStorage: St
       return cache.resource
       
     case let .some(cache):
-      try? storage.remove(objectId: cache.timestamp)
+      storage.remove(objectId: cache.timestamp, completion: { _ in })
       return nil
       
     case .none:
