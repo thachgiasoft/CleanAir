@@ -34,12 +34,26 @@ class ResourceLoaderTests: XCTestCase {
       XCTAssertEqual(error as NSError, Mapper.InvalidData() as NSError)
     }
   }
+  
+  func test_map_deliversMappedResult_onValidDataAndValidResponse() throws {
+    let sut = makeSUT()
+    let results = ["results": AnyDecodableResource(resource: "anyString")]
+    let validData = try JSONEncoder().encode(results)
+    let anyURL = URL(string: "https://www.anyURL.com")!
+    let okCode = 200
+    let okResponse = HTTPURLResponse(url: anyURL, statusCode: okCode, httpVersion: nil, headerFields: nil)!
+    XCTAssertNoThrow(try sut.map(validData, from: okResponse))
+  }
 }
 
 // MARK: - Private
 private extension ResourceLoaderTests {
-  class AnyDecodableResource: Decodable {
+  class AnyDecodableResource: Codable {
     let resource: AnyResource
+    
+    init(resource: AnyResource) {
+      self.resource = resource
+    }
   }
   
   typealias AnyResource = String
