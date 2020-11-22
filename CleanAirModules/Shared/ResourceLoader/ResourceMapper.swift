@@ -13,14 +13,17 @@ public  final class ResourceMapper<T: Decodable, Z> {
   }
   
   private let modelMapper: (T) -> Z
-  private struct InvalidData: Error { }
+  
+  struct InvalidData: Error { }
+  struct InvalidStatusCode: Error { }
   
   public init(_ modelMapper: @escaping (T) -> Z) {
     self.modelMapper = modelMapper
   }
   
   public func map(_ data: Data, from response: HTTPURLResponse) throws -> Z {
-    guard response.statusCode == 200, let result = try? JSONDecoder().decode(Root<T>.self, from: data) else { throw InvalidData() }
+    guard response.statusCode == 200 else { throw InvalidStatusCode() }
+    guard let result = try? JSONDecoder().decode(Root<T>.self, from: data) else { throw InvalidData() }
     return modelMapper(result.results)
   }
 }
