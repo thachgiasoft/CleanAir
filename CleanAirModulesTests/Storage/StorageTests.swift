@@ -10,25 +10,23 @@ import XCTest
 @testable import RealmSwift
 
 class StorageTests: XCTestCase {
+  static var realm: Realm = try! Realm()
+  
   override class func setUp() {
     preapareForTesting()
+  }
+  
+  func test_init_storesRealmInstance() {
+    let sut = makeSUT()
+    XCTAssertEqual(sut.realm, Self.realm)
   }
 }
 
 // MARK: - Private
 private extension StorageTests {
-  class AnyLocalType: Object {
-    @objc dynamic var id: AnyType = 0
-    override class func primaryKey() -> String? {
-      return "id"
-    }
-  }
-  typealias AnyType = Int
-  
   func makeSUT() -> RealmStorage<AnyType, AnyLocalType> {
-    let realm = try! Realm(configuration: .defaultConfiguration)
     let sut = RealmStorage(
-      realm: realm,
+      realm: Self.realm,
       storeMapper: { AnyLocalType(value: $0) },
       objectMapper: { $0.id }
     )
@@ -39,3 +37,11 @@ private extension StorageTests {
     Realm.Configuration.defaultConfiguration.inMemoryIdentifier = "inMemoryRealm"
   }
 }
+
+class AnyLocalType: Object {
+  @objc dynamic var id: AnyType = 0
+  override class func primaryKey() -> String? {
+    return "id"
+  }
+}
+typealias AnyType = Int
