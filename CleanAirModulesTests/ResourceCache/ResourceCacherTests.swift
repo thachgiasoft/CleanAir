@@ -29,6 +29,19 @@ class ResourceCacherTests: XCTestCase {
     XCTAssertEqual(store.cacheCalls, 1)
     XCTAssertEqual(store.caches.first?.value.resource, anyResource)
   }
+  
+  func test_cache_loads_validCache() {
+    let (sut, store) = makeSUT(policy: { _ in true })
+    let anyResource: AnyType = "AnyType"
+    XCTAssertEqual(store.cacheCalls, .zero)
+    let exp1 = expectation(description: "Waiting to cache insertion")
+    sut.cache(resource: anyResource) { _ in
+      exp1.fulfill()
+    }
+    
+    wait(for: [exp1], timeout: 1.0)
+    XCTAssertNotNil(sut.load())
+  }
 }
 
 // MARK: - Private
@@ -38,13 +51,13 @@ private extension ResourceCacherTests {
   typealias AnyTypeStore = ResourceStorage
   typealias AnyTypeCacher = ResourceCacher<AnyType, AnyTypeStore>
   
-  func makeSUT() -> (AnyTypeCacher, AnyTypeStore)  {
+  func makeSUT(policy: @escaping (Double) -> Bool = { _ in true }) -> (AnyTypeCacher, AnyTypeStore)  {
     let store = AnyTypeStore()
     let date = Date()
     let cacher = ResourceCacher<AnyType, AnyTypeStore>(
       storage: store,
       date: { date },
-      policy: { $0 <= date.timeIntervalSince1970 }
+      policy: policy
     )
     return (cacher, store)
   }
