@@ -20,17 +20,18 @@ class ResourceLoaderTests: XCTestCase {
     XCTAssertEqual(sut.url, url)
   }
   
-  func test_getRequest_configures_httpMethod_to_GET() {
-    let (sut, _) = makeSUT()
-    let request = sut.getRequest()
-    XCTAssertEqual(request.httpMethod, "GET")
-  }
-  
   func test_multipleLoadCalls_triggers_clientEqualTimes() {
     let multipleCallsCount = 5
     let (sut, client) = makeSUT()
     for _ in 0..<multipleCallsCount { sut.load { _ in } }
     XCTAssertEqual(client.executeCount, multipleCallsCount)
+  }
+  
+  func test_load_executes_getRequest() {
+    let (sut, client) = makeSUT()
+    sut.load { _ in }
+    let request = client.completions[0].1
+    XCTAssertEqual(request.httpMethod, "GET")
   }
 }
 
@@ -51,16 +52,22 @@ private extension ResourceLoaderTests {
   }
   
   class HTTPClientStub: HTTPClient {
-    private var completions: [(HTTPClient.Result) -> Void] = []
+    var completions: [(((HTTPClient.Result) -> Void), URLRequest)] = []
     var executeCount: Int { completions.count }
     
     class HTTPClientTaskMock: HTTPClientTask {
+      let request: URLRequest
+      
+      init(_ request: URLRequest) {
+        self.request = request
+      }
+      
       func cancel() { }
     }
     
     func execute(request: URLRequest, completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
-      completions.append(completion)
-      return HTTPClientTaskMock()
+      completions.append((completion, request))
+      return HTTPClientTaskMock(request)
     }
   }
 }

@@ -41,7 +41,10 @@ public class ResourceLoader<Resource> {
       }
     }
   }
-  
+}
+
+// MARK: - Private
+private extension ResourceLoader {
   func getRequest() -> URLRequest {
     var request = URLRequest(url: url)
     request.httpMethod = "GET"
