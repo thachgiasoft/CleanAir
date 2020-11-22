@@ -41,19 +41,6 @@ class HTTPClientTests: XCTestCase {
     wait(for: [exp2], timeout: 1.0)
   }
   
-  func test_executeAnyRequest_deliversResult() {
-    let sut = makeSUT()
-    let exp = expectation(description: "Wating for response")
-    var receivedResult: (HTTPClient.Result)?
-    _ = sut.execute(request: anyRequest) { result in
-      receivedResult = result
-      exp.fulfill()
-    }
-    
-    wait(for: [exp], timeout: 1.0)
-    XCTAssertNotNil(receivedResult)
-  }
-  
   func test_clientResult_deliversErrorOnNonExpectedResponse() {
     let sut = makeSUT()
     let result = sut.clientResult(for: nil, response: nil, error: nil)
