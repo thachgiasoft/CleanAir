@@ -20,6 +20,12 @@ class StorageTests: XCTestCase {
     let sut = makeSUT()
     XCTAssertEqual(sut.realm, Self.realm)
   }
+  
+  func test_store_doesntThrowError() {
+    let resource: AnyType = 1
+    let sut = makeSUT()
+    XCTAssertNoThrow(try sut.store(resource))
+  }
 }
 
 // MARK: - Private
@@ -27,7 +33,7 @@ private extension StorageTests {
   func makeSUT() -> RealmStorage<AnyType, AnyLocalType> {
     let sut = RealmStorage(
       realm: Self.realm,
-      storeMapper: { AnyLocalType(value: $0) },
+      storeMapper: { Self.local(for: $0) },
       objectMapper: { $0.id }
     )
     return sut
@@ -35,6 +41,12 @@ private extension StorageTests {
   
   static func preapareForTesting() {
     Realm.Configuration.defaultConfiguration.inMemoryIdentifier = "inMemoryRealm"
+  }
+  
+  static func local(for value: AnyType) -> AnyLocalType {
+    let local = AnyLocalType()
+    local.id = value
+    return local
   }
 }
 

@@ -20,7 +20,12 @@ public class FavouriteCityService {
     
     let result: Result<Void, Error>
     if isFavourite {
-      result = storage.store(updatedCity)
+      do {
+        try storage.store(updatedCity)
+        result = .success(())
+      } catch {
+        result = .failure(error)
+      }
     } else {
       result = storage.remove(objectId: city.id)
     }

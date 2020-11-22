@@ -24,7 +24,7 @@ public class ResourceCacher<Resource, ResourceStorage> where ResourceStorage: St
   }
   
   public func cache(resource: Resource) where ResourceStorage.StorableObject == ResourceCache<Resource> {
-    storage.store(ResourceCache(timestamp: date().timeIntervalSince1970, resource: resource))
+    try? storage.store(ResourceCache(timestamp: date().timeIntervalSince1970, resource: resource))
   }
   
   public func load() throws -> Resource where ResourceStorage.StorableObject == ResourceCache<Resource> {

@@ -39,14 +39,9 @@ public class RealmStorage<StoringObject, RealmObject> where RealmObject: Object 
 
 // MARK: - Storage
 extension RealmStorage: Storage {
-  public func store(_ object: StoringObject) -> Storage.StoreResult {
-    do {
-      try realm.write {
-        realm.add(storeMapper(object), update: .all)
-      }
-      return .success(())
-    } catch {
-      return .failure(error)
+  public func store(_ object: StoringObject) throws {
+    try realm.write {
+      realm.add(storeMapper(object), update: .all)
     }
   }
   

@@ -14,8 +14,7 @@ public protocol Storage {
   typealias LoadResult = Swift.Result<StorableObject, Error>
   typealias RemoveResult = Swift.Result<Void, Error>
   
-  @discardableResult
-  func store(_ object: StorableObject) -> StoreResult
+  func store(_ object: StorableObject) throws
   
   @discardableResult
   func load() -> LoadResult
