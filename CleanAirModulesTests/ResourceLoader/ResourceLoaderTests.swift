@@ -9,56 +9,149 @@ import XCTest
 @testable import CleanAirModules
 
 class ResourceLoaderTests: XCTestCase {
-  func test_map_throwsInvalidStatusError_onNoOkStatusCode() {
-    let sut = makeSUT()
-    let anyData = Data()
-    let anyURL = URL(string: "https://www.anyURL.com")!
-    let noOkCode = 400
-    let noOkResponse = HTTPURLResponse(url: anyURL, statusCode: noOkCode, httpVersion: nil, headerFields: nil)!
-    do {
-      try _ = sut.map(anyData, from: noOkResponse)
-    } catch {
-      XCTAssertEqual(error as NSError, Mapper.InvalidStatusCode() as NSError)
-    }
+  func test_init_doesntTrigger_client() {
+    let (_, client) = makeSUT()
+    XCTAssertEqual(client.executeCount, .zero)
   }
   
-  func test_map_throwsInvalidDataError_onInvalidData() {
-    let sut = makeSUT()
-    let anyData = Data()
-    let anyURL = URL(string: "https://www.anyURL.com")!
-    let okCode = 200
-    let okResponse = HTTPURLResponse(url: anyURL, statusCode: okCode, httpVersion: nil, headerFields: nil)!
-    do {
-      try _ = sut.map(anyData, from: okResponse)
-    } catch {
-      XCTAssertEqual(error as NSError, Mapper.InvalidData() as NSError)
-    }
+  func test_init_doesntHaveSideEffectOnURL() {
+    let url = anyURL
+    let (sut, _) = makeSUT(url: url)
+    XCTAssertEqual(sut.url, url)
   }
   
-  func test_map_deliversMappedResult_onValidDataAndValidResponse() throws {
-    let sut = makeSUT()
-    let results = ["results": AnyDecodableResource(resource: "anyString")]
-    let validData = try JSONEncoder().encode(results)
-    let anyURL = URL(string: "https://www.anyURL.com")!
-    let okCode = 200
-    let okResponse = HTTPURLResponse(url: anyURL, statusCode: okCode, httpVersion: nil, headerFields: nil)!
-    XCTAssertNoThrow(try sut.map(validData, from: okResponse))
+  func test_multipleLoadCalls_triggers_clientEqualTimes() {
+    let multipleCallsCount = 5
+    let (sut, client) = makeSUT()
+    for _ in 0..<multipleCallsCount { sut.load { _ in } }
+    XCTAssertEqual(client.executeCount, multipleCallsCount)
+  }
+  
+  func test_load_executes_getRequest() {
+    let (sut, client) = makeSUT()
+    sut.load { _ in }
+    let request = client.completions[0].1
+    XCTAssertEqual(request.httpMethod, "GET")
+  }
+  
+  func test_load_delivers_eventually() {
+    let (sut, client) = makeSUT()
+    var result: AnyResourceLoder.Result?
+    let exp = expectation(description: "Waiting for deliver")
+    sut.load { loadedResult in
+      result = loadedResult
+      exp.fulfill()
+    }
+    
+    client.complete(at: 0)
+    
+    wait(for: [exp], timeout: 1.0)
+    XCTAssertNotNil(result)
+  }
+  
+  func test_load_fails_to_deliver_whenDeallocated() {
+    let (sut, client) = makeSUT()
+    var loader: AnyResourceLoder? = AnyResourceLoder(client: client, url: sut.url, mapper: sut.mapper)
+    var result: AnyResourceLoder.Result?
+    let exp = expectation(description: "Waiting for deliver")
+    exp.isInverted = true
+    loader?.load { loadedResult in
+      result = loadedResult
+      exp.fulfill()
+    }
+    
+    loader = nil
+    client.complete(at: 0)
+    
+    wait(for: [exp], timeout: 1.0)
+    XCTAssertNil(result)
+  }
+  
+  func test_load_cancelsTask_whenDeallocated() {
+    let (sut, client) = makeSUT()
+    var loader: AnyResourceLoder? = AnyResourceLoder(client: client, url: sut.url, mapper: sut.mapper)
+    loader?.load { _ in }
+    loader = nil
+    XCTAssertTrue(client.completions[0].2.isCanceled)
+  }
+  
+  func test_load_delivers_error_whenClientFails() {
+    let (sut, client) = makeSUT()
+    var result: AnyResourceLoder.Result?
+    let exp = expectation(description: "Waiting for deliver")
+    
+    sut.load { loadedResult in
+      result = loadedResult
+      exp.fulfill()
+    }
+    
+    client.complete(at: 0, with: .failure(NSError(domain: "", code: 0, userInfo: nil)))
+    
+    wait(for: [exp], timeout: 1.0)
+    XCTAssertThrowsError(try result!.get())
+  }
+  
+  func test_load_delivers_error_whenMapperFails() {
+    let (sut, client) = makeSUT()
+    var result: AnyResourceLoder.Result?
+    let exp = expectation(description: "Waiting for deliver")
+    
+    sut.load { loadedResult in
+      result = loadedResult
+      exp.fulfill()
+    }
+    
+    let invalidURLResponse = HTTPURLResponse(url: anyURL, statusCode: -1, httpVersion: nil, headerFields: [:])!
+    client.complete(at: 0, with: .success((Data(), invalidURLResponse)))
+    
+    wait(for: [exp], timeout: 1.0)
+    XCTAssertThrowsError(try result!.get())
   }
 }
 
 // MARK: - Private
 private extension ResourceLoaderTests {
-  class AnyDecodableResource: Codable {
-    let resource: AnyResource
-    
-    init(resource: AnyResource) {
-      self.resource = resource
-    }
+  typealias AnyResource = String
+  typealias AnyResourceLoder = ResourceLoader<AnyResource>
+  var anyURL: URL { URL(string: "https://www.anyURL.com")! }
+  
+  func makeSUT(url: URL =  URL(string: "https://www.anyURL.com")!) -> (AnyResourceLoder, HTTPClientStub) {
+    let client = HTTPClientStub()
+    let loader = AnyResourceLoder(
+      client: client,
+      url: url,
+      mapper: ResourceResultsMapper({ $0 }).map
+    )
+    return (loader, client)
   }
   
-  typealias AnyResource = String
-  typealias Mapper = ResourceResultsMapper<AnyDecodableResource, AnyResource>
-  func makeSUT() -> Mapper {
-    return Mapper({ $0.resource })
+  class HTTPClientStub: HTTPClient {
+    var completions: [(((HTTPClient.Result) -> Void), URLRequest, HTTPClientTaskMock)] = []
+    var executeCount: Int { completions.count }
+    
+    class HTTPClientTaskMock: HTTPClientTask {
+      let request: URLRequest
+      var isCanceled = false
+     
+      init(_ request: URLRequest) {
+        self.request = request
+      }
+      
+      func cancel() {
+        isCanceled = true
+      }
+    }
+    
+    func execute(request: URLRequest, completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
+      let task = HTTPClientTaskMock(request)
+      completions.append((completion, request, task))
+      return task
+    }
+    
+    func complete(at: Int, with result: HTTPClient.Result = .failure(NSError(domain: "", code: 0, userInfo: nil))) {
+      completions[at].0(result)
+    }
   }
 }
+
+
