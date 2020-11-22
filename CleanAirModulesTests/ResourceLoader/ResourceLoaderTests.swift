@@ -57,7 +57,7 @@ private extension ResourceLoaderTests {
   }
   
   typealias AnyResource = String
-  typealias Mapper = ResourceMapper<AnyDecodableResource, AnyResource>
+  typealias Mapper = ResourceResultsMapper<AnyDecodableResource, AnyResource>
   func makeSUT() -> Mapper {
     return Mapper({ $0.resource })
   }

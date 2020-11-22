@@ -35,7 +35,7 @@
 		534178C5256800D300EB2D11 /* APIURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534178002567D7AC00EB2D11 /* APIURL.swift */; };
 		534178CA256800D900EB2D11 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341775E256733C200EB2D11 /* HTTPClient.swift */; };
 		534178CD256800EC00EB2D11 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53417764256734E500EB2D11 /* URLSessionHTTPClient.swift */; };
-		534178D42568011A00EB2D11 /* ResourceMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341778A25673AE800EB2D11 /* ResourceMapper.swift */; };
+		534178D42568011A00EB2D11 /* ResourceResultsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341778A25673AE800EB2D11 /* ResourceResultsMapper.swift */; };
 		534178D92568013000EB2D11 /* ResourceLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177692567354100EB2D11 /* ResourceLoader.swift */; };
 		534178DC2568013900EB2D11 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53417774256737F300EB2D11 /* City.swift */; };
 		534178E32568014700EB2D11 /* CitiesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534178292567EE2300EB2D11 /* CitiesLoader.swift */; };
@@ -171,7 +171,7 @@
 		534177792567386400EB2D11 /* CityMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityMapper.swift; sourceTree = "<group>"; };
 		53417780256739E500EB2D11 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		5341778525673A6300EB2D11 /* CountryMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryMapper.swift; sourceTree = "<group>"; };
-		5341778A25673AE800EB2D11 /* ResourceMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceMapper.swift; sourceTree = "<group>"; };
+		5341778A25673AE800EB2D11 /* ResourceResultsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceResultsMapper.swift; sourceTree = "<group>"; };
 		5341779625673CBE00EB2D11 /* ResourcePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcePresenter.swift; sourceTree = "<group>"; };
 		5341779D25673D0900EB2D11 /* ResourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceView.swift; sourceTree = "<group>"; };
 		534177A025673D2C00EB2D11 /* ResourceLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoadingView.swift; sourceTree = "<group>"; };
@@ -370,7 +370,7 @@
 		5341776C2567354F00EB2D11 /* ResourceLoader */ = {
 			isa = PBXGroup;
 			children = (
-				5341778A25673AE800EB2D11 /* ResourceMapper.swift */,
+				5341778A25673AE800EB2D11 /* ResourceResultsMapper.swift */,
 				534177692567354100EB2D11 /* ResourceLoader.swift */,
 			);
 			path = ResourceLoader;
@@ -984,7 +984,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				534178D42568011A00EB2D11 /* ResourceMapper.swift in Sources */,
+				534178D42568011A00EB2D11 /* ResourceResultsMapper.swift in Sources */,
 				534178E62568015100EB2D11 /* CityMapper.swift in Sources */,
 				53C0478D25684A290026F0FB /* ResourceCache.swift in Sources */,
 				534178F52568018D00EB2D11 /* CountryMapper.swift in Sources */,

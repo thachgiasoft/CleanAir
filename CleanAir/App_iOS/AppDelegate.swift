@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let loader = ResourceLoader(
       client: URLSessionHTTPClient(session: .shared),
       url: APIURL.countries,
-      mapper: ResourceMapper(CountryMapper.map).map
+      mapper: ResourceResultsMapper(CountryMapper.map).map
     )
     
     let loaderWithCaching = CountriesLoaderWithCaching(
@@ -46,7 +46,7 @@ private extension AppDelegate {
     let loader = ResourceLoader(
       client: URLSessionHTTPClient(session: .shared),
       url: APIURL.cities(for: country.code),
-      mapper: ResourceMapper(CityMapper.map).map
+      mapper: ResourceResultsMapper(CityMapper.map).map
     )
     
     let loaderWithValidation = CitiesLoaderWithLocalValidation(
