@@ -9,12 +9,11 @@ import Foundation
 import RealmSwift
 
 public class LocalCountryCache: Object {
-  @objc dynamic var id: String = "1"
-  @objc dynamic var timeStamp: Double = 0
+  @objc dynamic var timeStamp: Int = 0
   var countries = List<LocalCountry>()
   
   public override class func primaryKey() -> String? {
-    return "id"
+    return "timeStamp"
   }
 }
 

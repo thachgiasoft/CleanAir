@@ -8,6 +8,6 @@
 import Foundation
 
 public struct ResourceCache<Resource> {
-  public let timestamp: TimeInterval
+  public let id: Int
   public let resource: Resource
 }
