@@ -34,7 +34,7 @@ public class ResourceCacher<Resource, ResourceStorage> where ResourceStorage: St
       return cache.resource
       
     case let .some(cache):
-      try? storage.remove(cache)
+      try? storage.remove(objectId: cache.timestamp)
       return nil
       
     case .none:

@@ -21,9 +21,5 @@ public protocol Storage {
   @discardableResult
   func load(objectId: Any) -> StorageObject?
   
-  @discardableResult
-  func remove(_ object: StorageObject) -> RemoveResult
-  
-  @discardableResult
-  func remove(objectId: Any) -> RemoveResult
+  func remove(objectId: Any) throws
 }

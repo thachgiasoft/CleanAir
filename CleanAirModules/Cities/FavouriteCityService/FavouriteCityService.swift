@@ -27,7 +27,12 @@ public class FavouriteCityService {
         result = .failure(error)
       }
     } else {
-      result = storage.remove(objectId: city.id)
+      do {
+        try storage.remove(objectId: city.id)
+        result = .success(())
+      } catch {
+        result = .failure(error)
+      }
     }
     completion(result.map { updatedCity })
   }

@@ -50,26 +50,10 @@ extension RealmStorage: Storage {
     return objectMapper(result)
   }
   
-  public func remove(_ object: LocalObject) -> Storage.RemoveResult {
-    do {
-      try realm.write {
-        realm.delete(storeMapper(object))
-      }
-      return .success(())
-    } catch {
-      return .failure(error)
-    }
-  }
-  
-  public func remove(objectId: Any) -> Storage.RemoveResult {
-    do {
-      guard let result = realm.object(ofType: RealmObject.self, forPrimaryKey: objectId) else { return .failure(StorageError.objectNotFound) }
-      try realm.write {
-        realm.delete(result)
-      }
-      return .success(())
-    } catch {
-      return .failure(error)
+  public func remove(objectId: Any) throws {
+    guard let result = realm.object(ofType: RealmObject.self, forPrimaryKey: objectId) else { throw StorageError.objectNotFound }
+    try realm.write {
+      realm.delete(result)
     }
   }
 }
