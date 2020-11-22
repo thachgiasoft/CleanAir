@@ -33,6 +33,21 @@ class ResourceLoaderTests: XCTestCase {
     let request = client.completions[0].1
     XCTAssertEqual(request.httpMethod, "GET")
   }
+  
+  func test_load_delivers_eventually() {
+    let (sut, client) = makeSUT()
+    var result: AnyResourceLoder.Result?
+    let exp = expectation(description: "Waiting for deliver")
+    sut.load { loadedResult in
+      result = loadedResult
+      exp.fulfill()
+    }
+    
+    client.complete(at: 0)
+    
+    wait(for: [exp], timeout: 1.0)
+    XCTAssertNotNil(result)
+  }
 }
 
 // MARK: - Private
@@ -68,6 +83,10 @@ private extension ResourceLoaderTests {
     func execute(request: URLRequest, completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
       completions.append((completion, request))
       return HTTPClientTaskMock(request)
+    }
+    
+    func complete(at: Int) {
+      completions[at].0(.failure(NSError(domain: "", code: 0, userInfo: nil)))
     }
   }
 }
