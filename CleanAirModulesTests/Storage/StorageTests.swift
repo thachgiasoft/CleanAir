@@ -26,11 +26,18 @@ class StorageTests: XCTestCase {
     let sut = makeSUT()
     XCTAssertNoThrow(try sut.store(resource))
   }
+  
+  func test_load_deliversStoredResult() throws {
+    let resource: AnyType = 2
+    let sut = makeSUT()
+    try sut.store(resource)
+    XCTAssertTrue(sut.load()!.contains(resource))
+  }
 }
 
 // MARK: - Private
 private extension StorageTests {
-  func makeSUT() -> RealmStorage<AnyType, AnyLocalType> {
+  func makeSUT() -> RealmStorage<AnyType, AnyType, AnyLocalType> {
     let sut = RealmStorage(
       realm: Self.realm,
       storeMapper: { Self.local(for: $0) },

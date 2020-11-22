@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import RealmSwift
 
 public final class CountriesStorageMapper {
   public enum CacheError: Swift.Error {
@@ -15,12 +14,6 @@ public final class CountriesStorageMapper {
   
   public static func map(_ models: [Country]) -> [LocalCountry] {
     return models.map(CountriesStorageMapper.map)
-  }
-  
-  public static func map(_ local: Results<LocalCountry>) -> [Country] {
-    return local.map {
-      return Country(code: $0.code, name: $0.name, totalNumberOfMeasurements: $0.count, numberOfMeasuredCities: $0.cities, numberOfMeasuringLocations: $0.locations)
-    }
   }
   
   public static func map(_ model: Country) -> LocalCountry {

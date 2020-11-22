@@ -8,31 +8,26 @@
 import Foundation
 import RealmSwift
 
-public class RealmStorage<StoringObject, RealmObject> where RealmObject: Object {
+public class RealmStorage<StoringObject, LoadingObject, RealmObject> where RealmObject: Object {
   public typealias StoreMapper = (StoringObject) -> RealmObject
-  public typealias ResultMappper = (Results<RealmObject>) throws -> StoringObject
-  public typealias ObjectMapper = (RealmObject) throws -> StoringObject
+  public typealias ResultMappper = (Results<RealmObject>) -> [LoadingObject]
+  public typealias ObjectMapper = (RealmObject) -> LoadingObject
   
   let realm: Realm
   let storeMapper: StoreMapper
-  let resultMapper: (Results<RealmObject>) throws -> StoringObject
-  let objectMapper: (RealmObject) throws -> StoringObject
+  let resultMapper: ResultMappper
+  let objectMapper: ObjectMapper
   
   enum StorageError: Swift.Error {
     case objectNotFound
   }
   
-  public init(realm: Realm, storeMapper: @escaping StoreMapper, resultMapper: @escaping ResultMappper) {
+  public init(realm: Realm,
+              storeMapper: @escaping StoreMapper,
+              objectMapper: @escaping ObjectMapper) where StoringObject == LoadingObject {
     self.realm = realm
     self.storeMapper = storeMapper
-    self.resultMapper = resultMapper
-    self.objectMapper = { _ in throw StorageError.objectNotFound }
-  }
-  
-  public init(realm: Realm, storeMapper: @escaping StoreMapper, objectMapper: @escaping ObjectMapper) {
-    self.realm = realm
-    self.storeMapper = storeMapper
-    self.resultMapper = { _ in throw StorageError.objectNotFound }
+    self.resultMapper = { result in return result.map { objectMapper($0) } }
     self.objectMapper = objectMapper
   }
 }
@@ -45,24 +40,14 @@ extension RealmStorage: Storage {
     }
   }
   
-  public func load() -> Swift.Result<StoringObject, Error> {
-    do {
-      let result = realm.objects(RealmObject.self)
-      let objects = try resultMapper(result)
-      return .success(objects)
-    } catch {
-      return .failure(error)
-    }
+  public func load() -> [LoadingObject]? {
+    let result = realm.objects(RealmObject.self)
+    return resultMapper(result)
   }
   
-  public func load(objectId: Any) -> Swift.Result<StoringObject, Error> {
-    do {
-      guard let result = realm.object(ofType: RealmObject.self, forPrimaryKey: objectId) else { return .failure(StorageError.objectNotFound) }
-      let loadResult = try objectMapper(result)
-      return .success(loadResult)
-    } catch {
-      return .failure(error)
-    }
+  public func load(objectId: Any) -> LoadingObject? {
+    guard let result = realm.object(ofType: RealmObject.self, forPrimaryKey: objectId) else { return .none }
+    return objectMapper(result)
   }
   
   public func remove(_ object: StoringObject) -> Storage.RemoveResult {

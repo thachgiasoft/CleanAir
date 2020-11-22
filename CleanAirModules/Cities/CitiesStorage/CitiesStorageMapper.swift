@@ -6,15 +6,10 @@
 //
 
 import Foundation
-import RealmSwift
 
 public final class CitiesStorageMapper {
   public static func map(_ models: [City]) -> [LocalCity] {
     return models.map(CitiesStorageMapper.map)
-  }
-  
-  public static func map(_ local: Results<LocalCity>) -> [City] {
-    return local.map { CitiesStorageMapper.map($0) }
   }
   
   public static func map(_ model: City) -> LocalCity {

@@ -6,13 +6,8 @@
 //
 
 import Foundation
-import RealmSwift
 
 public final class CountriesCasheMapper {
-  public enum CacheError: Swift.Error {
-    case invalidCacheResult
-  }
-  
   public static func map(_ cache: ResourceCache<[Country]>) -> LocalCountryCache {
     let localCache = LocalCountryCache()
     localCache.timeStamp = cache.timestamp
