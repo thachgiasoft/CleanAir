@@ -9,7 +9,12 @@ import XCTest
 @testable import CleanAirModules
 
 class ResourceCacherTests: XCTestCase {
-  
+  func test_init_has_zeroSideEffects_onStore() {
+    let (_, store) = makeSUT()
+    XCTAssertEqual(store.cacheCalls, .zero)
+    XCTAssertEqual(store.cacheLoadCalls, .zero)
+    XCTAssertEqual(store.cacheRemoveCalls, .zero)
+  }
 }
 
 // MARK: - Private
@@ -32,12 +37,16 @@ private extension ResourceCacherTests {
   
   class ResourceStorage: Storage {
     var caches: [Int: AnyTypeCache] = [:]
+    var cacheLoadCalls: Int = 0
+    var cacheRemoveCalls: Int = 0
+    var cacheCalls: Int { caches.count }
     
     func remove(objectId: Any, completion: @escaping (RemoveResult) -> Void) {
       if let id = objectId as? Int {
         caches.removeValue(forKey: id)
       }
       completion(.success(()))
+      cacheRemoveCalls += 1
     }
     
     func store(_ object: AnyTypeCache, completion: @escaping (StoreResult) -> Void) {
@@ -46,6 +55,7 @@ private extension ResourceCacherTests {
     }
     
     func load() -> [AnyTypeCache]? {
+      cacheLoadCalls += 1
       return caches.map { $0.value }
     }
     
