@@ -23,22 +23,22 @@ public class ResourceCacher<Resource, ResourceStorage> where ResourceStorage: St
     self.policy = policy
   }
   
-  public func cache(resource: Resource) where ResourceStorage.StorableObject == ResourceCache<Resource> {
-    storage.store(ResourceCache(timestamp: date().timeIntervalSince1970, resource: resource))
+  public func cache(resource: Resource) where ResourceStorage.StorageObject == ResourceCache<Resource> {
+    try? storage.store(ResourceCache(timestamp: date().timeIntervalSince1970, resource: resource))
   }
   
-  public func load() throws -> Resource where ResourceStorage.StorableObject == ResourceCache<Resource> {
-    let loadResult = storage.load()
-    switch loadResult {
-    case let .success(cache) where policy(cache.timestamp):
+  public func load() -> Resource? where ResourceStorage.StorageObject == ResourceCache<Resource> {
+    let cacheLoad = storage.load()?.first
+    switch cacheLoad {
+    case let .some(cache) where policy(cache.timestamp):
       return cache.resource
       
-    case let .success(cache):
-      storage.remove(cache)
-      throw ResourceCacheError.cacheExpired
+    case let .some(cache):
+      try? storage.remove(objectId: cache.timestamp)
+      return nil
       
-    case .failure:
-      throw ResourceCacheError.storage
+    case .none:
+      return nil
     }
   }
 }

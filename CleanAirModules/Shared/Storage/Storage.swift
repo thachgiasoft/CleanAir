@@ -8,24 +8,18 @@
 import Foundation
 
 public protocol Storage {
-  associatedtype StorableObject
+  associatedtype StorageObject
   
   typealias StoreResult = Swift.Result<Void, Error>
-  typealias LoadResult = Swift.Result<StorableObject, Error>
+  typealias LoadResult = Swift.Result<StorageObject, Error>
+  
   typealias RemoveResult = Swift.Result<Void, Error>
   
-  @discardableResult
-  func store(_ object: StorableObject) -> StoreResult
+  func store(_ object: StorageObject) throws
+  func load() -> [StorageObject]?
   
   @discardableResult
-  func load() -> LoadResult
+  func load(objectId: Any) -> StorageObject?
   
-  @discardableResult
-  func load(objectId: Any) -> LoadResult
-  
-  @discardableResult
-  func remove(_ object: StorableObject) -> RemoveResult
-  
-  @discardableResult
-  func remove(objectId: Any) -> RemoveResult
+  func remove(objectId: Any) throws
 }

@@ -8,4 +8,4 @@
 import Foundation
 
 public typealias CityStorage = RealmStorage<City, LocalCity>
-public typealias CitiesStorage = RealmStorage<[City], LocalCity>
+public typealias CitiesStorage = RealmStorage<City, LocalCity>

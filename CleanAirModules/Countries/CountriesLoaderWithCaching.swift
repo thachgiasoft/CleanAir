@@ -20,10 +20,11 @@ public class CountriesLoaderWithCaching {
 // MARK: - CountriesLoader
 extension CountriesLoaderWithCaching: CountriesLoader {
   public func load(completion: @escaping (Result<[Country], Error>) -> Void) {
-    do {
-      let cacheResult = try cacher.load()
-      completion(.success(cacheResult))
-    } catch {
+    switch cacher.load() {
+    case let .some(cache):
+      completion(.success(cache))
+      
+    case .none:
       fetch(completion: completion)
     }
   }

@@ -7,6 +7,7 @@
 
 import Foundation
 @testable import CleanAirModules
+@testable import RealmSwift
 
 class FavouriteCityServiceMock: FavouriteCityService {
   typealias Result = Swift.Result<City, Error>
@@ -33,15 +34,22 @@ class FavouriteCityServiceMock: FavouriteCityService {
 private class CityStorageMock: CityStorage {
   init() {
     super.init(
+      realm: try! Realm(),
       storeMapper: { _ in LocalCity() },
       resultMapper: { _ in
-        City(
+        [City(
           name: "",
           country: "",
           measurementsCount: 0,
           availableLocationsCount: 0,
           isFavourite: false
-        )
-      })
+        )]
+      }, objectMapper: { _ in City(
+        name: "",
+        country: "",
+        measurementsCount: 0,
+        availableLocationsCount: 0,
+        isFavourite: false
+      )})
   }
 }
