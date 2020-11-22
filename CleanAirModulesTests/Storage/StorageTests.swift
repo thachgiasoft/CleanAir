@@ -59,7 +59,7 @@ class StorageTests: XCTestCase {
   }
   
   func test_removeExistingObject_doesntThrowError() throws {
-    let resource: AnyType = 3
+    let resource: AnyType = 4
     let sut = makeSUT()
     
     let exp1 = expectation(description: "Waiting to store")
@@ -78,7 +78,7 @@ class StorageTests: XCTestCase {
   }
   
   func test_removeUnexistingObject_ThrowsError() throws {
-    let resource: AnyType = 4
+    let resource: AnyType = 5
     let sut = makeSUT()
     let exp1 = expectation(description: "Waiting to store")
     sut.store(resource) { _ in
@@ -87,7 +87,7 @@ class StorageTests: XCTestCase {
     
     let exp2 = expectation(description: "Waiting to store")
     var receivedResult: Swift.Result<Void, Error>?
-    sut.remove(objectId: 5) { result in
+    sut.remove(objectId: 6) { result in
       receivedResult = result
       exp2.fulfill()
     }
@@ -107,16 +107,16 @@ class StorageTests: XCTestCase {
     let exp4 = expectation(description: "q4")
     
     let sut = makeSUT()
-    XCTAssertNil(sut.load(objectId: 1))
+    XCTAssertNil(sut.load(objectId: 11))
     
     q1.async { sut.store(1) { _ in exp1.fulfill() }}
-    q2.async { sut.remove(objectId: 1) { _ in exp2.fulfill() }}
+    q2.async { sut.remove(objectId: 11) { _ in exp2.fulfill() }}
     q3.async { sut.store(1) { _ in exp3.fulfill() } }
-    q4.async { sut.remove(objectId: 1) { _ in exp4.fulfill() }}
+    q4.async { sut.remove(objectId: 11) { _ in exp4.fulfill() }}
     
     wait(for: [exp1, exp2, exp3, exp4], timeout: 1.0)
     
-    XCTAssertNil(sut.load(objectId: 1))
+    XCTAssertNil(sut.load(objectId: 11))
   }
 }
 
@@ -132,7 +132,7 @@ private extension StorageTests {
   }
   
   static func preapareForTesting() {
-    Realm.Configuration.defaultConfiguration.inMemoryIdentifier = "inMemoryRealm"
+    Realm.Configuration.defaultConfiguration.inMemoryIdentifier = UUID().uuidString
   }
   
   static func local(for value: AnyType) -> AnyLocalType {
