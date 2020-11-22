@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       loader: loader,
       cacher: ResourceCacher(
         storage: RealmStorage(
-          realm: try! Realm(),
+          realm: { try! Realm() },
           storeMapper: CountriesCasheMapper.map,
           objectMapper: CountriesCasheMapper.map
         ),
@@ -52,7 +52,7 @@ private extension AppDelegate {
     let loaderWithValidation = CitiesLoaderWithLocalValidation(
       loader: loader,
       storage: RealmStorage(
-        realm: try! Realm(),
+        realm: { try! Realm() },
         storeMapper: CitiesStorageMapper.map,
         objectMapper:  CitiesStorageMapper.map
       )
@@ -60,7 +60,7 @@ private extension AppDelegate {
     
     let service = FavouriteCityService(
       storage: RealmStorage(
-        realm: try! Realm(),
+        realm: { try! Realm() },
         storeMapper: CitiesStorageMapper.map,
         objectMapper:  CitiesStorageMapper.map
       )

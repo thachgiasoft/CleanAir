@@ -16,11 +16,6 @@ class StorageTests: XCTestCase {
     preapareForTesting()
   }
   
-  func test_init_storesRealmInstance() {
-    let sut = makeSUT()
-    XCTAssertEqual(sut.realm, Self.realm)
-  }
-  
   func test_store_doesntThrowError() {
     let resource: AnyType = 1
     let sut = makeSUT()
@@ -60,7 +55,7 @@ class StorageTests: XCTestCase {
 private extension StorageTests {
   func makeSUT() -> RealmStorage<AnyType, AnyLocalType> {
     let sut = RealmStorage(
-      realm: Self.realm,
+      realm: { try! Realm(configuration: .defaultConfiguration) },
       storeMapper: { Self.local(for: $0) },
       objectMapper: { $0.id }
     )

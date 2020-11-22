@@ -34,7 +34,7 @@ class FavouriteCityServiceMock: FavouriteCityService {
 private class CityStorageMock: CityStorage {
   init() {
     super.init(
-      realm: try! Realm(),
+      realm: { try! Realm() },
       storeMapper: { _ in LocalCity() },
       objectMapper: { _ in City(
         name: "",
