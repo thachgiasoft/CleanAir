@@ -9,7 +9,11 @@ import Foundation
 import RealmSwift
 
 public class RealmStorage<StoringObject, RealmObject> where RealmObject: Object {
-  let storeMapper: (StoringObject) -> RealmObject
+  public typealias StoreMapper = (StoringObject) -> RealmObject
+  public typealias ResultMappper = (Results<RealmObject>) throws -> StoringObject
+  public typealias ObjectMapper = (RealmObject) throws -> StoringObject
+  
+  let storeMapper: StoreMapper
   let resultMapper: (Results<RealmObject>) throws -> StoringObject
   let objectMapper: (RealmObject) throws -> StoringObject
   
@@ -17,13 +21,13 @@ public class RealmStorage<StoringObject, RealmObject> where RealmObject: Object 
     case objectNotFound
   }
   
-  public init(storeMapper: @escaping (StoringObject) -> RealmObject, resultMapper: @escaping (Results<RealmObject>) -> StoringObject) {
+  public init(storeMapper: @escaping StoreMapper, resultMapper: @escaping ResultMappper) {
     self.storeMapper = storeMapper
     self.resultMapper = resultMapper
     self.objectMapper = { _ in throw StorageError.objectNotFound }
   }
   
-  public init(storeMapper: @escaping (StoringObject) -> RealmObject, objectMapper: @escaping (RealmObject) -> StoringObject) {
+  public init(storeMapper: @escaping StoreMapper, objectMapper: @escaping ObjectMapper) {
     self.storeMapper = storeMapper
     self.resultMapper = { _ in throw StorageError.objectNotFound }
     self.objectMapper = objectMapper
