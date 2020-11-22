@@ -16,6 +16,10 @@ class StorageTests: XCTestCase {
     preapareForTesting()
   }
   
+  override class func tearDown() {
+    cleanUp()
+  }
+  
   func test_init_storesRealmInstance() {
     let sut = makeSUT()
     XCTAssertEqual(sut.realm, Self.realm)
@@ -33,6 +37,13 @@ class StorageTests: XCTestCase {
     try sut.store(resource)
     XCTAssertTrue(sut.load()!.contains(resource))
   }
+  
+  func test_loadForId_deliversStoredResult() throws {
+    let resource: AnyType = 3
+    let sut = makeSUT()
+    try sut.store(resource)
+    XCTAssertEqual(sut.load(objectId: resource), resource)
+  }
 }
 
 // MARK: - Private
@@ -48,6 +59,10 @@ private extension StorageTests {
   
   static func preapareForTesting() {
     Realm.Configuration.defaultConfiguration.inMemoryIdentifier = "inMemoryRealm"
+  }
+  
+  static func cleanUp() {
+    realm.deleteAll()
   }
   
   static func local(for value: AnyType) -> AnyLocalType {
