@@ -90,6 +90,23 @@ class ResourceLoaderTests: XCTestCase {
     wait(for: [exp], timeout: 1.0)
     XCTAssertThrowsError(try result!.get())
   }
+  
+  func test_load_delivers_error_whenMapperFails() {
+    let (sut, client) = makeSUT()
+    var result: AnyResourceLoder.Result?
+    let exp = expectation(description: "Waiting for deliver")
+    
+    sut.load { loadedResult in
+      result = loadedResult
+      exp.fulfill()
+    }
+    
+    let invalidURLResponse = HTTPURLResponse(url: anyURL, statusCode: -1, httpVersion: nil, headerFields: [:])!
+    client.complete(at: 0, with: .success((Data(), invalidURLResponse)))
+    
+    wait(for: [exp], timeout: 1.0)
+    XCTAssertThrowsError(try result!.get())
+  }
 }
 
 // MARK: - Private
