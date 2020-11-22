@@ -10,7 +10,9 @@ import XCTest
 @testable import RealmSwift
 
 class StorageTests: XCTestCase {
-  
+  override class func setUp() {
+    preapareForTesting()
+  }
 }
 
 // MARK: - Private
@@ -24,12 +26,16 @@ private extension StorageTests {
   typealias AnyType = Int
   
   func makeSUT() -> RealmStorage<AnyType, AnyLocalType> {
-    let realm = try! Realm()
+    let realm = try! Realm(configuration: .defaultConfiguration)
     let sut = RealmStorage(
       realm: realm,
       storeMapper: { AnyLocalType(value: $0) },
       objectMapper: { $0.id }
     )
     return sut
+  }
+  
+  static func preapareForTesting() {
+    Realm.Configuration.defaultConfiguration.inMemoryIdentifier = "inMemoryRealm"
   }
 }
