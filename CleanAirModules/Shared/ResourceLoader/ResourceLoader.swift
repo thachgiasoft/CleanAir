@@ -26,7 +26,7 @@ public class ResourceLoader<Resource> {
   }
   
   public func load(completion: @escaping (Result) -> Void) {
-    client.execute(request: Self.getRequest(with: url)) { [weak self] response in
+    client.execute(request: getRequest()) { [weak self] response in
       guard let self = self else { return }
       switch response {
       case let .success((data, response)):
@@ -41,11 +41,8 @@ public class ResourceLoader<Resource> {
       }
     }
   }
-}
-
-// MARK: - Private
-private extension ResourceLoader {
-  static func getRequest(with url: URL) -> URLRequest {
+  
+  func getRequest() -> URLRequest {
     var request = URLRequest(url: url)
     request.httpMethod = "GET"
     return request

@@ -19,6 +19,12 @@ class ResourceLoaderTests: XCTestCase {
     let (sut, _) = makeSUT(url: url)
     XCTAssertEqual(sut.url, url)
   }
+  
+  func test_getRequest_configures_httpMethod_to_GET() {
+    let (sut, _) = makeSUT()
+    let request = sut.getRequest()
+    XCTAssertEqual(request.httpMethod, "GET")
+  }
 }
 
 // MARK: - Private
