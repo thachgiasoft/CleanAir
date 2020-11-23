@@ -692,7 +692,6 @@
 		534179CE2568153100EB2D11 /* CountriesStorage */ = {
 			isa = PBXGroup;
 			children = (
-				534179E8256816D600EB2D11 /* CountriesCacheStorage.swift */,
 				534179D3256815F300EB2D11 /* CountriesStorageMapper.swift */,
 				534179CA2568152A00EB2D11 /* LocalCountry.swift */,
 			);
@@ -810,6 +809,7 @@
 		53C0B0C0256870D000D7A8F3 /* CountriesCache */ = {
 			isa = PBXGroup;
 			children = (
+				534179E8256816D600EB2D11 /* CountriesCacheStorage.swift */,
 				53C0B0C2256870F300D7A8F3 /* CountriesCacheMapper.swift */,
 				5361E5DE25685D5700731693 /* CountriesCachePolicy.swift */,
 				532988AE2568327300813C7A /* LocalCountryCache.swift */,
