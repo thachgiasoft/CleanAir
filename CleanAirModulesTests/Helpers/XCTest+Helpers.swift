@@ -31,9 +31,8 @@ extension XCTest {
       cacheRemoveCalls += 1
     }
     
-    func store(_ object: AnyTypeCache, completion: @escaping (StoreResult) -> Void) {
+    func store(_ object: AnyTypeCache) throws {
       caches[object.id] = object
-      completion(.success(()))
     }
     
     func load() -> [AnyTypeCache]? {

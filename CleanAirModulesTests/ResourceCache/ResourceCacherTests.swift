@@ -27,58 +27,36 @@ class ResourceCacherTests: XCTestCase {
     XCTAssertEqual(date, sut.date())
   }
   
-  func test_cache_insertsCacheIntoStore() {
+  func test_cache_insertsCacheIntoStore() throws {
     let (sut, store) = makeSUT()
     let resource = anyResource
     XCTAssertEqual(store.cacheCalls, .zero)
-    let exp = expectation(description: "Waiting to cache")
-    sut.cache(resource: resource) { _ in
-      exp.fulfill()
-    }
-    
-    wait(for: [exp], timeout: 1.0)
+    try sut.cache(resource: resource)
     XCTAssertEqual(store.cacheCalls, 1)
     XCTAssertEqual(store.caches.first?.value.resource, resource)
   }
   
-  func test_cache_loads_validCache() {
+  func test_cache_loads_validCache() throws {
     let (sut, store) = makeSUT(policy: { _ in true })
     let resource = anyResource
-    XCTAssertEqual(store.cacheCalls, .zero)
-    let exp1 = expectation(description: "Waiting to cache insertion")
-    sut.cache(resource: resource) { _ in
-      exp1.fulfill()
-    }
-    
-    wait(for: [exp1], timeout: 1.0)
+    try sut.cache(resource: resource)
     XCTAssertNotNil(sut.load())
   }
   
-  func test_laod_deliversNil_onExpiredCache() {
+  func test_laod_deliversNil_onExpiredCache() throws {
     let (sut, store) = makeSUT(policy: { _ in false })
     let resource = anyResource
     XCTAssertEqual(store.cacheCalls, .zero)
-    let exp1 = expectation(description: "Waiting to cache insertion")
-    sut.cache(resource: resource) { _ in
-      exp1.fulfill()
-    }
-    
-    wait(for: [exp1], timeout: 1.0)
+    try sut.cache(resource: resource)
     XCTAssertNil(sut.load())
   }
   
-  func test_laod_removes_expiredCache() {
+  func test_laod_removes_expiredCache() throws {
     let (sut, store) = makeSUT(policy: { _ in false })
     let resource = anyResource
     XCTAssertEqual(store.cacheCalls, .zero)
-    let exp1 = expectation(description: "Waiting to cache insertion")
-    sut.cache(resource: resource) { _ in
-      exp1.fulfill()
-    }
-    
+    try sut.cache(resource: resource)
     _ = sut.load()
-    
-    wait(for: [exp1], timeout: 1.0)
     XCTAssertTrue(store.caches.isEmpty)
   }
   

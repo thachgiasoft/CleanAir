@@ -11,7 +11,7 @@ public protocol CityStorage {
   typealias StoreResult = Swift.Result<Void, Error>
   typealias RemoveResult = Swift.Result<Void, Error>
   
-  func store(_ object: City, completion: @escaping (StoreResult) -> Void)
+  func store(_ object: City) throws
   func load() -> [City]?
   
   @discardableResult

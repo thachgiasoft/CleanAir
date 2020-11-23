@@ -18,10 +18,8 @@ public class FavouriteCityService {
     let isFavourite = !city.isFavourite
     let updatedCity = City(name: city.name, country: city.country, measurementsCount: city.measurementsCount, availableLocationsCount: city.availableLocationsCount, isFavourite: isFavourite)
     
-    if isFavourite {
-      storage.store(updatedCity, completion: { completion($0.map { updatedCity }) })
-    } else {
-      storage.remove(objectId: city.id, completion: { completion($0.map { updatedCity }) })
-    }
+    isFavourite
+      ? try? storage.store(updatedCity)
+      : storage.remove(objectId: city.id, completion: { completion($0.map { updatedCity }) })
   }
 }

@@ -15,16 +15,7 @@ class StorageTests: XCTestCase {
   }
   
   func test_store_doesntThrowError() {
-    let sut = makeSUT()
-    let exp = expectation(description: "Waiting to store")
-    var result: Swift.Result<Void, Error>?
-    sut.store(anyResource) { receivedResult in
-      result = receivedResult
-      exp.fulfill()
-    }
-    
-    wait(for: [exp], timeout: 1.0)
-    XCTAssertNoThrow(try result?.get())
+    XCTAssertNoThrow(try makeSUT().store(anyResource))
   }
   
   func test_load_deliversEmptyOnEmptyStore() {
@@ -35,25 +26,14 @@ class StorageTests: XCTestCase {
   func test_load_deliversStoredResult() throws {
     let resource = anyResource
     let sut = makeSUT()
-    let exp = expectation(description: "Waiting to store")
-    sut.store(resource) { _ in
-      exp.fulfill()
-    }
-    
-    wait(for: [exp], timeout: 1.0)
+    try sut.store(resource)
     XCTAssertTrue(sut.load() == [resource])
   }
   
   func test_loadForId_deliversStoredResult() throws {
     let resource = anyResource
     let sut = makeSUT()
-    
-    let exp = expectation(description: "Waiting to store")
-    sut.store(resource) { _ in
-      exp.fulfill()
-    }
-    
-    wait(for: [exp], timeout: 1.0)
+    try sut.store(resource)
     XCTAssertEqual(sut.load(objectId: resource), resource)
   }
   
@@ -61,10 +41,7 @@ class StorageTests: XCTestCase {
     let resource = anyResource
     let sut = makeSUT()
     
-    let exp1 = expectation(description: "Waiting to store")
-    sut.store(resource) { _ in
-      exp1.fulfill()
-    }
+    try sut.store(resource)
     
     let exp2 = expectation(description: "Waiting to store")
     var receivedResult: Swift.Result<Void, Error>?
@@ -72,17 +49,14 @@ class StorageTests: XCTestCase {
       receivedResult = result
       exp2.fulfill()
     }
-    wait(for: [exp1, exp2], timeout: 1.0)
+    wait(for: [exp2], timeout: 1.0)
     XCTAssertNoThrow(try receivedResult?.get())
   }
   
   func test_removeUnexistingObject_ThrowsError() throws {
     let resource = anyResource
     let sut = makeSUT()
-    let exp1 = expectation(description: "Waiting to store")
-    sut.store(resource) { _ in
-      exp1.fulfill()
-    }
+    try sut.store(resource)
     
     let exp2 = expectation(description: "Waiting to store")
     var receivedResult: Swift.Result<Void, Error>?
@@ -90,33 +64,8 @@ class StorageTests: XCTestCase {
       receivedResult = result
       exp2.fulfill()
     }
-    wait(for: [exp1, exp2], timeout: 1.0)
+    wait(for: [exp2], timeout: 1.0)
     XCTAssertThrowsError(try receivedResult?.get())
-  }
-  
-  func test_multipleQueues_haveNoSideEffects() throws {
-    let q1 = DispatchQueue(label: "1", qos: .background)
-    let q2 = DispatchQueue(label: "2", qos: .utility)
-    let q3 = DispatchQueue(label: "3", qos: .userInteractive)
-    let q4 = DispatchQueue(label: "4", qos: .default)
-    
-    let exp1 = expectation(description: "q1")
-    let exp2 = expectation(description: "q2")
-    let exp3 = expectation(description: "q3")
-    let exp4 = expectation(description: "q4")
-    
-    let sut = makeSUT()
-    let resource = anyResource
-    XCTAssertNil(sut.load(objectId: resource))
-    
-    q1.async { sut.store(resource) { _ in exp1.fulfill() }}
-    q2.async { sut.remove(objectId: resource) { _ in exp2.fulfill() }}
-    q3.async { sut.store(resource) { _ in exp3.fulfill() } }
-    q4.async { sut.remove(objectId: resource) { _ in exp4.fulfill() }}
-    
-    wait(for: [exp1, exp2, exp3, exp4], timeout: 1.0)
-    
-    XCTAssertNil(sut.load(objectId: resource))
   }
 }
 

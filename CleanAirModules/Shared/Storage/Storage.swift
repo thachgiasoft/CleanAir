@@ -9,11 +9,9 @@ import Foundation
 
 public protocol Storage {
   associatedtype StorageObject
-  
-  typealias StoreResult = Swift.Result<Void, Error>
   typealias RemoveResult = Swift.Result<Void, Error>
   
-  func store(_ object: StorageObject, completion: @escaping (StoreResult) -> Void)
+  func store(_ object: StorageObject) throws
   func load() -> [StorageObject]?
   
   @discardableResult

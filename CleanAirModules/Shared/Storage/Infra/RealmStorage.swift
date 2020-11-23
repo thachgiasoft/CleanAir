@@ -35,18 +35,14 @@ public class RealmStorage<LocalObject, RealmObject> where RealmObject: Object {
 
 // MARK: - Storage
 extension RealmStorage: Storage {
-  public func store(_ object: LocalObject, completion: @escaping (StoreResult) -> Void) {
-    queue.async(flags: .barrier) { [weak self] in
-      guard let self = self else { return }
-      let realm = self.realmIntializer()
-      do {
-        try realm.write {
-          realm.add(self.storeMapper(object), update: .all)
-          completion(.success(()))
-        }
-      } catch {
-        completion(.failure(error))
+  public func store(_ object: LocalObject) throws {
+    let realm = self.realmIntializer()
+    do {
+      try realm.write {
+        realm.add(self.storeMapper(object), update: .all)
       }
+    } catch {
+      throw error
     }
   }
   
