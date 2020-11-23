@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class ResourceCacher<Resource, ResourceStorage> where ResourceStorage: Storage {
+public class ResourceCacheService<Resource, ResourceStorage> where ResourceStorage: Storage {
   let storage: ResourceStorage
   let date: () -> Date
   let policy: (_ timeStamp: TimeInterval) -> Bool

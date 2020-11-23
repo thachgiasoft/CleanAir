@@ -367,6 +367,22 @@
 			path = FavouriteCityService;
 			sourceTree = "<group>";
 		};
+		5339BBCB256C640E00F2BBD2 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				532988AE2568327300813C7A /* LocalCountryCache.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		5339BBCF256C643000F2BBD2 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				534179CA2568152A00EB2D11 /* LocalCountry.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 		534177372567314300EB2D11 = {
 			isa = PBXGroup;
 			children = (
@@ -693,7 +709,7 @@
 			isa = PBXGroup;
 			children = (
 				534179D3256815F300EB2D11 /* CountriesStorageMapper.swift */,
-				534179CA2568152A00EB2D11 /* LocalCountry.swift */,
+				5339BBCF256C643000F2BBD2 /* Realm */,
 			);
 			path = CountriesStorage;
 			sourceTree = "<group>";
@@ -812,7 +828,7 @@
 				534179E8256816D600EB2D11 /* CountriesCacheStorage.swift */,
 				53C0B0C2256870F300D7A8F3 /* CountriesCacheMapper.swift */,
 				5361E5DE25685D5700731693 /* CountriesCachePolicy.swift */,
-				532988AE2568327300813C7A /* LocalCountryCache.swift */,
+				5339BBCB256C640E00F2BBD2 /* Realm */,
 			);
 			path = CountriesCache;
 			sourceTree = "<group>";
