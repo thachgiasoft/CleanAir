@@ -41,28 +41,4 @@ private extension CitiesStorageMapperTests {
     XCTAssertEqual(city.measurementsCount, localCity.measurementsCount)
     XCTAssertEqual(city.isFavourite, localCity.isFavourite)
   }
-  
-  func anyCity() -> City {
-    let name = UUID().uuidString
-    let country = UUID().uuidString
-    return City(
-      name: name,
-      country: country,
-      measurementsCount: 1,
-      availableLocationsCount: 1,
-      isFavourite: false
-    )
-  }
-  
-  func anyLocalCity() -> LocalCity {
-    let name = UUID().uuidString
-    let country = UUID().uuidString
-    let city = LocalCity()
-    city.name = name
-    city.country = country
-    city.availableLocationsCount = 2
-    city.measurementsCount = 2
-    city.isFavourite = true
-    return city
-  }
 }
