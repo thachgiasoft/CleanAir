@@ -9,9 +9,9 @@ import Foundation
 
 public class CountriesLoaderWithCaching {
   let loader: CountriesLoader
-  let cacher: ResourceCacher<[Country], CountriesStorage>
+  let cacher: ResourceCacher<[Country], CountriesCacheStorage>
   
-  public init(loader: CountriesLoader, cacher: ResourceCacher<[Country], CountriesStorage>) {
+  public init(loader: CountriesLoader, cacher: ResourceCacher<[Country], CountriesCacheStorage>) {
     self.loader = loader
     self.cacher = cacher
   }
