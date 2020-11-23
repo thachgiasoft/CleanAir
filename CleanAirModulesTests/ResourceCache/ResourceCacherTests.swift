@@ -19,7 +19,7 @@ class ResourceCacherTests: XCTestCase {
   func test_init_has_zeroSideEffects_onInjectedData() {
     let date = Date()
     let store = AnyTypeStore()
-    let sut = ResourceCacher<AnyType, AnyTypeStore>(
+    let sut = ResourceCacheLoader<AnyType, AnyTypeStore>(
       storage: store,
       date: { date },
       policy: { _ in return true }
@@ -72,11 +72,11 @@ private extension ResourceCacherTests {
   typealias AnyType = String
   typealias AnyTypeCache = ResourceCache<AnyType>
   typealias AnyTypeStore = ResourceStorage
-  typealias AnyTypeCacher = ResourceCacher<AnyType, AnyTypeStore>
+  typealias AnyTypeCacher = ResourceCacheLoader<AnyType, AnyTypeStore>
   
   func makeSUT(date: @escaping () -> Date = Date.init, policy: @escaping (Double) -> Bool = { _ in true }) -> (AnyTypeCacher, AnyTypeStore)  {
     let store = AnyTypeStore()
-    let cacher = ResourceCacher<AnyType, AnyTypeStore>(
+    let cacher = ResourceCacheLoader<AnyType, AnyTypeStore>(
       storage: store,
       date: date,
       policy: policy

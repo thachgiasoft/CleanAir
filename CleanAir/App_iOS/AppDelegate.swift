@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let loaderWithCaching = CountriesLoaderWithCaching(
       loader: loader,
-      cacher: ResourceCacher(
+      cacher: ResourceCacheService(
         storage: RealmStorage(
           realm: { try! Realm() },
           storeMapper: CountriesCasheMapper.map,
