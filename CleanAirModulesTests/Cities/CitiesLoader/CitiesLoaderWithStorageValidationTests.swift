@@ -12,7 +12,7 @@ class CitiesLoaderWithStorageValidationTests: XCTestCase {
   func test_init_doesntHaveSideEffects_onLoaderAndStorage() {
     let (_, loader, storage) = makeSUT()
     XCTAssertNil(loader.completion)
-    XCTAssertTrue(storage.stored.isEmpty)
+    XCTAssertNil(storage.stored)
   }
   
   func test_load_eventuallyDeliversResult() {
@@ -35,6 +35,23 @@ class CitiesLoaderWithStorageValidationTests: XCTestCase {
     wait(for: [exp], timeout: 1.0)
     XCTAssertEqual(store.storeCalls, .zero)
     XCTAssertEqual(store.removeCalls, .zero)
+  }
+  
+  func test_load_updatesWithLocalData_onLoaderSuccess() {
+    let (sut, loader, store) = makeSUT()
+    let exp = expectation(description: "Waiting for deliver")
+    
+    let localIsFavourite = true
+    store.store(anyCity(isFavourite: localIsFavourite), completion: { _ in })
+
+    var loadedCity: City!
+    sut.load { result in
+      loadedCity = try! result.get().first
+      exp.fulfill()
+    }
+    loader.complete(with: anyCity(isFavourite: !localIsFavourite))
+    wait(for: [exp], timeout: 1.0)
+    XCTAssertEqual(loadedCity.isFavourite, localIsFavourite)
   }
 }
 
@@ -67,26 +84,29 @@ private extension CitiesLoaderWithStorageValidationTests {
   }
   
   class CityStorageMock: CityStorage {
-    var stored: [String: City] = [:]
+    var stored: City?
     var removeCalls: Int = 0
     var storeCalls: Int = 0
+    var loadCalls: Int = 0
+    var getAllCalls: Int = 0
     
     func store(_ object: City, completion: @escaping (StoreResult) -> Void) {
       storeCalls += 1
-      stored[object.id] = object
+      stored = object
     }
     
     func load() -> [City]? {
-      return stored.map { $0.value }
+      getAllCalls += 1
+      return [stored].compactMap { $0 }
     }
     
     func load(objectId: Any) -> City? {
-      return stored[objectId as! String]
+      loadCalls += 1
+      return stored
     }
     
     func remove(objectId: Any, completion: @escaping (RemoveResult) -> Void) {
       removeCalls += 1
-      stored.removeValue(forKey: objectId as! String)
       completion(.success(()))
     }
   }

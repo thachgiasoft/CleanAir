@@ -51,7 +51,7 @@ extension XCTest {
     }
   }
   
-  func anyCity() -> City {
+  func anyCity(isFavourite: Bool = false) -> City {
     let name = UUID().uuidString
     let country = UUID().uuidString
     return City(
@@ -59,11 +59,11 @@ extension XCTest {
       country: country,
       measurementsCount: 1,
       availableLocationsCount: 1,
-      isFavourite: false
+      isFavourite: isFavourite
     )
   }
   
-  func anyLocalCity() -> LocalCity {
+  func anyLocalCity(isFavourite: Bool = true) -> LocalCity {
     let name = UUID().uuidString
     let country = UUID().uuidString
     let city = LocalCity()
@@ -71,7 +71,7 @@ extension XCTest {
     city.country = country
     city.availableLocationsCount = 2
     city.measurementsCount = 2
-    city.isFavourite = true
+    city.isFavourite = isFavourite
     return city
   }
 }
