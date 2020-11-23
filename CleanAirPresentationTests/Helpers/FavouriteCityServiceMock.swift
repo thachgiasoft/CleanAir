@@ -32,16 +32,19 @@ class FavouriteCityServiceMock: FavouriteCityService {
 }
 
 private class CityStorageMock: CityStorage {
-  init() {
-    super.init(
-      realm: { try! Realm() },
-      storeMapper: { _ in LocalCity() },
-      objectMapper: { _ in City(
-        name: "",
-        country: "",
-        measurementsCount: 0,
-        availableLocationsCount: 0,
-        isFavourite: false
-      )})
+  func store(_ object: City, completion: @escaping (StoreResult) -> Void) {
+    
+  }
+  
+  func load() -> [City]? {
+    return nil
+  }
+  
+  func load(objectId: Any) -> City? {
+    return nil
+  }
+  
+  func remove(objectId: Any, completion: @escaping (RemoveResult) -> Void) {
+    
   }
 }
