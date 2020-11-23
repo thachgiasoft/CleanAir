@@ -55,6 +55,21 @@ class ResourceCacherTests: XCTestCase {
     wait(for: [exp1], timeout: 1.0)
     XCTAssertNil(sut.load())
   }
+  
+  func test_laod_removes_expiredCache() {
+    let (sut, store) = makeSUT(policy: { _ in false })
+    let anyResource: AnyType = "AnyType"
+    XCTAssertEqual(store.cacheCalls, .zero)
+    let exp1 = expectation(description: "Waiting to cache insertion")
+    sut.cache(resource: anyResource) { _ in
+      exp1.fulfill()
+    }
+    
+    _ = sut.load()
+    
+    wait(for: [exp1], timeout: 1.0)
+    XCTAssertTrue(store.caches.isEmpty)
+  }
 }
 
 // MARK: - Private
