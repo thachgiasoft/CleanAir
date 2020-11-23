@@ -44,7 +44,7 @@ private class CityStorageMock: CityStorage {
     return nil
   }
   
-  func remove(objectId: Any, completion: @escaping (RemoveResult) -> Void) {
+  func remove(objectId: Any) throws {
     
   }
 }

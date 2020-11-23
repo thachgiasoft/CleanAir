@@ -12,10 +12,8 @@ public protocol Storage {
   typealias RemoveResult = Swift.Result<Void, Error>
   
   func store(_ object: StorageObject) throws
+  func remove(objectId: Any) throws
+  
   func load() -> [StorageObject]?
-  
-  @discardableResult
   func load(objectId: Any) -> StorageObject?
-  
-  func remove(objectId: Any, completion: @escaping (RemoveResult) -> Void)
 }

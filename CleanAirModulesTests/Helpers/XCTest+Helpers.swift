@@ -23,11 +23,10 @@ extension XCTest {
     var cacheRemoveCalls: Int = 0
     var cacheCalls: Int { caches.count }
     
-    func remove(objectId: Any, completion: @escaping (RemoveResult) -> Void) {
+    func remove(objectId: Any) throws {
       if let id = objectId as? Int {
         caches.removeValue(forKey: id)
       }
-      completion(.success(()))
       cacheRemoveCalls += 1
     }
     

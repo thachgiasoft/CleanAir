@@ -36,7 +36,7 @@ public class ResourceCacher<Resource, ResourceStorage> where ResourceStorage: St
       return cache.resource
       
     case let .some(cache):
-      storage.remove(objectId: cache.id, completion: { _ in })
+      try? storage.remove(objectId: cache.id)
       return nil
       
     case .none:

@@ -20,6 +20,7 @@ public class FavouriteCityService {
     
     isFavourite
       ? try? storage.store(updatedCity)
-      : storage.remove(objectId: city.id, completion: { completion($0.map { updatedCity }) })
+      : try? storage.remove(objectId: city.id)
+    completion(.success(updatedCity))
   }
 }

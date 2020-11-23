@@ -105,9 +105,8 @@ private extension CitiesLoaderWithStorageValidationTests {
       return stored
     }
     
-    func remove(objectId: Any, completion: @escaping (RemoveResult) -> Void) {
+    func remove(objectId: Any) throws {
       removeCalls += 1
-      completion(.success(()))
     }
   }
 }

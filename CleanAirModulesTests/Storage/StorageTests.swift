@@ -40,32 +40,15 @@ class StorageTests: XCTestCase {
   func test_removeExistingObject_doesntThrowError() throws {
     let resource = anyResource
     let sut = makeSUT()
-    
     try sut.store(resource)
-    
-    let exp2 = expectation(description: "Waiting to store")
-    var receivedResult: Swift.Result<Void, Error>?
-    sut.remove(objectId: resource) { result in
-      receivedResult = result
-      exp2.fulfill()
-    }
-    wait(for: [exp2], timeout: 1.0)
-    XCTAssertNoThrow(try receivedResult?.get())
+    XCTAssertNoThrow(try sut.remove(objectId: resource))
   }
   
   func test_removeUnexistingObject_ThrowsError() throws {
     let resource = anyResource
     let sut = makeSUT()
     try sut.store(resource)
-    
-    let exp2 = expectation(description: "Waiting to store")
-    var receivedResult: Swift.Result<Void, Error>?
-    sut.remove(objectId: anyResource) { result in
-      receivedResult = result
-      exp2.fulfill()
-    }
-    wait(for: [exp2], timeout: 1.0)
-    XCTAssertThrowsError(try receivedResult?.get())
+    XCTAssertThrowsError(try sut.remove(objectId: anyResource))
   }
 }
 

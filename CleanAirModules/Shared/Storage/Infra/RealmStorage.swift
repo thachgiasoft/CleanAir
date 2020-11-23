@@ -46,19 +46,15 @@ extension RealmStorage: Storage {
     }
   }
   
-  public func remove(objectId: Any, completion: @escaping (RemoveResult) -> Void) {
-    queue.async(flags: .barrier) { [weak self] in
-      guard let self = self else { return }
-      let realm = self.realmIntializer()
-      guard let result = realm.object(ofType: RealmObject.self, forPrimaryKey: objectId) else { return completion(.failure(StorageError.objectNotFound))}
-      do {
-        try realm.write {
-          realm.delete(result)
-          completion(.success(()))
-        }
-      } catch {
-        completion(.failure(error))
+  public func remove(objectId: Any) throws {
+    let realm = self.realmIntializer()
+    guard let result = realm.object(ofType: RealmObject.self, forPrimaryKey: objectId) else { throw StorageError.objectNotFound }
+    do {
+      try realm.write {
+        realm.delete(result)
       }
+    } catch {
+      throw error
     }
   }
   

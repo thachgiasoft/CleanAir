@@ -37,9 +37,8 @@ class ResourceCacherTests: XCTestCase {
   }
   
   func test_cache_loads_validCache() throws {
-    let (sut, store) = makeSUT(policy: { _ in true })
-    let resource = anyResource
-    try sut.cache(resource: resource)
+    let (sut, _) = makeSUT(policy: { _ in true })
+    try sut.cache(resource: anyResource)
     XCTAssertNotNil(sut.load())
   }
   
