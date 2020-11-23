@@ -16,6 +16,17 @@ class ResourceCacherTests: XCTestCase {
     XCTAssertEqual(store.cacheRemoveCalls, .zero)
   }
   
+  func test_init_has_zeroSideEffects_onInjectedData() {
+    let date = Date()
+    let store = AnyTypeStore()
+    let sut = ResourceCacher<AnyType, AnyTypeStore>(
+      storage: store,
+      date: { date },
+      policy: { _ in return true }
+    )
+    XCTAssertEqual(date, sut.date())
+  }
+  
   func test_cache_insertsCacheIntoStore() {
     let (sut, store) = makeSUT()
     let anyResource: AnyType = "AnyType"
@@ -79,12 +90,11 @@ private extension ResourceCacherTests {
   typealias AnyTypeStore = ResourceStorage
   typealias AnyTypeCacher = ResourceCacher<AnyType, AnyTypeStore>
   
-  func makeSUT(policy: @escaping (Double) -> Bool = { _ in true }) -> (AnyTypeCacher, AnyTypeStore)  {
+  func makeSUT(date: @escaping () -> Date = Date.init, policy: @escaping (Double) -> Bool = { _ in true }) -> (AnyTypeCacher, AnyTypeStore)  {
     let store = AnyTypeStore()
-    let date = Date()
     let cacher = ResourceCacher<AnyType, AnyTypeStore>(
       storage: store,
-      date: { date },
+      date: date,
       policy: policy
     )
     return (cacher, store)

@@ -18,7 +18,7 @@ public class ResourceCacher<Resource, ResourceStorage> where ResourceStorage: St
     case cacheExpired
   }
   
-  public init(storage: ResourceStorage, date: @escaping () -> Date = Date.init, policy: @escaping (_ timeStamp: TimeInterval) -> Bool) {
+  public init(storage: ResourceStorage, date: @escaping () -> Date, policy: @escaping (_ timeStamp: TimeInterval) -> Bool) {
     self.storage = storage
     self.date = date
     self.policy = policy
