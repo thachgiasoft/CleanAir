@@ -13,5 +13,3 @@ public protocol CityStorage {
   func load() -> [City]?
   func load(objectId: Any) -> City?
 }
-
-extension RealmStorage: CityStorage where LocalObject == City, RealmObject == LocalCity { }
