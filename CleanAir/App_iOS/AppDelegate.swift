@@ -29,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
           storeMapper: CountriesCasheMapper.map,
           objectMapper: CountriesCasheMapper.map
         ),
+        date: Date.init,
         policy: CountriesCachePolicy.validate
       )
     )
