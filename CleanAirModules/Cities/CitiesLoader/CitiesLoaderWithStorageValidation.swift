@@ -8,10 +8,10 @@
 import Foundation
 
 public class CitiesLoaderWithStorageValidation {
-  let loader: ResourceLoader<[City]>
+  let loader: CitiesLoader
   let storage: CityStorage
   
-  public init(loader: ResourceLoader<[City]>, storage: CityStorage) {
+  public init(loader: CitiesLoader, storage: CityStorage) {
     self.loader = loader
     self.storage = storage
   }
