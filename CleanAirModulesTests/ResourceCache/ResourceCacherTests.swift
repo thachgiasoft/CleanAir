@@ -81,6 +81,13 @@ class ResourceCacherTests: XCTestCase {
     wait(for: [exp1], timeout: 1.0)
     XCTAssertTrue(store.caches.isEmpty)
   }
+  
+  func test_laod_deliversNil_onEmptyCache() {
+    let (sut, store) = makeSUT(policy: { _ in false })
+    XCTAssertEqual(store.cacheCalls, .zero)
+    _ = sut.load()
+    XCTAssertNil(sut.load())
+  }
 }
 
 // MARK: - Private
