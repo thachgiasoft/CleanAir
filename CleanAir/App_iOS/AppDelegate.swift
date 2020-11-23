@@ -50,7 +50,7 @@ private extension AppDelegate {
       mapper: ResourceResultsMapper(CityMapper.map).map
     )
     
-    let loaderWithValidation = CitiesLoaderWithLocalValidation(
+    let loaderWithValidation = CitiesLoaderWithStorageValidation(
       loader: loader,
       storage: RealmStorage(
         realm: { try! Realm() },

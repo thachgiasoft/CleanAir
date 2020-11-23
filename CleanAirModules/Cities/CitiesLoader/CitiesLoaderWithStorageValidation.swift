@@ -1,5 +1,5 @@
 //
-//  CitiesLoaderWithLocalValidation.swift
+//  CitiesLoaderWithStorageValidation.swift
 //  CleanAirModules
 //
 //  Created by Marko Engelman on 21/11/2020.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class CitiesLoaderWithLocalValidation {
+public class CitiesLoaderWithStorageValidation {
   let loader: ResourceLoader<[City]>
   let storage: CityStorage
   
@@ -18,7 +18,7 @@ public class CitiesLoaderWithLocalValidation {
 }
 
 // MARK: - CitiesLoader
-extension CitiesLoaderWithLocalValidation: CitiesLoader {
+extension CitiesLoaderWithStorageValidation: CitiesLoader {
   public func load(completion: @escaping (Result<[City], Error>) -> Void) {
     loader.load { [weak self] result in
       guard let self = self else { return }
@@ -34,7 +34,7 @@ extension CitiesLoaderWithLocalValidation: CitiesLoader {
 }
 
 // MARK: - Private
-private extension CitiesLoaderWithLocalValidation {
+private extension CitiesLoaderWithStorageValidation {
   func validate(_ cities: [City]) -> [City] {
     var validatedCities: [City] = []
     cities.forEach { city in
