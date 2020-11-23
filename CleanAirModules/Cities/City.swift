@@ -8,7 +8,7 @@
 import Foundation
 
 public struct City: Equatable {
-  public var id: String { return name }
+  public let id: String
   public let name: String
   public let country: String
   public let measurementsCount: Int
@@ -16,6 +16,7 @@ public struct City: Equatable {
   public let isFavourite: Bool
   
   public init(name: String, country: String, measurementsCount: Int, availableLocationsCount: Int, isFavourite: Bool) {
+    self.id = name
     self.name = name
     self.country = country
     self.measurementsCount = measurementsCount

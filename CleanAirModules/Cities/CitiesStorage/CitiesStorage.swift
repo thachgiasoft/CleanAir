@@ -7,5 +7,17 @@
 
 import Foundation
 
-public typealias CityStorage = RealmStorage<City, LocalCity>
-public typealias CitiesStorage = RealmStorage<City, LocalCity>
+public protocol CityStorage {
+  typealias StoreResult = Swift.Result<Void, Error>
+  typealias RemoveResult = Swift.Result<Void, Error>
+  
+  func store(_ object: City, completion: @escaping (StoreResult) -> Void)
+  func load() -> [City]?
+  
+  @discardableResult
+  func load(objectId: Any) -> City?
+  
+  func remove(objectId: Any, completion: @escaping (RemoveResult) -> Void)
+}
+
+extension RealmStorage: CityStorage where LocalObject == City, RealmObject == LocalCity { }

@@ -29,24 +29,24 @@ class ResourceCacherTests: XCTestCase {
   
   func test_cache_insertsCacheIntoStore() {
     let (sut, store) = makeSUT()
-    let anyResource: AnyType = "AnyType"
+    let resource = anyResource
     XCTAssertEqual(store.cacheCalls, .zero)
     let exp = expectation(description: "Waiting to cache")
-    sut.cache(resource: anyResource) { _ in
+    sut.cache(resource: resource) { _ in
       exp.fulfill()
     }
     
     wait(for: [exp], timeout: 1.0)
     XCTAssertEqual(store.cacheCalls, 1)
-    XCTAssertEqual(store.caches.first?.value.resource, anyResource)
+    XCTAssertEqual(store.caches.first?.value.resource, resource)
   }
   
   func test_cache_loads_validCache() {
     let (sut, store) = makeSUT(policy: { _ in true })
-    let anyResource: AnyType = "AnyType"
+    let resource = anyResource
     XCTAssertEqual(store.cacheCalls, .zero)
     let exp1 = expectation(description: "Waiting to cache insertion")
-    sut.cache(resource: anyResource) { _ in
+    sut.cache(resource: resource) { _ in
       exp1.fulfill()
     }
     
@@ -56,10 +56,10 @@ class ResourceCacherTests: XCTestCase {
   
   func test_laod_deliversNil_onExpiredCache() {
     let (sut, store) = makeSUT(policy: { _ in false })
-    let anyResource: AnyType = "AnyType"
+    let resource = anyResource
     XCTAssertEqual(store.cacheCalls, .zero)
     let exp1 = expectation(description: "Waiting to cache insertion")
-    sut.cache(resource: anyResource) { _ in
+    sut.cache(resource: resource) { _ in
       exp1.fulfill()
     }
     
@@ -69,10 +69,10 @@ class ResourceCacherTests: XCTestCase {
   
   func test_laod_removes_expiredCache() {
     let (sut, store) = makeSUT(policy: { _ in false })
-    let anyResource: AnyType = "AnyType"
+    let resource = anyResource
     XCTAssertEqual(store.cacheCalls, .zero)
     let exp1 = expectation(description: "Waiting to cache insertion")
-    sut.cache(resource: anyResource) { _ in
+    sut.cache(resource: resource) { _ in
       exp1.fulfill()
     }
     
@@ -105,39 +105,5 @@ private extension ResourceCacherTests {
       policy: policy
     )
     return (cacher, store)
-  }
-  
-  class ResourceStorage: Storage {
-    var caches: [Int: AnyTypeCache] = [:]
-    var cacheLoadCalls: Int = 0
-    var cacheRemoveCalls: Int = 0
-    var cacheCalls: Int { caches.count }
-    
-    func remove(objectId: Any, completion: @escaping (RemoveResult) -> Void) {
-      if let id = objectId as? Int {
-        caches.removeValue(forKey: id)
-      }
-      completion(.success(()))
-      cacheRemoveCalls += 1
-    }
-    
-    func store(_ object: AnyTypeCache, completion: @escaping (StoreResult) -> Void) {
-      caches[object.id] = object
-      completion(.success(()))
-    }
-    
-    func load() -> [AnyTypeCache]? {
-      cacheLoadCalls += 1
-      return caches.map { $0.value }
-    }
-    
-    func load(objectId: Any) -> AnyTypeCache? {
-      cacheLoadCalls += 1
-      if let id = objectId as? Int {
-        return caches[id]
-      } else {
-        return nil
-      }
-    }
   }
 }
