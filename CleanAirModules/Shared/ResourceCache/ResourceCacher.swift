@@ -12,20 +12,21 @@ public class ResourceCacher<Resource, ResourceStorage> where ResourceStorage: St
   let date: () -> Date
   let policy: (_ timeStamp: TimeInterval) -> Bool
   
+  public typealias CacheCompletion = (Swift.Result<Void, Error>) -> Void
   enum ResourceCacheError: Swift.Error {
     case storage
     case cacheExpired
   }
   
-  public init(storage: ResourceStorage, date: @escaping () -> Date = Date.init, policy: @escaping (_ timeStamp: TimeInterval) -> Bool) {
+  public init(storage: ResourceStorage, date: @escaping () -> Date, policy: @escaping (_ timeStamp: TimeInterval) -> Bool) {
     self.storage = storage
     self.date = date
     self.policy = policy
   }
   
-  public func cache(resource: Resource) where ResourceStorage.StorageObject == ResourceCache<Resource> {
+  public func cache(resource: Resource, completion: @escaping CacheCompletion) where ResourceStorage.StorageObject == ResourceCache<Resource> {
     let cache = ResourceCache(id: Int(date().timeIntervalSince1970), resource: resource)
-    storage.store(cache, completion: { _ in })
+    storage.store(cache, completion: completion)
   }
   
   public func load() -> Resource? where ResourceStorage.StorageObject == ResourceCache<Resource> {

@@ -35,9 +35,10 @@ private extension CountriesLoaderWithCaching {
   func fetch(completion: @escaping (Result<[Country], Error>) -> Void) {
     loader.load { [weak self] result in
       if case let .success(countries) = result {
-        self?.cacher.cache(resource: countries)
+        self?.cacher.cache(resource: countries) { _ in completion(result) }
+      } else {
+        completion(result)
       }
-      completion(result)
     }
   }
 }
