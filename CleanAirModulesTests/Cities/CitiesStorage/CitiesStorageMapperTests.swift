@@ -1,5 +1,5 @@
 //
-//  CitiesStorageTests.swift
+//  CitiesStorageMapperTests.swift
 //  CleanAirModulesTests
 //
 //  Created by Marko Engelman on 23/11/2020.
@@ -8,7 +8,7 @@
 import XCTest
 @testable import CleanAirModules
 
-class CitiesStorageTests: XCTestCase {
+class CitiesStorageMapperTests: XCTestCase {
   func test_mapper_mapsCity_toLocalCity() {
     let city = anyCity()
     let localCity = CitiesStorageMapper.map(city)
@@ -32,7 +32,7 @@ class CitiesStorageTests: XCTestCase {
 }
 
 // MARK: - Private
-private extension CitiesStorageTests {
+private extension CitiesStorageMapperTests {
   func expect(city: City, equalTo localCity: LocalCity) {
     XCTAssertEqual(city.id, localCity.name)
     XCTAssertEqual(city.name, localCity.name)
