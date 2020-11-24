@@ -9,7 +9,7 @@ import XCTest
 @testable import CleanAirModules
 @testable import RealmSwift
 
-class StorageTests: XCTestCase {
+class RealmStorageTests: XCTestCase {
   override class func setUp() {
     preapareForTesting()
   }
@@ -53,7 +53,7 @@ class StorageTests: XCTestCase {
 }
 
 // MARK: - Private
-private extension StorageTests {
+private extension RealmStorageTests {
   func makeSUT() -> RealmStorage<AnyType, AnyLocalType> {
     let sut = RealmStorage(
       realm: { try! Realm(configuration: .defaultConfiguration) },
