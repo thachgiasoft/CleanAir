@@ -54,12 +54,8 @@ class RealmStorageTests: XCTestCase {
 
 // MARK: - Private
 private extension RealmStorageTests {
-  func makeSUT() -> RealmStorage<AnyType, AnyLocalType> {
-    let sut = RealmStorage(
-      realm: { try! Realm(configuration: .defaultConfiguration) },
-      storeMapper: { Self.local(for: $0) },
-      objectMapper: { $0.id }
-    )
+  func makeSUT() -> RealmStorage {
+    let sut = RealmStorage(realm: { try! Realm(configuration: .defaultConfiguration) })
     return sut
   }
   

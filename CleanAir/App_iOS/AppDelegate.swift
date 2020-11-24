@@ -21,11 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       mapper: ResourceResultsMapper(CountryMapper.map).map
     )
     
-    let storage = RealmStorage(
-      realm: { try! Realm() },
-      storeMapper: CountriesCasheMapper.map,
-      objectMapper: CountriesCasheMapper.map
-    )
+    let storage = RealmStorage(realm: { try! Realm() })
     
     let cacher = ResourceCacheCacher(
       storage: (storage.store),
@@ -62,19 +58,11 @@ private extension AppDelegate {
     
     let loaderWithValidation = CitiesLoaderWithStorageValidation(
       loader: loader,
-      storage: RealmStorage(
-        realm: { try! Realm() },
-        storeMapper: CitiesStorageMapper.map,
-        objectMapper:  CitiesStorageMapper.map
-      )
+      storage: RealmStorage(realm: { try! Realm() })
     )
     
     let service = FavouriteCityService(
-      storage: RealmStorage(
-        realm: { try! Realm() },
-        storeMapper: CitiesStorageMapper.map,
-        objectMapper:  CitiesStorageMapper.map
-      )
+      storage: RealmStorage(realm: { try! Realm() })
     )
 
     let controller = CitiesUIComposer.makeView(with: loaderWithValidation, service: service, selection: { _ in })

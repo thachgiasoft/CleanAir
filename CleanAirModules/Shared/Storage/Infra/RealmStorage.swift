@@ -8,28 +8,15 @@
 import Foundation
 import RealmSwift
 
-public class RealmStorage<LocalObject, RealmObject> where RealmObject: Object {
-  public typealias StoreMapper = (LocalObject) -> RealmObject
-  public typealias ResultMappper = (Results<RealmObject>) -> [LocalObject]
-  public typealias ObjectMapper = (RealmObject) -> LocalObject
-  
+public class RealmStorage {
   let realmIntializer: () -> Realm
-  let storeMapper: StoreMapper
-  let resultMapper: ResultMappper
-  let objectMapper: ObjectMapper
-  lazy var queue = DispatchQueue(label: "\(self)")
   
   enum StorageError: Swift.Error {
     case objectNotFound
   }
   
-  public init(realm: @escaping () -> Realm,
-              storeMapper: @escaping StoreMapper,
-              objectMapper: @escaping ObjectMapper) {
+  public init(realm: @escaping () -> Realm) {
     self.realmIntializer = realm
-    self.storeMapper = storeMapper
-    self.resultMapper = { result in return result.map { objectMapper($0) } }
-    self.objectMapper = objectMapper
   }
   
   func find<T: Object>(object: T.Type) -> Results<T> {
