@@ -21,17 +21,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       mapper: ResourceResultsMapper(CountryMapper.map).map
     )
     
+    let storage = RealmStorage(
+      realm: { try! Realm() },
+      storeMapper: CountriesCasheMapper.map,
+      objectMapper: CountriesCasheMapper.map
+    )
+    
+    let cacher = ResourceCacheCacher(
+      storage: (storage.store),
+      date: Date.init
+    )
+    
+    let cacheLoader = ResourceCacheLoader(
+      storage: (load: storage.load, remove: storage.remove),
+      date: Date.init,
+      policy: CountriesCachePolicy.validate
+    )
+    
     let loaderWithCaching = CountriesLoaderWithCaching(
       loader: loader,
-      cacher: ResourceCacheService(
-        storage: RealmStorage(
-          realm: { try! Realm() },
-          storeMapper: CountriesCasheMapper.map,
-          objectMapper: CountriesCasheMapper.map
-        ),
-        date: Date.init,
-        policy: CountriesCachePolicy.validate
-      )
+      cacheLoader: cacheLoader,
+      cacheCacher: cacher
     )
     
     window?.rootViewController = CountriesUIComposer.makeView(with: loaderWithCaching, selection: { [weak self] in self?.showCities(for: $0) })
