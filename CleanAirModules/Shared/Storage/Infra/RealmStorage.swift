@@ -31,24 +31,32 @@ public class RealmStorage<LocalObject, RealmObject> where RealmObject: Object {
     self.resultMapper = { result in return result.map { objectMapper($0) } }
     self.objectMapper = objectMapper
   }
-}
-
-// MARK: - Storage
-extension RealmStorage: Storage {
-  public func store(_ object: LocalObject) throws {
+  
+  func find<T: Object>(object: T.Type) -> Results<T> {
+    let realm = realmIntializer()
+    let result = realm.objects(T.self)
+    return result
+  }
+  
+  func find<T: Object>(object: T.Type, forId: Any) -> T? {
+    let realm = realmIntializer()
+    return realm.object(ofType: T.self, forPrimaryKey: forId)
+  }
+  
+  func insert<T: Object>(object: T, update: Realm.UpdatePolicy = .all) throws {
     let realm = self.realmIntializer()
     do {
       try realm.write {
-        realm.add(self.storeMapper(object), update: .all)
+        realm.add(object, update: update)
       }
     } catch {
       throw error
     }
   }
   
-  public func remove(objectId: Any) throws {
+  func delete<T: Object>(object: T.Type, forId: Any) throws {
     let realm = self.realmIntializer()
-    guard let result = realm.object(ofType: RealmObject.self, forPrimaryKey: objectId) else { throw StorageError.objectNotFound }
+    guard let result = realm.object(ofType: object, forPrimaryKey: forId) else { throw StorageError.objectNotFound }
     do {
       try realm.write {
         realm.delete(result)
@@ -57,20 +65,24 @@ extension RealmStorage: Storage {
       throw error
     }
   }
+}
+
+// MARK: - Storage
+extension RealmStorage: Storage {
+  public func store(_ object: LocalObject) throws {
+    try insert(object: self.storeMapper(object))
+  }
+  
+  public func remove(objectId: Any) throws {
+    try delete(object: RealmObject.self, forId: objectId)
+  }
   
   public func load() -> [LocalObject]? {
-    let realm = self.realmIntializer()
-    var result: Results<RealmObject>?
-    queue.sync { result = realm.objects(RealmObject.self) }
-    guard let unwrapped = result else { return .none }
-    return resultMapper(unwrapped)
+    return resultMapper(find(object: RealmObject.self))
   }
   
   public func load(objectId: Any) -> LocalObject? {
-    var result: RealmObject?
-    let realm = realmIntializer()
-    queue.sync { result = realm.object(ofType: RealmObject.self, forPrimaryKey: objectId) }
-    guard let unwrapped = result else { return .none }
-    return objectMapper(unwrapped)
+    guard let object = find(object: RealmObject.self, forId: objectId) else { return .none }
+    return objectMapper(object)
   }
 }
