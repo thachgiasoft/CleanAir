@@ -13,11 +13,11 @@ extension RealmStorage: CachedCountriesStorage {
   }
   
   public func remove(_ cache: ResourceCache<[Country]>) throws {
-    try delete(object: LocalCountryCache.self, forId: cache.id)
+    try delete(object: RealmCountryCache.self, forId: cache.id)
   }
   
   public func load() -> [ResourceCache<[Country]>] {
-    let local = find(object: LocalCountryCache.self)
+    let local = find(object: RealmCountryCache.self)
     return local.map { CountriesCasheMapper.map($0) }
   }
 }
