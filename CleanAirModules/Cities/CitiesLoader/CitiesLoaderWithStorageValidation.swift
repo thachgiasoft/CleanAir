@@ -38,7 +38,7 @@ private extension CitiesLoaderWithStorageValidation {
   func validate(_ cities: [City]) -> [City] {
     var validatedCities: [City] = []
     cities.forEach { city in
-      if let localCity = storage.load(objectId: city.id) {
+      if let localCity = storage.load(cityId: city.id) {
         let updatedCity = City(name: city.name, country: city.country, measurementsCount: city.measurementsCount, availableLocationsCount: city.availableLocationsCount, isFavourite: localCity.isFavourite)
         validatedCities.append(updatedCity)
       } else {

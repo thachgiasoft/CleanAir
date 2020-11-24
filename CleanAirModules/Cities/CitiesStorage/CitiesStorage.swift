@@ -8,8 +8,7 @@
 import Foundation
 
 public protocol CityStorage {
-  func store(_ object: City) throws
-  func remove(objectId: Any) throws
-  func load() -> [City]?
-  func load(objectId: Any) -> City?
+  func store(_ city: City) throws
+  func remove(cityId: String) throws
+  func load(cityId: String) -> City?
 }

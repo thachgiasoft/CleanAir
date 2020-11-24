@@ -7,4 +7,17 @@
 
 import Foundation
 
-extension RealmStorage: CityStorage where LocalObject == City, RealmObject == RealmCity { }
+extension RealmStorage: CityStorage {
+  public func store(_ city: City) throws {
+    try insert(object: CitiesStorageMapper.map(city))
+  }
+  
+  public func remove(cityId: String) throws {
+    try delete(object: RealmCity.self, forId: cityId)
+  }
+  
+  public func load(cityId: String) -> City? {
+    guard let local = find(object: RealmCity.self, forId: cityId) else { return nil }
+    return CitiesStorageMapper.map(local)
+  }
+}

@@ -100,12 +100,12 @@ private extension CitiesLoaderWithStorageValidationTests {
       return [stored].compactMap { $0 }
     }
     
-    func load(objectId: Any) -> City? {
+    func load(cityId: String) -> City? {
       loadCalls += 1
       return stored
     }
     
-    func remove(objectId: Any) throws {
+    func remove(cityId: String) throws {
       removeCalls += 1
     }
   }

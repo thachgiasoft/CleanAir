@@ -20,7 +20,7 @@ public class FavouriteCityService {
     
     isFavourite
       ? try? storage.store(updatedCity)
-      : try? storage.remove(objectId: city.id)
+      : try? storage.remove(cityId: city.id)
     completion(.success(updatedCity))
   }
 }
