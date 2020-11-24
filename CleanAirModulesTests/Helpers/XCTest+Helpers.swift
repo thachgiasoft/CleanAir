@@ -17,7 +17,7 @@ extension XCTest {
   
   var anyResource: String { UUID().uuidString }
   
-  class ResourceStorage: Storage {
+  class ResourceStorage {
     var caches: [Int: AnyTypeCache] = [:]
     var cacheLoadCalls: Int = 0
     var cacheRemoveCalls: Int = 0

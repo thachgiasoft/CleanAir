@@ -66,23 +66,3 @@ public class RealmStorage<LocalObject, RealmObject> where RealmObject: Object {
     }
   }
 }
-
-// MARK: - Storage
-extension RealmStorage: Storage {
-  public func store(_ object: LocalObject) throws {
-    try insert(object: self.storeMapper(object))
-  }
-  
-  public func remove(objectId: Any) throws {
-    try delete(object: RealmObject.self, forId: objectId)
-  }
-  
-  public func load() -> [LocalObject]? {
-    return resultMapper(find(object: RealmObject.self))
-  }
-  
-  public func load(objectId: Any) -> LocalObject? {
-    guard let object = find(object: RealmObject.self, forId: objectId) else { return .none }
-    return objectMapper(object)
-  }
-}

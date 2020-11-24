@@ -61,7 +61,6 @@
 		53417938256805B000EB2D11 /* CitiesListSwiftUIViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53417937256805B000EB2D11 /* CitiesListSwiftUIViewPreview.swift */; };
 		5341794E256807AE00EB2D11 /* CoutryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341794D256807AE00EB2D11 /* CoutryViewModel.swift */; };
 		5341796A256809B000EB2D11 /* ResourceCacheLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53417969256809B000EB2D11 /* ResourceCacheLoader.swift */; };
-		5341797125680A3600EB2D11 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341797025680A3600EB2D11 /* Storage.swift */; };
 		5341797D25680DDF00EB2D11 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5341797C25680DDF00EB2D11 /* RealmSwift */; };
 		5341797F25680DDF00EB2D11 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 5341797E25680DDF00EB2D11 /* Realm */; };
 		5341798325680E1200EB2D11 /* RealmStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341798225680E1200EB2D11 /* RealmStorage.swift */; };
@@ -213,7 +212,6 @@
 		53417937256805B000EB2D11 /* CitiesListSwiftUIViewPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesListSwiftUIViewPreview.swift; sourceTree = "<group>"; };
 		5341794D256807AE00EB2D11 /* CoutryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoutryViewModel.swift; sourceTree = "<group>"; };
 		53417969256809B000EB2D11 /* ResourceCacheLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCacheLoader.swift; sourceTree = "<group>"; };
-		5341797025680A3600EB2D11 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		5341798225680E1200EB2D11 /* RealmStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorage.swift; sourceTree = "<group>"; };
 		534179CA2568152A00EB2D11 /* RealmCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCountry.swift; sourceTree = "<group>"; };
 		534179D3256815F300EB2D11 /* CountriesStorageMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesStorageMapper.swift; sourceTree = "<group>"; };
@@ -699,7 +697,6 @@
 		5341797425680A3A00EB2D11 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
-				5341797025680A3600EB2D11 /* Storage.swift */,
 				5341798625680E1500EB2D11 /* Infra */,
 			);
 			path = Storage;
@@ -1099,7 +1096,6 @@
 				53716AC525694B180032A245 /* CitiesLoaderWithStorageValidation.swift in Sources */,
 				534178C5256800D300EB2D11 /* APIURL.swift in Sources */,
 				532988A92568206100813C7A /* CountriesLoaderWithCaching.swift in Sources */,
-				5341797125680A3600EB2D11 /* Storage.swift in Sources */,
 				534BC2AB256D09A1002F0F0F /* ResourceCacheCacher.swift in Sources */,
 				5361E5DF25685D5700731693 /* CountriesCachePolicy.swift in Sources */,
 				53190669256C5A9A004E4624 /* RealmCitiesStorage.swift in Sources */,

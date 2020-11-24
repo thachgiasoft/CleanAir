@@ -13,42 +13,42 @@ class StorageTests: XCTestCase {
   override class func setUp() {
     preapareForTesting()
   }
-  
-  func test_store_doesntThrowError() {
-    XCTAssertNoThrow(try makeSUT().store(anyResource))
-  }
-  
-  func test_load_deliversEmptyOnEmptyStore() {
+
+  func test_insert_doesntThrowError() {
     let sut = makeSUT()
-    XCTAssertTrue(sut.load()!.isEmpty)
+    XCTAssertNoThrow(try sut.insert(object: anyLocal))
   }
-  
+
+  func test_find_deliversEmptyOnEmptyStore() {
+    let sut = makeSUT()
+    XCTAssertTrue(sut.find(object: type(of: anyLocal)).isEmpty)
+  }
+
   func test_load_deliversStoredResult() throws {
-    let resource = anyResource
+    let local = anyLocal
     let sut = makeSUT()
-    try sut.store(resource)
-    XCTAssertTrue(sut.load() == [resource])
+    try sut.insert(object: local)
+    XCTAssertTrue(sut.find(object: type(of: local)).first == local)
   }
-  
+
   func test_loadForId_deliversStoredResult() throws {
-    let resource = anyResource
+    let local = anyLocal
     let sut = makeSUT()
-    try sut.store(resource)
-    XCTAssertEqual(sut.load(objectId: resource), resource)
+    try sut.insert(object: local)
+    XCTAssertEqual(sut.find(object: type(of: local), forId: local.id), local)
   }
-  
+
   func test_removeExistingObject_doesntThrowError() throws {
-    let resource = anyResource
+    let local = anyLocal
     let sut = makeSUT()
-    try sut.store(resource)
-    XCTAssertNoThrow(try sut.remove(objectId: resource))
+    try sut.insert(object: local)
+    XCTAssertNoThrow(try sut.delete(object: type(of: local), forId: local.id))
   }
-  
+
   func test_removeUnexistingObject_ThrowsError() throws {
-    let resource = anyResource
+    let local = anyLocal
     let sut = makeSUT()
-    try sut.store(resource)
-    XCTAssertThrowsError(try sut.remove(objectId: anyResource))
+    XCTAssertThrowsError(try sut.delete(object: type(of: local), forId: local.id))
   }
 }
 
@@ -68,9 +68,13 @@ private extension StorageTests {
   }
   
   static func local(for value: AnyType) -> AnyLocalType {
-    let local = AnyLocalType()
-    local.id = value
-    return local
+      let local = AnyLocalType()
+      local.id = value
+      return local
+  }
+  
+  var anyLocal: AnyLocalType {
+    return Self.local(for: anyResource)
   }
 }
 
