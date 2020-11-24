@@ -10,7 +10,7 @@ import RealmSwift
 
 public class RealmCountryCache: Object {
   @objc dynamic var timeStamp: Int = 0
-  var countries = List<LocalCountry>()
+  var countries = List<RealmCountry>()
   
   public override class func primaryKey() -> String? {
     return "timeStamp"
