@@ -7,9 +7,7 @@
 
 import Foundation
 
-public typealias CountriesCacheStorage = RealmStorage<ResourceCache<[Country]>, RealmCountryCache>
-
-public protocol CachedCountriesStorage {
+public protocol CountriesCacheStorage {
   func store(_ cache: ResourceCache<[Country]>) throws
   func remove(_ cache: ResourceCache<[Country]>) throws
   func load() -> [ResourceCache<[Country]>]

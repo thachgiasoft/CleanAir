@@ -68,7 +68,7 @@
 		534179CB2568152A00EB2D11 /* RealmCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534179CA2568152A00EB2D11 /* RealmCountry.swift */; };
 		534179D4256815F300EB2D11 /* CountriesStorageMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534179D3256815F300EB2D11 /* CountriesStorageMapper.swift */; };
 		534179E9256816D600EB2D11 /* CountriesCacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534179E8256816D600EB2D11 /* CountriesCacheStorage.swift */; };
-		534BC29D256D06EC002F0F0F /* RealmCachedCitiesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534BC29C256D06EC002F0F0F /* RealmCachedCitiesStorage.swift */; };
+		534BC29D256D06EC002F0F0F /* RealmCountriesCacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534BC29C256D06EC002F0F0F /* RealmCountriesCacheStorage.swift */; };
 		534BC2AB256D09A1002F0F0F /* ResourceCacheCacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534BC2AA256D09A1002F0F0F /* ResourceCacheCacher.swift */; };
 		534BC2B3256D0B63002F0F0F /* ResourceCacherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534BC2B2256D0B63002F0F0F /* ResourceCacherTests.swift */; };
 		5361E5DF25685D5700731693 /* CountriesCachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5361E5DE25685D5700731693 /* CountriesCachePolicy.swift */; };
@@ -218,7 +218,7 @@
 		534179CA2568152A00EB2D11 /* RealmCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCountry.swift; sourceTree = "<group>"; };
 		534179D3256815F300EB2D11 /* CountriesStorageMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesStorageMapper.swift; sourceTree = "<group>"; };
 		534179E8256816D600EB2D11 /* CountriesCacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesCacheStorage.swift; sourceTree = "<group>"; };
-		534BC29C256D06EC002F0F0F /* RealmCachedCitiesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCachedCitiesStorage.swift; sourceTree = "<group>"; };
+		534BC29C256D06EC002F0F0F /* RealmCountriesCacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCountriesCacheStorage.swift; sourceTree = "<group>"; };
 		534BC2AA256D09A1002F0F0F /* ResourceCacheCacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCacheCacher.swift; sourceTree = "<group>"; };
 		534BC2B2256D0B63002F0F0F /* ResourceCacherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCacherTests.swift; sourceTree = "<group>"; };
 		5361E5DE25685D5700731693 /* CountriesCachePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesCachePolicy.swift; sourceTree = "<group>"; };
@@ -377,7 +377,7 @@
 			isa = PBXGroup;
 			children = (
 				532988AE2568327300813C7A /* RealmCountryCache.swift */,
-				534BC29C256D06EC002F0F0F /* RealmCachedCitiesStorage.swift */,
+				534BC29C256D06EC002F0F0F /* RealmCountriesCacheStorage.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -1078,7 +1078,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				534BC29D256D06EC002F0F0F /* RealmCachedCitiesStorage.swift in Sources */,
+				534BC29D256D06EC002F0F0F /* RealmCountriesCacheStorage.swift in Sources */,
 				534178D42568011A00EB2D11 /* ResourceResultsMapper.swift in Sources */,
 				534178E62568015100EB2D11 /* CityMapper.swift in Sources */,
 				53C0478D25684A290026F0FB /* ResourceCache.swift in Sources */,
