@@ -7,17 +7,16 @@
 
 import Foundation
 
-public class ResourceCacheLoader<Resource, ResourceStorage> where ResourceStorage: Storage {
+public class ResourceCacheLoader<Resource> {
   public typealias ResourceCacheStorage = (
     load: (() -> [ResourceCache<Resource>]),
-    remove: ((_ id: Int) throws -> Void)
+    remove: ((ResourceCache<Resource>) throws -> Void)
   )
   
   let storage: ResourceCacheStorage
   let date: () -> Date
   let policy: (_ timeStamp: TimeInterval) -> Bool
   
-  public typealias CacheCompletion = (Swift.Result<Void, Error>) -> Void
   enum ResourceCacheError: Swift.Error {
     case storage
     case cacheExpired
@@ -29,8 +28,6 @@ public class ResourceCacheLoader<Resource, ResourceStorage> where ResourceStorag
     self.policy = policy
   }
   
-  public func cache(resource: Resource) throws where ResourceStorage.StorageObject == ResourceCache<Resource> { }
-  
   public func load() -> Resource? {
     let cacheLoad = storage.load().first
     switch cacheLoad {
@@ -38,7 +35,7 @@ public class ResourceCacheLoader<Resource, ResourceStorage> where ResourceStorag
       return cache.resource
       
     case let .some(cache):
-      try? storage.remove(cache.id)
+      try? storage.remove(cache)
       return nil
       
     case .none:

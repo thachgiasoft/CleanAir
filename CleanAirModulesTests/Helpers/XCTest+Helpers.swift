@@ -13,7 +13,7 @@ extension XCTest {
   typealias AnyType = String
   typealias AnyTypeCache = ResourceCache<AnyType>
   typealias AnyTypeStore = ResourceStorage
-  typealias AnyTypeCacher = ResourceCacheLoader<AnyType, AnyTypeStore>
+  typealias AnyTypeCacher = ResourceCacheLoader<AnyType>
   
   var anyResource: String { UUID().uuidString }
   

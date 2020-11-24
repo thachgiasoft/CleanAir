@@ -19,7 +19,7 @@ class ResourceCacheLoaderTests: XCTestCase {
   func test_init_has_zeroSideEffects_onInjectedData() {
     let date = Date()
     let store = AnyTypeStore()
-    let sut = ResourceCacheLoader<AnyType, AnyTypeStore>(
+    let sut = ResourceCacheLoader<AnyType>(
       storage: (
         store.load,
         store.remove
@@ -30,36 +30,27 @@ class ResourceCacheLoaderTests: XCTestCase {
     XCTAssertEqual(date, sut.date())
   }
   
-  func test_cache_insertsCacheIntoStore() throws {
-    let (sut, store) = makeSUT()
-    let resource = anyResource
-    XCTAssertEqual(store.cacheCalls, .zero)
-    try sut.cache(resource: resource)
-    XCTAssertEqual(store.cacheCalls, 1)
-    XCTAssertEqual(store.caches.first?.value.resource, resource)
-  }
-  
   func test_cache_loads_validCache() throws {
-    let (sut, _) = makeSUT(policy: { _ in true })
-    try sut.cache(resource: anyResource)
+    let (sut, store) = makeSUT(policy: { _ in true })
+    try store.store(ResourceCache(id: 1, resource: anyResource))
     XCTAssertNotNil(sut.load())
   }
   
   func test_laod_deliversNil_onExpiredCache() throws {
     let (sut, store) = makeSUT(policy: { _ in false })
-    let resource = anyResource
     XCTAssertEqual(store.cacheCalls, .zero)
-    try sut.cache(resource: resource)
+    try store.store(ResourceCache(id: 1, resource: anyResource))
     XCTAssertNil(sut.load())
   }
-  
+
   func test_laod_removes_expiredCache() throws {
     let (sut, store) = makeSUT(policy: { _ in false })
     let resource = anyResource
     XCTAssertEqual(store.cacheCalls, .zero)
-    try sut.cache(resource: resource)
+    XCTAssertEqual(store.cacheRemoveCalls, .zero)
+    try store.store(ResourceCache(id: 1, resource: resource))
     _ = sut.load()
-    XCTAssertTrue(store.caches.isEmpty)
+    XCTAssertEqual(store.cacheRemoveCalls, 1)
   }
   
   func test_laod_deliversNil_onEmptyCache() {
@@ -75,15 +66,12 @@ private extension ResourceCacheLoaderTests {
   typealias AnyType = String
   typealias AnyTypeCache = ResourceCache<AnyType>
   typealias AnyTypeStore = ResourceStorage
-  typealias AnyTypeCacher = ResourceCacheLoader<AnyType, AnyTypeStore>
+  typealias AnyTypeCacher = ResourceCacheLoader<AnyType>
   
   func makeSUT(date: @escaping () -> Date = Date.init, policy: @escaping (Double) -> Bool = { _ in true }) -> (AnyTypeCacher, AnyTypeStore)  {
     let store = AnyTypeStore()
-    let cacher = ResourceCacheLoader<AnyType, AnyTypeStore>(
-      storage: (
-        store.load,
-        store.remove
-      ),
+    let cacher = ResourceCacheLoader<AnyType>(
+      storage: (store.load, store.remove),
       date: date,
       policy: policy
     )
