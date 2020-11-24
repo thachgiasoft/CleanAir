@@ -20,7 +20,10 @@ class ResourceCacheLoaderTests: XCTestCase {
     let date = Date()
     let store = AnyTypeStore()
     let sut = ResourceCacheLoader<AnyType, AnyTypeStore>(
-      storage: store,
+      storage: (
+        store.load,
+        store.remove
+      ),
       date: { date },
       policy: { _ in return true }
     )
@@ -77,7 +80,10 @@ private extension ResourceCacheLoaderTests {
   func makeSUT(date: @escaping () -> Date = Date.init, policy: @escaping (Double) -> Bool = { _ in true }) -> (AnyTypeCacher, AnyTypeStore)  {
     let store = AnyTypeStore()
     let cacher = ResourceCacheLoader<AnyType, AnyTypeStore>(
-      storage: store,
+      storage: (
+        store.load,
+        store.remove
+      ),
       date: date,
       policy: policy
     )

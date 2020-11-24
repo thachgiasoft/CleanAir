@@ -8,7 +8,12 @@
 import Foundation
 
 public class ResourceCacheLoader<Resource, ResourceStorage> where ResourceStorage: Storage {
-  let storage: ResourceStorage
+  public typealias ResourceCacheStorage = (
+    load: (() -> [ResourceCache<Resource>]),
+    remove: ((_ id: Int) throws -> Void)
+  )
+  
+  let storage: ResourceCacheStorage
   let date: () -> Date
   let policy: (_ timeStamp: TimeInterval) -> Bool
   
@@ -18,25 +23,22 @@ public class ResourceCacheLoader<Resource, ResourceStorage> where ResourceStorag
     case cacheExpired
   }
   
-  public init(storage: ResourceStorage, date: @escaping () -> Date, policy: @escaping (_ timeStamp: TimeInterval) -> Bool) {
+  public init(storage: ResourceCacheStorage, date: @escaping () -> Date, policy: @escaping (_ timeStamp: TimeInterval) -> Bool) {
     self.storage = storage
     self.date = date
     self.policy = policy
   }
   
-  public func cache(resource: Resource) throws where ResourceStorage.StorageObject == ResourceCache<Resource> {
-    let cache = ResourceCache(id: Int(date().timeIntervalSince1970), resource: resource)
-    try storage.store(cache)
-  }
+  public func cache(resource: Resource) throws where ResourceStorage.StorageObject == ResourceCache<Resource> { }
   
-  public func load() -> Resource? where ResourceStorage.StorageObject == ResourceCache<Resource> {
-    let cacheLoad = storage.load()?.first
+  public func load() -> Resource? {
+    let cacheLoad = storage.load().first
     switch cacheLoad {
     case let .some(cache) where policy(Double(cache.id)):
       return cache.resource
       
     case let .some(cache):
-      try? storage.remove(objectId: cache.id)
+      try? storage.remove(cache.id)
       return nil
       
     case .none:

@@ -34,6 +34,11 @@ extension XCTest {
       caches[object.id] = object
     }
     
+    func load() -> [AnyTypeCache] {
+      cacheLoadCalls += 1
+      return caches.map { $0.value }
+    }
+    
     func load() -> [AnyTypeCache]? {
       cacheLoadCalls += 1
       return caches.map { $0.value }
