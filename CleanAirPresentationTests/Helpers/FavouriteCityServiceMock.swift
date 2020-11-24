@@ -32,7 +32,7 @@ class FavouriteCityServiceMock: FavouriteCityService {
 }
 
 private class CityStorageMock: CityStorage {
-  func store(_ object: City, completion: @escaping (StoreResult) -> Void) {
+  func store(_ city: City)  throws {
     
   }
   
@@ -40,11 +40,11 @@ private class CityStorageMock: CityStorage {
     return nil
   }
   
-  func load(objectId: Any) -> City? {
+  func load(cityId: String) -> City? {
     return nil
   }
   
-  func remove(objectId: Any, completion: @escaping (RemoveResult) -> Void) {
+  func remove(cityId: String) throws {
     
   }
 }

@@ -1,5 +1,5 @@
 //
-//  LocalCity.swift
+//  RealmCity.swift
 //  CleanAirModules
 //
 //  Created by Marko Engelman on 20/11/2020.
@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-public class LocalCity: Object {
+public class RealmCity: Object {
   @objc dynamic var name: String = ""
   @objc dynamic var country: String = ""
   @objc dynamic var measurementsCount: Int = 0

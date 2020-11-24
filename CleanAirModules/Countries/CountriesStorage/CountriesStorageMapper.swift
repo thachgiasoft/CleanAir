@@ -12,12 +12,12 @@ public final class CountriesStorageMapper {
     case invalidCacheResult
   }
   
-  public static func map(_ models: [Country]) -> [LocalCountry] {
+  public static func map(_ models: [Country]) -> [RealmCountry] {
     return models.map(CountriesStorageMapper.map)
   }
   
-  public static func map(_ model: Country) -> LocalCountry {
-    let rlmModel = LocalCountry()
+  public static func map(_ model: Country) -> RealmCountry {
+    let rlmModel = RealmCountry()
     rlmModel.code = model.code
     rlmModel.name = model.name
     rlmModel.count = model.totalNumberOfMeasurements
@@ -26,7 +26,7 @@ public final class CountriesStorageMapper {
     return rlmModel
   }
   
-  public static func map(_ local: LocalCountry) -> Country {
+  public static func map(_ local: RealmCountry) -> Country {
     return Country(
       code: local.code,
       name: local.name,

@@ -8,12 +8,12 @@
 import Foundation
 
 public final class CitiesStorageMapper {
-  public static func map(_ models: [City]) -> [LocalCity] {
+  public static func map(_ models: [City]) -> [RealmCity] {
     return models.map(CitiesStorageMapper.map)
   }
   
-  public static func map(_ model: City) -> LocalCity {
-    let rlmModel = LocalCity()
+  public static func map(_ model: City) -> RealmCity {
+    let rlmModel = RealmCity()
     rlmModel.name = model.name
     rlmModel.country = model.country
     rlmModel.availableLocationsCount = model.availableLocationsCount
@@ -22,7 +22,7 @@ public final class CitiesStorageMapper {
     return rlmModel
   }
   
-  public static func map(_ local: LocalCity) -> City {
+  public static func map(_ local: RealmCity) -> City {
     return City(
       name: local.name,
       country: local.country,

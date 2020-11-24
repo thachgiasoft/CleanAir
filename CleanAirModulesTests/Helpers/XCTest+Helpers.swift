@@ -13,27 +13,30 @@ extension XCTest {
   typealias AnyType = String
   typealias AnyTypeCache = ResourceCache<AnyType>
   typealias AnyTypeStore = ResourceStorage
-  typealias AnyTypeCacher = ResourceCacher<AnyType, AnyTypeStore>
+  typealias AnyTypeCacher = ResourceCacheLoader<AnyType>
   
   var anyResource: String { UUID().uuidString }
   
-  class ResourceStorage: Storage {
+  class ResourceStorage {
     var caches: [Int: AnyTypeCache] = [:]
     var cacheLoadCalls: Int = 0
     var cacheRemoveCalls: Int = 0
     var cacheCalls: Int { caches.count }
     
-    func remove(objectId: Any, completion: @escaping (RemoveResult) -> Void) {
+    func remove(objectId: Any) throws {
       if let id = objectId as? Int {
         caches.removeValue(forKey: id)
       }
-      completion(.success(()))
       cacheRemoveCalls += 1
     }
     
-    func store(_ object: AnyTypeCache, completion: @escaping (StoreResult) -> Void) {
+    func store(_ object: AnyTypeCache) throws {
       caches[object.id] = object
-      completion(.success(()))
+    }
+    
+    func load() -> [AnyTypeCache] {
+      cacheLoadCalls += 1
+      return caches.map { $0.value }
     }
     
     func load() -> [AnyTypeCache]? {
@@ -63,10 +66,10 @@ extension XCTest {
     )
   }
   
-  func anyLocalCity(isFavourite: Bool = true) -> LocalCity {
+  func anyLocalCity(isFavourite: Bool = true) -> RealmCity {
     let name = UUID().uuidString
     let country = UUID().uuidString
-    let city = LocalCity()
+    let city = RealmCity()
     city.name = name
     city.country = country
     city.availableLocationsCount = 2

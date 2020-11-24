@@ -37,12 +37,12 @@ class CitiesLoaderWithStorageValidationTests: XCTestCase {
     XCTAssertEqual(store.removeCalls, .zero)
   }
   
-  func test_load_updatesWithLocalData_onLoaderSuccess() {
+  func test_load_updatesWithLocalData_onLoaderSuccess() throws {
     let (sut, loader, store) = makeSUT()
     let exp = expectation(description: "Waiting for deliver")
     
     let localIsFavourite = true
-    store.store(anyCity(isFavourite: localIsFavourite), completion: { _ in })
+    try store.store(anyCity(isFavourite: localIsFavourite))
 
     var loadedCity: City!
     sut.load { result in
@@ -90,7 +90,7 @@ private extension CitiesLoaderWithStorageValidationTests {
     var loadCalls: Int = 0
     var getAllCalls: Int = 0
     
-    func store(_ object: City, completion: @escaping (StoreResult) -> Void) {
+    func store(_ object: City) throws {
       storeCalls += 1
       stored = object
     }
@@ -100,14 +100,13 @@ private extension CitiesLoaderWithStorageValidationTests {
       return [stored].compactMap { $0 }
     }
     
-    func load(objectId: Any) -> City? {
+    func load(cityId: String) -> City? {
       loadCalls += 1
       return stored
     }
     
-    func remove(objectId: Any, completion: @escaping (RemoveResult) -> Void) {
+    func remove(cityId: String) throws {
       removeCalls += 1
-      completion(.success(()))
     }
   }
 }

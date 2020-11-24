@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-public class LocalCountry: Object {
+public class RealmCountry: Object {
   @objc dynamic var code: String = ""
   @objc dynamic var name: String = ""
   @objc dynamic var count: Int = 0

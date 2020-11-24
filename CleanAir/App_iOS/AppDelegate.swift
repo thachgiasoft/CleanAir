@@ -21,17 +21,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       mapper: ResourceResultsMapper(CountryMapper.map).map
     )
     
+    let storage = RealmStorage(realm: { try! Realm() })
+    
+    let cacher = ResourceCacheCacher(
+      storage: (storage.store),
+      date: Date.init
+    )
+    
+    let cacheLoader = ResourceCacheLoader(
+      storage: (load: storage.load, remove: storage.remove),
+      date: Date.init,
+      policy: CountriesCachePolicy.validate
+    )
+    
     let loaderWithCaching = CountriesLoaderWithCaching(
       loader: loader,
-      cacher: ResourceCacher(
-        storage: RealmStorage(
-          realm: { try! Realm() },
-          storeMapper: CountriesCasheMapper.map,
-          objectMapper: CountriesCasheMapper.map
-        ),
-        date: Date.init,
-        policy: CountriesCachePolicy.validate
-      )
+      cacheLoader: cacheLoader,
+      cacheCacher: cacher
     )
     
     window?.rootViewController = CountriesUIComposer.makeView(with: loaderWithCaching, selection: { [weak self] in self?.showCities(for: $0) })
@@ -52,19 +58,11 @@ private extension AppDelegate {
     
     let loaderWithValidation = CitiesLoaderWithStorageValidation(
       loader: loader,
-      storage: RealmStorage(
-        realm: { try! Realm() },
-        storeMapper: CitiesStorageMapper.map,
-        objectMapper:  CitiesStorageMapper.map
-      )
+      storage: RealmStorage(realm: { try! Realm() })
     )
     
     let service = FavouriteCityService(
-      storage: RealmStorage(
-        realm: { try! Realm() },
-        storeMapper: CitiesStorageMapper.map,
-        objectMapper:  CitiesStorageMapper.map
-      )
+      storage: RealmStorage(realm: { try! Realm() })
     )
 
     let controller = CitiesUIComposer.makeView(with: loaderWithValidation, service: service, selection: { _ in })
