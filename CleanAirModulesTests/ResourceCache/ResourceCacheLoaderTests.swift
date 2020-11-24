@@ -8,7 +8,7 @@
 import XCTest
 @testable import CleanAirModules
 
-class ResourceCacherTests: XCTestCase {
+class ResourceCacheLoaderTests: XCTestCase {
   func test_init_has_zeroSideEffects_onStore() {
     let (_, store) = makeSUT()
     XCTAssertEqual(store.cacheCalls, .zero)
@@ -68,7 +68,7 @@ class ResourceCacherTests: XCTestCase {
 }
 
 // MARK: - Private
-private extension ResourceCacherTests {
+private extension ResourceCacheLoaderTests {
   typealias AnyType = String
   typealias AnyTypeCache = ResourceCache<AnyType>
   typealias AnyTypeStore = ResourceStorage
