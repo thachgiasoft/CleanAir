@@ -7,4 +7,4 @@
 
 import Foundation
 
-extension RealmStorage: CityStorage where LocalObject == City, RealmObject == LocalCity { }
+extension RealmStorage: CityStorage where LocalObject == City, RealmObject == RealmCity { }

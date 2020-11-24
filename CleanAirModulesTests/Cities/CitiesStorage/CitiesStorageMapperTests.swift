@@ -33,7 +33,7 @@ class CitiesStorageMapperTests: XCTestCase {
 
 // MARK: - Private
 private extension CitiesStorageMapperTests {
-  func expect(city: City, equalTo localCity: LocalCity) {
+  func expect(city: City, equalTo localCity: RealmCity) {
     XCTAssertEqual(city.id, localCity.name)
     XCTAssertEqual(city.name, localCity.name)
     XCTAssertEqual(city.country, localCity.country)

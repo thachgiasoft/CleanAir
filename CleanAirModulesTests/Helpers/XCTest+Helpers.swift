@@ -61,10 +61,10 @@ extension XCTest {
     )
   }
   
-  func anyLocalCity(isFavourite: Bool = true) -> LocalCity {
+  func anyLocalCity(isFavourite: Bool = true) -> RealmCity {
     let name = UUID().uuidString
     let country = UUID().uuidString
-    let city = LocalCity()
+    let city = RealmCity()
     city.name = name
     city.country = country
     city.availableLocationsCount = 2
