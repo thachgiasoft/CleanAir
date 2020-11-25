@@ -14,13 +14,14 @@ public class FavouriteCityService {
     self.storage = storage
   }
   
-  public func toggl(for city: City, completion: @escaping (Swift.Result<City, Error>) -> Void) {
+  public func toggl(for city: City) throws -> City {
     let isFavourite = !city.isFavourite
     let updatedCity = City(name: city.name, country: city.country, measurementsCount: city.measurementsCount, availableLocationsCount: city.availableLocationsCount, isFavourite: isFavourite)
     
     isFavourite
-      ? try? storage.store(updatedCity)
-      : try? storage.remove(cityId: city.id)
-    completion(.success(updatedCity))
+      ? try storage.store(updatedCity)
+      : try storage.remove(cityId: city.id)
+    
+    return updatedCity
   }
 }
