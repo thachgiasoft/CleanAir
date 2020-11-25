@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     window = UIWindow(frame: UIScreen.main.bounds)
     let loader = ResourceLoader(
-      client: URLSessionHTTPClient(session: .shared),
+      client: Self.makeHTTPClient(),
       url: APIURL.countries,
       mapper: ResourceResultsMapper(CountryMapper.map).map
     )
@@ -51,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 private extension AppDelegate {
   func showCities(for country: Country) {
     let loader = ResourceLoader(
-      client: URLSessionHTTPClient(session: .shared),
+      client: Self.makeHTTPClient(),
       url: APIURL.cities(for: country.code),
       mapper: ResourceResultsMapper(CityMapper.map).map
     )
@@ -67,6 +67,11 @@ private extension AppDelegate {
 
     let controller = CitiesUIComposer.makeView(with: loaderWithValidation, service: service, selection: { _ in })
     rootController?.show(controller, sender: self)
+  }
+  
+  static func makeHTTPClient() -> HTTPClient {
+    let client = URLSessionHTTPClient(session: .shared)
+    return HTTPClientLogger(client: client)
   }
 }
 
