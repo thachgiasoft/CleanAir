@@ -33,7 +33,12 @@ private extension CityMapperTests {
   func anyRemoveCity() -> RemoteCity {
     let name = UUID().uuidString
     let country = UUID().uuidString
-    let city = RemoteCity(name: name, country: country, count: 1, locations: 2)
+    let city = RemoteCity(
+      name: name,
+      country: country,
+      count: Int.random(in: 0...9999),
+      locations: Int.random(in: 0...9999)
+    )
     return city
   }
 }
