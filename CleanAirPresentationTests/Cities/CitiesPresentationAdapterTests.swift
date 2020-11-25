@@ -15,26 +15,12 @@ class CitiesPresentationAdapterTests: XCTestCase {
     XCTAssertEqual(service.callCount, 0)
   }
   
-  func test_toggle_triggersService() {
-    let (sut, _, service) = makeSUT(city: anyCity())
-    sut.toggleFavourite()
-    XCTAssertEqual(service.callCount, 1)
-    sut.toggleFavourite()
-    XCTAssertEqual(service.callCount, 2)
-  }
-  
-  func test_toggle_triggersPresenter() {
-    let (sut, presenter, _) = makeSUT(city: anyCity())
-    sut.toggleFavourite()
-    XCTAssertEqual(presenter.didStartLoadingCount, 1)
-  }
-  
   func test_toggle_onSuccess_deliversResourceToPresenter() {
     let city = anyCity()
     let (sut, presenter, service) = makeSUT(city: city)
     
     expect(sut: sut, presenter: presenter, toComplete: .success(city), when: {
-      service.complete(at: 1, with: .success(city))
+      service.complete(at: 1, with: city)
     })
   }
   
@@ -42,7 +28,7 @@ class CitiesPresentationAdapterTests: XCTestCase {
     let (sut, presenter, service) = makeSUT(city: anyCity())
     let error = NSError(domain: "1", code: 1, userInfo: [:])
     expect(sut: sut, presenter: presenter, toComplete: .failure(error), when: {
-      service.complete(at: 1, with: .failure(error))
+      service.complete(at: 1, with: error)
     })
   }
 }
@@ -66,8 +52,9 @@ private extension CitiesPresentationAdapterTests {
   func expect(sut: Adapter, presenter: Presenter, toComplete result: Swift.Result<City, Error>, when: () -> Void) {
     let exp = expectation(description: "Waiting for deliver completion")
     
-    sut.toggleFavourite()
     when()
+    
+    sut.toggleFavourite()
     
     DispatchQueue.main.async {
       switch result {
