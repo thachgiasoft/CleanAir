@@ -45,7 +45,6 @@ class ResourceCacheLoaderTests: XCTestCase {
 
   func test_laod_removes_expiredCache() throws {
     let (sut, store) = makeSUT(policy: { _ in false })
-    let resource = anyResource
     XCTAssertEqual(store.cacheCalls, .zero)
     XCTAssertEqual(store.cacheRemoveCalls, .zero)
     try store.store(anyCache())
