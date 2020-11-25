@@ -26,6 +26,24 @@ class CleanAirEndToEndTests: XCTestCase {
     wait(for: [exp], timeout: 10)
     XCTAssertNoThrow(try result?.get(), "Expected countries, got error instead")
   }
+  
+  func test_city_endpoint_delivers_cities() throws {
+    let loader = ResourceLoader(
+      client: makeClient(),
+      url: APIURL.cities(),
+      mapper: ResourceResultsMapper(CityMapper.map).map
+    )
+    
+    let exp = expectation(description: "Waiting for cities")
+    var result: Swift.Result<[City], Error>?
+    loader.load { loadedResult in
+      result = loadedResult
+      exp.fulfill()
+    }
+    
+    wait(for: [exp], timeout: 10)
+    XCTAssertNoThrow(try result?.get(), "Expected cities, got error instead")
+  }
 }
 
 // MARK: - Private
