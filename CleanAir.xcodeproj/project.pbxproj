@@ -27,6 +27,7 @@
 		532988AF2568327300813C7A /* RealmCountryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532988AE2568327300813C7A /* RealmCountryCache.swift */; };
 		532EAA17256D90CA00CD174C /* CleanAirEndToEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532EAA16256D90CA00CD174C /* CleanAirEndToEndTests.swift */; };
 		532EAA19256D90CA00CD174C /* CleanAirModules.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 534178B52567FFCB00EB2D11 /* CleanAirModules.framework */; };
+		53385180256E6A8F0057C8F1 /* HTTPClientLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5338517F256E6A8F0057C8F1 /* HTTPClientLogger.swift */; };
 		534177482567314300EB2D11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177472567314300EB2D11 /* ViewController.swift */; };
 		5341774D2567314400EB2D11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5341774C2567314400EB2D11 /* Assets.xcassets */; };
 		534177502567314400EB2D11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5341774E2567314400EB2D11 /* LaunchScreen.storyboard */; };
@@ -185,6 +186,7 @@
 		532EAA14256D90CA00CD174C /* CleanAirEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanAirEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		532EAA16256D90CA00CD174C /* CleanAirEndToEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanAirEndToEndTests.swift; sourceTree = "<group>"; };
 		532EAA18256D90CA00CD174C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5338517F256E6A8F0057C8F1 /* HTTPClientLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientLogger.swift; sourceTree = "<group>"; };
 		534177402567314300EB2D11 /* CleanAir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanAir.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		534177472567314300EB2D11 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5341774C2567314400EB2D11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -547,6 +549,7 @@
 			isa = PBXGroup;
 			children = (
 				534177CA2567449900EB2D11 /* WeakRef.swift */,
+				5338517F256E6A8F0057C8F1 /* HTTPClientLogger.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1121,6 +1124,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53385180256E6A8F0057C8F1 /* HTTPClientLogger.swift in Sources */,
 				5318225025690D0400731A3E /* CityViewModelMapper.swift in Sources */,
 				534177482567314300EB2D11 /* ViewController.swift in Sources */,
 				534178262567EA3100EB2D11 /* CitiesListViewViewModel.swift in Sources */,
