@@ -90,9 +90,9 @@ extension XCTest {
     )
   }
   
-  func anyCountriesCache() -> ResourceCache<[Country]> {
+  func anyCountriesCache(timeStamp: Int = Int.random(in: 0...99999)) -> ResourceCache<[Country]> {
     let county = anyCountry()
-    return ResourceCache(id: Int.random(in: 0...99999), resource: [county])
+    return ResourceCache(id: timeStamp, resource: [county])
   }
   
   func anyLocalCountry() -> RealmCountry {
