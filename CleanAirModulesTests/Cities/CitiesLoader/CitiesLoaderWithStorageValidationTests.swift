@@ -82,31 +82,4 @@ private extension CitiesLoaderWithStorageValidationTests {
       completion?(.failure(NSError(domain: "", code: 1, userInfo: [:])))
     }
   }
-  
-  class CityStorageMock: CityStorage {
-    var stored: City?
-    var removeCalls: Int = 0
-    var storeCalls: Int = 0
-    var loadCalls: Int = 0
-    var getAllCalls: Int = 0
-    
-    func store(_ object: City) throws {
-      storeCalls += 1
-      stored = object
-    }
-    
-    func load() -> [City]? {
-      getAllCalls += 1
-      return [stored].compactMap { $0 }
-    }
-    
-    func load(cityId: String) -> City? {
-      loadCalls += 1
-      return stored
-    }
-    
-    func remove(cityId: String) throws {
-      removeCalls += 1
-    }
-  }
 }
