@@ -410,9 +410,17 @@
 		533851C6256E93F60057C8F1 /* Countries */ = {
 			isa = PBXGroup;
 			children = (
-				533851C0256E93F30057C8F1 /* RealmCuntriesCacheStorageTests.swift */,
+				533851D3256E95420057C8F1 /* CountriesCacheStorage */,
 			);
 			path = Countries;
+			sourceTree = "<group>";
+		};
+		533851D3256E95420057C8F1 /* CountriesCacheStorage */ = {
+			isa = PBXGroup;
+			children = (
+				533851C0256E93F30057C8F1 /* RealmCuntriesCacheStorageTests.swift */,
+			);
+			path = CountriesCacheStorage;
 			sourceTree = "<group>";
 		};
 		5339BBCB256C640E00F2BBD2 /* Realm */ = {
