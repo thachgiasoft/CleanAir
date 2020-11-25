@@ -18,7 +18,12 @@ public class ResourceCacheCacher<Resource> {
   }
   
   public func cache(resource: Resource) throws {
-    let cache = ResourceCache(id: Int(date().timeIntervalSince1970), resource: resource)
+    let timestamp = date()
+    let cache = ResourceCache(
+      id: Int(timestamp.timeIntervalSince1970),
+      timestamp: timestamp,
+      resource: resource
+    )
     try storage(cache)
   }
 }

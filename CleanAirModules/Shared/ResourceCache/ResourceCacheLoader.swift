@@ -15,14 +15,14 @@ public class ResourceCacheLoader<Resource> {
   
   let storage: ResourceCacheStorage
   let date: () -> Date
-  let policy: (_ timeStamp: TimeInterval) -> Bool
+  let policy: (_ timestamp: Date) -> Bool
   
   enum ResourceCacheError: Swift.Error {
     case storage
     case cacheExpired
   }
   
-  public init(storage: ResourceCacheStorage, date: @escaping () -> Date, policy: @escaping (_ timeStamp: TimeInterval) -> Bool) {
+  public init(storage: ResourceCacheStorage, date: @escaping () -> Date, policy: @escaping (_ timestamp: Date) -> Bool) {
     self.storage = storage
     self.date = date
     self.policy = policy
@@ -31,7 +31,7 @@ public class ResourceCacheLoader<Resource> {
   public func load() -> Resource? {
     let cacheLoad = storage.load().first
     switch cacheLoad {
-    case let .some(cache) where policy(Double(cache.id)):
+    case let .some(cache) where policy(cache.timestamp):
       return cache.resource
       
     case let .some(cache):

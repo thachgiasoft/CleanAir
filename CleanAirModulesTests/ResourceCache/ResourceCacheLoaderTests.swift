@@ -32,14 +32,14 @@ class ResourceCacheLoaderTests: XCTestCase {
   
   func test_cache_loads_validCache() throws {
     let (sut, store) = makeSUT(policy: { _ in true })
-    try store.store(ResourceCache(id: 1, resource: anyResource))
+    try store.store(anyCache())
     XCTAssertNotNil(sut.load())
   }
   
   func test_laod_deliversNil_onExpiredCache() throws {
     let (sut, store) = makeSUT(policy: { _ in false })
     XCTAssertEqual(store.cacheCalls, .zero)
-    try store.store(ResourceCache(id: 1, resource: anyResource))
+    try store.store(anyCache())
     XCTAssertNil(sut.load())
   }
 
@@ -48,7 +48,7 @@ class ResourceCacheLoaderTests: XCTestCase {
     let resource = anyResource
     XCTAssertEqual(store.cacheCalls, .zero)
     XCTAssertEqual(store.cacheRemoveCalls, .zero)
-    try store.store(ResourceCache(id: 1, resource: resource))
+    try store.store(anyCache())
     _ = sut.load()
     XCTAssertEqual(store.cacheRemoveCalls, 1)
   }
@@ -68,7 +68,7 @@ private extension ResourceCacheLoaderTests {
   typealias AnyTypeStore = ResourceStorage
   typealias AnyTypeCacher = ResourceCacheLoader<AnyType>
   
-  func makeSUT(date: @escaping () -> Date = Date.init, policy: @escaping (Double) -> Bool = { _ in true }) -> (AnyTypeCacher, AnyTypeStore)  {
+  func makeSUT(date: @escaping () -> Date = Date.init, policy: @escaping (Date) -> Bool = { _ in true }) -> (AnyTypeCacher, AnyTypeStore)  {
     let store = AnyTypeStore()
     let cacher = ResourceCacheLoader<AnyType>(
       storage: (store.load, store.remove),
@@ -76,5 +76,13 @@ private extension ResourceCacheLoaderTests {
       policy: policy
     )
     return (cacher, store)
+  }
+  
+  func anyCache() -> ResourceCache<AnyType> {
+    return ResourceCache(
+      id: 1,
+      timestamp: Date(),
+      resource: anyResource
+    )
   }
 }

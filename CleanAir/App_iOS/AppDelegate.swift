@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let cacheLoader = ResourceCacheLoader(
       storage: (load: storage.load, remove: storage.remove),
       date: Date.init,
-      policy: CountriesCachePolicy.validate
+      policy: { CountriesCachePolicy.validate(cacheTimeStamp: $0, against: Date()) }
     )
     
     let loaderWithCaching = CountriesLoaderWithCaching(

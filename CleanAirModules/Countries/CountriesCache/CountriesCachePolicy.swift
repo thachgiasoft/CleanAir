@@ -8,8 +8,9 @@
 import Foundation
 
 public final class CountriesCachePolicy {
-  public static func validate(cacheTimeStamp: TimeInterval) -> Bool {
-    let now = Date().timeIntervalSince1970
-    return now - cacheTimeStamp <= 60 * 60 * 24
+  static let validCacheDuration: TimeInterval = 60 * 60 * 24
+  
+  public static func validate(cacheTimeStamp: Date, against: Date) -> Bool {
+    return against.timeIntervalSince1970 - cacheTimeStamp.timeIntervalSince1970 <= validCacheDuration
   }
 }
