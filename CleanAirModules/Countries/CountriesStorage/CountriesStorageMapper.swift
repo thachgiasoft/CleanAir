@@ -8,14 +8,6 @@
 import Foundation
 
 public final class CountriesStorageMapper {
-  public enum CacheError: Swift.Error {
-    case invalidCacheResult
-  }
-  
-  public static func map(_ models: [Country]) -> [RealmCountry] {
-    return models.map(CountriesStorageMapper.map)
-  }
-  
   public static func map(_ model: Country) -> RealmCountry {
     let rlmModel = RealmCountry()
     rlmModel.code = model.code

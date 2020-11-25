@@ -85,6 +85,7 @@
 		53716AC1256924850032A245 /* CityListSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53716AC0256924850032A245 /* CityListSwiftUIView.swift */; };
 		53716AC525694B180032A245 /* CitiesLoaderWithStorageValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53716AC425694B180032A245 /* CitiesLoaderWithStorageValidation.swift */; };
 		5399EA87256AFEFB00084C20 /* ResourceCacheLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5399EA86256AFEFB00084C20 /* ResourceCacheLoaderTests.swift */; };
+		539BCA38256EB3C60012C93B /* CountriesMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539BCA37256EB3C60012C93B /* CountriesMapperTests.swift */; };
 		53A437EB256AE8A000C75DE1 /* ResourceLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A437EA256AE8A000C75DE1 /* ResourceLoaderTests.swift */; };
 		53B06BE7256EA52400F51249 /* CountriesCachePolicyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B06BE6256EA52400F51249 /* CountriesCachePolicyTests.swift */; };
 		53B06BFD256EACCB00F51249 /* FavouriteCityServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B06BFC256EACCB00F51249 /* FavouriteCityServiceTests.swift */; };
@@ -251,6 +252,7 @@
 		53716AC0256924850032A245 /* CityListSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListSwiftUIView.swift; sourceTree = "<group>"; };
 		53716AC425694B180032A245 /* CitiesLoaderWithStorageValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesLoaderWithStorageValidation.swift; sourceTree = "<group>"; };
 		5399EA86256AFEFB00084C20 /* ResourceCacheLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCacheLoaderTests.swift; sourceTree = "<group>"; };
+		539BCA37256EB3C60012C93B /* CountriesMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesMapperTests.swift; sourceTree = "<group>"; };
 		53A437EA256AE8A000C75DE1 /* ResourceLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoaderTests.swift; sourceTree = "<group>"; };
 		53B06BE6256EA52400F51249 /* CountriesCachePolicyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesCachePolicyTests.swift; sourceTree = "<group>"; };
 		53B06BFC256EACCB00F51249 /* FavouriteCityServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCityServiceTests.swift; sourceTree = "<group>"; };
@@ -434,6 +436,7 @@
 		533851EA256E99DE0057C8F1 /* CountriesLoader */ = {
 			isa = PBXGroup;
 			children = (
+				539BCA37256EB3C60012C93B /* CountriesMapperTests.swift */,
 				533851E4256E99D80057C8F1 /* CountriesLoaderWithCachingTests.swift */,
 				53B06BE6256EA52400F51249 /* CountriesCachePolicyTests.swift */,
 			);
@@ -1274,6 +1277,7 @@
 				53069426256BC77A0034FB33 /* CitiesStorageMapperTests.swift in Sources */,
 				5317B8A4256A866400FE6D4F /* ResourceResultsMapperTests.swift in Sources */,
 				53B06BFD256EACCB00F51249 /* FavouriteCityServiceTests.swift in Sources */,
+				539BCA38256EB3C60012C93B /* CountriesMapperTests.swift in Sources */,
 				53069448256BCD990034FB33 /* CitiesLoaderWithStorageValidationTests.swift in Sources */,
 				53BFC7682569C73E00630261 /* APITests.swift in Sources */,
 				5399EA87256AFEFB00084C20 /* ResourceCacheLoaderTests.swift in Sources */,
