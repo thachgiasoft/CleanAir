@@ -1287,6 +1287,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.markoengelman.cleanAir.CleanAirEndToEndTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1307,6 +1308,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.markoengelman.cleanAir.CleanAirEndToEndTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
