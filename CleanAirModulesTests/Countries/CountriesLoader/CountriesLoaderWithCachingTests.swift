@@ -68,7 +68,7 @@ class CountriesLoaderWithCachingTests: XCTestCase {
 // MARK: - Private
 private extension CountriesLoaderWithCachingTests {
   func makeSUT(date: @escaping (() -> Date) = Date.init,
-               policy: @escaping ((_ : TimeInterval) -> Bool) = { _ in true }
+               policy: @escaping ((_ : Date) -> Bool) = { _ in true }
   ) -> (CountriesLoaderWithCaching, CountriesLoaderMock, CountriesCacheStorageMock) {
     let loader = CountriesLoaderMock()
     let storage = CountriesCacheStorageMock()
