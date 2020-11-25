@@ -11,3 +11,10 @@ public struct ResourceCache<Resource> {
   public let id: Int
   public let resource: Resource
 }
+
+// MARK: - Equatable
+extension ResourceCache: Equatable {
+  public static func == (lhs: ResourceCache<Resource>, rhs: ResourceCache<Resource>) -> Bool {
+    return lhs.id == rhs.id
+  }
+}

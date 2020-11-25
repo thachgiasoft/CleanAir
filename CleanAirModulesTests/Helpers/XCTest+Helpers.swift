@@ -60,8 +60,8 @@ extension XCTest {
     return City(
       name: name,
       country: country,
-      measurementsCount: 1,
-      availableLocationsCount: 1,
+      measurementsCount: Int.random(in: 0...99999),
+      availableLocationsCount: Int.random(in: 0...99999),
       isFavourite: isFavourite
     )
   }
@@ -72,9 +72,36 @@ extension XCTest {
     let city = RealmCity()
     city.name = name
     city.country = country
-    city.availableLocationsCount = 2
-    city.measurementsCount = 2
+    city.availableLocationsCount = Int.random(in: 0...99999)
+    city.measurementsCount = Int.random(in: 0...99999)
     city.isFavourite = isFavourite
     return city
+  }
+  
+  func anyCountry() -> Country {
+    let code = UUID().uuidString
+    let name = UUID().uuidString
+    return Country(
+      code: code,
+      name: name,
+      totalNumberOfMeasurements: Int.random(in: 0...99999),
+      numberOfMeasuredCities: Int.random(in: 0...99999),
+      numberOfMeasuringLocations: Int.random(in: 0...99999)
+    )
+  }
+  
+  func anyCountriesCache() -> ResourceCache<[Country]> {
+    let county = anyCountry()
+    return ResourceCache(id: Int.random(in: 0...99999), resource: [county])
+  }
+  
+  func anyLocalCountry() -> RealmCountry {
+    let realmCounty = RealmCountry()
+    realmCounty.code = UUID().uuidString
+    realmCounty.name = UUID().uuidString
+    realmCounty.count = Int.random(in: 0...99999)
+    realmCounty.locations = Int.random(in: 0...99999)
+    realmCounty.cities = Int.random(in: 0...99999)
+    return realmCounty
   }
 }
