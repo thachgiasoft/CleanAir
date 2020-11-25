@@ -25,6 +25,8 @@
 		532988A025681CB000813C7A /* CountriesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177C42567428C00EB2D11 /* CountriesLoader.swift */; };
 		532988A92568206100813C7A /* CountriesLoaderWithCaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532988A82568206100813C7A /* CountriesLoaderWithCaching.swift */; };
 		532988AF2568327300813C7A /* RealmCountryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532988AE2568327300813C7A /* RealmCountryCache.swift */; };
+		532EAA17256D90CA00CD174C /* CleanAirEndToEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532EAA16256D90CA00CD174C /* CleanAirEndToEndTests.swift */; };
+		532EAA19256D90CA00CD174C /* CleanAirModules.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 534178B52567FFCB00EB2D11 /* CleanAirModules.framework */; };
 		534177482567314300EB2D11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177472567314300EB2D11 /* ViewController.swift */; };
 		5341774D2567314400EB2D11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5341774C2567314400EB2D11 /* Assets.xcassets */; };
 		534177502567314400EB2D11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5341774E2567314400EB2D11 /* LaunchScreen.storyboard */; };
@@ -95,6 +97,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		5329888025681A8200813C7A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 534177382567314300EB2D11 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 534178B42567FFCB00EB2D11;
+			remoteInfo = CleanAirModules;
+		};
+		532EAA1A256D90CA00CD174C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 534177382567314300EB2D11 /* Project object */;
 			proxyType = 1;
@@ -173,6 +182,9 @@
 		531E451A25687DF900388852 /* FavouriteCityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCityService.swift; sourceTree = "<group>"; };
 		532988A82568206100813C7A /* CountriesLoaderWithCaching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesLoaderWithCaching.swift; sourceTree = "<group>"; };
 		532988AE2568327300813C7A /* RealmCountryCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCountryCache.swift; sourceTree = "<group>"; };
+		532EAA14256D90CA00CD174C /* CleanAirEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanAirEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		532EAA16256D90CA00CD174C /* CleanAirEndToEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanAirEndToEndTests.swift; sourceTree = "<group>"; };
+		532EAA18256D90CA00CD174C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		534177402567314300EB2D11 /* CleanAir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanAir.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		534177472567314300EB2D11 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5341774C2567314400EB2D11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -245,6 +257,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		532EAA11256D90CA00CD174C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				532EAA19256D90CA00CD174C /* CleanAirModules.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5341773D2567314300EB2D11 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -371,6 +391,15 @@
 			path = FavouriteCityService;
 			sourceTree = "<group>";
 		};
+		532EAA15256D90CA00CD174C /* CleanAirEndToEndTests */ = {
+			isa = PBXGroup;
+			children = (
+				532EAA16256D90CA00CD174C /* CleanAirEndToEndTests.swift */,
+				532EAA18256D90CA00CD174C /* Info.plist */,
+			);
+			path = CleanAirEndToEndTests;
+			sourceTree = "<group>";
+		};
 		5339BBCB256C640E00F2BBD2 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
@@ -396,6 +425,7 @@
 				534177422567314300EB2D11 /* CleanAir */,
 				53BFC7662569C73E00630261 /* CleanAirModulesTests */,
 				53714CC82569758A00109B16 /* CleanAirPresentationTests */,
+				532EAA15256D90CA00CD174C /* CleanAirEndToEndTests */,
 				534177412567314300EB2D11 /* Products */,
 				534178FA256801CB00EB2D11 /* Frameworks */,
 			);
@@ -412,6 +442,7 @@
 				53417906256802E000EB2D11 /* CleanAirPresentation.framework */,
 				53714CC72569758A00109B16 /* CleanAirPresentationTests.xctest */,
 				53BFC7652569C73E00630261 /* CleanAirModulesTests.xctest */,
+				532EAA14256D90CA00CD174C /* CleanAirEndToEndTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -859,6 +890,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		532EAA13256D90CA00CD174C /* CleanAirEndToEndTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 532EAA1E256D90CA00CD174C /* Build configuration list for PBXNativeTarget "CleanAirEndToEndTests" */;
+			buildPhases = (
+				532EAA10256D90CA00CD174C /* Sources */,
+				532EAA11256D90CA00CD174C /* Frameworks */,
+				532EAA12256D90CA00CD174C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				532EAA1B256D90CA00CD174C /* PBXTargetDependency */,
+			);
+			name = CleanAirEndToEndTests;
+			productName = CleanAirEndToEndTests;
+			productReference = 532EAA14256D90CA00CD174C /* CleanAirEndToEndTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		5341773F2567314300EB2D11 /* CleanAir */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 534177542567314400EB2D11 /* Build configuration list for PBXNativeTarget "CleanAir" */;
@@ -966,6 +1015,9 @@
 				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1220;
 				TargetAttributes = {
+					532EAA13256D90CA00CD174C = {
+						CreatedOnToolsVersion = 12.2;
+					};
 					5341773F2567314300EB2D11 = {
 						CreatedOnToolsVersion = 12.2;
 					};
@@ -1004,11 +1056,19 @@
 				53417905256802E000EB2D11 /* CleanAirPresentation */,
 				53714CC62569758A00109B16 /* CleanAirPresentationTests */,
 				53BFC7642569C73E00630261 /* CleanAirModulesTests */,
+				532EAA13256D90CA00CD174C /* CleanAirEndToEndTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		532EAA12256D90CA00CD174C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5341773E2567314300EB2D11 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1049,6 +1109,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		532EAA10256D90CA00CD174C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				532EAA17256D90CA00CD174C /* CleanAirEndToEndTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5341773C2567314300EB2D11 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1164,6 +1232,11 @@
 			target = 534178B42567FFCB00EB2D11 /* CleanAirModules */;
 			targetProxy = 5329888025681A8200813C7A /* PBXContainerItemProxy */;
 		};
+		532EAA1B256D90CA00CD174C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 534178B42567FFCB00EB2D11 /* CleanAirModules */;
+			targetProxy = 532EAA1A256D90CA00CD174C /* PBXContainerItemProxy */;
+		};
 		534178FE256801CB00EB2D11 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 534178B42567FFCB00EB2D11 /* CleanAirModules */;
@@ -1198,6 +1271,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		532EAA1C256D90CA00CD174C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 54PNV7AZ7G;
+				INFOPLIST_FILE = CleanAirEndToEndTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.markoengelman.cleanAir.CleanAirEndToEndTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		532EAA1D256D90CA00CD174C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 54PNV7AZ7G;
+				INFOPLIST_FILE = CleanAirEndToEndTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.markoengelman.cleanAir.CleanAirEndToEndTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		534177522567314400EB2D11 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1567,6 +1682,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		532EAA1E256D90CA00CD174C /* Build configuration list for PBXNativeTarget "CleanAirEndToEndTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				532EAA1C256D90CA00CD174C /* Debug */,
+				532EAA1D256D90CA00CD174C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5341773B2567314300EB2D11 /* Build configuration list for PBXProject "CleanAir" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

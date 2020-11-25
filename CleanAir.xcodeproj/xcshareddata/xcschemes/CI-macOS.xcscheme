@@ -82,6 +82,16 @@
                ReferencedContainer = "container:CleanAir.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "532EAA13256D90CA00CD174C"
+               BuildableName = "CleanAirEndToEndTests.xctest"
+               BlueprintName = "CleanAirEndToEndTests"
+               ReferencedContainer = "container:CleanAir.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

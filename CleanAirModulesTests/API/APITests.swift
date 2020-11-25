@@ -12,5 +12,6 @@ class APITests: XCTestCase {
   func test_doesnt_crash() {
     _ = APIURL.countries
     _ = APIURL.cities(for: "anyCityName")
+    _ = APIURL.cities()
   }
 }

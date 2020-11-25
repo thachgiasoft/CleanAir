@@ -16,4 +16,8 @@ public struct APIURL {
   public static func cities(for country: String) -> URL {
     return URL(string: "\(base)/\(version)/cities?country=\(country)")!
   }
+  
+  public static func cities() -> URL {
+    return URL(string: "\(base)/\(version)/cities")!
+  }
 }
