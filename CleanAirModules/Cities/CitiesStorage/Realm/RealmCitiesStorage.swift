@@ -22,8 +22,7 @@ extension RealmStorage: CityStorage {
   }
   
   public func load(with request: CityStorageLoadRequest) -> [City] {
-    return find(object: RealmCity.self)
-      .map { CitiesStorageMapper.map($0) }
-      .filter { $0.isFavourite == request.isFavourite }
+    let filter = NSPredicate(format: "isFavourite == %d", request.isFavourite)
+    return find(object: RealmCity.self, filtered: filter).map { CitiesStorageMapper.map($0) }
   }
 }
