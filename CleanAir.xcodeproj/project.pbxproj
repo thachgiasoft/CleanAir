@@ -101,6 +101,7 @@
 		53C0478D25684A290026F0FB /* ResourceCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C0478C25684A290026F0FB /* ResourceCache.swift */; };
 		53C0B0C3256870F300D7A8F3 /* CountriesCacheMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C0B0C2256870F300D7A8F3 /* CountriesCacheMapper.swift */; };
 		53C4FF88256F060700716FAE /* CountriesComponentsComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C4FF87256F060700716FAE /* CountriesComponentsComposer.swift */; };
+		53C4FF92256F075D00716FAE /* CitiesComponentsComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C4FF91256F075D00716FAE /* CitiesComponentsComposer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -270,6 +271,7 @@
 		53C0478C25684A290026F0FB /* ResourceCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCache.swift; sourceTree = "<group>"; };
 		53C0B0C2256870F300D7A8F3 /* CountriesCacheMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesCacheMapper.swift; sourceTree = "<group>"; };
 		53C4FF87256F060700716FAE /* CountriesComponentsComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesComponentsComposer.swift; sourceTree = "<group>"; };
+		53C4FF91256F075D00716FAE /* CitiesComponentsComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesComponentsComposer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -585,6 +587,7 @@
 				534177CF256744F100EB2D11 /* CountriesUIComposer.swift */,
 				53C4FF87256F060700716FAE /* CountriesComponentsComposer.swift */,
 				5341782C2567EEC500EB2D11 /* CitiesUIComposer.swift */,
+				53C4FF91256F075D00716FAE /* CitiesComponentsComposer.swift */,
 			);
 			path = App_iOS;
 			sourceTree = "<group>";
@@ -1189,6 +1192,7 @@
 				534178142567E4CA00EB2D11 /* ResourceListSwiftUIViewAdapter.swift in Sources */,
 				534177FB2567D12400EB2D11 /* CountriesListViewViewModel.swift in Sources */,
 				5341782D2567EEC500EB2D11 /* CitiesUIComposer.swift in Sources */,
+				53C4FF92256F075D00716FAE /* CitiesComponentsComposer.swift in Sources */,
 				534177D0256744F100EB2D11 /* CountriesUIComposer.swift in Sources */,
 				534179342568056900EB2D11 /* CountriesListSwiftUIViewPreview.swift in Sources */,
 				5318224D25690BBF00731A3E /* CityViewModel.swift in Sources */,

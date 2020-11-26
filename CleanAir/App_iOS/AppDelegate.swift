@@ -14,8 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
   weak var rootController: UIViewController?
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    let loader = CountriesComponentsComposer.countriesLoader(client: Self.makeHTTPClient(), realm: { try! Realm() })
-    let controller = CountriesUIComposer.makeView(with: loader, selection: { [weak self] in self?.showCities(for: $0) })
+    let loader = CountriesComponentsComposer.countriesLoader(client: Self.makeHTTPClient(), realm: Self.makeRealm)
+    let controller = CountriesUIComposer.makeView(with: loader, selection: { [weak self] in self?.openCountry(country: $0) })
     let rootNavigationController = UINavigationController(rootViewController: controller)
     rootNavigationController.navigationBar.prefersLargeTitles = true
     
@@ -29,29 +29,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 // MARK: - Private
 private extension AppDelegate {
-  func showCities(for country: Country) {
-    let loader = ResourceLoader(
-      client: Self.makeHTTPClient(),
-      url: APIURL.cities(for: country.code),
-      mapper: ResourceResultsMapper(CityMapper.map).map
-    )
-    
-    let loaderWithValidation = CitiesLoaderWithStorageValidation(
-      loader: loader,
-      storage: RealmStorage(realm: { try! Realm() })
-    )
-    
-    let service = FavouriteCityService(
-      storage: RealmStorage(realm: { try! Realm() })
-    )
-
-    let controller = CitiesUIComposer.makeView(with: loaderWithValidation, service: service, selection: { _ in })
-    rootController?.show(controller, sender: self)
+  func openCountry(country: Country) {
+    rootController?.show(citiviesView(for: country), sender: self)
+  }
+  
+  func citiviesView(for country: Country) -> UIViewController {
+    let loader = CitiesComponentsComposer.countriesLoader(client: Self.makeHTTPClient(), realm: Self.makeRealm, countryCode: country.code)
+    let service = CitiesComponentsComposer.countriesFavouriteService(realm: Self.makeRealm)
+    let controller = CitiesUIComposer.makeView(with: loader, service: service, selection: { _ in })
+    return controller
   }
   
   static func makeHTTPClient() -> HTTPClient {
     let client = URLSessionHTTPClient(session: .shared)
     return HTTPClientLogger(client: client)
   }
+  
+  static func makeRealm() -> Realm {
+    return try! Realm()
+  }
 }
-extension ResourceLoader: CitiesLoader where Resource == [City] { }
