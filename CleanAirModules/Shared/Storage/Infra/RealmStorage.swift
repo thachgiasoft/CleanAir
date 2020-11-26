@@ -30,6 +30,11 @@ public class RealmStorage {
     return realm.object(ofType: T.self, forPrimaryKey: forId)
   }
   
+  func find<T: Object>(object: T.Type, filtered: NSPredicate) -> Results<T> {
+    let realm = realmIntializer()
+    return realm.objects(T.self).filter(filtered)
+  }
+  
   func insert<T: Object>(object: T, update: Realm.UpdatePolicy = .all) throws {
     let realm = self.realmIntializer()
     do {

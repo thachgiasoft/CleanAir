@@ -26,6 +26,15 @@ class RealmCitiesStorageTests: XCTestCase {
     XCTAssertNotNil(sut.load(cityId: city.id))
   }
   
+  func test_load_loads_requestsCities() throws {
+    let sut = makeSUT()
+    let favourite = true
+    let city = anyCity(isFavourite: favourite)
+    try sut.store(city)
+    let request = CityStorageLoadRequest(isFavourite: favourite)
+    XCTAssertFalse(sut.load(with: request).result.isEmpty)
+  }
+  
   func test_remove_removes_insertedCity() throws {
     let sut = makeSUT()
     let city = anyCity()
@@ -43,11 +52,7 @@ class RealmCitiesStorageTests: XCTestCase {
 // MARK: - Private
 private extension RealmCitiesStorageTests {
   func makeSUT() -> CityStorage {
-    let sut = RealmStorage(realm: { try! Realm(configuration: .defaultConfiguration) })
+    let sut = RealmStorage(realm: self.realm)
     return sut
-  }
-  
-  static func preapareForTesting() {
-    Realm.Configuration.defaultConfiguration.inMemoryIdentifier = UUID().uuidString
   }
 }

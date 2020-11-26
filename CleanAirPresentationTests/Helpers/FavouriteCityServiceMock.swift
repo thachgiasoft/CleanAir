@@ -36,16 +36,21 @@ class FavouriteCityServiceMock: FavouriteCityService {
 }
 
 private class CityStorageMock: CityStorage {
+  class CityStorageLoadRequestObserverMock: CityStorageLoadRequestObserver {
+    var inserted: (((insertionIndexes: [Int], updatedLoadResult: [City])) -> Void)?
+    var removed: (((removalIndexes: [Int], updatedLoadResult: [City])) -> Void)?
+  }
+  
   func store(_ city: City)  throws {
     
   }
   
-  func load() -> [City]? {
+  func load(cityId: String) -> City? {
     return nil
   }
   
-  func load(cityId: String) -> City? {
-    return nil
+  func load(with request: CityStorageLoadRequest) -> (result: [City], requestObserver: CityStorageLoadRequestObserver) {
+    return ([], CityStorageLoadRequestObserverMock())
   }
   
   func remove(cityId: String) throws {

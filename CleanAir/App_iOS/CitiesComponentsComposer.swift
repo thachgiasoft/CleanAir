@@ -19,7 +19,7 @@ final class CitiesComponentsComposer {
     
     let loaderWithValidation = CitiesLoaderWithStorageValidation(
       loader: loader,
-      storage: RealmStorage(realm: { try! Realm() })
+      storage: RealmStorage(realm: realm)
     )
     
     return loaderWithValidation

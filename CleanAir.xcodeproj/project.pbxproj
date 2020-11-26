@@ -100,8 +100,15 @@
 		53BFC79D2569C98C00630261 /* HTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BFC79C2569C98C00630261 /* HTTPClientTests.swift */; };
 		53C0478D25684A290026F0FB /* ResourceCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C0478C25684A290026F0FB /* ResourceCache.swift */; };
 		53C0B0C3256870F300D7A8F3 /* CountriesCacheMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C0B0C2256870F300D7A8F3 /* CountriesCacheMapper.swift */; };
+		53C40112256FE81A00716FAE /* CityStorageLoadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C40111256FE81A00716FAE /* CityStorageLoadRequest.swift */; };
+		53C40128256FE8BC00716FAE /* CityStorageLoadRequestObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C40127256FE8BC00716FAE /* CityStorageLoadRequestObserver.swift */; };
+		53C4012E256FE9C200716FAE /* RealmStorageResultObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C4012D256FE9C200716FAE /* RealmStorageResultObserver.swift */; };
+		53C40134256FF26600716FAE /* ResourceStorageResultObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C40133256FF26600716FAE /* ResourceStorageResultObserver.swift */; };
+		53C4015325701BE100716FAE /* RealmStorageResultObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C4015225701BE100716FAE /* RealmStorageResultObserverTests.swift */; };
+		53C4015925703A5100716FAE /* ResourceStorageResultObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C4015825703A5100716FAE /* ResourceStorageResultObserverTests.swift */; };
 		53C4FF88256F060700716FAE /* CountriesComponentsComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C4FF87256F060700716FAE /* CountriesComponentsComposer.swift */; };
 		53C4FF92256F075D00716FAE /* CitiesComponentsComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C4FF91256F075D00716FAE /* CitiesComponentsComposer.swift */; };
+		53E6729125703F6300523795 /* RealmStorageTests+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E6729025703F6300523795 /* RealmStorageTests+Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -270,8 +277,15 @@
 		53BFC79C2569C98C00630261 /* HTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientTests.swift; sourceTree = "<group>"; };
 		53C0478C25684A290026F0FB /* ResourceCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCache.swift; sourceTree = "<group>"; };
 		53C0B0C2256870F300D7A8F3 /* CountriesCacheMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesCacheMapper.swift; sourceTree = "<group>"; };
+		53C40111256FE81A00716FAE /* CityStorageLoadRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityStorageLoadRequest.swift; sourceTree = "<group>"; };
+		53C40127256FE8BC00716FAE /* CityStorageLoadRequestObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityStorageLoadRequestObserver.swift; sourceTree = "<group>"; };
+		53C4012D256FE9C200716FAE /* RealmStorageResultObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorageResultObserver.swift; sourceTree = "<group>"; };
+		53C40133256FF26600716FAE /* ResourceStorageResultObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceStorageResultObserver.swift; sourceTree = "<group>"; };
+		53C4015225701BE100716FAE /* RealmStorageResultObserverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorageResultObserverTests.swift; sourceTree = "<group>"; };
+		53C4015825703A5100716FAE /* ResourceStorageResultObserverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceStorageResultObserverTests.swift; sourceTree = "<group>"; };
 		53C4FF87256F060700716FAE /* CountriesComponentsComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesComponentsComposer.swift; sourceTree = "<group>"; };
 		53C4FF91256F075D00716FAE /* CitiesComponentsComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesComponentsComposer.swift; sourceTree = "<group>"; };
+		53E6729025703F6300523795 /* RealmStorageTests+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealmStorageTests+Helpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -359,6 +373,7 @@
 		5306945D256BCF400034FB33 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				53E6729025703F6300523795 /* RealmStorageTests+Helpers.swift */,
 				53069458256BCF300034FB33 /* XCTest+Helpers.swift */,
 			);
 			path = Helpers;
@@ -386,6 +401,8 @@
 			isa = PBXGroup;
 			children = (
 				531E451225687C5600388852 /* CitiesStorage.swift */,
+				53C40111256FE81A00716FAE /* CityStorageLoadRequest.swift */,
+				53C40127256FE8BC00716FAE /* CityStorageLoadRequestObserver.swift */,
 				531E451625687CB700388852 /* CitiesStorageMapper.swift */,
 				5319066D256C5A9D004E4624 /* Realm */,
 			);
@@ -396,6 +413,7 @@
 			isa = PBXGroup;
 			children = (
 				53417774256737F300EB2D11 /* City.swift */,
+				53716AC425694B180032A245 /* CitiesLoaderWithStorageValidation.swift */,
 				531E450825687BAE00388852 /* CitiesStorage */,
 				53417777256737FA00EB2D11 /* CitiesLoader */,
 				531E451D25687DFD00388852 /* FavouriteCityService */,
@@ -537,7 +555,6 @@
 			isa = PBXGroup;
 			children = (
 				534178292567EE2300EB2D11 /* CitiesLoader.swift */,
-				53716AC425694B180032A245 /* CitiesLoaderWithStorageValidation.swift */,
 				5341777C2567386A00EB2D11 /* CitiesAPI */,
 			);
 			path = CitiesLoader;
@@ -575,6 +592,7 @@
 				5341797425680A3A00EB2D11 /* Storage */,
 				5341776C2567354F00EB2D11 /* ResourceLoader */,
 				5341796D256809B300EB2D11 /* ResourceCache */,
+				53C40139256FF26900716FAE /* ResourceStorageLoadObserver */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -787,6 +805,7 @@
 			isa = PBXGroup;
 			children = (
 				5341798225680E1200EB2D11 /* RealmStorage.swift */,
+				53C4012D256FE9C200716FAE /* RealmStorageResultObserver.swift */,
 			);
 			path = Infra;
 			sourceTree = "<group>";
@@ -857,6 +876,7 @@
 			isa = PBXGroup;
 			children = (
 				53BE4B94256A589B00475FAE /* RealmStorageTests.swift */,
+				53C4015225701BE100716FAE /* RealmStorageResultObserverTests.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -894,6 +914,7 @@
 				53BE4B8D256A588600475FAE /* Storage */,
 				5317B8A8256A866900FE6D4F /* ResourceLoader */,
 				5399EA7C256AFEE100084C20 /* ResourceCache */,
+				53C4016625703A6400716FAE /* ResourceStorageLoadObserver */,
 				5306942A256BC77E0034FB33 /* Cities */,
 				533851C6256E93F60057C8F1 /* Countries */,
 				5306945D256BCF400034FB33 /* Helpers */,
@@ -927,6 +948,22 @@
 				5339BBCB256C640E00F2BBD2 /* Realm */,
 			);
 			path = CountriesCache;
+			sourceTree = "<group>";
+		};
+		53C40139256FF26900716FAE /* ResourceStorageLoadObserver */ = {
+			isa = PBXGroup;
+			children = (
+				53C40133256FF26600716FAE /* ResourceStorageResultObserver.swift */,
+			);
+			path = ResourceStorageLoadObserver;
+			sourceTree = "<group>";
+		};
+		53C4016625703A6400716FAE /* ResourceStorageLoadObserver */ = {
+			isa = PBXGroup;
+			children = (
+				53C4015825703A5100716FAE /* ResourceStorageResultObserverTests.swift */,
+			);
+			path = ResourceStorageLoadObserver;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1210,6 +1247,7 @@
 				534178E62568015100EB2D11 /* CityMapper.swift in Sources */,
 				53C0478D25684A290026F0FB /* ResourceCache.swift in Sources */,
 				534178F52568018D00EB2D11 /* CountryMapper.swift in Sources */,
+				53C40134256FF26600716FAE /* ResourceStorageResultObserver.swift in Sources */,
 				534178E32568014700EB2D11 /* CitiesLoader.swift in Sources */,
 				534178CA256800D900EB2D11 /* HTTPClient.swift in Sources */,
 				534179E9256816D600EB2D11 /* CountriesCacheStorage.swift in Sources */,
@@ -1218,8 +1256,10 @@
 				532988AF2568327300813C7A /* RealmCountryCache.swift in Sources */,
 				534178DC2568013900EB2D11 /* City.swift in Sources */,
 				534178D92568013000EB2D11 /* ResourceLoader.swift in Sources */,
+				53C40128256FE8BC00716FAE /* CityStorageLoadRequestObserver.swift in Sources */,
 				531E451B25687DF900388852 /* FavouriteCityService.swift in Sources */,
 				531E451325687C5600388852 /* CitiesStorage.swift in Sources */,
+				53C4012E256FE9C200716FAE /* RealmStorageResultObserver.swift in Sources */,
 				53C0B0C3256870F300D7A8F3 /* CountriesCacheMapper.swift in Sources */,
 				5341798325680E1200EB2D11 /* RealmStorage.swift in Sources */,
 				531E450F25687BF600388852 /* RealmCity.swift in Sources */,
@@ -1233,6 +1273,7 @@
 				534179D4256815F300EB2D11 /* CountriesStorageMapper.swift in Sources */,
 				534178F02568017F00EB2D11 /* Country.swift in Sources */,
 				532988A025681CB000813C7A /* CountriesLoader.swift in Sources */,
+				53C40112256FE81A00716FAE /* CityStorageLoadRequest.swift in Sources */,
 				534178CD256800EC00EB2D11 /* URLSessionHTTPClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1272,6 +1313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53C4015925703A5100716FAE /* ResourceStorageResultObserverTests.swift in Sources */,
 				534BC2B3256D0B63002F0F0F /* ResourceCacherTests.swift in Sources */,
 				53BE4B95256A589B00475FAE /* RealmStorageTests.swift in Sources */,
 				533851B3256E90B80057C8F1 /* RealmCitiesStorageTests.swift in Sources */,
@@ -1286,7 +1328,9 @@
 				5317B8A4256A866400FE6D4F /* ResourceResultsMapperTests.swift in Sources */,
 				53B06BFD256EACCB00F51249 /* FavouriteCityServiceTests.swift in Sources */,
 				539BCA38256EB3C60012C93B /* CountriesMapperTests.swift in Sources */,
+				53C4015325701BE100716FAE /* RealmStorageResultObserverTests.swift in Sources */,
 				53069448256BCD990034FB33 /* CitiesLoaderWithStorageValidationTests.swift in Sources */,
+				53E6729125703F6300523795 /* RealmStorageTests+Helpers.swift in Sources */,
 				53BFC7682569C73E00630261 /* APITests.swift in Sources */,
 				5399EA87256AFEFB00084C20 /* ResourceCacheLoaderTests.swift in Sources */,
 			);

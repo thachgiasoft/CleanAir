@@ -40,8 +40,4 @@ private extension RealmCuntriesCacheStorageTests {
     let sut = RealmStorage(realm: { try! Realm(configuration: .defaultConfiguration) })
     return sut
   }
-  
-  static func preapareForTesting() {
-    Realm.Configuration.defaultConfiguration.inMemoryIdentifier = UUID().uuidString
-  }
 }
