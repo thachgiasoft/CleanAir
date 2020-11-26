@@ -135,8 +135,13 @@ extension XCTest {
       removeCalls += 1
     }
     
-    func load(with request: CityStorageLoadRequest) -> [City] {
-      return []
+    func load(with request: CityStorageLoadRequest) -> (result: [City], requestObserver: CityStorageLoadRequestObserver) {
+      return ([], CityStorageObserverMock())
     }
+  }
+  
+  class CityStorageObserverMock: CityStorageLoadRequestObserver {
+    var inserted: (((insertionIndexes: [Int], updatedLoadResult: [City])) -> Void)?
+    var removed: (((removalIndexes: [Int], updatedLoadResult: [City])) -> Void)?
   }
 }
