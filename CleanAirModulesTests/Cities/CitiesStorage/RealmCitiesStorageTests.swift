@@ -57,6 +57,7 @@ private extension RealmCitiesStorageTests {
   }
   
   static func preapareForTesting() {
+    Realm.Configuration.defaultConfiguration.deleteRealmIfMigrationNeeded = true
     Realm.Configuration.defaultConfiguration.inMemoryIdentifier = UUID().uuidString
   }
 }
