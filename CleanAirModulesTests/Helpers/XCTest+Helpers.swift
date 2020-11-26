@@ -134,5 +134,9 @@ extension XCTest {
     func remove(cityId: String) throws {
       removeCalls += 1
     }
+    
+    func load(with request: CityStorageLoadRequest) -> [City] {
+      return []
+    }
   }
 }

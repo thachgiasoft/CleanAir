@@ -20,4 +20,10 @@ extension RealmStorage: CityStorage {
     guard let local = find(object: RealmCity.self, forId: cityId) else { return nil }
     return CitiesStorageMapper.map(local)
   }
+  
+  public func load(with request: CityStorageLoadRequest) -> [City] {
+    return find(object: RealmCity.self)
+      .map { CitiesStorageMapper.map($0) }
+      .filter { $0.isFavourite == request.isFavourite }
+  }
 }
