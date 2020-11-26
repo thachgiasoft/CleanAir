@@ -14,34 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
   weak var rootController: UIViewController?
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    let loader = CountriesComponentsComposer.countriesLoader(client: Self.makeHTTPClient(), realm: { try! Realm() })
+    let controller = CountriesUIComposer.makeView(with: loader, selection: { [weak self] in self?.showCities(for: $0) })
+    let rootNavigationController = UINavigationController(rootViewController: controller)
+    rootNavigationController.navigationBar.prefersLargeTitles = true
+    
+    rootController = rootNavigationController
     window = UIWindow(frame: UIScreen.main.bounds)
-    let loader = ResourceLoader(
-      client: Self.makeHTTPClient(),
-      url: APIURL.countries,
-      mapper: ResourceResultsMapper(CountryMapper.map).map
-    )
-    
-    let storage = RealmStorage(realm: { try! Realm() })
-    
-    let cacher = ResourceCacheCacher(
-      storage: (storage.store),
-      date: Date.init
-    )
-    
-    let cacheLoader = ResourceCacheLoader(
-      storage: (load: storage.load, remove: storage.remove),
-      date: Date.init,
-      policy: { CountriesCachePolicy.validate(cacheTimeStamp: $0, against: Date()) }
-    )
-    
-    let loaderWithCaching = CountriesLoaderWithCaching(
-      loader: loader,
-      cacheLoader: cacheLoader,
-      cacheCacher: cacher
-    )
-    
-    window?.rootViewController = CountriesUIComposer.makeView(with: loaderWithCaching, selection: { [weak self] in self?.showCities(for: $0) })
-    rootController = window?.rootViewController
+    window?.rootViewController = rootNavigationController
     window?.makeKeyAndVisible()
     return true
   }
@@ -74,6 +54,4 @@ private extension AppDelegate {
     return HTTPClientLogger(client: client)
   }
 }
-
-extension ResourceLoader: CountriesLoader where Resource == [Country] { }
 extension ResourceLoader: CitiesLoader where Resource == [City] { }
