@@ -104,6 +104,7 @@
 		53C40128256FE8BC00716FAE /* CityStorageLoadRequestObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C40127256FE8BC00716FAE /* CityStorageLoadRequestObserver.swift */; };
 		53C4012E256FE9C200716FAE /* RealmStorageResultObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C4012D256FE9C200716FAE /* RealmStorageResultObserver.swift */; };
 		53C40134256FF26600716FAE /* ResourceStorageResultObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C40133256FF26600716FAE /* ResourceStorageResultObserver.swift */; };
+		53C4015325701BE100716FAE /* RealmStorageResultObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C4015225701BE100716FAE /* RealmStorageResultObserverTests.swift */; };
 		53C4FF88256F060700716FAE /* CountriesComponentsComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C4FF87256F060700716FAE /* CountriesComponentsComposer.swift */; };
 		53C4FF92256F075D00716FAE /* CitiesComponentsComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C4FF91256F075D00716FAE /* CitiesComponentsComposer.swift */; };
 /* End PBXBuildFile section */
@@ -278,6 +279,7 @@
 		53C40127256FE8BC00716FAE /* CityStorageLoadRequestObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityStorageLoadRequestObserver.swift; sourceTree = "<group>"; };
 		53C4012D256FE9C200716FAE /* RealmStorageResultObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorageResultObserver.swift; sourceTree = "<group>"; };
 		53C40133256FF26600716FAE /* ResourceStorageResultObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceStorageResultObserver.swift; sourceTree = "<group>"; };
+		53C4015225701BE100716FAE /* RealmStorageResultObserverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorageResultObserverTests.swift; sourceTree = "<group>"; };
 		53C4FF87256F060700716FAE /* CountriesComponentsComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesComponentsComposer.swift; sourceTree = "<group>"; };
 		53C4FF91256F075D00716FAE /* CitiesComponentsComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesComponentsComposer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -869,6 +871,7 @@
 			isa = PBXGroup;
 			children = (
 				53BE4B94256A589B00475FAE /* RealmStorageTests.swift */,
+				53C4015225701BE100716FAE /* RealmStorageResultObserverTests.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -1310,6 +1313,7 @@
 				5317B8A4256A866400FE6D4F /* ResourceResultsMapperTests.swift in Sources */,
 				53B06BFD256EACCB00F51249 /* FavouriteCityServiceTests.swift in Sources */,
 				539BCA38256EB3C60012C93B /* CountriesMapperTests.swift in Sources */,
+				53C4015325701BE100716FAE /* RealmStorageResultObserverTests.swift in Sources */,
 				53069448256BCD990034FB33 /* CitiesLoaderWithStorageValidationTests.swift in Sources */,
 				53BFC7682569C73E00630261 /* APITests.swift in Sources */,
 				5399EA87256AFEFB00084C20 /* ResourceCacheLoaderTests.swift in Sources */,
