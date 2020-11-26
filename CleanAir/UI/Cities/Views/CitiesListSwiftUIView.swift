@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CitiesListSwiftUIView: View {
   var onAppear: () -> Void
-  @ObservedObject var viewModel: CitiesListViewViewModel
+  @ObservedObject var viewModel: CityListViewModel
   
   var body: some View {
     if let error = viewModel.error {
