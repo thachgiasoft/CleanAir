@@ -52,12 +52,7 @@ class RealmCitiesStorageTests: XCTestCase {
 // MARK: - Private
 private extension RealmCitiesStorageTests {
   func makeSUT() -> CityStorage {
-    let sut = RealmStorage(realm: { try! Realm(configuration: .defaultConfiguration) })
+    let sut = RealmStorage(realm: self.realm)
     return sut
-  }
-  
-  static func preapareForTesting() {
-    Realm.Configuration.defaultConfiguration.deleteRealmIfMigrationNeeded = true
-    Realm.Configuration.defaultConfiguration.inMemoryIdentifier = UUID().uuidString
   }
 }

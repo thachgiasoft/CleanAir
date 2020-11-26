@@ -108,6 +108,7 @@
 		53C4015925703A5100716FAE /* ResourceStorageResultObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C4015825703A5100716FAE /* ResourceStorageResultObserverTests.swift */; };
 		53C4FF88256F060700716FAE /* CountriesComponentsComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C4FF87256F060700716FAE /* CountriesComponentsComposer.swift */; };
 		53C4FF92256F075D00716FAE /* CitiesComponentsComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C4FF91256F075D00716FAE /* CitiesComponentsComposer.swift */; };
+		53E6729125703F6300523795 /* RealmStorageTests+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E6729025703F6300523795 /* RealmStorageTests+Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -284,6 +285,7 @@
 		53C4015825703A5100716FAE /* ResourceStorageResultObserverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceStorageResultObserverTests.swift; sourceTree = "<group>"; };
 		53C4FF87256F060700716FAE /* CountriesComponentsComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesComponentsComposer.swift; sourceTree = "<group>"; };
 		53C4FF91256F075D00716FAE /* CitiesComponentsComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesComponentsComposer.swift; sourceTree = "<group>"; };
+		53E6729025703F6300523795 /* RealmStorageTests+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealmStorageTests+Helpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -371,6 +373,7 @@
 		5306945D256BCF400034FB33 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				53E6729025703F6300523795 /* RealmStorageTests+Helpers.swift */,
 				53069458256BCF300034FB33 /* XCTest+Helpers.swift */,
 			);
 			path = Helpers;
@@ -1327,6 +1330,7 @@
 				539BCA38256EB3C60012C93B /* CountriesMapperTests.swift in Sources */,
 				53C4015325701BE100716FAE /* RealmStorageResultObserverTests.swift in Sources */,
 				53069448256BCD990034FB33 /* CitiesLoaderWithStorageValidationTests.swift in Sources */,
+				53E6729125703F6300523795 /* RealmStorageTests+Helpers.swift in Sources */,
 				53BFC7682569C73E00630261 /* APITests.swift in Sources */,
 				5399EA87256AFEFB00084C20 /* ResourceCacheLoaderTests.swift in Sources */,
 			);

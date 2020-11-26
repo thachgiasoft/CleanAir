@@ -15,9 +15,9 @@ class RealmStorageResultObserverTests: XCTestCase {
   }
   
   func test_insertions_deliversInsertedObjectForQuery() throws {
-    let currentLocal = Self.local(for: "!", id: UUID().uuidString)
-    let insertion = Self.local(for: currentLocal.queryValue, id: UUID().uuidString)
-    let preQueryStorageValues = [currentLocal, Self.local(for: currentLocal.queryValue, id: UUID().uuidString)]
+    let currentLocal = self.local(for: "!", id: UUID().uuidString)
+    let insertion = self.local(for: currentLocal.queryValue, id: UUID().uuidString)
+    let preQueryStorageValues = [currentLocal, self.local(for: currentLocal.queryValue, id: UUID().uuidString)]
 
     let (sut, storage) = try makeSut(for: currentLocal, with: preQueryStorageValues)
 
@@ -39,9 +39,9 @@ class RealmStorageResultObserverTests: XCTestCase {
   }
   
   func test_deletion_deliversRemovedObjectForQuery() throws {
-    let currentLocal = Self.local(for: "!", id: UUID().uuidString)
-    let deletion = Self.local(for: currentLocal.queryValue, id: UUID().uuidString)
-    let preQueryStorageValues = [deletion, currentLocal, Self.local(for: currentLocal.queryValue, id: UUID().uuidString)]
+    let currentLocal = self.local(for: "!", id: UUID().uuidString)
+    let deletion = self.local(for: currentLocal.queryValue, id: UUID().uuidString)
+    let preQueryStorageValues = [deletion, currentLocal, self.local(for: currentLocal.queryValue, id: UUID().uuidString)]
 
     let (sut, storage) = try makeSut(for: currentLocal, with: preQueryStorageValues)
 
@@ -68,26 +68,10 @@ private extension RealmStorageResultObserverTests {
   func makeSut(
     for local: AnyLocalType,
     with initial: [AnyLocalType]) throws -> (RealmStorageResultObserver<AnyLocalType>, RealmStorage) {
-    let storage = RealmStorage(realm: { try! Realm() })
+    let storage = RealmStorage(realm: self.realm)
     initial.forEach { try! storage.insert(object: $0) }
-    let result = storage.find(object: type(of: local), filtered: Self.anyLocalFilter(for: local))
+    let result = storage.find(object: type(of: local), filtered: self.anyLocalFilter(for: local))
     let sut = RealmStorageResultObserver(result: result)
     return (sut, storage)
-  }
-  
-  static func preapareForTesting() {
-    Realm.Configuration.defaultConfiguration.deleteRealmIfMigrationNeeded = true
-    Realm.Configuration.defaultConfiguration.inMemoryIdentifier = UUID().uuidString
-  }
-  
-  static func local(for value: AnyType, id: String) -> AnyLocalType {
-    let local = AnyLocalType()
-    local.id = id
-    local.queryValue = value
-    return local
-  }
-  
-  static func anyLocalFilter(for value: AnyLocalType) -> NSPredicate {
-    return NSPredicate(format: "queryValue == %@", value.queryValue)
   }
 }
