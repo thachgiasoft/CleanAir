@@ -8,9 +8,7 @@
 import Foundation
 import CleanAirPresentation
 
-typealias ResourceListViewViewModel = ResourceListSwiftUIViewAdapter
-
-class ResourceListSwiftUIViewAdapter<Resource, ResourceViewModel>: ObservableObject {
+class ResourceListViewModel<Resource, ResourceViewModel>: ObservableObject {
   typealias ViewModelMapper = (Resource) -> ResourceViewModel
   let onAppear: () -> Void
   let selection: (Resource) -> Void
@@ -41,21 +39,21 @@ class ResourceListSwiftUIViewAdapter<Resource, ResourceViewModel>: ObservableObj
 }
 
 // MARK: - ResourceView
-extension ResourceListSwiftUIViewAdapter: ResourceView {
+extension ResourceListViewModel: ResourceView {
   func show(resourceViewModel: [Resource]) {
     self.resource = resourceViewModel.map { mapper($0) }
   }
 }
 
 // MARK: - ResourceLoadingView
-extension ResourceListSwiftUIViewAdapter: ResourceLoadingView {
+extension ResourceListViewModel: ResourceLoadingView {
   func show(loadingViewModel: ResourceLoadingViewModel) {
     self.isLoading = loadingViewModel.isLoading
   }
 }
 
 // MARK: - ResourceErrorView
-extension ResourceListSwiftUIViewAdapter: ResourceErrorView {
+extension ResourceListViewModel: ResourceErrorView {
   func show(errorViewModel: ResourceErrorViewModel) {
     error = errorViewModel.error
   }
