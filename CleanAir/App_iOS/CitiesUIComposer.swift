@@ -19,7 +19,7 @@ final class CitiesUIComposer {
       resource: []
     )
     
-    var view = CitiesListSwiftUIView(onAppear: { }, viewModel: viewModel)
+    var view = CityListSwiftUIView(onAppear: { }, viewModel: viewModel)
     let presenter = ResourcePresenter<[City], WeakRef<CityListViewModel>>(
       view: WeakRef(viewModel),
       loadingView: WeakRef(viewModel),

@@ -32,7 +32,7 @@ struct CitiesListSwiftUIView_Previews: PreviewProvider {
         measurementsCount: 1, availableLocationsCount: 1,
         isFavourite: false)
     ]
-    CitiesListSwiftUIView(
+    CityListSwiftUIView(
       onAppear: { },
       viewModel: ResourceListViewModel<City, CityViewModel>(
         onAppear: { },
