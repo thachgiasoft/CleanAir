@@ -16,7 +16,7 @@ struct CitiesListSwiftUIView: View {
       Text(error)
     } else {
       List(viewModel.resource, id: \.self.name) { city in
-        CityListSwiftUIView(viewModel: city)
+        CitySwiftUIView(viewModel: city)
       }.onAppear(perform: {
         onAppear()
       })
