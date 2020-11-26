@@ -8,10 +8,29 @@
 import Foundation
 import RealmSwift
 
-class RealmStorageResultObserver<T> where T: Object {
-  let result: Results<T>
+public class RealmStorageResultObserver<T> where T: Object {
+  private (set) var token: NotificationToken? = nil
   
-  init(result: Results<T>) {
-    self.result = result
+  public var inserted: (((insertionIndexes: [Int], updatedLoadResult: [T])) -> Void)?
+  public var removed: (((removalIndexes: [Int], updatedLoadResult: [T])) -> Void)?
+  
+  deinit {
+    token?.invalidate()
+  }
+  
+  public init(result: Results<T>) {
+    token = result.observe { [weak self] change in
+      switch change {
+      case .initial:
+        break
+        
+      case .update(let result, let deletions, let insertions, _):
+        if !insertions.isEmpty { self?.inserted?((insertions, result.map { $0 })) }
+        if !deletions.isEmpty { self?.removed?((deletions, result.map { $0 })) }
+        
+      case .error:
+        break
+      }
+    }
   }
 }
