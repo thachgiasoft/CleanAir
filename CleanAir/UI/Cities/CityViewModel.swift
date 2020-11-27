@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import CleanAirPresentation
 
-public class CityViewModel: ObservableObject {
+public class CityViewModel: ObservableObject, Identifiable {
   public let name: String
   public let country: String
   public let measurementsCount: Int
