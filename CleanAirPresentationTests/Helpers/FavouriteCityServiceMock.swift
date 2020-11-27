@@ -35,14 +35,29 @@ class FavouriteCityServiceMock: FavouriteCityService {
   }
 }
 
-private class CityStorageMock: CityStorage {
+class CityStorageMock: CityStorage {
+  var loadCalls = 0
+  var city: City?
+  var observer: CityStorageLoadRequestObserverMock?
+  
   class CityStorageLoadRequestObserverMock: CityStorageLoadRequestObserver {
+    var city: City? {
+      didSet {
+        if let city = city {
+          inserted?(([], [city]))
+        } else {
+          removed?(([], []))
+        }
+      }
+    }
+    
     var inserted: (((insertionIndexes: [Int], updatedLoadResult: [City])) -> Void)?
     var removed: (((removalIndexes: [Int], updatedLoadResult: [City])) -> Void)?
   }
   
-  func store(_ city: City)  throws {
-    
+  func store(_ city: City) throws {
+    self.city = city
+    observer?.city = city
   }
   
   func load(cityId: String) -> City? {
@@ -50,10 +65,15 @@ private class CityStorageMock: CityStorage {
   }
   
   func load(with request: CityStorageLoadRequest) -> (result: [City], requestObserver: CityStorageLoadRequestObserver) {
-    return ([], CityStorageLoadRequestObserverMock())
+    loadCalls += 1
+    let cities: [City] = city != nil ? [city!] : []
+    observer = CityStorageLoadRequestObserverMock()
+    observer?.city = city
+    return (cities, observer!)
   }
   
   func remove(cityId: String) throws {
-    
+    city = nil
+    observer?.city = nil
   }
 }
