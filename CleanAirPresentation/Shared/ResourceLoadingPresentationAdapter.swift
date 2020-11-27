@@ -1,5 +1,5 @@
 //
-//  ResourcePresentationAdapter.swift
+//  ResourceLoadingPresentationAdapter.swift
 //  CleanAir
 //
 //  Created by Marko Engelman on 20/11/2020.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class ResourcePresentationAdapter<Resource, View> where View: ResourceView {
+public class ResourceLoadingPresentationAdapter<Resource, View> where View: ResourceView {
   public typealias Result = Swift.Result<Resource, Error>
   public typealias ResultCompletion = ((Result) -> Void)
   public typealias Loader = (_ completion: @escaping ResultCompletion) -> Void
