@@ -54,7 +54,7 @@ private extension ResourceLoadingPresentationAdapterTests {
   typealias AnyType = String
   typealias AnyView = AnyResourceView<AnyType>
   typealias AnyLoader = AnyResourceLoader<AnyType>
-  typealias AnyPresenter = AnyResourcePresenterStub<AnyType, AnyView>
+  typealias AnyPresenter = AnyResourceLoadingPresenterStub<AnyType, AnyView>
   typealias AnyPresentationAdapter = ResourceLoadingPresentationAdapter<AnyType, AnyView>
   
   func makeSUT(queue: DispatchQueue = .main) -> (AnyPresentationAdapter, AnyPresenter, AnyLoader) {

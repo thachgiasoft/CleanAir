@@ -1,5 +1,5 @@
 //
-//  AnyResourcePresenterStub.swift
+//  AnyResourceLoadingPresenterStub.swift
 //  CleanAirPresentationTests
 //
 //  Created by Marko Engelman on 21/11/2020.
@@ -8,7 +8,7 @@
 import Foundation
 @testable import CleanAirPresentation
 
-class AnyResourcePresenterStub<Resource, View>: ResourceLoadingPresenter<Resource, View> where View: AnyResourceView<Resource> {
+class AnyResourceLoadingPresenterStub<Resource, View>: ResourceLoadingPresenter<Resource, View> where View: AnyResourceView<Resource> {
   var didStartLoadingCount = 0
   var receivedResource: Resource?
   var receivedError: Error?
