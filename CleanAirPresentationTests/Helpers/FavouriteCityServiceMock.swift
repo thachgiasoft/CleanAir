@@ -26,11 +26,11 @@ class FavouriteCityServiceMock: FavouriteCityService {
     }
   }
   
-  func complete(at: Int, with city: City) {
+  func complete(with city: City) {
     completions[city.id] = city
   }
   
-  func complete(at: Int, with error: Error) {
+  func complete(with error: Error) {
     self.error = error
   }
 }

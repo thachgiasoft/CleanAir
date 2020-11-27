@@ -57,9 +57,8 @@ private extension CitiesUIComposer {
   static func viewModel(for city: City, with service: FavouriteCityService) -> CityViewModel {
     let viewModel = CityViewModelMapper.map(model: city)
     let adapter = CityPresentationAdapter<WeakRef<CityViewModel>>(city: city, service: service)
-    adapter.presenter = ResourceLoadingPresenter(
+    adapter.presenter = ResourcePresenter(
       view: WeakRef(viewModel),
-      loadingView: WeakRef(viewModel),
       errorView: WeakRef(viewModel),
       viewModelMapper: CityViewModelMapper.map
     )

@@ -12,7 +12,7 @@ public class CityPresentationAdapter<CityView> where CityView: ResourceView {
   private(set) var city: City
   let service: FavouriteCityService
   
-  public var presenter: ResourceLoadingPresenter<City, CityView>?
+  public var presenter: ResourcePresenter<City, CityView>?
   
   public init(city: City, service: FavouriteCityService) {
     self.city = city
@@ -20,12 +20,11 @@ public class CityPresentationAdapter<CityView> where CityView: ResourceView {
   }
   
   public func toggleFavourite() {
-    presenter?.didStartLoading()
     do {
       city = try service.toggl(for: city)
-      presenter?.didFinishLoading(with: city)
+      presenter?.didReceiveRequesToShow(resource: city)
     } catch {
-      presenter?.didFinishLoading(with: error)
+      presenter?.didReceiveRequesToShowResource(error: error)
     }
   }
 }

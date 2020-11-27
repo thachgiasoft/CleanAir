@@ -18,25 +18,24 @@ class CitiesPresentationAdapterTests: XCTestCase {
   func test_toggle_onSuccess_deliversResourceToPresenter() {
     let city = anyCity()
     let (sut, presenter, service) = makeSUT(city: city)
-    
-    expect(sut: sut, presenter: presenter, toComplete: .success(city), when: {
-      service.complete(at: 1, with: city)
-    })
+    service.complete(with: city)
+    sut.toggleFavourite()
+    XCTAssertEqual(presenter.receivedResource, city)
   }
   
   func test_toggle_onFailure_deliversErrorToPresenter() {
     let (sut, presenter, service) = makeSUT(city: anyCity())
     let error = NSError(domain: "1", code: 1, userInfo: [:])
-    expect(sut: sut, presenter: presenter, toComplete: .failure(error), when: {
-      service.complete(at: 1, with: error)
-    })
+    service.complete(with: error)
+    sut.toggleFavourite()
+    XCTAssertEqual(presenter.receivedError as NSError?, error)
   }
 }
 
 // MARK: - Private
 private extension CitiesPresentationAdapterTests {
   typealias View = AnyResourceView<City>
-  typealias Presenter = AnyResourcePresenterStub<City, View>
+  typealias Presenter = AnyResourcePresenterMock<City, View>
   typealias Adapter = CityPresentationAdapter<View>
   typealias Service = FavouriteCityServiceMock
   
@@ -44,30 +43,22 @@ private extension CitiesPresentationAdapterTests {
     let view = View()
     let service = Service()
     let sut = Adapter(city: city, service: service)
-    let presenter = Presenter(view: view, loadingView: view, errorView: view)
+    let presenter = Presenter(view: view, errorView: view)
     sut.presenter = presenter
     return (sut, presenter, service)
   }
   
-  func expect(sut: Adapter, presenter: Presenter, toComplete result: Swift.Result<City, Error>, when: () -> Void) {
-    let exp = expectation(description: "Waiting for deliver completion")
+  class AnyResourcePresenterMock<Resource, View>: ResourcePresenter<Resource, View> where View: AnyResourceView<Resource> {
+    var didStartLoadingCount = 0
+    var receivedResource: Resource?
+    var receivedError: Error?
     
-    when()
-    
-    sut.toggleFavourite()
-    
-    DispatchQueue.main.async {
-      switch result {
-      case let .success(resource):
-        XCTAssertEqual(presenter.receivedResource, resource)
-        
-      case let .failure(error):
-        XCTAssertEqual(presenter.receivedError as NSError?, error as NSError?)
-      }
-      
-      exp.fulfill()
+    override public func didReceiveRequesToShow(resource: Resource) {
+      receivedResource = resource
     }
     
-    wait(for: [exp], timeout: 2.0)
+    override public func didReceiveRequesToShowResource(error: Error) {
+      receivedError = error
+    }
   }
 }

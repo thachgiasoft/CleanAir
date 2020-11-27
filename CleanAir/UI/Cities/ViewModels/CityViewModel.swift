@@ -34,13 +34,6 @@ extension CityViewModel: ResourceView {
   }
 }
 
-// MARK: - ResourceLoadingView
-extension CityViewModel: ResourceLoadingView {
-  public func show(loadingViewModel: ResourceLoadingViewModel) {
-    
-  }
-}
-
 // MARK: - ResourceErrorView
 extension CityViewModel: ResourceErrorView {
   public func show(errorViewModel: ResourceErrorViewModel) {
