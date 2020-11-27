@@ -20,7 +20,7 @@ final class CountriesUIComposer {
     )
     
     var view = CountriesListSwiftUIView(onAppear: { }, viewModel: viewModel)
-    let presenter = ResourcePresenter<[Country], WeakRef<CountriesListViewViewModel>>(
+    let presenter = ResourceLoadingPresenter<[Country], WeakRef<CountriesListViewViewModel>>(
       view: WeakRef(viewModel),
       loadingView: WeakRef(viewModel),
       errorView: WeakRef(viewModel),

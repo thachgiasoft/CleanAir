@@ -12,7 +12,7 @@ public class FavouriteCitiesPresentationAdapter<FavouriteCitiesView> where Favou
   let storage: CityStorage
   var loadResultObserver: CityStorageLoadRequestObserver?
   
-  public var presenter: ResourcePresenter<[City], FavouriteCitiesView>?
+  public var presenter: ResourceLoadingPresenter<[City], FavouriteCitiesView>?
   
   public init(storage: CityStorage) {
     self.storage = storage

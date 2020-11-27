@@ -12,7 +12,7 @@ public class CityPresentationAdapter<CityView> where CityView: ResourceView {
   private(set) var city: City
   let service: FavouriteCityService
   
-  public var presenter: ResourcePresenter<City, CityView>?
+  public var presenter: ResourceLoadingPresenter<City, CityView>?
   
   public init(city: City, service: FavouriteCityService) {
     self.city = city

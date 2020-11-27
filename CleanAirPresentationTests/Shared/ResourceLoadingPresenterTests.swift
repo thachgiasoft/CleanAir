@@ -8,7 +8,7 @@
 import XCTest
 @testable import CleanAirPresentation
 
-class ResourcePresenterTests: XCTestCase {
+class ResourceLoadingPresenterTests: XCTestCase {
   func test_init_doesnt_callView() {
     let (_, view) = makeSUT()
     XCTAssertNil(view.receivedResourceViewModel)
@@ -57,10 +57,10 @@ class ResourcePresenterTests: XCTestCase {
 }
 
 // MARK: - Private
-private extension ResourcePresenterTests {
+private extension ResourceLoadingPresenterTests {
   typealias AnyType = String
   typealias AnyView = AnyResourceView<AnyType>
-  typealias Presenter = ResourcePresenter<AnyType, AnyView>
+  typealias Presenter = ResourceLoadingPresenter<AnyType, AnyView>
   
   func makeSUT(mapper: @escaping (AnyType) -> (AnyType) = { $0 }) -> (Presenter, AnyView) {
     let view = AnyView()

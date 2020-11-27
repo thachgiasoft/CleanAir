@@ -20,7 +20,7 @@ final class CitiesUIComposer {
     )
     
     let view = CityListSwiftUIView(onAppear: viewModel.onAppear, viewModel: viewModel)
-    let presenter = ResourcePresenter<[City], WeakRef<CityListViewModel>>(
+    let presenter = ResourceLoadingPresenter<[City], WeakRef<CityListViewModel>>(
       view: WeakRef(viewModel),
       loadingView: WeakRef(viewModel),
       errorView: WeakRef(viewModel)
@@ -41,7 +41,7 @@ final class CitiesUIComposer {
     )
     
     let view = CityListSwiftUIView(onAppear: viewModel.onAppear, viewModel: viewModel)
-    let presenter = ResourcePresenter<[City], WeakRef<CityListViewModel>>(
+    let presenter = ResourceLoadingPresenter<[City], WeakRef<CityListViewModel>>(
       view: WeakRef(viewModel),
       loadingView: WeakRef(viewModel),
       errorView: WeakRef(viewModel)
@@ -58,7 +58,7 @@ private extension CitiesUIComposer {
   static func viewModel(for city: City, with service: FavouriteCityService) -> CityViewModel {
     let viewModel = CityViewModelMapper.map(model: city)
     let adapter = CityPresentationAdapter<WeakRef<CityViewModel>>(city: city, service: service)
-    adapter.presenter = ResourcePresenter(
+    adapter.presenter = ResourceLoadingPresenter(
       view: WeakRef(viewModel),
       loadingView: WeakRef(viewModel),
       errorView: WeakRef(viewModel),

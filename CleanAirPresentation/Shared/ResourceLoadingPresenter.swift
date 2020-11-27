@@ -1,5 +1,5 @@
 //
-//  ResourcePresenter.swift
+//  ResourceLoadingPresenter.swift
 //  CleanAir
 //
 //  Created by Marko Engelman on 20/11/2020.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class ResourcePresenter<Resource, View> where View: ResourceView {
+public class ResourceLoadingPresenter<Resource, View> where View: ResourceView {
   let view: View
   let loadingView: ResourceLoadingView
   let errorView: ResourceErrorView

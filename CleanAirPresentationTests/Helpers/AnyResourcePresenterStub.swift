@@ -8,7 +8,7 @@
 import Foundation
 @testable import CleanAirPresentation
 
-class AnyResourcePresenterStub<Resource, View>: ResourcePresenter<Resource, View> where View: AnyResourceView<Resource> {
+class AnyResourcePresenterStub<Resource, View>: ResourceLoadingPresenter<Resource, View> where View: AnyResourceView<Resource> {
   var didStartLoadingCount = 0
   var receivedResource: Resource?
   var receivedError: Error?

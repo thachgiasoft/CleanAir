@@ -14,7 +14,7 @@ public class ResourcePresentationAdapter<Resource, View> where View: ResourceVie
   
   let loader: Loader
   let queue: DispatchQueue
-  public var presenter: ResourcePresenter<Resource, View>?
+  public var presenter: ResourceLoadingPresenter<Resource, View>?
   
   public init(loader: @escaping Loader, queue: DispatchQueue = .main) {
     self.loader = loader
