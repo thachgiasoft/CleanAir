@@ -65,7 +65,6 @@
 		5341792C2568040300EB2D11 /* CleanAirPresentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 53417906256802E000EB2D11 /* CleanAirPresentation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		534179342568056900EB2D11 /* CountriesListSwiftUIViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534179332568056900EB2D11 /* CountriesListSwiftUIViewPreview.swift */; };
 		53417938256805B000EB2D11 /* CitiesListSwiftUIViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53417937256805B000EB2D11 /* CitiesListSwiftUIViewPreview.swift */; };
-		5341794E256807AE00EB2D11 /* CoutryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341794D256807AE00EB2D11 /* CoutryViewModel.swift */; };
 		5341796A256809B000EB2D11 /* ResourceCacheLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53417969256809B000EB2D11 /* ResourceCacheLoader.swift */; };
 		5341797D25680DDF00EB2D11 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5341797C25680DDF00EB2D11 /* RealmSwift */; };
 		5341797F25680DDF00EB2D11 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 5341797E25680DDF00EB2D11 /* Realm */; };
@@ -251,7 +250,6 @@
 		53417909256802E000EB2D11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		534179332568056900EB2D11 /* CountriesListSwiftUIViewPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListSwiftUIViewPreview.swift; sourceTree = "<group>"; };
 		53417937256805B000EB2D11 /* CitiesListSwiftUIViewPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesListSwiftUIViewPreview.swift; sourceTree = "<group>"; };
-		5341794D256807AE00EB2D11 /* CoutryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoutryViewModel.swift; sourceTree = "<group>"; };
 		53417969256809B000EB2D11 /* ResourceCacheLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCacheLoader.swift; sourceTree = "<group>"; };
 		5341798225680E1200EB2D11 /* RealmStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorage.swift; sourceTree = "<group>"; };
 		534179CA2568152A00EB2D11 /* RealmCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCountry.swift; sourceTree = "<group>"; };
@@ -704,7 +702,6 @@
 		534178372567F4FD00EB2D11 /* Countries */ = {
 			isa = PBXGroup;
 			children = (
-				5341794D256807AE00EB2D11 /* CoutryViewModel.swift */,
 				534178342567F4F900EB2D11 /* CountriesPresenter.swift */,
 			);
 			path = Countries;
@@ -1305,7 +1302,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5341794E256807AE00EB2D11 /* CoutryViewModel.swift in Sources */,
 				5341791B2568037E00EB2D11 /* ResourceLoadingPresenter.swift in Sources */,
 				534179182568036200EB2D11 /* ResourceLoadingPresentationAdapter.swift in Sources */,
 				53417924256803C000EB2D11 /* ResourceLoadingView.swift in Sources */,
