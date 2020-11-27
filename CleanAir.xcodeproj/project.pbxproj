@@ -85,6 +85,9 @@
 		536AD9C825713E3B00CE436B /* FavouriteCityListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536AD9C725713E3B00CE436B /* FavouriteCityListViewModel.swift */; };
 		536AD9CE25713EFE00CE436B /* FavouriteCitySwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536AD9CD25713EFE00CE436B /* FavouriteCitySwiftUIView.swift */; };
 		536ADA0725717A7700CE436B /* ResourceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536ADA0625717A7700CE436B /* ResourceViewModel.swift */; };
+		536ADA0D25717BF600CE436B /* ResourceLoadingListSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536ADA0C25717BF600CE436B /* ResourceLoadingListSwiftUIView.swift */; };
+		536ADA1825717DB500CE436B /* ResourceSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536ADA1725717DB500CE436B /* ResourceSwiftUIView.swift */; };
+		536ADA322571832A00CE436B /* ResourceListSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536ADA312571832A00CE436B /* ResourceListSwiftUIView.swift */; };
 		53714CCA2569758A00109B16 /* ResourceLoadingPresentationAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53714CC92569758A00109B16 /* ResourceLoadingPresentationAdapterTests.swift */; };
 		53714CCC2569758A00109B16 /* CleanAirPresentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53417906256802E000EB2D11 /* CleanAirPresentation.framework */; };
 		53714CD92569773400109B16 /* AnyResourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53714CD82569773300109B16 /* AnyResourceView.swift */; };
@@ -267,6 +270,9 @@
 		536AD9C725713E3B00CE436B /* FavouriteCityListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCityListViewModel.swift; sourceTree = "<group>"; };
 		536AD9CD25713EFE00CE436B /* FavouriteCitySwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCitySwiftUIView.swift; sourceTree = "<group>"; };
 		536ADA0625717A7700CE436B /* ResourceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceViewModel.swift; sourceTree = "<group>"; };
+		536ADA0C25717BF600CE436B /* ResourceLoadingListSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoadingListSwiftUIView.swift; sourceTree = "<group>"; };
+		536ADA1725717DB500CE436B /* ResourceSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceSwiftUIView.swift; sourceTree = "<group>"; };
+		536ADA312571832A00CE436B /* ResourceListSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceListSwiftUIView.swift; sourceTree = "<group>"; };
 		53714CC72569758A00109B16 /* CleanAirPresentationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanAirPresentationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		53714CC92569758A00109B16 /* ResourceLoadingPresentationAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoadingPresentationAdapterTests.swift; sourceTree = "<group>"; };
 		53714CCB2569758A00109B16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -675,6 +681,7 @@
 			isa = PBXGroup;
 			children = (
 				534178192567E4D500EB2D11 /* ViewModels */,
+				536ADA1225717BFB00CE436B /* Views */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -832,6 +839,16 @@
 				536AD9CD25713EFE00CE436B /* FavouriteCitySwiftUIView.swift */,
 			);
 			path = FavouriteList;
+			sourceTree = "<group>";
+		};
+		536ADA1225717BFB00CE436B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				536ADA0C25717BF600CE436B /* ResourceLoadingListSwiftUIView.swift */,
+				536ADA312571832A00CE436B /* ResourceListSwiftUIView.swift */,
+				536ADA1725717DB500CE436B /* ResourceSwiftUIView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		53714CC82569758A00109B16 /* CleanAirPresentationTests */ = {
@@ -1214,6 +1231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				536ADA322571832A00CE436B /* ResourceListSwiftUIView.swift in Sources */,
 				53C4FF88256F060700716FAE /* CountriesComponentsComposer.swift in Sources */,
 				536AD9A825713D5000CE436B /* FavouriteCityListSwiftUIView.swift in Sources */,
 				53385180256E6A8F0057C8F1 /* HTTPClientLogger.swift in Sources */,
@@ -1224,6 +1242,8 @@
 				53417938256805B000EB2D11 /* CitiesListSwiftUIViewPreview.swift in Sources */,
 				5341781F2567E9FA00EB2D11 /* CityListSwiftUIView.swift in Sources */,
 				534177E52567C0D900EB2D11 /* AppDelegate.swift in Sources */,
+				536ADA0D25717BF600CE436B /* ResourceLoadingListSwiftUIView.swift in Sources */,
+				536ADA1825717DB500CE436B /* ResourceSwiftUIView.swift in Sources */,
 				53716AC1256924850032A245 /* CitySwiftUIView.swift in Sources */,
 				534178142567E4CA00EB2D11 /* ResourceLoadingListViewModel.swift in Sources */,
 				534177FB2567D12400EB2D11 /* CountriesListViewViewModel.swift in Sources */,
