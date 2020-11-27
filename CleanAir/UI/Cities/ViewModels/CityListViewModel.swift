@@ -9,4 +9,4 @@ import Foundation
 import CleanAirPresentation
 import CleanAirModules
 
-typealias CityListViewModel = ResourceListViewModel<City, CityViewModel>
+typealias CityListViewModel = ResourceLoadingListViewModel<City, CityViewModel>

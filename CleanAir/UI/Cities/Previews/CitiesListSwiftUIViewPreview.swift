@@ -34,7 +34,7 @@ struct CitiesListSwiftUIView_Previews: PreviewProvider {
     ]
     CityListSwiftUIView(
       onAppear: { },
-      viewModel: ResourceListViewModel<City, CityViewModel>(
+      viewModel: ResourceLoadingListViewModel<City, CityViewModel>(
         onAppear: { },
         onSelect: { _ in },
         mapper: CityViewModelMapper.map,

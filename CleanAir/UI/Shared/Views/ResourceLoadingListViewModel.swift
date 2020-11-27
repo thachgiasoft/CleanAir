@@ -1,5 +1,5 @@
 //
-//  ResourceListSwiftUIViewAdapter.swift
+//  ResourceLoadingListViewModel.swift
 //  CleanAir
 //
 //  Created by Marko Engelman on 20/11/2020.
@@ -8,7 +8,7 @@
 import Foundation
 import CleanAirPresentation
 
-class ResourceListViewModel<Resource, ResourceViewModel>: ObservableObject {
+class ResourceLoadingListViewModel<Resource, ResourceViewModel>: ObservableObject {
   typealias ViewModelMapper = (Resource) -> ResourceViewModel
   let onAppear: () -> Void
   let selection: (Resource) -> Void
@@ -39,21 +39,21 @@ class ResourceListViewModel<Resource, ResourceViewModel>: ObservableObject {
 }
 
 // MARK: - ResourceView
-extension ResourceListViewModel: ResourceView {
+extension ResourceLoadingListViewModel: ResourceView {
   func show(resourceViewModel: [Resource]) {
     self.resource = resourceViewModel.map { mapper($0) }
   }
 }
 
 // MARK: - ResourceLoadingView
-extension ResourceListViewModel: ResourceLoadingView {
+extension ResourceLoadingListViewModel: ResourceLoadingView {
   func show(loadingViewModel: ResourceLoadingViewModel) {
     self.isLoading = loadingViewModel.isLoading
   }
 }
 
 // MARK: - ResourceErrorView
-extension ResourceListViewModel: ResourceErrorView {
+extension ResourceLoadingListViewModel: ResourceErrorView {
   func show(errorViewModel: ResourceErrorViewModel) {
     error = errorViewModel.error
   }
