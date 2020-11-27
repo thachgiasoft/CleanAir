@@ -5,7 +5,6 @@
 //  Created by Marko Engelman on 21/11/2020.
 //
 
-import Foundation
 import SwiftUI
 import CleanAirPresentation
 

@@ -11,7 +11,11 @@ import CleanAirPresentation
 
 final class CitiesUIComposer {
   static func makeView(with loader: CitiesLoader, service: FavouriteCityService, selection: @escaping (City) -> Void) -> UIViewController {
-    let adapter = ResourceLoadingPresentationAdapter<[City], WeakRef<CityListViewModel>>(loader: loader.load)
+    typealias CityListViewModel = ResourceLoadingListViewModel<City, CityViewModel>
+    typealias CityListView = WeakRef<CityListViewModel>
+    typealias CityListAdapter = ResourceLoadingPresentationAdapter<[City], CityListView>
+    
+    let adapter = CityListAdapter(loader: loader.load)
     
     let viewModel = ResourceLoadingListViewModel(
       onAppear: adapter.load,
@@ -37,7 +41,11 @@ final class CitiesUIComposer {
   }
   
   static func makeFavouritesView(with storage: CityStorage, service: FavouriteCityService, onAdd: @escaping () -> Void) -> UIViewController {
-    let adapter = FavouriteCitiesPresentationAdapter<WeakRef<FavouriteCityListViewModel>>(storage: storage)
+    typealias CityListViewModel = ResourceListViewModel<City, CityViewModel>
+    typealias CityListView = WeakRef<CityListViewModel>
+    typealias CityListAdapter = FavouriteCitiesPresentationAdapter<CityListView>
+    
+    let adapter = CityListAdapter(storage: storage)
     
     let viewModel = ResourceListViewModel(
       onAppear: adapter.load,
