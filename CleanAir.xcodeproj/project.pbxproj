@@ -660,11 +660,8 @@
 		534178112567E41A00EB2D11 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				534177C02567426D00EB2D11 /* ResourceLoadingPresentationAdapter.swift */,
-				5341779625673CBE00EB2D11 /* ResourceLoadingPresenter.swift */,
-				5341779D25673D0900EB2D11 /* ResourceView.swift */,
-				534177A425673D9700EB2D11 /* ResourceErrorView.swift */,
-				534177A025673D2C00EB2D11 /* ResourceLoadingView.swift */,
+				536AD9642571217D00CE436B /* ResourceLoading */,
+				536AD96D2571218900CE436B /* Shared */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -832,6 +829,25 @@
 				534179CE2568153100EB2D11 /* CountriesStorage */,
 			);
 			path = Countries;
+			sourceTree = "<group>";
+		};
+		536AD9642571217D00CE436B /* ResourceLoading */ = {
+			isa = PBXGroup;
+			children = (
+				534177C02567426D00EB2D11 /* ResourceLoadingPresentationAdapter.swift */,
+				5341779625673CBE00EB2D11 /* ResourceLoadingPresenter.swift */,
+				534177A025673D2C00EB2D11 /* ResourceLoadingView.swift */,
+			);
+			path = ResourceLoading;
+			sourceTree = "<group>";
+		};
+		536AD96D2571218900CE436B /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				5341779D25673D0900EB2D11 /* ResourceView.swift */,
+				534177A425673D9700EB2D11 /* ResourceErrorView.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		53714CC82569758A00109B16 /* CleanAirPresentationTests */ = {
