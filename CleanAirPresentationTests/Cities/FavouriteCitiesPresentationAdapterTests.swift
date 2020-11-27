@@ -46,7 +46,7 @@ class FavouriteCitiesPresentationAdapterTests: XCTestCase {
 
 // MARK: - Private
 private extension FavouriteCitiesPresentationAdapterTests {
-  typealias Presenter = AnyResourcePresenterMock<[City], AnyResourceView<[City]>>
+  typealias Presenter = AnyResourcePresenterStub<[City], AnyResourceView<[City]>>
   typealias Adapter = FavouriteCitiesPresentationAdapter<AnyResourceView<[City]>>
   typealias Storage = CityStorageMock
   
@@ -57,19 +57,5 @@ private extension FavouriteCitiesPresentationAdapterTests {
     let presenter = Presenter(view: view, errorView: view)
     sut.presenter = presenter
     return (sut, presenter, storage)
-  }
-  
-  class AnyResourcePresenterMock<Resource, View>: ResourcePresenter<Resource, View> where View: AnyResourceView<Resource> {
-    var didStartLoadingCount = 0
-    var receivedResource: Resource?
-    var receivedError: Error?
-    
-    override public func didReceiveRequesToShow(resource: Resource) {
-      receivedResource = resource
-    }
-    
-    override public func didReceiveRequesToShowResource(error: Error) {
-      receivedError = error
-    }
   }
 }
