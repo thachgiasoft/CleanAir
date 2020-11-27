@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
   weak var rootController: UIViewController?
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    let rootNavigationController = UINavigationController(rootViewController: countriresView())
+    let rootNavigationController = UINavigationController(rootViewController: favouriteCitiesView())
     rootNavigationController.navigationBar.prefersLargeTitles = true
     
     rootController = rootNavigationController
@@ -31,6 +31,10 @@ private extension AppDelegate {
     rootController?.show(citiviesView(for: country), sender: self)
   }
   
+  func showCountries() {
+    rootController?.show(countriresView(), sender: self)
+  }
+  
   func countriresView() -> UIViewController {
     let loader = CountriesComponentsComposer.countriesLoader(client: Self.makeHTTPClient(), realm: Self.makeRealm)
     let controller = CountriesUIComposer.makeView(with: loader, selection: { [weak self] in self?.openCountry(country: $0) })
@@ -40,7 +44,7 @@ private extension AppDelegate {
   func favouriteCitiesView() -> UIViewController {
     let service = CitiesComponentsComposer.countriesFavouriteService(realm: Self.makeRealm)
     let storage = CitiesComponentsComposer.storage(realm: Self.makeRealm)
-    let controller = CitiesUIComposer.makeFavouritesView(with: storage, service: service)
+    let controller = CitiesUIComposer.makeFavouritesView(with: storage, service: service, onAdd: { [weak self] in self?.showCountries() })
     return controller
   }
   
