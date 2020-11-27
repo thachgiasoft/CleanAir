@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FavouriteCitySwiftUIView: View {
+struct FavouriteCitySwiftUIView: View, ResourceSwiftUIView {
   @ObservedObject var viewModel: CityViewModel
   
   var body: some View {
