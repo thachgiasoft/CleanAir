@@ -60,7 +60,6 @@
 		5341791E256803B900EB2D11 /* ResourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341779D25673D0900EB2D11 /* ResourceView.swift */; };
 		53417921256803BC00EB2D11 /* ResourceErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177A425673D9700EB2D11 /* ResourceErrorView.swift */; };
 		53417924256803C000EB2D11 /* ResourceLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177A025673D2C00EB2D11 /* ResourceLoadingView.swift */; };
-		53417926256803C300EB2D11 /* CountriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534178342567F4F900EB2D11 /* CountriesPresenter.swift */; };
 		5341792B2568040300EB2D11 /* CleanAirPresentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53417906256802E000EB2D11 /* CleanAirPresentation.framework */; };
 		5341792C2568040300EB2D11 /* CleanAirPresentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 53417906256802E000EB2D11 /* CleanAirPresentation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		534179342568056900EB2D11 /* CountriesListSwiftUIViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534179332568056900EB2D11 /* CountriesListSwiftUIViewPreview.swift */; };
@@ -100,7 +99,6 @@
 		53BE4B95256A589B00475FAE /* RealmStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BE4B94256A589B00475FAE /* RealmStorageTests.swift */; };
 		53BFC72225698F2C00630261 /* ResourceLoadingPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BFC72125698F2C00630261 /* ResourceLoadingPresenterTests.swift */; };
 		53BFC72625699E1600630261 /* XCTest+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BFC72525699E1600630261 /* XCTest+Helpers.swift */; };
-		53BFC7372569B70F00630261 /* CountriesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BFC7362569B70F00630261 /* CountriesPresenterTests.swift */; };
 		53BFC7562569BA1D00630261 /* CitiesPresentationAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BFC7552569BA1D00630261 /* CitiesPresentationAdapterTests.swift */; };
 		53BFC75A2569BC1800630261 /* FavouriteCityServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BFC7592569BC1800630261 /* FavouriteCityServiceMock.swift */; };
 		53BFC7682569C73E00630261 /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BFC7672569C73E00630261 /* APITests.swift */; };
@@ -243,7 +241,6 @@
 		534178252567EA3100EB2D11 /* CityListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListViewModel.swift; sourceTree = "<group>"; };
 		534178292567EE2300EB2D11 /* CitiesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesLoader.swift; sourceTree = "<group>"; };
 		5341782C2567EEC500EB2D11 /* CitiesUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesUIComposer.swift; sourceTree = "<group>"; };
-		534178342567F4F900EB2D11 /* CountriesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesPresenter.swift; sourceTree = "<group>"; };
 		534178B52567FFCB00EB2D11 /* CleanAirModules.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CleanAirModules.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		534178B82567FFCB00EB2D11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53417906256802E000EB2D11 /* CleanAirPresentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CleanAirPresentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -284,7 +281,6 @@
 		53BE4B94256A589B00475FAE /* RealmStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorageTests.swift; sourceTree = "<group>"; };
 		53BFC72125698F2C00630261 /* ResourceLoadingPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoadingPresenterTests.swift; sourceTree = "<group>"; };
 		53BFC72525699E1600630261 /* XCTest+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+Helpers.swift"; sourceTree = "<group>"; };
-		53BFC7362569B70F00630261 /* CountriesPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesPresenterTests.swift; sourceTree = "<group>"; };
 		53BFC7552569BA1D00630261 /* CitiesPresentationAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesPresentationAdapterTests.swift; sourceTree = "<group>"; };
 		53BFC7592569BC1800630261 /* FavouriteCityServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCityServiceMock.swift; sourceTree = "<group>"; };
 		53BFC7652569C73E00630261 /* CleanAirModulesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanAirModulesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -699,14 +695,6 @@
 			path = Cities;
 			sourceTree = "<group>";
 		};
-		534178372567F4FD00EB2D11 /* Countries */ = {
-			isa = PBXGroup;
-			children = (
-				534178342567F4F900EB2D11 /* CountriesPresenter.swift */,
-			);
-			path = Countries;
-			sourceTree = "<group>";
-		};
 		534178B62567FFCB00EB2D11 /* CleanAirModules */ = {
 			isa = PBXGroup;
 			children = (
@@ -730,7 +718,6 @@
 			isa = PBXGroup;
 			children = (
 				534178112567E41A00EB2D11 /* Shared */,
-				534178372567F4FD00EB2D11 /* Countries */,
 				53417957256807D800EB2D11 /* Cities */,
 				53417909256802E000EB2D11 /* Info.plist */,
 			);
@@ -848,7 +835,6 @@
 			isa = PBXGroup;
 			children = (
 				53BFC7412569B72800630261 /* Shared */,
-				53BFC73C2569B72200630261 /* Countries */,
 				53BFC74E2569BA0700630261 /* Cities */,
 				53714CDC2569773700109B16 /* Helpers */,
 				53714CCB2569758A00109B16 /* Info.plist */,
@@ -893,14 +879,6 @@
 				53C4015225701BE100716FAE /* RealmStorageResultObserverTests.swift */,
 			);
 			path = Storage;
-			sourceTree = "<group>";
-		};
-		53BFC73C2569B72200630261 /* Countries */ = {
-			isa = PBXGroup;
-			children = (
-				53BFC7362569B70F00630261 /* CountriesPresenterTests.swift */,
-			);
-			path = Countries;
 			sourceTree = "<group>";
 		};
 		53BFC7412569B72800630261 /* Shared */ = {
@@ -1310,7 +1288,6 @@
 				536AD9112570591900CE436B /* FavouriteCitiesPresentationAdapter.swift in Sources */,
 				53182253256914FE00731A3E /* CityPresentationAdapter.swift in Sources */,
 				536AD9732571226700CE436B /* ResourcePresenter.swift in Sources */,
-				53417926256803C300EB2D11 /* CountriesPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1329,7 +1306,6 @@
 				53714CCA2569758A00109B16 /* ResourceLoadingPresentationAdapterTests.swift in Sources */,
 				536AD99A25713B1A00CE436B /* AnyResourcePresenterStub.swift in Sources */,
 				53714CD92569773400109B16 /* AnyResourceView.swift in Sources */,
-				53BFC7372569B70F00630261 /* CountriesPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

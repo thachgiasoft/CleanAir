@@ -23,9 +23,9 @@ final class CountriesUIComposer {
     let presenter = ResourceLoadingPresenter<[Country], WeakRef<CountriesListViewViewModel>>(
       view: WeakRef(viewModel),
       loadingView: WeakRef(viewModel),
-      errorView: WeakRef(viewModel),
-      viewModelMapper: CountriesPresenter.viewModel
+      errorView: WeakRef(viewModel)
     )
+    
     adapter.presenter = presenter
     view.onAppear = adapter.load
     let controller = UIHostingController(rootView: view)
