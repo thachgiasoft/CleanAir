@@ -82,6 +82,7 @@
 		536AD97E2571238C00CE436B /* ResourcePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536AD97D2571238C00CE436B /* ResourcePresenterTests.swift */; };
 		536AD9842571277000CE436B /* FavouriteCitiesPresentationAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536AD9832571277000CE436B /* FavouriteCitiesPresentationAdapterTests.swift */; };
 		536AD99A25713B1A00CE436B /* AnyResourcePresenterStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536AD99925713B1A00CE436B /* AnyResourcePresenterStub.swift */; };
+		536AD9A825713D5000CE436B /* FavouriteCityListSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536AD9A725713D5000CE436B /* FavouriteCityListSwiftUIView.swift */; };
 		53714CCA2569758A00109B16 /* ResourceLoadingPresentationAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53714CC92569758A00109B16 /* ResourceLoadingPresentationAdapterTests.swift */; };
 		53714CCC2569758A00109B16 /* CleanAirPresentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53417906256802E000EB2D11 /* CleanAirPresentation.framework */; };
 		53714CD92569773400109B16 /* AnyResourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53714CD82569773300109B16 /* AnyResourceView.swift */; };
@@ -262,6 +263,7 @@
 		536AD97D2571238C00CE436B /* ResourcePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcePresenterTests.swift; sourceTree = "<group>"; };
 		536AD9832571277000CE436B /* FavouriteCitiesPresentationAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCitiesPresentationAdapterTests.swift; sourceTree = "<group>"; };
 		536AD99925713B1A00CE436B /* AnyResourcePresenterStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyResourcePresenterStub.swift; sourceTree = "<group>"; };
+		536AD9A725713D5000CE436B /* FavouriteCityListSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCityListSwiftUIView.swift; sourceTree = "<group>"; };
 		53714CC72569758A00109B16 /* CleanAirPresentationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanAirPresentationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		53714CC92569758A00109B16 /* ResourceLoadingPresentationAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoadingPresentationAdapterTests.swift; sourceTree = "<group>"; };
 		53714CCB2569758A00109B16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -704,8 +706,8 @@
 		534178232567EA1600EB2D11 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5341781E2567E9F900EB2D11 /* CityListSwiftUIView.swift */,
-				53716AC0256924850032A245 /* CitySwiftUIView.swift */,
+				536AD9AE25713D5D00CE436B /* List */,
+				536AD9AD25713D5400CE436B /* FavouriteList */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -865,6 +867,23 @@
 				536AD9722571226700CE436B /* ResourcePresenter.swift */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		536AD9AD25713D5400CE436B /* FavouriteList */ = {
+			isa = PBXGroup;
+			children = (
+				536AD9A725713D5000CE436B /* FavouriteCityListSwiftUIView.swift */,
+			);
+			path = FavouriteList;
+			sourceTree = "<group>";
+		};
+		536AD9AE25713D5D00CE436B /* List */ = {
+			isa = PBXGroup;
+			children = (
+				5341781E2567E9F900EB2D11 /* CityListSwiftUIView.swift */,
+				53716AC0256924850032A245 /* CitySwiftUIView.swift */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 		53714CC82569758A00109B16 /* CleanAirPresentationTests */ = {
@@ -1257,6 +1276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53C4FF88256F060700716FAE /* CountriesComponentsComposer.swift in Sources */,
+				536AD9A825713D5000CE436B /* FavouriteCityListSwiftUIView.swift in Sources */,
 				53385180256E6A8F0057C8F1 /* HTTPClientLogger.swift in Sources */,
 				5318225025690D0400731A3E /* CityViewModelMapper.swift in Sources */,
 				534177482567314300EB2D11 /* ViewController.swift in Sources */,
