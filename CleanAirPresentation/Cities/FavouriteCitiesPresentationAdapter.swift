@@ -12,7 +12,7 @@ public class FavouriteCitiesPresentationAdapter<FavouriteCitiesView> where Favou
   let storage: CityStorage
   var loadResultObserver: CityStorageLoadRequestObserver?
   
-  public var presenter: ResourceLoadingPresenter<[City], FavouriteCitiesView>?
+  public var presenter: ResourcePresenter<[City], FavouriteCitiesView>?
   
   public init(storage: CityStorage) {
     self.storage = storage
@@ -21,7 +21,7 @@ public class FavouriteCitiesPresentationAdapter<FavouriteCitiesView> where Favou
   public func load() {
     let (cities, observer) = storage.load(with: CityStorageLoadRequest(isFavourite: true))
     configure(with: observer)
-    presenter?.didFinishLoading(with: cities)
+    presenter?.didReceiveRequesToShow(resource: cities)
   }
 }
 
@@ -34,6 +34,6 @@ private extension FavouriteCitiesPresentationAdapter {
   }
   
   func update(with cities: [City]) {
-    presenter?.didFinishLoading(with: cities)
+    presenter?.didReceiveRequesToShow(resource: cities)
   }
 }

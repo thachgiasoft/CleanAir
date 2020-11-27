@@ -41,9 +41,8 @@ final class CitiesUIComposer {
     )
     
     let view = CityListSwiftUIView(onAppear: viewModel.onAppear, viewModel: viewModel)
-    let presenter = ResourceLoadingPresenter<[City], WeakRef<CityListViewModel>>(
+    let presenter = ResourcePresenter<[City], WeakRef<CityListViewModel>>(
       view: WeakRef(viewModel),
-      loadingView: WeakRef(viewModel),
       errorView: WeakRef(viewModel)
     )
     
