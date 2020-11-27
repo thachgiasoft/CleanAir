@@ -80,7 +80,7 @@
 		536AD97E2571238C00CE436B /* ResourcePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536AD97D2571238C00CE436B /* ResourcePresenterTests.swift */; };
 		536AD9842571277000CE436B /* FavouriteCitiesPresentationAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536AD9832571277000CE436B /* FavouriteCitiesPresentationAdapterTests.swift */; };
 		536AD99A25713B1A00CE436B /* AnyResourcePresenterStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536AD99925713B1A00CE436B /* AnyResourcePresenterStub.swift */; };
-		536AD9A825713D5000CE436B /* FavouriteCityListSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536AD9A725713D5000CE436B /* FavouriteCityListSwiftUIView.swift */; };
+		536AD9A825713D5000CE436B /* ResourceAddListViewSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536AD9A725713D5000CE436B /* ResourceAddListViewSwiftUIView.swift */; };
 		536AD9C225713DE400CE436B /* ResourceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536AD9C125713DE400CE436B /* ResourceListViewModel.swift */; };
 		536AD9C825713E3B00CE436B /* FavouriteCityListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536AD9C725713E3B00CE436B /* FavouriteCityListViewModel.swift */; };
 		536AD9CE25713EFE00CE436B /* FavouriteCitySwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536AD9CD25713EFE00CE436B /* FavouriteCitySwiftUIView.swift */; };
@@ -265,7 +265,7 @@
 		536AD97D2571238C00CE436B /* ResourcePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcePresenterTests.swift; sourceTree = "<group>"; };
 		536AD9832571277000CE436B /* FavouriteCitiesPresentationAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCitiesPresentationAdapterTests.swift; sourceTree = "<group>"; };
 		536AD99925713B1A00CE436B /* AnyResourcePresenterStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyResourcePresenterStub.swift; sourceTree = "<group>"; };
-		536AD9A725713D5000CE436B /* FavouriteCityListSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCityListSwiftUIView.swift; sourceTree = "<group>"; };
+		536AD9A725713D5000CE436B /* ResourceAddListViewSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceAddListViewSwiftUIView.swift; sourceTree = "<group>"; };
 		536AD9C125713DE400CE436B /* ResourceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceListViewModel.swift; sourceTree = "<group>"; };
 		536AD9C725713E3B00CE436B /* FavouriteCityListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCityListViewModel.swift; sourceTree = "<group>"; };
 		536AD9CD25713EFE00CE436B /* FavouriteCitySwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCitySwiftUIView.swift; sourceTree = "<group>"; };
@@ -836,7 +836,6 @@
 			isa = PBXGroup;
 			children = (
 				536AD9C725713E3B00CE436B /* FavouriteCityListViewModel.swift */,
-				536AD9A725713D5000CE436B /* FavouriteCityListSwiftUIView.swift */,
 			);
 			path = FavouriteList;
 			sourceTree = "<group>";
@@ -844,6 +843,7 @@
 		536ADA1225717BFB00CE436B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				536AD9A725713D5000CE436B /* ResourceAddListViewSwiftUIView.swift */,
 				536ADA0C25717BF600CE436B /* ResourceLoadingListSwiftUIView.swift */,
 				536ADA312571832A00CE436B /* ResourceListSwiftUIView.swift */,
 				536ADA1725717DB500CE436B /* ResourceSwiftUIView.swift */,
@@ -1233,7 +1233,7 @@
 			files = (
 				536ADA322571832A00CE436B /* ResourceListSwiftUIView.swift in Sources */,
 				53C4FF88256F060700716FAE /* CountriesComponentsComposer.swift in Sources */,
-				536AD9A825713D5000CE436B /* FavouriteCityListSwiftUIView.swift in Sources */,
+				536AD9A825713D5000CE436B /* ResourceAddListViewSwiftUIView.swift in Sources */,
 				53385180256E6A8F0057C8F1 /* HTTPClientLogger.swift in Sources */,
 				5318225025690D0400731A3E /* CityViewModelMapper.swift in Sources */,
 				534177482567314300EB2D11 /* ViewController.swift in Sources */,

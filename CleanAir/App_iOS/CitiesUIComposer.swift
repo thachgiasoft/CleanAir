@@ -33,16 +33,16 @@ final class CitiesUIComposer {
   static func makeFavouritesView(with storage: CityStorage, service: FavouriteCityService, onAdd: @escaping () -> Void) -> UIViewController {
     let adapter = FavouriteCitiesPresentationAdapter<WeakRef<FavouriteCityListViewModel>>(storage: storage)
     
-    let viewModel = FavouriteCityListViewModel(
+    let viewModel = ResourceListViewModel<City, CityViewModel>(
       onAppear: adapter.load,
       onSelect: { _ in },
       mapper: { CitiesUIComposer.viewModel(for: $0, with: service) },
       resource: []
     )
     
-    let view = FavouriteCityListSwiftUIView(
+    let view = ResourceListSwiftUIView<City, CityViewModel, FavouriteCitySwiftUIView>(
       onAppear: viewModel.onAppear,
-      onAdd: onAdd,
+      builder: { FavouriteCitySwiftUIView(viewModel:$0) },
       viewModel: viewModel
     )
     
@@ -52,7 +52,13 @@ final class CitiesUIComposer {
     )
     
     adapter.presenter = presenter
-    let controller = UIHostingController(rootView: view)
+    let listView = ResourceAddListViewSwiftUIView<ResourceListSwiftUIView<City, CityViewModel, FavouriteCitySwiftUIView>>(
+      title: "Favourite cities",
+      onAddClick: onAdd,
+      listView: { view }
+    )
+    
+    let controller = UIHostingController(rootView: listView)
     return controller
   }
 }
