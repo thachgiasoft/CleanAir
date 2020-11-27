@@ -2,7 +2,7 @@
 //  ResourcePresenterTests.swift
 //  CleanAirPresentationTests
 //
-//  Created by Marko Engelman on 21/11/2020.
+//  Created by Marko Engelman on 27/11/2020.
 //
 
 import XCTest
@@ -16,21 +16,9 @@ class ResourcePresenterTests: XCTestCase {
     XCTAssertNil(view.receivedResourceErrorViewModel)
   }
   
-  func test_didStartLoading_triggersLoading() {
+  func test_didReceiveRequesToShow_deliversResource() {
     let (sut, view) = makeSUT()
-    sut.didStartLoading()
-    XCTAssertTrue(view.receivedResourceLoadingViewModel!.isLoading)
-  }
-  
-  func test_didFinishLoadingWithResource_stopsLoading() {
-    let (sut, view) = makeSUT()
-    sut.didFinishLoading(with: anyResource)
-    XCTAssertFalse(view.receivedResourceLoadingViewModel!.isLoading)
-  }
-  
-  func test_didFinishLoadingWithResource_deliversResource() {
-    let (sut, view) = makeSUT()
-    sut.didFinishLoading(with: anyResource)
+    sut.didReceiveRequesToShow(resource: anyResource)
     XCTAssertEqual(view.receivedResourceViewModel, anyResource)
   }
   
@@ -38,20 +26,14 @@ class ResourcePresenterTests: XCTestCase {
     let mappedResource = anyResource
     let resource = anyResource
     let view = AnyView()
-    let sut = Presenter(view: view, loadingView: view, errorView: view)
-    sut.didFinishLoading(with: resource)
+    let sut = Presenter(view: view, errorView: view)
+    sut.didReceiveRequesToShow(resource: resource)
     XCTAssertEqual(view.receivedResourceViewModel, mappedResource)
   }
   
-  func test_didFinishLoadingWithError_stopsLoading() {
+  func test_didReceiveRequesToShowResource_deliversError() {
     let (sut, view) = makeSUT()
-    sut.didFinishLoading(with: anyError)
-    XCTAssertFalse(view.receivedResourceLoadingViewModel!.isLoading)
-  }
-  
-  func test_didFinishLoadingWithError_deliversError() {
-    let (sut, view) = makeSUT()
-    sut.didFinishLoading(with: anyError)
+    sut.didReceiveRequesToShowResource(error: anyError)
     XCTAssertNotNil(view.receivedResourceErrorViewModel)
   }
 }
@@ -64,7 +46,7 @@ private extension ResourcePresenterTests {
   
   func makeSUT(mapper: @escaping (AnyType) -> (AnyType) = { $0 }) -> (Presenter, AnyView) {
     let view = AnyView()
-    let presenter = Presenter(view: view, loadingView: view, errorView: view, viewModelMapper: mapper)
+    let presenter = Presenter(view: view, errorView: view, viewModelMapper: mapper)
     return (presenter, view)
   }
 }

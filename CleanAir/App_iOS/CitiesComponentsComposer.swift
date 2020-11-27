@@ -10,7 +10,7 @@ import CleanAirModules
 import RealmSwift
 
 final class CitiesComponentsComposer {
-  static func countriesLoader(client: HTTPClient, realm: @escaping () -> Realm, countryCode: String) -> CitiesLoader {
+  static func countriesLoader(client: HTTPClient, storage: CityStorage, countryCode: String) -> CitiesLoader {
     let loader = ResourceLoader(
       client: client,
       url: APIURL.cities(for: countryCode),
@@ -19,7 +19,7 @@ final class CitiesComponentsComposer {
     
     let loaderWithValidation = CitiesLoaderWithStorageValidation(
       loader: loader,
-      storage: RealmStorage(realm: realm)
+      storage: storage
     )
     
     return loaderWithValidation
@@ -28,6 +28,10 @@ final class CitiesComponentsComposer {
   static func countriesFavouriteService(realm: @escaping () -> Realm) -> FavouriteCityService {
     let service = FavouriteCityService(storage: RealmStorage(realm: realm))
     return service
+  }
+  
+  static func storage(realm: @escaping () -> Realm) -> CityStorage {
+    return RealmStorage(realm: realm)
   }
 }
 extension ResourceLoader: CitiesLoader where Resource == [City] { }

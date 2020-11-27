@@ -1,5 +1,5 @@
 //
-//  ResourcePresentationAdapterTests.swift
+//  ResourceLoadingPresentationAdapterTests.swift
 //  CleanAirPresentationTests
 //
 //  Created by Marko Engelman on 21/11/2020.
@@ -8,7 +8,7 @@
 import XCTest
 @testable import CleanAirPresentation
 
-class ResourcePresentationAdapterTests: XCTestCase {
+class ResourceLoadingPresentationAdapterTests: XCTestCase {
   func test_init_doesntTriggerLoader() {
     let (_, _, loader) = makeSUT()
     XCTAssertEqual(loader.loadCount, 0)
@@ -50,12 +50,12 @@ class ResourcePresentationAdapterTests: XCTestCase {
 }
 
 // MARK: - Private
-private extension ResourcePresentationAdapterTests {
+private extension ResourceLoadingPresentationAdapterTests {
   typealias AnyType = String
   typealias AnyView = AnyResourceView<AnyType>
   typealias AnyLoader = AnyResourceLoader<AnyType>
-  typealias AnyPresenter = AnyResourcePresenterStub<AnyType, AnyView>
-  typealias AnyPresentationAdapter = ResourcePresentationAdapter<AnyType, AnyView>
+  typealias AnyPresenter = AnyResourceLoadingPresenterStub<AnyType, AnyView>
+  typealias AnyPresentationAdapter = ResourceLoadingPresentationAdapter<AnyType, AnyView>
   
   func makeSUT(queue: DispatchQueue = .main) -> (AnyPresentationAdapter, AnyPresenter, AnyLoader) {
     let view = AnyView()

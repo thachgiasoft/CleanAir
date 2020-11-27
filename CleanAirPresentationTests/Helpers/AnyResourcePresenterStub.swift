@@ -2,7 +2,7 @@
 //  AnyResourcePresenterStub.swift
 //  CleanAirPresentationTests
 //
-//  Created by Marko Engelman on 21/11/2020.
+//  Created by Marko Engelman on 27/11/2020.
 //
 
 import Foundation
@@ -13,15 +13,11 @@ class AnyResourcePresenterStub<Resource, View>: ResourcePresenter<Resource, View
   var receivedResource: Resource?
   var receivedError: Error?
   
-  override func didStartLoading() {
-    didStartLoadingCount += 1
-  }
-  
-  override func didFinishLoading(with resource: Resource) {
+  override public func didReceiveRequesToShow(resource: Resource) {
     receivedResource = resource
   }
   
-  override func didFinishLoading(with error: Error) {
+  override public func didReceiveRequesToShowResource(error: Error) {
     receivedError = error
   }
 }

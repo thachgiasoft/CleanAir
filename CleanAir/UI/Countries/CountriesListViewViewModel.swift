@@ -7,5 +7,6 @@
 
 import Foundation
 import CleanAirPresentation
+import CleanAirModules
 
-typealias CountriesListViewViewModel = ResourceListViewViewModel<CountryViewModel, CountryViewModel>
+typealias CountriesListViewViewModel = ResourceLoadingListViewModel<Country, Country>

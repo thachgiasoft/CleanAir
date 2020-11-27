@@ -11,23 +11,68 @@ import CleanAirPresentation
 
 final class CitiesUIComposer {
   static func makeView(with loader: CitiesLoader, service: FavouriteCityService, selection: @escaping (City) -> Void) -> UIViewController {
-    let adapter = ResourcePresentationAdapter<[City], WeakRef<CitiesListViewViewModel>>(loader: loader.load)
-    let viewModel = CitiesListViewViewModel(
+    typealias CityListViewModel = ResourceLoadingListViewModel<City, CityViewModel>
+    typealias CityListView = WeakRef<CityListViewModel>
+    typealias CityListAdapter = ResourceLoadingPresentationAdapter<[City], CityListView>
+    
+    let adapter = CityListAdapter(loader: loader.load)
+    
+    let viewModel = ResourceLoadingListViewModel(
       onAppear: adapter.load,
       onSelect: selection,
       mapper: { CitiesUIComposer.viewModel(for: $0, with: service) },
       resource: []
     )
     
-    var view = CitiesListSwiftUIView(onAppear: { }, viewModel: viewModel)
-    let presenter = ResourcePresenter<[City], WeakRef<CitiesListViewViewModel>>(
+    let view = ResourceLoadingListSwiftUIView(
+      onAppear: viewModel.onAppear,
+      builder: { CitySwiftUIView(viewModel:$0) },
+      viewModel: viewModel
+    )
+    
+    let presenter = ResourceLoadingPresenter(
       view: WeakRef(viewModel),
       loadingView: WeakRef(viewModel),
       errorView: WeakRef(viewModel)
     )
+    
     adapter.presenter = presenter
-    view.onAppear = adapter.load
-    let controller = UIHostingController(rootView: view)
+    return UIHostingController(rootView: view)
+  }
+  
+  static func makeFavouritesView(with storage: CityStorage, service: FavouriteCityService, onAdd: @escaping () -> Void) -> UIViewController {
+    typealias CityListViewModel = ResourceListViewModel<City, CityViewModel>
+    typealias CityListView = WeakRef<CityListViewModel>
+    typealias CityListAdapter = FavouriteCitiesPresentationAdapter<CityListView>
+    
+    let adapter = CityListAdapter(storage: storage)
+    
+    let viewModel = ResourceListViewModel(
+      onAppear: adapter.load,
+      onSelect: { _ in },
+      mapper: { CitiesUIComposer.viewModel(for: $0, with: service) },
+      resource: []
+    )
+    
+    let view = ResourceListSwiftUIView(
+      onAppear: viewModel.onAppear,
+      builder: { FavouriteCitySwiftUIView(viewModel:$0) },
+      viewModel: viewModel
+    )
+    
+    let presenter = ResourcePresenter(
+      view: WeakRef(viewModel),
+      errorView: WeakRef(viewModel)
+    )
+    
+    adapter.presenter = presenter
+    let listView = ResourceAddListViewSwiftUIView(
+      title: "Favourite cities",
+      onAddClick: onAdd,
+      listView: { view }
+    )
+    
+    let controller = UIHostingController(rootView: listView)
     return controller
   }
 }
@@ -39,7 +84,6 @@ private extension CitiesUIComposer {
     let adapter = CityPresentationAdapter<WeakRef<CityViewModel>>(city: city, service: service)
     adapter.presenter = ResourcePresenter(
       view: WeakRef(viewModel),
-      loadingView: WeakRef(viewModel),
       errorView: WeakRef(viewModel),
       viewModelMapper: CityViewModelMapper.map
     )

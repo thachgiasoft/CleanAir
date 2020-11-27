@@ -1,5 +1,5 @@
 //
-//  CityListSwiftUIView.swift
+//  CitySwiftUIView.swift
 //  CleanAir
 //
 //  Created by Marko Engelman on 21/11/2020.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CityListSwiftUIView: View {
+struct CitySwiftUIView: View, ResourceSwiftUIView {
   @ObservedObject var viewModel: CityViewModel
   
   var body: some View {

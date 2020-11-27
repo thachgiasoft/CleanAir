@@ -12,7 +12,7 @@ import CleanAirPresentation
 
 final class CountriesUIComposer {
   static func makeView(with loader: CountriesLoader, selection: @escaping (Country) -> Void) -> UIViewController {
-    let adapter = ResourcePresentationAdapter<[Country], WeakRef<CountriesListViewViewModel>>(loader: loader.load)
+    let adapter = ResourceLoadingPresentationAdapter<[Country], WeakRef<CountriesListViewViewModel>>(loader: loader.load)
     let viewModel = CountriesListViewViewModel(
       onAppear: adapter.load,
       onSelect: selection,
@@ -20,12 +20,12 @@ final class CountriesUIComposer {
     )
     
     var view = CountriesListSwiftUIView(onAppear: { }, viewModel: viewModel)
-    let presenter = ResourcePresenter<[Country], WeakRef<CountriesListViewViewModel>>(
+    let presenter = ResourceLoadingPresenter<[Country], WeakRef<CountriesListViewViewModel>>(
       view: WeakRef(viewModel),
       loadingView: WeakRef(viewModel),
-      errorView: WeakRef(viewModel),
-      viewModelMapper: CountriesPresenter.viewModel
+      errorView: WeakRef(viewModel)
     )
+    
     adapter.presenter = presenter
     view.onAppear = adapter.load
     let controller = UIHostingController(rootView: view)

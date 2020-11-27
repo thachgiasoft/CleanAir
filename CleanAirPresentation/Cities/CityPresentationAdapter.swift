@@ -20,12 +20,11 @@ public class CityPresentationAdapter<CityView> where CityView: ResourceView {
   }
   
   public func toggleFavourite() {
-    presenter?.didStartLoading()
     do {
       city = try service.toggl(for: city)
-      presenter?.didFinishLoading(with: city)
+      presenter?.didReceiveRequesToShow(resource: city)
     } catch {
-      presenter?.didFinishLoading(with: error)
+      presenter?.didReceiveRequesToShowResource(error: error)
     }
   }
 }
