@@ -71,6 +71,7 @@
 		534BC29D256D06EC002F0F0F /* RealmCountriesCacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534BC29C256D06EC002F0F0F /* RealmCountriesCacheStorage.swift */; };
 		534BC2AB256D09A1002F0F0F /* ResourceCacheCacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534BC2AA256D09A1002F0F0F /* ResourceCacheCacher.swift */; };
 		534BC2B3256D0B63002F0F0F /* ResourceCacherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534BC2B2256D0B63002F0F0F /* ResourceCacherTests.swift */; };
+		534F55A125724D4D00DE9D4E /* MeasurementsViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534F55A025724D4D00DE9D4E /* MeasurementsViewAdapter.swift */; };
 		5361E5DF25685D5700731693 /* CountriesCachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5361E5DE25685D5700731693 /* CountriesCachePolicy.swift */; };
 		536AD9112570591900CE436B /* FavouriteCitiesPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536AD9102570591900CE436B /* FavouriteCitiesPresentationAdapter.swift */; };
 		536AD9732571226700CE436B /* ResourcePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536AD9722571226700CE436B /* ResourcePresenter.swift */; };
@@ -252,6 +253,7 @@
 		534BC29C256D06EC002F0F0F /* RealmCountriesCacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCountriesCacheStorage.swift; sourceTree = "<group>"; };
 		534BC2AA256D09A1002F0F0F /* ResourceCacheCacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCacheCacher.swift; sourceTree = "<group>"; };
 		534BC2B2256D0B63002F0F0F /* ResourceCacherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCacherTests.swift; sourceTree = "<group>"; };
+		534F55A025724D4D00DE9D4E /* MeasurementsViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementsViewAdapter.swift; sourceTree = "<group>"; };
 		5361E5DE25685D5700731693 /* CountriesCachePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesCachePolicy.swift; sourceTree = "<group>"; };
 		536AD9102570591900CE436B /* FavouriteCitiesPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCitiesPresentationAdapter.swift; sourceTree = "<group>"; };
 		536AD9722571226700CE436B /* ResourcePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcePresenter.swift; sourceTree = "<group>"; };
@@ -637,6 +639,7 @@
 				534178172567E4CE00EB2D11 /* Shared */,
 				534177ED2567C1A400EB2D11 /* Countries */,
 				534178212567EA0100EB2D11 /* Cities */,
+				534F55A625724D5100DE9D4E /* Measurements */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -789,6 +792,22 @@
 			children = (
 			);
 			path = Measurements;
+			sourceTree = "<group>";
+		};
+		534F55A625724D5100DE9D4E /* Measurements */ = {
+			isa = PBXGroup;
+			children = (
+				534F55AF25724D5B00DE9D4E /* View */,
+			);
+			path = Measurements;
+			sourceTree = "<group>";
+		};
+		534F55AF25724D5B00DE9D4E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				534F55A025724D4D00DE9D4E /* MeasurementsViewAdapter.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		536AD9642571217D00CE436B /* ResourceLoading */ = {
@@ -1230,6 +1249,7 @@
 				536ADA322571832A00CE436B /* ResourceListSwiftUIView.swift in Sources */,
 				53C4FF88256F060700716FAE /* CountriesComponentsComposer.swift in Sources */,
 				536AD9A825713D5000CE436B /* ResourceAddListViewSwiftUIView.swift in Sources */,
+				534F55A125724D4D00DE9D4E /* MeasurementsViewAdapter.swift in Sources */,
 				53385180256E6A8F0057C8F1 /* HTTPClientLogger.swift in Sources */,
 				5318225025690D0400731A3E /* CityViewModelMapper.swift in Sources */,
 				534177482567314300EB2D11 /* ViewController.swift in Sources */,
