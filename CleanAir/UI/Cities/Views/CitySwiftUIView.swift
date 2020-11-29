@@ -22,6 +22,21 @@ struct CitySwiftUIView: View, ResourceSwiftUIView {
           Image(systemName: viewModel.isFavourite ? "star.fill" : "star")
         }
       }
-    })
+    }).padding(.all)
   }
+}
+
+struct CitySwiftUIView_Previews: PreviewProvider {
+    static var previews: some View {
+      CitySwiftUIView(
+        viewModel: CityViewModel(
+          name: "City name",
+          country: "City country",
+          measurementsCount: 1,
+          availableLocationsCount: 12,
+          isFavourite: true
+        )
+      )
+      .previewLayout(.sizeThatFits)
+    }
 }
