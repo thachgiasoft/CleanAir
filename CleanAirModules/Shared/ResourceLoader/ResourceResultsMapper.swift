@@ -23,7 +23,9 @@ public  final class ResourceResultsMapper<T: Decodable, Z> {
   
   public func map(_ data: Data, from response: HTTPURLResponse) throws -> Z {
     guard response.statusCode == 200 else { throw InvalidStatusCode() }
-    guard let result = try? JSONDecoder().decode(Results<T>.self, from: data) else { throw InvalidData() }
+    let decoder = JSONDecoder()
+    decoder.dateDecodingStrategy = .iso8601
+    guard let result = try? decoder.decode(Results<T>.self, from: data) else { throw InvalidData() }
     return modelMapper(result.results)
   }
 }
