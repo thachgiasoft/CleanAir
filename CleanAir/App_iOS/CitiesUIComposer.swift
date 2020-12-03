@@ -40,7 +40,11 @@ final class CitiesUIComposer {
     return UIHostingController(rootView: view)
   }
   
-  static func makeFavouritesView(with storage: CityStorage, service: FavouriteCityService, onAdd: @escaping () -> Void) -> UIViewController {
+  static func makeFavouritesView(
+    with storage: CityStorage,
+    service: FavouriteCityService,
+    onSelect: @escaping (_ city: City) -> Void,
+    onAdd: @escaping () -> Void) -> UIViewController {
     typealias CityListViewModel = ResourceListViewModel<City, CityViewModel>
     typealias CityListView = WeakRef<CityListViewModel>
     typealias CityListAdapter = FavouriteCitiesPresentationAdapter<CityListView>
@@ -49,7 +53,7 @@ final class CitiesUIComposer {
     
     let viewModel = ResourceListViewModel(
       onAppear: adapter.load,
-      onSelect: { _ in },
+      onSelect: onSelect,
       mapper: { CitiesUIComposer.viewModel(for: $0, with: service) },
       resource: []
     )
