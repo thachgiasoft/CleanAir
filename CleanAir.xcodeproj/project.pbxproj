@@ -312,6 +312,7 @@
 		53C4FF87256F060700716FAE /* CountriesComponentsComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesComponentsComposer.swift; sourceTree = "<group>"; };
 		53C4FF91256F075D00716FAE /* CitiesComponentsComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesComponentsComposer.swift; sourceTree = "<group>"; };
 		53E558DF2578F53E005D872F /* MeasurementSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementSwiftUIView.swift; sourceTree = "<group>"; };
+		53E558E52578FB02005D872F /* CAMeasurementsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAMeasurementsLoader.swift; sourceTree = "<group>"; };
 		53E6729025703F6300523795 /* RealmStorageTests+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealmStorageTests+Helpers.swift"; sourceTree = "<group>"; };
 		53EAE3892573B5A200E8809B /* CAMeasurementMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAMeasurementMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -814,6 +815,7 @@
 			isa = PBXGroup;
 			children = (
 				538251452608CED50050D6D2 /* CAMeasurement.swift */,
+				53E558E52578FB02005D872F /* CAMeasurementsLoader.swift */,
 				53EAE3932573B5B600E8809B /* API */,
 			);
 			path = Measurements;
@@ -1331,6 +1333,7 @@
 				531E451325687C5600388852 /* CitiesStorage.swift in Sources */,
 				53C4012E256FE9C200716FAE /* RealmStorageResultObserver.swift in Sources */,
 				53C0B0C3256870F300D7A8F3 /* CountriesCacheMapper.swift in Sources */,
+				53E558E62578FB02005D872F /* CAMeasurementsLoader.swift in Sources */,
 				5341798325680E1200EB2D11 /* RealmStorage.swift in Sources */,
 				531E450F25687BF600388852 /* RealmCity.swift in Sources */,
 				53EAE38A2573B5A200E8809B /* CAMeasurementMapper.swift in Sources */,
