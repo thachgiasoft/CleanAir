@@ -15,13 +15,11 @@ public class FavouriteCityService {
   }
   
   public func toggl(for city: City) throws -> City {
-    let isFavourite = !city.isFavourite
-    let updatedCity = City(name: city.name, country: city.country, measurementsCount: city.measurementsCount, availableLocationsCount: city.availableLocationsCount, isFavourite: isFavourite)
+    var city = city
+    city.isFavourite
+      ? try { city.resetFavourite(); try storage.remove(cityId: city.id) }()
+      : try { city.makeFavourite(); try storage.store(city) }()
     
-    isFavourite
-      ? try storage.store(updatedCity)
-      : try storage.remove(cityId: city.id)
-    
-    return updatedCity
+    return city
   }
 }
