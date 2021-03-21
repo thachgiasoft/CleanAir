@@ -32,7 +32,13 @@ private extension AppDelegate {
   }
   
   func openCity(city: City) {
-    
+    let loader = ResourceLoader(
+      client: Self.makeHTTPClient(),
+      url: APIURL.measurements(for: city.id),
+      mapper: ResourceResultsMapper(CAMeasurementsMapper.map).map
+    )
+    let controller = CitiesUIComposer.makeMeasurementsView(with: loader)
+    rootController?.show(controller, sender: self)
   }
   
   func showCountries() {
