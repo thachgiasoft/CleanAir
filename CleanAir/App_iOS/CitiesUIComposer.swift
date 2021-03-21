@@ -45,20 +45,20 @@ final class CitiesUIComposer {
     service: FavouriteCityService,
     onSelect: @escaping (_ city: City) -> Void,
     onAdd: @escaping () -> Void) -> UIViewController {
-    typealias CityListViewModel = ResourceListViewModel<City, CityViewModel>
+    typealias CityListViewModel = ResourceLoadingListViewModel<City, CityViewModel>
     typealias CityListView = WeakRef<CityListViewModel>
     typealias CityListAdapter = FavouriteCitiesPresentationAdapter<CityListView>
     
     let adapter = CityListAdapter(storage: storage)
     
-    let viewModel = ResourceListViewModel(
+    let viewModel = CityListViewModel(
       onAppear: adapter.load,
       onSelect: onSelect,
       mapper: { CitiesUIComposer.viewModel(for: $0, with: service) },
       resource: []
     )
     
-    let view = ResourceListSwiftUIView(
+    let view = ResourceLoadingListSwiftUIView(
       onAppear: viewModel.onAppear,
       builder: { FavouriteCitySwiftUIView(viewModel:$0) },
       viewModel: viewModel
