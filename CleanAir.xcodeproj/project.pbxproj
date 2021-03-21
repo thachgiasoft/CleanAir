@@ -92,6 +92,7 @@
 		538251462608CED50050D6D2 /* CAMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538251452608CED50050D6D2 /* CAMeasurement.swift */; };
 		539729042607DF9600519A15 /* MeasurementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539729032607DF9600519A15 /* MeasurementViewModel.swift */; };
 		539729062607E22100519A15 /* MeasurementsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539729052607E22100519A15 /* MeasurementsViewModel.swift */; };
+		5397290E2607E7F700519A15 /* ResourceListSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5397290D2607E7F700519A15 /* ResourceListSwiftUIView.swift */; };
 		5399EA87256AFEFB00084C20 /* ResourceCacheLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5399EA86256AFEFB00084C20 /* ResourceCacheLoaderTests.swift */; };
 		539BCA38256EB3C60012C93B /* CountriesMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539BCA37256EB3C60012C93B /* CountriesMapperTests.swift */; };
 		539F224B2607B35100634EDE /* MeasurementSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539F224A2607B35100634EDE /* MeasurementSwiftUIView.swift */; };
@@ -278,6 +279,7 @@
 		538251452608CED50050D6D2 /* CAMeasurement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAMeasurement.swift; sourceTree = "<group>"; };
 		539729032607DF9600519A15 /* MeasurementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementViewModel.swift; sourceTree = "<group>"; };
 		539729052607E22100519A15 /* MeasurementsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasurementsViewModel.swift; sourceTree = "<group>"; };
+		5397290D2607E7F700519A15 /* ResourceListSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceListSwiftUIView.swift; sourceTree = "<group>"; };
 		5399EA86256AFEFB00084C20 /* ResourceCacheLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCacheLoaderTests.swift; sourceTree = "<group>"; };
 		539BCA37256EB3C60012C93B /* CountriesMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesMapperTests.swift; sourceTree = "<group>"; };
 		539F224A2607B35100634EDE /* MeasurementSwiftUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasurementSwiftUIView.swift; sourceTree = "<group>"; };
@@ -867,6 +869,7 @@
 			children = (
 				536AD9A725713D5000CE436B /* ResourceAddListViewSwiftUIView.swift */,
 				536ADA0C25717BF600CE436B /* ResourceLoadingListSwiftUIView.swift */,
+				5397290D2607E7F700519A15 /* ResourceListSwiftUIView.swift */,
 				536ADA1725717DB500CE436B /* ResourceSwiftUIView.swift */,
 			);
 			path = Views;
@@ -1290,6 +1293,7 @@
 				536AD9A825713D5000CE436B /* ResourceAddListViewSwiftUIView.swift in Sources */,
 				539729062607E22100519A15 /* MeasurementsViewModel.swift in Sources */,
 				53385180256E6A8F0057C8F1 /* HTTPClientLogger.swift in Sources */,
+				5397290E2607E7F700519A15 /* ResourceListSwiftUIView.swift in Sources */,
 				5318225025690D0400731A3E /* CityViewModelMapper.swift in Sources */,
 				534177482567314300EB2D11 /* ViewController.swift in Sources */,
 				534177E52567C0D900EB2D11 /* AppDelegate.swift in Sources */,
