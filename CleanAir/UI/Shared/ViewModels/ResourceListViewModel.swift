@@ -14,14 +14,14 @@ class ResourceListViewModel<Resource, ResourceViewModel>: ObservableObject {
   let selection: (Resource) -> Void
   let mapper: ViewModelMapper
   
-  @Published var resource: [ResourceViewModel]
+  @Published var resourceViewModels: [ResourceViewModel]
   @Published var error: String?
   
   init(onAppear: @escaping () -> Void,
        onSelect: @escaping (_ resource: Resource) -> Void,
        resource: [ResourceViewModel]) where Resource == ResourceViewModel {
     self.onAppear = onAppear
-    self.resource = resource
+    self.resourceViewModels = resource
     self.selection = onSelect
     self.mapper = { $0 }
   }
@@ -31,7 +31,7 @@ class ResourceListViewModel<Resource, ResourceViewModel>: ObservableObject {
        mapper: @escaping ViewModelMapper,
        resource: [ResourceViewModel] = []) {
     self.onAppear = onAppear
-    self.resource = resource
+    self.resourceViewModels = resource
     self.selection = onSelect
     self.mapper = mapper
   }
@@ -40,7 +40,7 @@ class ResourceListViewModel<Resource, ResourceViewModel>: ObservableObject {
 // MARK: - ResourceView
 extension ResourceListViewModel: ResourceView {
   func show(resourceViewModel: [Resource]) {
-    self.resource = resourceViewModel.map { mapper($0) }
+    self.resourceViewModels = resourceViewModel.map { mapper($0) }
   }
 }
 
