@@ -662,9 +662,8 @@
 		534177ED2567C1A400EB2D11 /* Countries */ = {
 			isa = PBXGroup;
 			children = (
-				534177FA2567D12400EB2D11 /* CountriesListViewViewModel.swift */,
-				534177F02567C1D300EB2D11 /* CountriesListSwiftUIView.swift */,
-				534179332568056900EB2D11 /* CountriesListSwiftUIViewPreview.swift */,
+				535EA1252607CB230001CA85 /* ViewModels */,
+				535EA1262607CB2A0001CA85 /* Views */,
 			);
 			path = Countries;
 			sourceTree = "<group>";
@@ -817,6 +816,23 @@
 				539F224C2607B35800634EDE /* View */,
 			);
 			path = Measurements;
+			sourceTree = "<group>";
+		};
+		535EA1252607CB230001CA85 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				534177FA2567D12400EB2D11 /* CountriesListViewViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		535EA1262607CB2A0001CA85 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				534177F02567C1D300EB2D11 /* CountriesListSwiftUIView.swift */,
+				534179332568056900EB2D11 /* CountriesListSwiftUIViewPreview.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		536AD9642571217D00CE436B /* ResourceLoading */ = {
