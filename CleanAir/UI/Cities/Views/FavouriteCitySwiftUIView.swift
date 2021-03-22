@@ -26,6 +26,7 @@ struct FavouriteCitySwiftUIView: View, ResourceSwiftUIView {
           viewModel.toggleFavourite?()
         }) {
           Image(systemName: viewModel.isFavourite ? "star.fill" : "star")
+            .foregroundColor(.yellow)
         }
       }
     }.padding(.all)

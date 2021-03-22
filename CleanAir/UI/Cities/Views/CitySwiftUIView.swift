@@ -19,7 +19,9 @@ struct CitySwiftUIView: View, ResourceSwiftUIView {
         Button(action: {
           viewModel.toggleFavourite?()
         }) {
-          Image(systemName: viewModel.isFavourite ? "star.fill" : "star")
+          let name = viewModel.isFavourite ? "star.fill" : "star"
+          Image(systemName: name)
+            .foregroundColor(.yellow)
         }
       }
     }).padding(.all)
