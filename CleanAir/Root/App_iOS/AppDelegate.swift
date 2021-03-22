@@ -13,14 +13,19 @@ import RealmSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
   weak var rootController: UIViewController?
+  var coordinator: RootCoordinator<UIViewController>?
+  
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    let rootNavigationController = UINavigationController(rootViewController: favouriteCitiesView())
+    let rootNavigationController = UINavigationController()
     rootNavigationController.navigationBar.prefersLargeTitles = true
-    
     rootController = rootNavigationController
     window = UIWindow(frame: UIScreen.main.bounds)
     window?.rootViewController = rootNavigationController
     window?.makeKeyAndVisible()
+    
+    coordinator = RootCoordinator(initialView: rootNavigationController)
+    coordinator?.start(with: { self.favouriteCitiesView() })
+    
     return true
   }
 }
@@ -73,5 +78,12 @@ private extension AppDelegate {
   
   static func makeRealm() -> Realm {
     return try! Realm()
+  }
+}
+
+// MARK: - Root
+extension UIViewController: PresentingView {
+  func show(view: UIViewController) {
+    show(view, sender: self)
   }
 }
