@@ -13,8 +13,16 @@ struct MeasurementSwiftUIView: ResourceSwiftUIView {
   
   var body: some View {
     VStack(alignment: .leading, spacing: 10, content: {
-      Text("\(viewModel.measurement)")
-      Text("\(viewModel.timeStamp)")
+      HStack(alignment: .top, spacing: 10) {
+        Image(systemName: "aqi.medium")
+        Text("\(viewModel.measurement)")
+      }
+      
+      HStack(alignment: .top, spacing: 10) {
+        Image(systemName: "clock")
+        Text("\(viewModel.timeStamp)")
+      }
+      
     }).padding(.all)
   }
 }
