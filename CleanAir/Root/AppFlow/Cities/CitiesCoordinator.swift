@@ -21,7 +21,7 @@ final class CitiesCoordinator<RootView, Factory> where RootView: PresentingView,
   func start() {
     let view = factory
       .makeFavouritesCitiesView(
-        selection: { [weak self] in self?.showMeasurements(for: $0) },
+        selection: { [weak self] in self?.presentMeasurements(for: $0) },
         onAdd: { [weak self] in self?.openAllCountries() }
       )
     initialView.show(view: view)
@@ -32,6 +32,10 @@ final class CitiesCoordinator<RootView, Factory> where RootView: PresentingView,
 private extension CitiesCoordinator {
   func showMeasurements(for city: String) {
     initialView.show(view: factory.makeMeasurementsViewFor(cityId: city))
+  }
+  
+  func presentMeasurements(for city: String) {
+    initialView.present(view: factory.makeMeasurementsViewFor(cityId: city))
   }
   
   func openAllCountries() {
