@@ -34,7 +34,6 @@
 		533851B3256E90B80057C8F1 /* RealmCitiesStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533851B2256E90B80057C8F1 /* RealmCitiesStorageTests.swift */; };
 		533851C1256E93F30057C8F1 /* RealmCuntriesCacheStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533851C0256E93F30057C8F1 /* RealmCuntriesCacheStorageTests.swift */; };
 		533851E5256E99D80057C8F1 /* CountriesLoaderWithCachingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533851E4256E99D80057C8F1 /* CountriesLoaderWithCachingTests.swift */; };
-		534177482567314300EB2D11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177472567314300EB2D11 /* ViewController.swift */; };
 		5341774D2567314400EB2D11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5341774C2567314400EB2D11 /* Assets.xcassets */; };
 		534177502567314400EB2D11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5341774E2567314400EB2D11 /* LaunchScreen.storyboard */; };
 		534177CB2567449900EB2D11 /* WeakRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177CA2567449900EB2D11 /* WeakRef.swift */; };
@@ -227,7 +226,6 @@
 		533851C0256E93F30057C8F1 /* RealmCuntriesCacheStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCuntriesCacheStorageTests.swift; sourceTree = "<group>"; };
 		533851E4256E99D80057C8F1 /* CountriesLoaderWithCachingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesLoaderWithCachingTests.swift; sourceTree = "<group>"; };
 		534177402567314300EB2D11 /* CleanAir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanAir.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		534177472567314300EB2D11 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5341774C2567314400EB2D11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5341774F2567314400EB2D11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		534177512567314400EB2D11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -562,7 +560,6 @@
 			children = (
 				534177EC2567C19D00EB2D11 /* UI */,
 				5382511C2608C4FB0050D6D2 /* Root */,
-				534177472567314300EB2D11 /* ViewController.swift */,
 				5341774C2567314400EB2D11 /* Assets.xcassets */,
 				5341774E2567314400EB2D11 /* LaunchScreen.storyboard */,
 				534177512567314400EB2D11 /* Info.plist */,
@@ -1393,7 +1390,6 @@
 				53F466CE260907C200C9B4E9 /* AppDelegate+Root.swift in Sources */,
 				5397290E2607E7F700519A15 /* ResourceListSwiftUIView.swift in Sources */,
 				5318225025690D0400731A3E /* CityViewModelMapper.swift in Sources */,
-				534177482567314300EB2D11 /* ViewController.swift in Sources */,
 				53F466C52608FE6E00C9B4E9 /* CitiesFactory.swift in Sources */,
 				534177E52567C0D900EB2D11 /* AppDelegate.swift in Sources */,
 				536ADA0D25717BF600CE436B /* ResourceLoadingListSwiftUIView.swift in Sources */,
