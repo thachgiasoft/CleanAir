@@ -37,7 +37,7 @@ private extension AppDelegate {
       url: APIURL.measurements(for: city.id),
       mapper: ResourceResultsMapper(CAMeasurementsMapper.map).map
     )
-    let controller = CitiesUIComposer.makeMeasurementsView(with: loader)
+    let controller = MeasurementsUIComposer.makeMeasurementsView(with: loader)
     rootController?.show(controller, sender: self)
   }
   
