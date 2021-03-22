@@ -10,23 +10,28 @@ import CleanAirModules
 import CleanAirPresentation
 
 final class CitiesUIComposer {
-  static func makeView(with loader: CitiesLoader, service: FavouriteCityService, selection: @escaping (City) -> Void) -> UIViewController {
-    typealias CityListViewModel = ResourceLoadingListViewModel<City, CityViewModel>
+  static func makeView(with loader: CitiesLoader, service: FavouriteCityService, onSelect: @escaping (City) -> Void) -> UIViewController {
+    typealias CityListViewModel = ResourceLoadingListViewModel<City, ResourceListViewModel<City, CityViewModel>>
     typealias CityListView = WeakRef<CityListViewModel>
     typealias CityListAdapter = ResourceLoadingPresentationAdapter<[City], CityListView>
     
     let adapter = CityListAdapter(loader: loader.load)
     
-    let viewModel = ResourceLoadingListViewModel(
+    let viewModel = CityListViewModel(
       onAppear: adapter.load,
-      onSelect: selection,
+      onSelect: onSelect,
       mapper: { CitiesUIComposer.viewModel(for: $0, with: service) },
       resource: []
     )
     
     let view = ResourceLoadingListSwiftUIView(
       onAppear: viewModel.onAppear,
-      builder: { CitySwiftUIView(viewModel:$0) },
+      builder: { resourceListViewModel in
+        ResourceListSwiftUIView(
+          viewModel: resourceListViewModel.resourceViewModel,
+          builder: { FavouriteCitySwiftUIView(viewModel: $0) },
+          selector: { onSelect(resourceListViewModel.resource) })
+      },
       viewModel: viewModel
     )
     
@@ -45,7 +50,7 @@ final class CitiesUIComposer {
     service: FavouriteCityService,
     onSelect: @escaping (_ city: City) -> Void,
     onAdd: @escaping () -> Void) -> UIViewController {
-    typealias CityListViewModel = ResourceLoadingListViewModel<City, CityViewModel>
+    typealias CityListViewModel = ResourceLoadingListViewModel<City, ResourceListViewModel<City, CityViewModel>>
     typealias CityListView = WeakRef<CityListViewModel>
     typealias CityListAdapter = FavouriteCitiesPresentationAdapter<CityListView>
     
@@ -60,7 +65,12 @@ final class CitiesUIComposer {
     
     let view = ResourceLoadingListSwiftUIView(
       onAppear: viewModel.onAppear,
-      builder: { FavouriteCitySwiftUIView(viewModel:$0) },
+      builder: { resourceListViewModel in
+        ResourceListSwiftUIView(
+          viewModel: resourceListViewModel.resourceViewModel,
+          builder: { FavouriteCitySwiftUIView(viewModel: $0) },
+          selector: { onSelect(resourceListViewModel.resource) })
+      },
       viewModel: viewModel
     )
     
@@ -113,15 +123,21 @@ final class CitiesUIComposer {
 
 // MARK: - Private
 private extension CitiesUIComposer {
-  static func viewModel(for city: City, with service: FavouriteCityService) -> CityViewModel {
-    let viewModel = CityViewModelMapper.map(model: city)
-    let adapter = CityPresentationAdapter<WeakRef<CityViewModel>>(city: city, service: service)
-    adapter.presenter = ResourcePresenter(
-      view: WeakRef(viewModel),
-      errorView: WeakRef(viewModel),
-      viewModelMapper: CityViewModelMapper.map
+  static func viewModel(for city: City, with service: FavouriteCityService) -> ResourceListViewModel<City, CityViewModel> {
+    let viewModel = ResourceListViewModel(
+      resource: city,
+      viewModelMapper: { model -> CityViewModel in
+        let viewModel = CityViewModelMapper.map(model: model)
+        let adapter = CityPresentationAdapter<WeakRef<CityViewModel>>(city: model, service: service)
+        adapter.presenter = ResourcePresenter(
+          view: WeakRef(viewModel),
+          errorView: WeakRef(viewModel),
+          viewModelMapper: CityViewModelMapper.map
+        )
+        viewModel.toggleFavourite = adapter.toggleFavourite
+        return viewModel
+      }
     )
-    viewModel.toggleFavourite = adapter.toggleFavourite
     return viewModel
   }
 }

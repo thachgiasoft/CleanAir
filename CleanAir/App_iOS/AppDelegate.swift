@@ -66,7 +66,7 @@ private extension AppDelegate {
     let storage = CitiesComponentsComposer.storage(realm: Self.makeRealm)
     let loader = CitiesComponentsComposer.countriesLoader(client: Self.makeHTTPClient(), storage: storage, countryCode: country.code)
     let service = CitiesComponentsComposer.countriesFavouriteService(realm: Self.makeRealm)
-    let controller = CitiesUIComposer.makeView(with: loader, service: service, selection: { _ in })
+    let controller = CitiesUIComposer.makeView(with: loader, service: service, onSelect: { [weak self] in self?.openCity(city: $0) })
     return controller
   }
   
