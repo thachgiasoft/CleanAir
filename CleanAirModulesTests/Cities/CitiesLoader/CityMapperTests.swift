@@ -17,6 +17,11 @@ class CityMapperTests: XCTestCase {
       expect(city: city, equalTo: remoteCity)
     }
   }
+  
+  func test_map_skipsInvalidCity() {
+    let invalidCities = CityMapper.invalidNames.map { anyRemoveCity(name: $0) }
+    XCTAssertTrue(CityMapper.map(invalidCities).isEmpty)
+  }
 }
 
 // MARK: - Private
@@ -30,8 +35,7 @@ private extension CityMapperTests {
     XCTAssertEqual(city.isFavourite, false)
   }
   
-  func anyRemoveCity() -> RemoteCity {
-    let name = UUID().uuidString
+  func anyRemoveCity(name: String = UUID().uuidString) -> RemoteCity {
     let country = UUID().uuidString
     let city = RemoteCity(
       city: name,
