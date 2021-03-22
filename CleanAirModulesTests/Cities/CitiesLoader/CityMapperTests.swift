@@ -22,8 +22,8 @@ class CityMapperTests: XCTestCase {
 // MARK: - Private
 private extension CityMapperTests {
   func expect(city: City, equalTo remoteCity: RemoteCity) {
-    XCTAssertEqual(city.id, remoteCity.name)
-    XCTAssertEqual(city.name, remoteCity.name)
+    XCTAssertEqual(city.id, remoteCity.city)
+    XCTAssertEqual(city.name, remoteCity.city)
     XCTAssertEqual(city.country, remoteCity.country)
     XCTAssertEqual(city.availableLocationsCount, remoteCity.locations)
     XCTAssertEqual(city.measurementsCount, remoteCity.count)
@@ -34,7 +34,7 @@ private extension CityMapperTests {
     let name = UUID().uuidString
     let country = UUID().uuidString
     let city = RemoteCity(
-      name: name,
+      city: name,
       country: country,
       count: Int.random(in: 0...9999),
       locations: Int.random(in: 0...9999)

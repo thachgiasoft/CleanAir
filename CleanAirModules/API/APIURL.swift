@@ -9,7 +9,7 @@ import Foundation
 
 public struct APIURL {
   private static let base = "https://api.openaq.org"
-  private static let version = "v1"
+  private static let version = "v2"
   
   public static let countries = URL(string: "\(base)/\(version)/countries")!
   
