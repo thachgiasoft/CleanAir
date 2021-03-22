@@ -3,41 +3,541 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		534177442567314300EB2D11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177432567314300EB2D11 /* AppDelegate.swift */; };
-		534177482567314300EB2D11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177472567314300EB2D11 /* ViewController.swift */; };
+		53069426256BC77A0034FB33 /* CitiesStorageMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53069425256BC77A0034FB33 /* CitiesStorageMapperTests.swift */; };
+		53069436256BCB250034FB33 /* CityMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53069435256BCB250034FB33 /* CityMapperTests.swift */; };
+		53069448256BCD990034FB33 /* CitiesLoaderWithStorageValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53069447256BCD990034FB33 /* CitiesLoaderWithStorageValidationTests.swift */; };
+		53069459256BCF300034FB33 /* XCTest+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53069458256BCF300034FB33 /* XCTest+Helpers.swift */; };
+		5317B8A4256A866400FE6D4F /* ResourceResultsMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5317B8A3256A866400FE6D4F /* ResourceResultsMapperTests.swift */; };
+		5318224D25690BBF00731A3E /* CityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5318224C25690BBF00731A3E /* CityViewModel.swift */; };
+		5318225025690D0400731A3E /* CityViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5318224F25690D0400731A3E /* CityViewModelMapper.swift */; };
+		53182253256914FE00731A3E /* CityPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53182252256914FE00731A3E /* CityPresentationAdapter.swift */; };
+		53190669256C5A9A004E4624 /* RealmCitiesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53190668256C5A9A004E4624 /* RealmCitiesStorage.swift */; };
+		531E450F25687BF600388852 /* RealmCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531E450E25687BF600388852 /* RealmCity.swift */; };
+		531E451325687C5600388852 /* CitiesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531E451225687C5600388852 /* CitiesStorage.swift */; };
+		531E451725687CB700388852 /* CitiesStorageMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531E451625687CB700388852 /* CitiesStorageMapper.swift */; };
+		531E451B25687DF900388852 /* FavouriteCityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531E451A25687DF900388852 /* FavouriteCityService.swift */; };
+		53200BF9260886610014C048 /* ResourceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53200BF8260886610014C048 /* ResourceListViewModel.swift */; };
+		53200C092608A9DD0014C048 /* MeasurementsUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53200C082608A9DD0014C048 /* MeasurementsUIComposer.swift */; };
+		53200C0B2608AB2B0014C048 /* MeasurementsComponentsComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53200C0A2608AB2B0014C048 /* MeasurementsComponentsComposer.swift */; };
+		5329887E25681A8200813C7A /* CleanAirModules.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 534178B52567FFCB00EB2D11 /* CleanAirModules.framework */; };
+		5329887F25681A8200813C7A /* CleanAirModules.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 534178B52567FFCB00EB2D11 /* CleanAirModules.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		532988A025681CB000813C7A /* CountriesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177C42567428C00EB2D11 /* CountriesLoader.swift */; };
+		532988A92568206100813C7A /* CountriesLoaderWithCaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532988A82568206100813C7A /* CountriesLoaderWithCaching.swift */; };
+		532988AF2568327300813C7A /* RealmCountryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532988AE2568327300813C7A /* RealmCountryCache.swift */; };
+		532D2D63260943D80014D1DC /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 532D2D62260943D80014D1DC /* release_notes.md */; };
+		532EAA17256D90CA00CD174C /* CleanAirEndToEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532EAA16256D90CA00CD174C /* CleanAirEndToEndTests.swift */; };
+		532EAA19256D90CA00CD174C /* CleanAirModules.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 534178B52567FFCB00EB2D11 /* CleanAirModules.framework */; };
+		53385180256E6A8F0057C8F1 /* HTTPClientLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5338517F256E6A8F0057C8F1 /* HTTPClientLogger.swift */; };
+		533851B3256E90B80057C8F1 /* RealmCitiesStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533851B2256E90B80057C8F1 /* RealmCitiesStorageTests.swift */; };
+		533851C1256E93F30057C8F1 /* RealmCuntriesCacheStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533851C0256E93F30057C8F1 /* RealmCuntriesCacheStorageTests.swift */; };
+		533851E5256E99D80057C8F1 /* CountriesLoaderWithCachingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533851E4256E99D80057C8F1 /* CountriesLoaderWithCachingTests.swift */; };
 		5341774D2567314400EB2D11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5341774C2567314400EB2D11 /* Assets.xcassets */; };
 		534177502567314400EB2D11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5341774E2567314400EB2D11 /* LaunchScreen.storyboard */; };
+		534177CB2567449900EB2D11 /* WeakRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177CA2567449900EB2D11 /* WeakRef.swift */; };
+		534177D0256744F100EB2D11 /* CountriesUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177CF256744F100EB2D11 /* CountriesUIComposer.swift */; };
+		534177E52567C0D900EB2D11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177E42567C0D900EB2D11 /* AppDelegate.swift */; };
+		534177F12567C1D300EB2D11 /* CountriesListSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177F02567C1D300EB2D11 /* CountriesListSwiftUIView.swift */; };
+		534177FB2567D12400EB2D11 /* CountriesListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177FA2567D12400EB2D11 /* CountriesListViewViewModel.swift */; };
+		534178142567E4CA00EB2D11 /* ResourceLoadingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534178132567E4CA00EB2D11 /* ResourceLoadingListViewModel.swift */; };
+		5341782D2567EEC500EB2D11 /* CitiesUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341782C2567EEC500EB2D11 /* CitiesUIComposer.swift */; };
+		534178C5256800D300EB2D11 /* APIURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534178002567D7AC00EB2D11 /* APIURL.swift */; };
+		534178CA256800D900EB2D11 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341775E256733C200EB2D11 /* HTTPClient.swift */; };
+		534178CD256800EC00EB2D11 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53417764256734E500EB2D11 /* URLSessionHTTPClient.swift */; };
+		534178D42568011A00EB2D11 /* ResourceResultsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341778A25673AE800EB2D11 /* ResourceResultsMapper.swift */; };
+		534178D92568013000EB2D11 /* ResourceLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177692567354100EB2D11 /* ResourceLoader.swift */; };
+		534178DC2568013900EB2D11 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53417774256737F300EB2D11 /* City.swift */; };
+		534178E32568014700EB2D11 /* CitiesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534178292567EE2300EB2D11 /* CitiesLoader.swift */; };
+		534178E62568015100EB2D11 /* CityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177792567386400EB2D11 /* CityMapper.swift */; };
+		534178F02568017F00EB2D11 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53417780256739E500EB2D11 /* Country.swift */; };
+		534178F52568018D00EB2D11 /* CountryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341778525673A6300EB2D11 /* CountryMapper.swift */; };
+		534178FB256801CB00EB2D11 /* CleanAirModules.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 534178B52567FFCB00EB2D11 /* CleanAirModules.framework */; };
+		534178FC256801CB00EB2D11 /* CleanAirModules.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 534178B52567FFCB00EB2D11 /* CleanAirModules.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		534179182568036200EB2D11 /* ResourceLoadingPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177C02567426D00EB2D11 /* ResourceLoadingPresentationAdapter.swift */; };
+		5341791B2568037E00EB2D11 /* ResourceLoadingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341779625673CBE00EB2D11 /* ResourceLoadingPresenter.swift */; };
+		5341791E256803B900EB2D11 /* ResourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341779D25673D0900EB2D11 /* ResourceView.swift */; };
+		53417921256803BC00EB2D11 /* ResourceErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177A425673D9700EB2D11 /* ResourceErrorView.swift */; };
+		53417924256803C000EB2D11 /* ResourceLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177A025673D2C00EB2D11 /* ResourceLoadingView.swift */; };
+		5341792B2568040300EB2D11 /* CleanAirPresentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53417906256802E000EB2D11 /* CleanAirPresentation.framework */; };
+		5341792C2568040300EB2D11 /* CleanAirPresentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 53417906256802E000EB2D11 /* CleanAirPresentation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		534179342568056900EB2D11 /* CountriesListSwiftUIViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534179332568056900EB2D11 /* CountriesListSwiftUIViewPreview.swift */; };
+		5341796A256809B000EB2D11 /* ResourceCacheLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53417969256809B000EB2D11 /* ResourceCacheLoader.swift */; };
+		5341797D25680DDF00EB2D11 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5341797C25680DDF00EB2D11 /* RealmSwift */; };
+		5341797F25680DDF00EB2D11 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 5341797E25680DDF00EB2D11 /* Realm */; };
+		5341798325680E1200EB2D11 /* RealmStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341798225680E1200EB2D11 /* RealmStorage.swift */; };
+		534179CB2568152A00EB2D11 /* RealmCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534179CA2568152A00EB2D11 /* RealmCountry.swift */; };
+		534179D4256815F300EB2D11 /* CountriesStorageMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534179D3256815F300EB2D11 /* CountriesStorageMapper.swift */; };
+		534179E9256816D600EB2D11 /* CountriesCacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534179E8256816D600EB2D11 /* CountriesCacheStorage.swift */; };
+		534BC29D256D06EC002F0F0F /* RealmCountriesCacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534BC29C256D06EC002F0F0F /* RealmCountriesCacheStorage.swift */; };
+		534BC2AB256D09A1002F0F0F /* ResourceCacheCacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534BC2AA256D09A1002F0F0F /* ResourceCacheCacher.swift */; };
+		534BC2B3256D0B63002F0F0F /* ResourceCacherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534BC2B2256D0B63002F0F0F /* ResourceCacherTests.swift */; };
+		5361E5DF25685D5700731693 /* CountriesCachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5361E5DE25685D5700731693 /* CountriesCachePolicy.swift */; };
+		536AD9112570591900CE436B /* FavouriteCitiesPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536AD9102570591900CE436B /* FavouriteCitiesPresentationAdapter.swift */; };
+		536AD9732571226700CE436B /* ResourcePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536AD9722571226700CE436B /* ResourcePresenter.swift */; };
+		536AD97E2571238C00CE436B /* ResourcePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536AD97D2571238C00CE436B /* ResourcePresenterTests.swift */; };
+		536AD9842571277000CE436B /* FavouriteCitiesPresentationAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536AD9832571277000CE436B /* FavouriteCitiesPresentationAdapterTests.swift */; };
+		536AD99A25713B1A00CE436B /* AnyResourcePresenterStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536AD99925713B1A00CE436B /* AnyResourcePresenterStub.swift */; };
+		536AD9A825713D5000CE436B /* ResourceAddListViewSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536AD9A725713D5000CE436B /* ResourceAddListViewSwiftUIView.swift */; };
+		536AD9CE25713EFE00CE436B /* CitySwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536AD9CD25713EFE00CE436B /* CitySwiftUIView.swift */; };
+		536ADA0D25717BF600CE436B /* ResourceLoadingListSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536ADA0C25717BF600CE436B /* ResourceLoadingListSwiftUIView.swift */; };
+		536ADA1825717DB500CE436B /* ResourceSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536ADA1725717DB500CE436B /* ResourceSwiftUIView.swift */; };
+		53714CCA2569758A00109B16 /* ResourceLoadingPresentationAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53714CC92569758A00109B16 /* ResourceLoadingPresentationAdapterTests.swift */; };
+		53714CCC2569758A00109B16 /* CleanAirPresentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53417906256802E000EB2D11 /* CleanAirPresentation.framework */; };
+		53714CD92569773400109B16 /* AnyResourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53714CD82569773300109B16 /* AnyResourceView.swift */; };
+		53714CE22569792F00109B16 /* AnyResourceLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53714CE12569792F00109B16 /* AnyResourceLoader.swift */; };
+		53714CE625697C9700109B16 /* AnyResourceLoadingPresenterStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53714CE525697C9700109B16 /* AnyResourceLoadingPresenterStub.swift */; };
+		53716AC525694B180032A245 /* CitiesLoaderWithStorageValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53716AC425694B180032A245 /* CitiesLoaderWithStorageValidation.swift */; };
+		538251462608CED50050D6D2 /* CAMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538251452608CED50050D6D2 /* CAMeasurement.swift */; };
+		539729042607DF9600519A15 /* MeasurementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539729032607DF9600519A15 /* MeasurementViewModel.swift */; };
+		539729062607E22100519A15 /* MeasurementsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539729052607E22100519A15 /* MeasurementsViewModel.swift */; };
+		5397290E2607E7F700519A15 /* ResourceListSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5397290D2607E7F700519A15 /* ResourceListSwiftUIView.swift */; };
+		5399EA87256AFEFB00084C20 /* ResourceCacheLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5399EA86256AFEFB00084C20 /* ResourceCacheLoaderTests.swift */; };
+		539BCA38256EB3C60012C93B /* CountriesMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539BCA37256EB3C60012C93B /* CountriesMapperTests.swift */; };
+		539F224B2607B35100634EDE /* MeasurementSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539F224A2607B35100634EDE /* MeasurementSwiftUIView.swift */; };
+		53A437EB256AE8A000C75DE1 /* ResourceLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A437EA256AE8A000C75DE1 /* ResourceLoaderTests.swift */; };
+		53B06BE7256EA52400F51249 /* CountriesCachePolicyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B06BE6256EA52400F51249 /* CountriesCachePolicyTests.swift */; };
+		53B06BFD256EACCB00F51249 /* FavouriteCityServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B06BFC256EACCB00F51249 /* FavouriteCityServiceTests.swift */; };
+		53BE4B95256A589B00475FAE /* RealmStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BE4B94256A589B00475FAE /* RealmStorageTests.swift */; };
+		53BFC72225698F2C00630261 /* ResourceLoadingPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BFC72125698F2C00630261 /* ResourceLoadingPresenterTests.swift */; };
+		53BFC72625699E1600630261 /* XCTest+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BFC72525699E1600630261 /* XCTest+Helpers.swift */; };
+		53BFC7562569BA1D00630261 /* CitiesPresentationAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BFC7552569BA1D00630261 /* CitiesPresentationAdapterTests.swift */; };
+		53BFC75A2569BC1800630261 /* FavouriteCityServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BFC7592569BC1800630261 /* FavouriteCityServiceMock.swift */; };
+		53BFC7682569C73E00630261 /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BFC7672569C73E00630261 /* APITests.swift */; };
+		53BFC76A2569C73E00630261 /* CleanAirModules.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 534178B52567FFCB00EB2D11 /* CleanAirModules.framework */; };
+		53BFC79D2569C98C00630261 /* HTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BFC79C2569C98C00630261 /* HTTPClientTests.swift */; };
+		53C0478D25684A290026F0FB /* ResourceCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C0478C25684A290026F0FB /* ResourceCache.swift */; };
+		53C0B0C3256870F300D7A8F3 /* CountriesCacheMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C0B0C2256870F300D7A8F3 /* CountriesCacheMapper.swift */; };
+		53C40112256FE81A00716FAE /* CityStorageLoadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C40111256FE81A00716FAE /* CityStorageLoadRequest.swift */; };
+		53C40128256FE8BC00716FAE /* CityStorageLoadRequestObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C40127256FE8BC00716FAE /* CityStorageLoadRequestObserver.swift */; };
+		53C4012E256FE9C200716FAE /* RealmStorageResultObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C4012D256FE9C200716FAE /* RealmStorageResultObserver.swift */; };
+		53C40134256FF26600716FAE /* ResourceStorageResultObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C40133256FF26600716FAE /* ResourceStorageResultObserver.swift */; };
+		53C4015325701BE100716FAE /* RealmStorageResultObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C4015225701BE100716FAE /* RealmStorageResultObserverTests.swift */; };
+		53C4015925703A5100716FAE /* ResourceStorageResultObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C4015825703A5100716FAE /* ResourceStorageResultObserverTests.swift */; };
+		53C4FF88256F060700716FAE /* CountriesComponentsComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C4FF87256F060700716FAE /* CountriesComponentsComposer.swift */; };
+		53C4FF92256F075D00716FAE /* CitiesComponentsComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C4FF91256F075D00716FAE /* CitiesComponentsComposer.swift */; };
+		53E558E62578FB02005D872F /* CAMeasurementsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E558E52578FB02005D872F /* CAMeasurementsLoader.swift */; };
+		53E6729125703F6300523795 /* RealmStorageTests+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E6729025703F6300523795 /* RealmStorageTests+Helpers.swift */; };
+		53EAE38A2573B5A200E8809B /* CAMeasurementMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EAE3892573B5A200E8809B /* CAMeasurementMapper.swift */; };
+		53F466B82608F54700C9B4E9 /* PresentingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F466B72608F54700C9B4E9 /* PresentingView.swift */; };
+		53F466C22608FE4700C9B4E9 /* CitiesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F466C12608FE4700C9B4E9 /* CitiesCoordinator.swift */; };
+		53F466C52608FE6E00C9B4E9 /* CitiesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F466C42608FE6E00C9B4E9 /* CitiesFactory.swift */; };
+		53F466C9260906AF00C9B4E9 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F466C8260906AF00C9B4E9 /* RootCoordinator.swift */; };
+		53F466CC260906FB00C9B4E9 /* RootFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F466CB260906FA00C9B4E9 /* RootFactory.swift */; };
+		53F466CE260907C200C9B4E9 /* AppDelegate+Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F466CD260907C200C9B4E9 /* AppDelegate+Root.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5329888025681A8200813C7A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 534177382567314300EB2D11 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 534178B42567FFCB00EB2D11;
+			remoteInfo = CleanAirModules;
+		};
+		532EAA1A256D90CA00CD174C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 534177382567314300EB2D11 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 534178B42567FFCB00EB2D11;
+			remoteInfo = CleanAirModules;
+		};
+		534178FD256801CB00EB2D11 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 534177382567314300EB2D11 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 534178B42567FFCB00EB2D11;
+			remoteInfo = CleanAirModules;
+		};
+		5341792D2568040300EB2D11 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 534177382567314300EB2D11 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53417905256802E000EB2D11;
+			remoteInfo = CleanAirPresentation;
+		};
+		53714CCD2569758A00109B16 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 534177382567314300EB2D11 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53417905256802E000EB2D11;
+			remoteInfo = CleanAirPresentation;
+		};
+		53BFC76B2569C73E00630261 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 534177382567314300EB2D11 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 534178B42567FFCB00EB2D11;
+			remoteInfo = CleanAirModules;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5329888225681A8200813C7A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5329887F25681A8200813C7A /* CleanAirModules.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		534178FF256801CB00EB2D11 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				534178FC256801CB00EB2D11 /* CleanAirModules.framework in Embed Frameworks */,
+				5341792C2568040300EB2D11 /* CleanAirPresentation.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		53069425256BC77A0034FB33 /* CitiesStorageMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesStorageMapperTests.swift; sourceTree = "<group>"; };
+		53069435256BCB250034FB33 /* CityMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityMapperTests.swift; sourceTree = "<group>"; };
+		53069447256BCD990034FB33 /* CitiesLoaderWithStorageValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesLoaderWithStorageValidationTests.swift; sourceTree = "<group>"; };
+		53069458256BCF300034FB33 /* XCTest+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+Helpers.swift"; sourceTree = "<group>"; };
+		5317B8A3256A866400FE6D4F /* ResourceResultsMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceResultsMapperTests.swift; sourceTree = "<group>"; };
+		5318224C25690BBF00731A3E /* CityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModel.swift; sourceTree = "<group>"; };
+		5318224F25690D0400731A3E /* CityViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModelMapper.swift; sourceTree = "<group>"; };
+		53182252256914FE00731A3E /* CityPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityPresentationAdapter.swift; sourceTree = "<group>"; };
+		53190668256C5A9A004E4624 /* RealmCitiesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCitiesStorage.swift; sourceTree = "<group>"; };
+		531E450E25687BF600388852 /* RealmCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCity.swift; sourceTree = "<group>"; };
+		531E451225687C5600388852 /* CitiesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesStorage.swift; sourceTree = "<group>"; };
+		531E451625687CB700388852 /* CitiesStorageMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesStorageMapper.swift; sourceTree = "<group>"; };
+		531E451A25687DF900388852 /* FavouriteCityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCityService.swift; sourceTree = "<group>"; };
+		53200BF8260886610014C048 /* ResourceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceListViewModel.swift; sourceTree = "<group>"; };
+		53200C082608A9DD0014C048 /* MeasurementsUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementsUIComposer.swift; sourceTree = "<group>"; };
+		53200C0A2608AB2B0014C048 /* MeasurementsComponentsComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementsComponentsComposer.swift; sourceTree = "<group>"; };
+		532988A82568206100813C7A /* CountriesLoaderWithCaching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesLoaderWithCaching.swift; sourceTree = "<group>"; };
+		532988AE2568327300813C7A /* RealmCountryCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCountryCache.swift; sourceTree = "<group>"; };
+		532D2D62260943D80014D1DC /* release_notes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = release_notes.md; sourceTree = "<group>"; };
+		532EAA14256D90CA00CD174C /* CleanAirEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanAirEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		532EAA16256D90CA00CD174C /* CleanAirEndToEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanAirEndToEndTests.swift; sourceTree = "<group>"; };
+		532EAA18256D90CA00CD174C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5338517F256E6A8F0057C8F1 /* HTTPClientLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientLogger.swift; sourceTree = "<group>"; };
+		533851B2256E90B80057C8F1 /* RealmCitiesStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCitiesStorageTests.swift; sourceTree = "<group>"; };
+		533851C0256E93F30057C8F1 /* RealmCuntriesCacheStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCuntriesCacheStorageTests.swift; sourceTree = "<group>"; };
+		533851E4256E99D80057C8F1 /* CountriesLoaderWithCachingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesLoaderWithCachingTests.swift; sourceTree = "<group>"; };
 		534177402567314300EB2D11 /* CleanAir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanAir.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		534177432567314300EB2D11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		534177472567314300EB2D11 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5341774C2567314400EB2D11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5341774F2567314400EB2D11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		534177512567314400EB2D11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5341775E256733C200EB2D11 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		53417764256734E500EB2D11 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
+		534177692567354100EB2D11 /* ResourceLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoader.swift; sourceTree = "<group>"; };
+		53417774256737F300EB2D11 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		534177792567386400EB2D11 /* CityMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityMapper.swift; sourceTree = "<group>"; };
+		53417780256739E500EB2D11 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		5341778525673A6300EB2D11 /* CountryMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryMapper.swift; sourceTree = "<group>"; };
+		5341778A25673AE800EB2D11 /* ResourceResultsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceResultsMapper.swift; sourceTree = "<group>"; };
+		5341779625673CBE00EB2D11 /* ResourceLoadingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoadingPresenter.swift; sourceTree = "<group>"; };
+		5341779D25673D0900EB2D11 /* ResourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceView.swift; sourceTree = "<group>"; };
+		534177A025673D2C00EB2D11 /* ResourceLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoadingView.swift; sourceTree = "<group>"; };
+		534177A425673D9700EB2D11 /* ResourceErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceErrorView.swift; sourceTree = "<group>"; };
+		534177C02567426D00EB2D11 /* ResourceLoadingPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoadingPresentationAdapter.swift; sourceTree = "<group>"; };
+		534177C42567428C00EB2D11 /* CountriesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesLoader.swift; sourceTree = "<group>"; };
+		534177CA2567449900EB2D11 /* WeakRef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakRef.swift; sourceTree = "<group>"; };
+		534177CF256744F100EB2D11 /* CountriesUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesUIComposer.swift; sourceTree = "<group>"; };
+		534177E42567C0D900EB2D11 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		534177F02567C1D300EB2D11 /* CountriesListSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListSwiftUIView.swift; sourceTree = "<group>"; };
+		534177FA2567D12400EB2D11 /* CountriesListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListViewViewModel.swift; sourceTree = "<group>"; };
+		534178002567D7AC00EB2D11 /* APIURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIURL.swift; sourceTree = "<group>"; };
+		534178132567E4CA00EB2D11 /* ResourceLoadingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoadingListViewModel.swift; sourceTree = "<group>"; };
+		534178292567EE2300EB2D11 /* CitiesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesLoader.swift; sourceTree = "<group>"; };
+		5341782C2567EEC500EB2D11 /* CitiesUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesUIComposer.swift; sourceTree = "<group>"; };
+		534178B52567FFCB00EB2D11 /* CleanAirModules.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CleanAirModules.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		534178B82567FFCB00EB2D11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53417906256802E000EB2D11 /* CleanAirPresentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CleanAirPresentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53417909256802E000EB2D11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		534179332568056900EB2D11 /* CountriesListSwiftUIViewPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListSwiftUIViewPreview.swift; sourceTree = "<group>"; };
+		53417969256809B000EB2D11 /* ResourceCacheLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCacheLoader.swift; sourceTree = "<group>"; };
+		5341798225680E1200EB2D11 /* RealmStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorage.swift; sourceTree = "<group>"; };
+		534179CA2568152A00EB2D11 /* RealmCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCountry.swift; sourceTree = "<group>"; };
+		534179D3256815F300EB2D11 /* CountriesStorageMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesStorageMapper.swift; sourceTree = "<group>"; };
+		534179E8256816D600EB2D11 /* CountriesCacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesCacheStorage.swift; sourceTree = "<group>"; };
+		534BC29C256D06EC002F0F0F /* RealmCountriesCacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCountriesCacheStorage.swift; sourceTree = "<group>"; };
+		534BC2AA256D09A1002F0F0F /* ResourceCacheCacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCacheCacher.swift; sourceTree = "<group>"; };
+		534BC2B2256D0B63002F0F0F /* ResourceCacherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCacherTests.swift; sourceTree = "<group>"; };
+		5361E5DE25685D5700731693 /* CountriesCachePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesCachePolicy.swift; sourceTree = "<group>"; };
+		536AD9102570591900CE436B /* FavouriteCitiesPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCitiesPresentationAdapter.swift; sourceTree = "<group>"; };
+		536AD9722571226700CE436B /* ResourcePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcePresenter.swift; sourceTree = "<group>"; };
+		536AD97D2571238C00CE436B /* ResourcePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcePresenterTests.swift; sourceTree = "<group>"; };
+		536AD9832571277000CE436B /* FavouriteCitiesPresentationAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCitiesPresentationAdapterTests.swift; sourceTree = "<group>"; };
+		536AD99925713B1A00CE436B /* AnyResourcePresenterStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyResourcePresenterStub.swift; sourceTree = "<group>"; };
+		536AD9A725713D5000CE436B /* ResourceAddListViewSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceAddListViewSwiftUIView.swift; sourceTree = "<group>"; };
+		536AD9CD25713EFE00CE436B /* CitySwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySwiftUIView.swift; sourceTree = "<group>"; };
+		536ADA0C25717BF600CE436B /* ResourceLoadingListSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoadingListSwiftUIView.swift; sourceTree = "<group>"; };
+		536ADA1725717DB500CE436B /* ResourceSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceSwiftUIView.swift; sourceTree = "<group>"; };
+		53714CC72569758A00109B16 /* CleanAirPresentationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanAirPresentationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		53714CC92569758A00109B16 /* ResourceLoadingPresentationAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoadingPresentationAdapterTests.swift; sourceTree = "<group>"; };
+		53714CCB2569758A00109B16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53714CD82569773300109B16 /* AnyResourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyResourceView.swift; sourceTree = "<group>"; };
+		53714CE12569792F00109B16 /* AnyResourceLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyResourceLoader.swift; sourceTree = "<group>"; };
+		53714CE525697C9700109B16 /* AnyResourceLoadingPresenterStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyResourceLoadingPresenterStub.swift; sourceTree = "<group>"; };
+		53716AC425694B180032A245 /* CitiesLoaderWithStorageValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesLoaderWithStorageValidation.swift; sourceTree = "<group>"; };
+		538251452608CED50050D6D2 /* CAMeasurement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAMeasurement.swift; sourceTree = "<group>"; };
+		539729032607DF9600519A15 /* MeasurementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementViewModel.swift; sourceTree = "<group>"; };
+		539729052607E22100519A15 /* MeasurementsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasurementsViewModel.swift; sourceTree = "<group>"; };
+		5397290D2607E7F700519A15 /* ResourceListSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceListSwiftUIView.swift; sourceTree = "<group>"; };
+		5399EA86256AFEFB00084C20 /* ResourceCacheLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCacheLoaderTests.swift; sourceTree = "<group>"; };
+		539BCA37256EB3C60012C93B /* CountriesMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesMapperTests.swift; sourceTree = "<group>"; };
+		539F224A2607B35100634EDE /* MeasurementSwiftUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasurementSwiftUIView.swift; sourceTree = "<group>"; };
+		53A437EA256AE8A000C75DE1 /* ResourceLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoaderTests.swift; sourceTree = "<group>"; };
+		53B06BE6256EA52400F51249 /* CountriesCachePolicyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesCachePolicyTests.swift; sourceTree = "<group>"; };
+		53B06BFC256EACCB00F51249 /* FavouriteCityServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCityServiceTests.swift; sourceTree = "<group>"; };
+		53BE4B94256A589B00475FAE /* RealmStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorageTests.swift; sourceTree = "<group>"; };
+		53BFC72125698F2C00630261 /* ResourceLoadingPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoadingPresenterTests.swift; sourceTree = "<group>"; };
+		53BFC72525699E1600630261 /* XCTest+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+Helpers.swift"; sourceTree = "<group>"; };
+		53BFC7552569BA1D00630261 /* CitiesPresentationAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesPresentationAdapterTests.swift; sourceTree = "<group>"; };
+		53BFC7592569BC1800630261 /* FavouriteCityServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCityServiceMock.swift; sourceTree = "<group>"; };
+		53BFC7652569C73E00630261 /* CleanAirModulesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanAirModulesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		53BFC7672569C73E00630261 /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
+		53BFC7692569C73E00630261 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53BFC79C2569C98C00630261 /* HTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientTests.swift; sourceTree = "<group>"; };
+		53C0478C25684A290026F0FB /* ResourceCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCache.swift; sourceTree = "<group>"; };
+		53C0B0C2256870F300D7A8F3 /* CountriesCacheMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesCacheMapper.swift; sourceTree = "<group>"; };
+		53C40111256FE81A00716FAE /* CityStorageLoadRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityStorageLoadRequest.swift; sourceTree = "<group>"; };
+		53C40127256FE8BC00716FAE /* CityStorageLoadRequestObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityStorageLoadRequestObserver.swift; sourceTree = "<group>"; };
+		53C4012D256FE9C200716FAE /* RealmStorageResultObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorageResultObserver.swift; sourceTree = "<group>"; };
+		53C40133256FF26600716FAE /* ResourceStorageResultObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceStorageResultObserver.swift; sourceTree = "<group>"; };
+		53C4015225701BE100716FAE /* RealmStorageResultObserverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorageResultObserverTests.swift; sourceTree = "<group>"; };
+		53C4015825703A5100716FAE /* ResourceStorageResultObserverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceStorageResultObserverTests.swift; sourceTree = "<group>"; };
+		53C4FF87256F060700716FAE /* CountriesComponentsComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesComponentsComposer.swift; sourceTree = "<group>"; };
+		53C4FF91256F075D00716FAE /* CitiesComponentsComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesComponentsComposer.swift; sourceTree = "<group>"; };
+		53E558E52578FB02005D872F /* CAMeasurementsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAMeasurementsLoader.swift; sourceTree = "<group>"; };
+		53E6729025703F6300523795 /* RealmStorageTests+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealmStorageTests+Helpers.swift"; sourceTree = "<group>"; };
+		53EAE3892573B5A200E8809B /* CAMeasurementMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAMeasurementMapper.swift; sourceTree = "<group>"; };
+		53F466B72608F54700C9B4E9 /* PresentingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentingView.swift; sourceTree = "<group>"; };
+		53F466C12608FE4700C9B4E9 /* CitiesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesCoordinator.swift; sourceTree = "<group>"; };
+		53F466C42608FE6E00C9B4E9 /* CitiesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesFactory.swift; sourceTree = "<group>"; };
+		53F466C8260906AF00C9B4E9 /* RootCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
+		53F466CB260906FA00C9B4E9 /* RootFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootFactory.swift; sourceTree = "<group>"; };
+		53F466CD260907C200C9B4E9 /* AppDelegate+Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Root.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		532EAA11256D90CA00CD174C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				532EAA19256D90CA00CD174C /* CleanAirModules.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5341773D2567314300EB2D11 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				534178FB256801CB00EB2D11 /* CleanAirModules.framework in Frameworks */,
+				5341792B2568040300EB2D11 /* CleanAirPresentation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		534178B22567FFCB00EB2D11 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5341797F25680DDF00EB2D11 /* Realm in Frameworks */,
+				5341797D25680DDF00EB2D11 /* RealmSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53417903256802E000EB2D11 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5329887E25681A8200813C7A /* CleanAirModules.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53714CC42569758A00109B16 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53714CCC2569758A00109B16 /* CleanAirPresentation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53BFC7622569C73E00630261 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53BFC76A2569C73E00630261 /* CleanAirModules.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5306942A256BC77E0034FB33 /* Cities */ = {
+			isa = PBXGroup;
+			children = (
+				53069434256BCAFE0034FB33 /* CitiesStorage */,
+				5306943D256BCB280034FB33 /* CitiesLoader */,
+				53B06C02256EACCE00F51249 /* FavouriteCityService */,
+			);
+			path = Cities;
+			sourceTree = "<group>";
+		};
+		53069434256BCAFE0034FB33 /* CitiesStorage */ = {
+			isa = PBXGroup;
+			children = (
+				53069425256BC77A0034FB33 /* CitiesStorageMapperTests.swift */,
+				533851B2256E90B80057C8F1 /* RealmCitiesStorageTests.swift */,
+			);
+			path = CitiesStorage;
+			sourceTree = "<group>";
+		};
+		5306943D256BCB280034FB33 /* CitiesLoader */ = {
+			isa = PBXGroup;
+			children = (
+				53069435256BCB250034FB33 /* CityMapperTests.swift */,
+				53069447256BCD990034FB33 /* CitiesLoaderWithStorageValidationTests.swift */,
+			);
+			path = CitiesLoader;
+			sourceTree = "<group>";
+		};
+		5306945D256BCF400034FB33 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				53E6729025703F6300523795 /* RealmStorageTests+Helpers.swift */,
+				53069458256BCF300034FB33 /* XCTest+Helpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		5317B8A8256A866900FE6D4F /* ResourceLoader */ = {
+			isa = PBXGroup;
+			children = (
+				5317B8A3256A866400FE6D4F /* ResourceResultsMapperTests.swift */,
+				53A437EA256AE8A000C75DE1 /* ResourceLoaderTests.swift */,
+			);
+			path = ResourceLoader;
+			sourceTree = "<group>";
+		};
+		5319066D256C5A9D004E4624 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				531E450E25687BF600388852 /* RealmCity.swift */,
+				53190668256C5A9A004E4624 /* RealmCitiesStorage.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		531E450825687BAE00388852 /* CitiesStorage */ = {
+			isa = PBXGroup;
+			children = (
+				531E451225687C5600388852 /* CitiesStorage.swift */,
+				53C40111256FE81A00716FAE /* CityStorageLoadRequest.swift */,
+				53C40127256FE8BC00716FAE /* CityStorageLoadRequestObserver.swift */,
+				531E451625687CB700388852 /* CitiesStorageMapper.swift */,
+				5319066D256C5A9D004E4624 /* Realm */,
+			);
+			path = CitiesStorage;
+			sourceTree = "<group>";
+		};
+		531E450A25687BB900388852 /* Cities */ = {
+			isa = PBXGroup;
+			children = (
+				53417774256737F300EB2D11 /* City.swift */,
+				53716AC425694B180032A245 /* CitiesLoaderWithStorageValidation.swift */,
+				531E450825687BAE00388852 /* CitiesStorage */,
+				53417777256737FA00EB2D11 /* CitiesLoader */,
+				531E451D25687DFD00388852 /* FavouriteCityService */,
+			);
+			path = Cities;
+			sourceTree = "<group>";
+		};
+		531E451D25687DFD00388852 /* FavouriteCityService */ = {
+			isa = PBXGroup;
+			children = (
+				531E451A25687DF900388852 /* FavouriteCityService.swift */,
+			);
+			path = FavouriteCityService;
+			sourceTree = "<group>";
+		};
+		532AF4C52607B27A00902555 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				539729052607E22100519A15 /* MeasurementsViewModel.swift */,
+				539729032607DF9600519A15 /* MeasurementViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		532EAA15256D90CA00CD174C /* CleanAirEndToEndTests */ = {
+			isa = PBXGroup;
+			children = (
+				532EAA16256D90CA00CD174C /* CleanAirEndToEndTests.swift */,
+				532EAA18256D90CA00CD174C /* Info.plist */,
+			);
+			path = CleanAirEndToEndTests;
+			sourceTree = "<group>";
+		};
+		533851C6256E93F60057C8F1 /* Countries */ = {
+			isa = PBXGroup;
+			children = (
+				533851D3256E95420057C8F1 /* CountriesCacheStorage */,
+				533851EA256E99DE0057C8F1 /* CountriesLoader */,
+			);
+			path = Countries;
+			sourceTree = "<group>";
+		};
+		533851D3256E95420057C8F1 /* CountriesCacheStorage */ = {
+			isa = PBXGroup;
+			children = (
+				533851C0256E93F30057C8F1 /* RealmCuntriesCacheStorageTests.swift */,
+			);
+			path = CountriesCacheStorage;
+			sourceTree = "<group>";
+		};
+		533851EA256E99DE0057C8F1 /* CountriesLoader */ = {
+			isa = PBXGroup;
+			children = (
+				539BCA37256EB3C60012C93B /* CountriesMapperTests.swift */,
+				533851E4256E99D80057C8F1 /* CountriesLoaderWithCachingTests.swift */,
+				53B06BE6256EA52400F51249 /* CountriesCachePolicyTests.swift */,
+			);
+			path = CountriesLoader;
+			sourceTree = "<group>";
+		};
+		5339BBCB256C640E00F2BBD2 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				532988AE2568327300813C7A /* RealmCountryCache.swift */,
+				534BC29C256D06EC002F0F0F /* RealmCountriesCacheStorage.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		5339BBCF256C643000F2BBD2 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				534179CA2568152A00EB2D11 /* RealmCountry.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 		534177372567314300EB2D11 = {
 			isa = PBXGroup;
 			children = (
+				534178B62567FFCB00EB2D11 /* CleanAirModules */,
+				53417907256802E000EB2D11 /* CleanAirPresentation */,
 				534177422567314300EB2D11 /* CleanAir */,
+				53BFC7662569C73E00630261 /* CleanAirModulesTests */,
+				53714CC82569758A00109B16 /* CleanAirPresentationTests */,
+				532EAA15256D90CA00CD174C /* CleanAirEndToEndTests */,
 				534177412567314300EB2D11 /* Products */,
+				534178FA256801CB00EB2D11 /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -48,6 +548,11 @@
 			isa = PBXGroup;
 			children = (
 				534177402567314300EB2D11 /* CleanAir.app */,
+				534178B52567FFCB00EB2D11 /* CleanAirModules.framework */,
+				53417906256802E000EB2D11 /* CleanAirPresentation.framework */,
+				53714CC72569758A00109B16 /* CleanAirPresentationTests.xctest */,
+				53BFC7652569C73E00630261 /* CleanAirModulesTests.xctest */,
+				532EAA14256D90CA00CD174C /* CleanAirEndToEndTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -55,18 +560,616 @@
 		534177422567314300EB2D11 /* CleanAir */ = {
 			isa = PBXGroup;
 			children = (
-				534177432567314300EB2D11 /* AppDelegate.swift */,
-				534177472567314300EB2D11 /* ViewController.swift */,
+				534177EC2567C19D00EB2D11 /* UI */,
+				5382511C2608C4FB0050D6D2 /* Root */,
 				5341774C2567314400EB2D11 /* Assets.xcassets */,
 				5341774E2567314400EB2D11 /* LaunchScreen.storyboard */,
 				534177512567314400EB2D11 /* Info.plist */,
+				532D2D62260943D80014D1DC /* release_notes.md */,
 			);
 			path = CleanAir;
 			sourceTree = "<group>";
 		};
+		53417762256734B500EB2D11 /* HTTPClient */ = {
+			isa = PBXGroup;
+			children = (
+				5341775E256733C200EB2D11 /* HTTPClient.swift */,
+				53417767256734E800EB2D11 /* Infra */,
+			);
+			path = HTTPClient;
+			sourceTree = "<group>";
+		};
+		53417767256734E800EB2D11 /* Infra */ = {
+			isa = PBXGroup;
+			children = (
+				53417764256734E500EB2D11 /* URLSessionHTTPClient.swift */,
+			);
+			path = Infra;
+			sourceTree = "<group>";
+		};
+		5341776C2567354F00EB2D11 /* ResourceLoader */ = {
+			isa = PBXGroup;
+			children = (
+				5341778A25673AE800EB2D11 /* ResourceResultsMapper.swift */,
+				534177692567354100EB2D11 /* ResourceLoader.swift */,
+			);
+			path = ResourceLoader;
+			sourceTree = "<group>";
+		};
+		53417777256737FA00EB2D11 /* CitiesLoader */ = {
+			isa = PBXGroup;
+			children = (
+				534178292567EE2300EB2D11 /* CitiesLoader.swift */,
+				5341777C2567386A00EB2D11 /* CitiesAPI */,
+			);
+			path = CitiesLoader;
+			sourceTree = "<group>";
+		};
+		5341777C2567386A00EB2D11 /* CitiesAPI */ = {
+			isa = PBXGroup;
+			children = (
+				534177792567386400EB2D11 /* CityMapper.swift */,
+			);
+			path = CitiesAPI;
+			sourceTree = "<group>";
+		};
+		53417783256739ED00EB2D11 /* CountriesLoader */ = {
+			isa = PBXGroup;
+			children = (
+				534177C42567428C00EB2D11 /* CountriesLoader.swift */,
+				5341778825673A6700EB2D11 /* CoutriesAPI */,
+			);
+			path = CountriesLoader;
+			sourceTree = "<group>";
+		};
+		5341778825673A6700EB2D11 /* CoutriesAPI */ = {
+			isa = PBXGroup;
+			children = (
+				5341778525673A6300EB2D11 /* CountryMapper.swift */,
+			);
+			path = CoutriesAPI;
+			sourceTree = "<group>";
+		};
+		5341779425673C8200EB2D11 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				53417762256734B500EB2D11 /* HTTPClient */,
+				5341797425680A3A00EB2D11 /* Storage */,
+				5341776C2567354F00EB2D11 /* ResourceLoader */,
+				5341796D256809B300EB2D11 /* ResourceCache */,
+				53C40139256FF26900716FAE /* ResourceStorageLoadObserver */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		534177C82567447D00EB2D11 /* App_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				53F466CF260908DD00C9B4E9 /* Composition */,
+				534177E42567C0D900EB2D11 /* AppDelegate.swift */,
+				53F466CD260907C200C9B4E9 /* AppDelegate+Root.swift */,
+			);
+			path = App_iOS;
+			sourceTree = "<group>";
+		};
+		534177CD256744C200EB2D11 /* Utilies */ = {
+			isa = PBXGroup;
+			children = (
+				534177CA2567449900EB2D11 /* WeakRef.swift */,
+				5338517F256E6A8F0057C8F1 /* HTTPClientLogger.swift */,
+			);
+			path = Utilies;
+			sourceTree = "<group>";
+		};
+		534177EC2567C19D00EB2D11 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				534178172567E4CE00EB2D11 /* Shared */,
+				534177ED2567C1A400EB2D11 /* Countries */,
+				534178212567EA0100EB2D11 /* Cities */,
+				534F55A625724D5100DE9D4E /* Measurements */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		534177ED2567C1A400EB2D11 /* Countries */ = {
+			isa = PBXGroup;
+			children = (
+				535EA1252607CB230001CA85 /* ViewModels */,
+				535EA1262607CB2A0001CA85 /* Views */,
+			);
+			path = Countries;
+			sourceTree = "<group>";
+		};
+		534178032567D7B100EB2D11 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				534178002567D7AC00EB2D11 /* APIURL.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		534178112567E41A00EB2D11 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				536AD9782571226D00CE436B /* Resource */,
+				536AD9642571217D00CE436B /* ResourceLoading */,
+				536AD96D2571218900CE436B /* Shared */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		534178172567E4CE00EB2D11 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				534178192567E4D500EB2D11 /* ViewModels */,
+				536ADA1225717BFB00CE436B /* Views */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		534178192567E4D500EB2D11 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				534178132567E4CA00EB2D11 /* ResourceLoadingListViewModel.swift */,
+				53200BF8260886610014C048 /* ResourceListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		534178212567EA0100EB2D11 /* Cities */ = {
+			isa = PBXGroup;
+			children = (
+				53E00369257196C800625D7D /* ViewModels */,
+				53E0036E257196CF00625D7D /* Views */,
+			);
+			path = Cities;
+			sourceTree = "<group>";
+		};
+		534178B62567FFCB00EB2D11 /* CleanAirModules */ = {
+			isa = PBXGroup;
+			children = (
+				534178032567D7B100EB2D11 /* API */,
+				5341779425673C8200EB2D11 /* Shared */,
+				531E450A25687BB900388852 /* Cities */,
+				534179DC2568168600EB2D11 /* Countries */,
+				534F558C2571B03500DE9D4E /* Measurements */,
+				534178B82567FFCB00EB2D11 /* Info.plist */,
+			);
+			path = CleanAirModules;
+			sourceTree = "<group>";
+		};
+		534178FA256801CB00EB2D11 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		53417907256802E000EB2D11 /* CleanAirPresentation */ = {
+			isa = PBXGroup;
+			children = (
+				534178112567E41A00EB2D11 /* Shared */,
+				53417957256807D800EB2D11 /* Cities */,
+				53417909256802E000EB2D11 /* Info.plist */,
+			);
+			path = CleanAirPresentation;
+			sourceTree = "<group>";
+		};
+		53417957256807D800EB2D11 /* Cities */ = {
+			isa = PBXGroup;
+			children = (
+				53182252256914FE00731A3E /* CityPresentationAdapter.swift */,
+				536AD9102570591900CE436B /* FavouriteCitiesPresentationAdapter.swift */,
+			);
+			path = Cities;
+			sourceTree = "<group>";
+		};
+		5341796D256809B300EB2D11 /* ResourceCache */ = {
+			isa = PBXGroup;
+			children = (
+				53C0478C25684A290026F0FB /* ResourceCache.swift */,
+				53417969256809B000EB2D11 /* ResourceCacheLoader.swift */,
+				534BC2AA256D09A1002F0F0F /* ResourceCacheCacher.swift */,
+			);
+			path = ResourceCache;
+			sourceTree = "<group>";
+		};
+		5341797425680A3A00EB2D11 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				5341798625680E1500EB2D11 /* Infra */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		5341798625680E1500EB2D11 /* Infra */ = {
+			isa = PBXGroup;
+			children = (
+				5341798225680E1200EB2D11 /* RealmStorage.swift */,
+				53C4012D256FE9C200716FAE /* RealmStorageResultObserver.swift */,
+			);
+			path = Infra;
+			sourceTree = "<group>";
+		};
+		534179CE2568153100EB2D11 /* CountriesStorage */ = {
+			isa = PBXGroup;
+			children = (
+				534179D3256815F300EB2D11 /* CountriesStorageMapper.swift */,
+				5339BBCF256C643000F2BBD2 /* Realm */,
+			);
+			path = CountriesStorage;
+			sourceTree = "<group>";
+		};
+		534179DC2568168600EB2D11 /* Countries */ = {
+			isa = PBXGroup;
+			children = (
+				53417780256739E500EB2D11 /* Country.swift */,
+				532988A82568206100813C7A /* CountriesLoaderWithCaching.swift */,
+				53417783256739ED00EB2D11 /* CountriesLoader */,
+				53C0B0C0256870D000D7A8F3 /* CountriesCache */,
+				534179CE2568153100EB2D11 /* CountriesStorage */,
+			);
+			path = Countries;
+			sourceTree = "<group>";
+		};
+		534F558C2571B03500DE9D4E /* Measurements */ = {
+			isa = PBXGroup;
+			children = (
+				538251452608CED50050D6D2 /* CAMeasurement.swift */,
+				53E558E52578FB02005D872F /* CAMeasurementsLoader.swift */,
+				53EAE3932573B5B600E8809B /* API */,
+			);
+			path = Measurements;
+			sourceTree = "<group>";
+		};
+		534F55A625724D5100DE9D4E /* Measurements */ = {
+			isa = PBXGroup;
+			children = (
+				532AF4C52607B27A00902555 /* ViewModels */,
+				539F224C2607B35800634EDE /* View */,
+			);
+			path = Measurements;
+			sourceTree = "<group>";
+		};
+		535EA1252607CB230001CA85 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				534177FA2567D12400EB2D11 /* CountriesListViewViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		535EA1262607CB2A0001CA85 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				534177F02567C1D300EB2D11 /* CountriesListSwiftUIView.swift */,
+				534179332568056900EB2D11 /* CountriesListSwiftUIViewPreview.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		536AD9642571217D00CE436B /* ResourceLoading */ = {
+			isa = PBXGroup;
+			children = (
+				534177C02567426D00EB2D11 /* ResourceLoadingPresentationAdapter.swift */,
+				5341779625673CBE00EB2D11 /* ResourceLoadingPresenter.swift */,
+				534177A025673D2C00EB2D11 /* ResourceLoadingView.swift */,
+			);
+			path = ResourceLoading;
+			sourceTree = "<group>";
+		};
+		536AD96D2571218900CE436B /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				5341779D25673D0900EB2D11 /* ResourceView.swift */,
+				534177A425673D9700EB2D11 /* ResourceErrorView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		536AD9782571226D00CE436B /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				536AD9722571226700CE436B /* ResourcePresenter.swift */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		536ADA1225717BFB00CE436B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				536AD9A725713D5000CE436B /* ResourceAddListViewSwiftUIView.swift */,
+				536ADA0C25717BF600CE436B /* ResourceLoadingListSwiftUIView.swift */,
+				5397290D2607E7F700519A15 /* ResourceListSwiftUIView.swift */,
+				536ADA1725717DB500CE436B /* ResourceSwiftUIView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		53714CC82569758A00109B16 /* CleanAirPresentationTests */ = {
+			isa = PBXGroup;
+			children = (
+				53BFC7412569B72800630261 /* Shared */,
+				53BFC74E2569BA0700630261 /* Cities */,
+				53714CDC2569773700109B16 /* Helpers */,
+				53714CCB2569758A00109B16 /* Info.plist */,
+			);
+			path = CleanAirPresentationTests;
+			sourceTree = "<group>";
+		};
+		53714CDC2569773700109B16 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				53BFC72525699E1600630261 /* XCTest+Helpers.swift */,
+				53714CD82569773300109B16 /* AnyResourceView.swift */,
+				53714CE525697C9700109B16 /* AnyResourceLoadingPresenterStub.swift */,
+				536AD99925713B1A00CE436B /* AnyResourcePresenterStub.swift */,
+				53714CE12569792F00109B16 /* AnyResourceLoader.swift */,
+				53BFC7592569BC1800630261 /* FavouriteCityServiceMock.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		5382511C2608C4FB0050D6D2 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				53F466B62608F4E400C9B4E9 /* AppFlow */,
+				534177C82567447D00EB2D11 /* App_iOS */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		5399EA7C256AFEE100084C20 /* ResourceCache */ = {
+			isa = PBXGroup;
+			children = (
+				5399EA86256AFEFB00084C20 /* ResourceCacheLoaderTests.swift */,
+				534BC2B2256D0B63002F0F0F /* ResourceCacherTests.swift */,
+			);
+			path = ResourceCache;
+			sourceTree = "<group>";
+		};
+		539F224C2607B35800634EDE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				539F224A2607B35100634EDE /* MeasurementSwiftUIView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		53B06C02256EACCE00F51249 /* FavouriteCityService */ = {
+			isa = PBXGroup;
+			children = (
+				53B06BFC256EACCB00F51249 /* FavouriteCityServiceTests.swift */,
+			);
+			path = FavouriteCityService;
+			sourceTree = "<group>";
+		};
+		53BE4B8D256A588600475FAE /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				53BE4B94256A589B00475FAE /* RealmStorageTests.swift */,
+				53C4015225701BE100716FAE /* RealmStorageResultObserverTests.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		53BFC7412569B72800630261 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				53714CC92569758A00109B16 /* ResourceLoadingPresentationAdapterTests.swift */,
+				53BFC72125698F2C00630261 /* ResourceLoadingPresenterTests.swift */,
+				536AD97D2571238C00CE436B /* ResourcePresenterTests.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		53BFC74E2569BA0700630261 /* Cities */ = {
+			isa = PBXGroup;
+			children = (
+				53BFC7552569BA1D00630261 /* CitiesPresentationAdapterTests.swift */,
+				536AD9832571277000CE436B /* FavouriteCitiesPresentationAdapterTests.swift */,
+			);
+			path = Cities;
+			sourceTree = "<group>";
+		};
+		53BFC7662569C73E00630261 /* CleanAirModulesTests */ = {
+			isa = PBXGroup;
+			children = (
+				53BFC7A42569CA2E00630261 /* API */,
+				53BFC7AB2569CA3200630261 /* HTTPClient */,
+				53BE4B8D256A588600475FAE /* Storage */,
+				5317B8A8256A866900FE6D4F /* ResourceLoader */,
+				5399EA7C256AFEE100084C20 /* ResourceCache */,
+				53C4016625703A6400716FAE /* ResourceStorageLoadObserver */,
+				5306942A256BC77E0034FB33 /* Cities */,
+				533851C6256E93F60057C8F1 /* Countries */,
+				5306945D256BCF400034FB33 /* Helpers */,
+				53BFC7692569C73E00630261 /* Info.plist */,
+			);
+			path = CleanAirModulesTests;
+			sourceTree = "<group>";
+		};
+		53BFC7A42569CA2E00630261 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				53BFC7672569C73E00630261 /* APITests.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		53BFC7AB2569CA3200630261 /* HTTPClient */ = {
+			isa = PBXGroup;
+			children = (
+				53BFC79C2569C98C00630261 /* HTTPClientTests.swift */,
+			);
+			path = HTTPClient;
+			sourceTree = "<group>";
+		};
+		53C0B0C0256870D000D7A8F3 /* CountriesCache */ = {
+			isa = PBXGroup;
+			children = (
+				534179E8256816D600EB2D11 /* CountriesCacheStorage.swift */,
+				53C0B0C2256870F300D7A8F3 /* CountriesCacheMapper.swift */,
+				5361E5DE25685D5700731693 /* CountriesCachePolicy.swift */,
+				5339BBCB256C640E00F2BBD2 /* Realm */,
+			);
+			path = CountriesCache;
+			sourceTree = "<group>";
+		};
+		53C40139256FF26900716FAE /* ResourceStorageLoadObserver */ = {
+			isa = PBXGroup;
+			children = (
+				53C40133256FF26600716FAE /* ResourceStorageResultObserver.swift */,
+			);
+			path = ResourceStorageLoadObserver;
+			sourceTree = "<group>";
+		};
+		53C4016625703A6400716FAE /* ResourceStorageLoadObserver */ = {
+			isa = PBXGroup;
+			children = (
+				53C4015825703A5100716FAE /* ResourceStorageResultObserverTests.swift */,
+			);
+			path = ResourceStorageLoadObserver;
+			sourceTree = "<group>";
+		};
+		53E00369257196C800625D7D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5318224C25690BBF00731A3E /* CityViewModel.swift */,
+				5318224F25690D0400731A3E /* CityViewModelMapper.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		53E0036E257196CF00625D7D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				536AD9CD25713EFE00CE436B /* CitySwiftUIView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		53EAE3932573B5B600E8809B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				53EAE3892573B5A200E8809B /* CAMeasurementMapper.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		53F466B62608F4E400C9B4E9 /* AppFlow */ = {
+			isa = PBXGroup;
+			children = (
+				53F466B92608F5EE00C9B4E9 /* Shared */,
+				53F466CA260906D000C9B4E9 /* Root */,
+				53F466C32608FE6200C9B4E9 /* Cities */,
+			);
+			path = AppFlow;
+			sourceTree = "<group>";
+		};
+		53F466B92608F5EE00C9B4E9 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				53F466B72608F54700C9B4E9 /* PresentingView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		53F466C32608FE6200C9B4E9 /* Cities */ = {
+			isa = PBXGroup;
+			children = (
+				53F466C42608FE6E00C9B4E9 /* CitiesFactory.swift */,
+				53F466C12608FE4700C9B4E9 /* CitiesCoordinator.swift */,
+			);
+			path = Cities;
+			sourceTree = "<group>";
+		};
+		53F466CA260906D000C9B4E9 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				53F466CB260906FA00C9B4E9 /* RootFactory.swift */,
+				53F466C8260906AF00C9B4E9 /* RootCoordinator.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		53F466CF260908DD00C9B4E9 /* Composition */ = {
+			isa = PBXGroup;
+			children = (
+				534177CD256744C200EB2D11 /* Utilies */,
+				53F466D0260908FD00C9B4E9 /* Countries */,
+				53F466D12609090400C9B4E9 /* Cities */,
+				53F466D22609091700C9B4E9 /* Measurements */,
+			);
+			path = Composition;
+			sourceTree = "<group>";
+		};
+		53F466D0260908FD00C9B4E9 /* Countries */ = {
+			isa = PBXGroup;
+			children = (
+				534177CF256744F100EB2D11 /* CountriesUIComposer.swift */,
+				53C4FF87256F060700716FAE /* CountriesComponentsComposer.swift */,
+			);
+			path = Countries;
+			sourceTree = "<group>";
+		};
+		53F466D12609090400C9B4E9 /* Cities */ = {
+			isa = PBXGroup;
+			children = (
+				5341782C2567EEC500EB2D11 /* CitiesUIComposer.swift */,
+				53C4FF91256F075D00716FAE /* CitiesComponentsComposer.swift */,
+			);
+			path = Cities;
+			sourceTree = "<group>";
+		};
+		53F466D22609091700C9B4E9 /* Measurements */ = {
+			isa = PBXGroup;
+			children = (
+				53200C082608A9DD0014C048 /* MeasurementsUIComposer.swift */,
+				53200C0A2608AB2B0014C048 /* MeasurementsComponentsComposer.swift */,
+			);
+			path = Measurements;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		534178B02567FFCB00EB2D11 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53417901256802E000EB2D11 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		532EAA13256D90CA00CD174C /* CleanAirEndToEndTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 532EAA1E256D90CA00CD174C /* Build configuration list for PBXNativeTarget "CleanAirEndToEndTests" */;
+			buildPhases = (
+				532EAA10256D90CA00CD174C /* Sources */,
+				532EAA11256D90CA00CD174C /* Frameworks */,
+				532EAA12256D90CA00CD174C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				532EAA1B256D90CA00CD174C /* PBXTargetDependency */,
+			);
+			name = CleanAirEndToEndTests;
+			productName = CleanAirEndToEndTests;
+			productReference = 532EAA14256D90CA00CD174C /* CleanAirEndToEndTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		5341773F2567314300EB2D11 /* CleanAir */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 534177542567314400EB2D11 /* Build configuration list for PBXNativeTarget "CleanAir" */;
@@ -74,15 +1177,96 @@
 				5341773C2567314300EB2D11 /* Sources */,
 				5341773D2567314300EB2D11 /* Frameworks */,
 				5341773E2567314300EB2D11 /* Resources */,
+				534178FF256801CB00EB2D11 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				534178FE256801CB00EB2D11 /* PBXTargetDependency */,
+				5341792E2568040300EB2D11 /* PBXTargetDependency */,
 			);
 			name = CleanAir;
 			productName = CleanAir;
 			productReference = 534177402567314300EB2D11 /* CleanAir.app */;
 			productType = "com.apple.product-type.application";
+		};
+		534178B42567FFCB00EB2D11 /* CleanAirModules */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 534178BA2567FFCB00EB2D11 /* Build configuration list for PBXNativeTarget "CleanAirModules" */;
+			buildPhases = (
+				534178B02567FFCB00EB2D11 /* Headers */,
+				534178B12567FFCB00EB2D11 /* Sources */,
+				534178B22567FFCB00EB2D11 /* Frameworks */,
+				534178B32567FFCB00EB2D11 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CleanAirModules;
+			packageProductDependencies = (
+				5341797C25680DDF00EB2D11 /* RealmSwift */,
+				5341797E25680DDF00EB2D11 /* Realm */,
+			);
+			productName = CleanAirModules;
+			productReference = 534178B52567FFCB00EB2D11 /* CleanAirModules.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		53417905256802E000EB2D11 /* CleanAirPresentation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5341790B256802E000EB2D11 /* Build configuration list for PBXNativeTarget "CleanAirPresentation" */;
+			buildPhases = (
+				53417901256802E000EB2D11 /* Headers */,
+				53417902256802E000EB2D11 /* Sources */,
+				53417903256802E000EB2D11 /* Frameworks */,
+				53417904256802E000EB2D11 /* Resources */,
+				5329888225681A8200813C7A /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5329888125681A8200813C7A /* PBXTargetDependency */,
+			);
+			name = CleanAirPresentation;
+			productName = CleanAirPresentation;
+			productReference = 53417906256802E000EB2D11 /* CleanAirPresentation.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		53714CC62569758A00109B16 /* CleanAirPresentationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53714CD12569758A00109B16 /* Build configuration list for PBXNativeTarget "CleanAirPresentationTests" */;
+			buildPhases = (
+				53714CC32569758A00109B16 /* Sources */,
+				53714CC42569758A00109B16 /* Frameworks */,
+				53714CC52569758A00109B16 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				53714CCE2569758A00109B16 /* PBXTargetDependency */,
+			);
+			name = CleanAirPresentationTests;
+			productName = CleanAirPresentationTests;
+			productReference = 53714CC72569758A00109B16 /* CleanAirPresentationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		53BFC7642569C73E00630261 /* CleanAirModulesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53BFC76F2569C73E00630261 /* Build configuration list for PBXNativeTarget "CleanAirModulesTests" */;
+			buildPhases = (
+				53BFC7612569C73E00630261 /* Sources */,
+				53BFC7622569C73E00630261 /* Frameworks */,
+				53BFC7632569C73E00630261 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				53BFC76C2569C73E00630261 /* PBXTargetDependency */,
+			);
+			name = CleanAirModulesTests;
+			productName = CleanAirModulesTests;
+			productReference = 53BFC7652569C73E00630261 /* CleanAirModulesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -93,7 +1277,22 @@
 				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1220;
 				TargetAttributes = {
+					532EAA13256D90CA00CD174C = {
+						CreatedOnToolsVersion = 12.2;
+					};
 					5341773F2567314300EB2D11 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					534178B42567FFCB00EB2D11 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					53417905256802E000EB2D11 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					53714CC62569758A00109B16 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					53BFC7642569C73E00630261 = {
 						CreatedOnToolsVersion = 12.2;
 					};
 				};
@@ -107,38 +1306,254 @@
 				Base,
 			);
 			mainGroup = 534177372567314300EB2D11;
+			packageReferences = (
+				5341797B25680DDF00EB2D11 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = 534177412567314300EB2D11 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				5341773F2567314300EB2D11 /* CleanAir */,
+				534178B42567FFCB00EB2D11 /* CleanAirModules */,
+				53417905256802E000EB2D11 /* CleanAirPresentation */,
+				53714CC62569758A00109B16 /* CleanAirPresentationTests */,
+				53BFC7642569C73E00630261 /* CleanAirModulesTests */,
+				532EAA13256D90CA00CD174C /* CleanAirEndToEndTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		532EAA12256D90CA00CD174C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5341773E2567314300EB2D11 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				532D2D63260943D80014D1DC /* release_notes.md in Resources */,
 				534177502567314400EB2D11 /* LaunchScreen.storyboard in Resources */,
 				5341774D2567314400EB2D11 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		534178B32567FFCB00EB2D11 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53417904256802E000EB2D11 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53714CC52569758A00109B16 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53BFC7632569C73E00630261 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		532EAA10256D90CA00CD174C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				532EAA17256D90CA00CD174C /* CleanAirEndToEndTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5341773C2567314300EB2D11 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				534177482567314300EB2D11 /* ViewController.swift in Sources */,
-				534177442567314300EB2D11 /* AppDelegate.swift in Sources */,
+				53C4FF88256F060700716FAE /* CountriesComponentsComposer.swift in Sources */,
+				536AD9A825713D5000CE436B /* ResourceAddListViewSwiftUIView.swift in Sources */,
+				539729062607E22100519A15 /* MeasurementsViewModel.swift in Sources */,
+				53385180256E6A8F0057C8F1 /* HTTPClientLogger.swift in Sources */,
+				53200C0B2608AB2B0014C048 /* MeasurementsComponentsComposer.swift in Sources */,
+				53200BF9260886610014C048 /* ResourceListViewModel.swift in Sources */,
+				53F466C22608FE4700C9B4E9 /* CitiesCoordinator.swift in Sources */,
+				53F466CE260907C200C9B4E9 /* AppDelegate+Root.swift in Sources */,
+				5397290E2607E7F700519A15 /* ResourceListSwiftUIView.swift in Sources */,
+				5318225025690D0400731A3E /* CityViewModelMapper.swift in Sources */,
+				53F466C52608FE6E00C9B4E9 /* CitiesFactory.swift in Sources */,
+				534177E52567C0D900EB2D11 /* AppDelegate.swift in Sources */,
+				536ADA0D25717BF600CE436B /* ResourceLoadingListSwiftUIView.swift in Sources */,
+				536ADA1825717DB500CE436B /* ResourceSwiftUIView.swift in Sources */,
+				534178142567E4CA00EB2D11 /* ResourceLoadingListViewModel.swift in Sources */,
+				53F466B82608F54700C9B4E9 /* PresentingView.swift in Sources */,
+				53F466CC260906FB00C9B4E9 /* RootFactory.swift in Sources */,
+				539729042607DF9600519A15 /* MeasurementViewModel.swift in Sources */,
+				534177FB2567D12400EB2D11 /* CountriesListViewViewModel.swift in Sources */,
+				5341782D2567EEC500EB2D11 /* CitiesUIComposer.swift in Sources */,
+				539F224B2607B35100634EDE /* MeasurementSwiftUIView.swift in Sources */,
+				53C4FF92256F075D00716FAE /* CitiesComponentsComposer.swift in Sources */,
+				536AD9CE25713EFE00CE436B /* CitySwiftUIView.swift in Sources */,
+				534177D0256744F100EB2D11 /* CountriesUIComposer.swift in Sources */,
+				53200C092608A9DD0014C048 /* MeasurementsUIComposer.swift in Sources */,
+				53F466C9260906AF00C9B4E9 /* RootCoordinator.swift in Sources */,
+				534179342568056900EB2D11 /* CountriesListSwiftUIViewPreview.swift in Sources */,
+				5318224D25690BBF00731A3E /* CityViewModel.swift in Sources */,
+				534177F12567C1D300EB2D11 /* CountriesListSwiftUIView.swift in Sources */,
+				534177CB2567449900EB2D11 /* WeakRef.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		534178B12567FFCB00EB2D11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				534BC29D256D06EC002F0F0F /* RealmCountriesCacheStorage.swift in Sources */,
+				534178D42568011A00EB2D11 /* ResourceResultsMapper.swift in Sources */,
+				534178E62568015100EB2D11 /* CityMapper.swift in Sources */,
+				53C0478D25684A290026F0FB /* ResourceCache.swift in Sources */,
+				534178F52568018D00EB2D11 /* CountryMapper.swift in Sources */,
+				53C40134256FF26600716FAE /* ResourceStorageResultObserver.swift in Sources */,
+				534178E32568014700EB2D11 /* CitiesLoader.swift in Sources */,
+				534178CA256800D900EB2D11 /* HTTPClient.swift in Sources */,
+				534179E9256816D600EB2D11 /* CountriesCacheStorage.swift in Sources */,
+				5341796A256809B000EB2D11 /* ResourceCacheLoader.swift in Sources */,
+				534179CB2568152A00EB2D11 /* RealmCountry.swift in Sources */,
+				532988AF2568327300813C7A /* RealmCountryCache.swift in Sources */,
+				534178DC2568013900EB2D11 /* City.swift in Sources */,
+				534178D92568013000EB2D11 /* ResourceLoader.swift in Sources */,
+				53C40128256FE8BC00716FAE /* CityStorageLoadRequestObserver.swift in Sources */,
+				531E451B25687DF900388852 /* FavouriteCityService.swift in Sources */,
+				531E451325687C5600388852 /* CitiesStorage.swift in Sources */,
+				53C4012E256FE9C200716FAE /* RealmStorageResultObserver.swift in Sources */,
+				53C0B0C3256870F300D7A8F3 /* CountriesCacheMapper.swift in Sources */,
+				53E558E62578FB02005D872F /* CAMeasurementsLoader.swift in Sources */,
+				5341798325680E1200EB2D11 /* RealmStorage.swift in Sources */,
+				531E450F25687BF600388852 /* RealmCity.swift in Sources */,
+				53EAE38A2573B5A200E8809B /* CAMeasurementMapper.swift in Sources */,
+				53716AC525694B180032A245 /* CitiesLoaderWithStorageValidation.swift in Sources */,
+				534178C5256800D300EB2D11 /* APIURL.swift in Sources */,
+				532988A92568206100813C7A /* CountriesLoaderWithCaching.swift in Sources */,
+				534BC2AB256D09A1002F0F0F /* ResourceCacheCacher.swift in Sources */,
+				5361E5DF25685D5700731693 /* CountriesCachePolicy.swift in Sources */,
+				538251462608CED50050D6D2 /* CAMeasurement.swift in Sources */,
+				53190669256C5A9A004E4624 /* RealmCitiesStorage.swift in Sources */,
+				531E451725687CB700388852 /* CitiesStorageMapper.swift in Sources */,
+				534179D4256815F300EB2D11 /* CountriesStorageMapper.swift in Sources */,
+				534178F02568017F00EB2D11 /* Country.swift in Sources */,
+				532988A025681CB000813C7A /* CountriesLoader.swift in Sources */,
+				53C40112256FE81A00716FAE /* CityStorageLoadRequest.swift in Sources */,
+				534178CD256800EC00EB2D11 /* URLSessionHTTPClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53417902256802E000EB2D11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5341791B2568037E00EB2D11 /* ResourceLoadingPresenter.swift in Sources */,
+				534179182568036200EB2D11 /* ResourceLoadingPresentationAdapter.swift in Sources */,
+				53417924256803C000EB2D11 /* ResourceLoadingView.swift in Sources */,
+				5341791E256803B900EB2D11 /* ResourceView.swift in Sources */,
+				53417921256803BC00EB2D11 /* ResourceErrorView.swift in Sources */,
+				536AD9112570591900CE436B /* FavouriteCitiesPresentationAdapter.swift in Sources */,
+				53182253256914FE00731A3E /* CityPresentationAdapter.swift in Sources */,
+				536AD9732571226700CE436B /* ResourcePresenter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53714CC32569758A00109B16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				536AD97E2571238C00CE436B /* ResourcePresenterTests.swift in Sources */,
+				536AD9842571277000CE436B /* FavouriteCitiesPresentationAdapterTests.swift in Sources */,
+				53BFC7562569BA1D00630261 /* CitiesPresentationAdapterTests.swift in Sources */,
+				53BFC72225698F2C00630261 /* ResourceLoadingPresenterTests.swift in Sources */,
+				53714CE22569792F00109B16 /* AnyResourceLoader.swift in Sources */,
+				53714CE625697C9700109B16 /* AnyResourceLoadingPresenterStub.swift in Sources */,
+				53BFC72625699E1600630261 /* XCTest+Helpers.swift in Sources */,
+				53BFC75A2569BC1800630261 /* FavouriteCityServiceMock.swift in Sources */,
+				53714CCA2569758A00109B16 /* ResourceLoadingPresentationAdapterTests.swift in Sources */,
+				536AD99A25713B1A00CE436B /* AnyResourcePresenterStub.swift in Sources */,
+				53714CD92569773400109B16 /* AnyResourceView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53BFC7612569C73E00630261 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53C4015925703A5100716FAE /* ResourceStorageResultObserverTests.swift in Sources */,
+				534BC2B3256D0B63002F0F0F /* ResourceCacherTests.swift in Sources */,
+				53BE4B95256A589B00475FAE /* RealmStorageTests.swift in Sources */,
+				533851B3256E90B80057C8F1 /* RealmCitiesStorageTests.swift in Sources */,
+				53069459256BCF300034FB33 /* XCTest+Helpers.swift in Sources */,
+				53B06BE7256EA52400F51249 /* CountriesCachePolicyTests.swift in Sources */,
+				53069436256BCB250034FB33 /* CityMapperTests.swift in Sources */,
+				533851C1256E93F30057C8F1 /* RealmCuntriesCacheStorageTests.swift in Sources */,
+				53BFC79D2569C98C00630261 /* HTTPClientTests.swift in Sources */,
+				53A437EB256AE8A000C75DE1 /* ResourceLoaderTests.swift in Sources */,
+				533851E5256E99D80057C8F1 /* CountriesLoaderWithCachingTests.swift in Sources */,
+				53069426256BC77A0034FB33 /* CitiesStorageMapperTests.swift in Sources */,
+				5317B8A4256A866400FE6D4F /* ResourceResultsMapperTests.swift in Sources */,
+				53B06BFD256EACCB00F51249 /* FavouriteCityServiceTests.swift in Sources */,
+				539BCA38256EB3C60012C93B /* CountriesMapperTests.swift in Sources */,
+				53C4015325701BE100716FAE /* RealmStorageResultObserverTests.swift in Sources */,
+				53069448256BCD990034FB33 /* CitiesLoaderWithStorageValidationTests.swift in Sources */,
+				53E6729125703F6300523795 /* RealmStorageTests+Helpers.swift in Sources */,
+				53BFC7682569C73E00630261 /* APITests.swift in Sources */,
+				5399EA87256AFEFB00084C20 /* ResourceCacheLoaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5329888125681A8200813C7A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 534178B42567FFCB00EB2D11 /* CleanAirModules */;
+			targetProxy = 5329888025681A8200813C7A /* PBXContainerItemProxy */;
+		};
+		532EAA1B256D90CA00CD174C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 534178B42567FFCB00EB2D11 /* CleanAirModules */;
+			targetProxy = 532EAA1A256D90CA00CD174C /* PBXContainerItemProxy */;
+		};
+		534178FE256801CB00EB2D11 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 534178B42567FFCB00EB2D11 /* CleanAirModules */;
+			targetProxy = 534178FD256801CB00EB2D11 /* PBXContainerItemProxy */;
+		};
+		5341792E2568040300EB2D11 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53417905256802E000EB2D11 /* CleanAirPresentation */;
+			targetProxy = 5341792D2568040300EB2D11 /* PBXContainerItemProxy */;
+		};
+		53714CCE2569758A00109B16 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53417905256802E000EB2D11 /* CleanAirPresentation */;
+			targetProxy = 53714CCD2569758A00109B16 /* PBXContainerItemProxy */;
+		};
+		53BFC76C2569C73E00630261 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 534178B42567FFCB00EB2D11 /* CleanAirModules */;
+			targetProxy = 53BFC76B2569C73E00630261 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5341774E2567314400EB2D11 /* LaunchScreen.storyboard */ = {
@@ -152,6 +1567,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		532EAA1C256D90CA00CD174C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 54PNV7AZ7G;
+				INFOPLIST_FILE = CleanAirEndToEndTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.markoengelman.cleanAir.CleanAirEndToEndTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		532EAA1D256D90CA00CD174C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 54PNV7AZ7G;
+				INFOPLIST_FILE = CleanAirEndToEndTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.markoengelman.cleanAir.CleanAirEndToEndTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		534177522567314400EB2D11 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -276,12 +1733,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54PNV7AZ7G;
 				INFOPLIST_FILE = CleanAir/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.markoengelman.eonet.CleanAir;
+				PRODUCT_BUNDLE_IDENTIFIER = com.markoengelman.CleanAir;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -296,21 +1753,240 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54PNV7AZ7G;
 				INFOPLIST_FILE = CleanAir/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.markoengelman.eonet.CleanAir;
+				PRODUCT_BUNDLE_IDENTIFIER = com.markoengelman.CleanAir;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
+		534178BB2567FFCB00EB2D11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 54PNV7AZ7G;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CleanAirModules/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.markoengelman.cleanAir.CleanAirModules;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		534178BC2567FFCB00EB2D11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 54PNV7AZ7G;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CleanAirModules/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.markoengelman.cleanAir.CleanAirModules;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5341790C256802E000EB2D11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 54PNV7AZ7G;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CleanAirPresentation/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.markoengelman.cleanAir.CleanAirPresentation;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5341790D256802E000EB2D11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 54PNV7AZ7G;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CleanAirPresentation/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.markoengelman.cleanAir.CleanAirPresentation;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		53714CCF2569758A00109B16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 54PNV7AZ7G;
+				EXCLUDED_ARCHS = "";
+				INFOPLIST_FILE = CleanAirPresentationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.markoengelman.cleanAir.CleanAirPresentationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		53714CD02569758A00109B16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 54PNV7AZ7G;
+				EXCLUDED_ARCHS = "";
+				INFOPLIST_FILE = CleanAirPresentationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.markoengelman.cleanAir.CleanAirPresentationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		53BFC76D2569C73E00630261 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 54PNV7AZ7G;
+				INFOPLIST_FILE = CleanAirModulesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.markoengelman.cleanAir.CleanAirModulesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		53BFC76E2569C73E00630261 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 54PNV7AZ7G;
+				INFOPLIST_FILE = CleanAirModulesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.markoengelman.cleanAir.CleanAirModulesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		532EAA1E256D90CA00CD174C /* Build configuration list for PBXNativeTarget "CleanAirEndToEndTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				532EAA1C256D90CA00CD174C /* Debug */,
+				532EAA1D256D90CA00CD174C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5341773B2567314300EB2D11 /* Build configuration list for PBXProject "CleanAir" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -329,7 +2005,67 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		534178BA2567FFCB00EB2D11 /* Build configuration list for PBXNativeTarget "CleanAirModules" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				534178BB2567FFCB00EB2D11 /* Debug */,
+				534178BC2567FFCB00EB2D11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5341790B256802E000EB2D11 /* Build configuration list for PBXNativeTarget "CleanAirPresentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5341790C256802E000EB2D11 /* Debug */,
+				5341790D256802E000EB2D11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53714CD12569758A00109B16 /* Build configuration list for PBXNativeTarget "CleanAirPresentationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53714CCF2569758A00109B16 /* Debug */,
+				53714CD02569758A00109B16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53BFC76F2569C73E00630261 /* Build configuration list for PBXNativeTarget "CleanAirModulesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53BFC76D2569C73E00630261 /* Debug */,
+				53BFC76E2569C73E00630261 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5341797B25680DDF00EB2D11 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.7.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5341797C25680DDF00EB2D11 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5341797B25680DDF00EB2D11 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+		5341797E25680DDF00EB2D11 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5341797B25680DDF00EB2D11 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 534177382567314300EB2D11 /* Project object */;
 }
