@@ -14,6 +14,14 @@ extension UIViewController: PresentingView {
   func show(view: UIViewController) {
     show(view, sender: self)
   }
+  
+  func present(view: UIViewController) {
+    if navigationController == nil {
+      present(UINavigationController(rootViewController: view), animated: true)
+    } else {
+      present(view, animated: true)
+    }
+  }
 }
 
 extension AppDelegate {

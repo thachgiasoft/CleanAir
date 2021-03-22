@@ -36,7 +36,8 @@ final class MeasurementsUIComposer {
       errorView: WeakRef(viewModel)
     )
     adapter.presenter = presenter
-    
-    return UIHostingController(rootView: view)
+    let controller = UIHostingController(rootView: view)
+    controller.title = "Measurements"
+    return controller
   }
 }

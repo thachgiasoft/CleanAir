@@ -11,4 +11,5 @@ protocol PresentingView {
   associatedtype View
   
   func show(view: View)
+  func present(view: View)
 }

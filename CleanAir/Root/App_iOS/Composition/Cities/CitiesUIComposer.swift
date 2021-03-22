@@ -42,7 +42,9 @@ final class CitiesUIComposer {
     )
     
     adapter.presenter = presenter
-    return UIHostingController(rootView: view)
+    let controller = UIHostingController(rootView: view)
+    controller.title = "Cities"
+    return controller
   }
   
   static func makeFavouritesView(
