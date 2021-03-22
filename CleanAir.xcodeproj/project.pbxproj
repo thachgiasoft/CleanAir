@@ -20,6 +20,7 @@
 		531E451325687C5600388852 /* CitiesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531E451225687C5600388852 /* CitiesStorage.swift */; };
 		531E451725687CB700388852 /* CitiesStorageMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531E451625687CB700388852 /* CitiesStorageMapper.swift */; };
 		531E451B25687DF900388852 /* FavouriteCityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531E451A25687DF900388852 /* FavouriteCityService.swift */; };
+		53200BF9260886610014C048 /* ResourceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53200BF8260886610014C048 /* ResourceListViewModel.swift */; };
 		5329887E25681A8200813C7A /* CleanAirModules.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 534178B52567FFCB00EB2D11 /* CleanAirModules.framework */; };
 		5329887F25681A8200813C7A /* CleanAirModules.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 534178B52567FFCB00EB2D11 /* CleanAirModules.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		532988A025681CB000813C7A /* CountriesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534177C42567428C00EB2D11 /* CountriesLoader.swift */; };
@@ -207,6 +208,7 @@
 		531E451225687C5600388852 /* CitiesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesStorage.swift; sourceTree = "<group>"; };
 		531E451625687CB700388852 /* CitiesStorageMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesStorageMapper.swift; sourceTree = "<group>"; };
 		531E451A25687DF900388852 /* FavouriteCityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCityService.swift; sourceTree = "<group>"; };
+		53200BF8260886610014C048 /* ResourceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceListViewModel.swift; sourceTree = "<group>"; };
 		532988A82568206100813C7A /* CountriesLoaderWithCaching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesLoaderWithCaching.swift; sourceTree = "<group>"; };
 		532988AE2568327300813C7A /* RealmCountryCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCountryCache.swift; sourceTree = "<group>"; };
 		532EAA14256D90CA00CD174C /* CleanAirEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanAirEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -701,6 +703,7 @@
 			isa = PBXGroup;
 			children = (
 				534178132567E4CA00EB2D11 /* ResourceLoadingListViewModel.swift */,
+				53200BF8260886610014C048 /* ResourceListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1293,6 +1296,7 @@
 				536AD9A825713D5000CE436B /* ResourceAddListViewSwiftUIView.swift in Sources */,
 				539729062607E22100519A15 /* MeasurementsViewModel.swift in Sources */,
 				53385180256E6A8F0057C8F1 /* HTTPClientLogger.swift in Sources */,
+				53200BF9260886610014C048 /* ResourceListViewModel.swift in Sources */,
 				5397290E2607E7F700519A15 /* ResourceListSwiftUIView.swift in Sources */,
 				5318225025690D0400731A3E /* CityViewModelMapper.swift in Sources */,
 				534177482567314300EB2D11 /* ViewController.swift in Sources */,
