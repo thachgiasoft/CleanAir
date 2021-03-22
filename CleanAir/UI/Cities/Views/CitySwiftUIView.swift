@@ -2,7 +2,7 @@
 //  CitySwiftUIView.swift
 //  CleanAir
 //
-//  Created by Marko Engelman on 21/11/2020.
+//  Created by Marko Engelman on 27/11/2020.
 //
 
 import SwiftUI
@@ -11,34 +11,39 @@ struct CitySwiftUIView: View, ResourceSwiftUIView {
   @ObservedObject var viewModel: CityViewModel
   
   var body: some View {
-    VStack(alignment: .leading, spacing: 10, content: {
-      HStack {
+    HStack {
+      VStack(alignment: .leading, spacing: 10) {
         Text(viewModel.name)
+          .font(.title)
+        Text(viewModel.country)
           .font(.body)
-        Spacer()
+      }
+      
+      Spacer()
+      
+      VStack(alignment: .trailing) {
         Button(action: {
           viewModel.toggleFavourite?()
         }) {
-          let name = viewModel.isFavourite ? "star.fill" : "star"
-          Image(systemName: name)
+          Image(systemName: viewModel.isFavourite ? "star.fill" : "star")
             .foregroundColor(.yellow)
         }
       }
-    }).padding(.all)
+    }.padding(.all)
   }
 }
 
 struct CitySwiftUIView_Previews: PreviewProvider {
-    static var previews: some View {
-      CitySwiftUIView(
-        viewModel: CityViewModel(
-          name: "City name",
-          country: "City country",
-          measurementsCount: 1,
-          availableLocationsCount: 12,
-          isFavourite: true
-        )
+  static var previews: some View {
+    CitySwiftUIView(
+      viewModel: CityViewModel(
+        name: "City name",
+        country: "City country",
+        measurementsCount: 1,
+        availableLocationsCount: 12,
+        isFavourite: true
       )
-      .previewLayout(.sizeThatFits)
-    }
+    )
+    .previewLayout(.sizeThatFits)
+  }
 }
