@@ -29,7 +29,7 @@ final class CitiesUIComposer {
       builder: { resourceListViewModel in
         ResourceListSwiftUIView(
           viewModel: resourceListViewModel.resourceViewModel,
-          builder: { FavouriteCitySwiftUIView(viewModel: $0) },
+          builder: { CitySwiftUIView(viewModel: $0) },
           selector: { onSelect(resourceListViewModel.resource) })
       },
       viewModel: viewModel
@@ -68,7 +68,7 @@ final class CitiesUIComposer {
       builder: { resourceListViewModel in
         ResourceListSwiftUIView(
           viewModel: resourceListViewModel.resourceViewModel,
-          builder: { FavouriteCitySwiftUIView(viewModel: $0) },
+          builder: { CitySwiftUIView(viewModel: $0) },
           selector: { onSelect(resourceListViewModel.resource) })
       },
       viewModel: viewModel
