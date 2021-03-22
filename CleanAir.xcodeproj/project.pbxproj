@@ -125,6 +125,7 @@
 		53F466C22608FE4700C9B4E9 /* CitiesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F466C12608FE4700C9B4E9 /* CitiesCoordinator.swift */; };
 		53F466C52608FE6E00C9B4E9 /* CitiesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F466C42608FE6E00C9B4E9 /* CitiesFactory.swift */; };
 		53F466C9260906AF00C9B4E9 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F466C8260906AF00C9B4E9 /* RootCoordinator.swift */; };
+		53F466CC260906FB00C9B4E9 /* RootFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F466CB260906FA00C9B4E9 /* RootFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -318,6 +319,7 @@
 		53F466C12608FE4700C9B4E9 /* CitiesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesCoordinator.swift; sourceTree = "<group>"; };
 		53F466C42608FE6E00C9B4E9 /* CitiesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesFactory.swift; sourceTree = "<group>"; };
 		53F466C8260906AF00C9B4E9 /* RootCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
+		53F466CB260906FA00C9B4E9 /* RootFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1089,6 +1091,7 @@
 		53F466CA260906D000C9B4E9 /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				53F466CB260906FA00C9B4E9 /* RootFactory.swift */,
 				53F466C8260906AF00C9B4E9 /* RootCoordinator.swift */,
 			);
 			path = Root;
@@ -1361,6 +1364,7 @@
 				536ADA1825717DB500CE436B /* ResourceSwiftUIView.swift in Sources */,
 				534178142567E4CA00EB2D11 /* ResourceLoadingListViewModel.swift in Sources */,
 				53F466B82608F54700C9B4E9 /* PresentingView.swift in Sources */,
+				53F466CC260906FB00C9B4E9 /* RootFactory.swift in Sources */,
 				539729042607DF9600519A15 /* MeasurementViewModel.swift in Sources */,
 				534177FB2567D12400EB2D11 /* CountriesListViewViewModel.swift in Sources */,
 				5341782D2567EEC500EB2D11 /* CitiesUIComposer.swift in Sources */,
