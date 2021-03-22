@@ -126,6 +126,7 @@
 		53F466C52608FE6E00C9B4E9 /* CitiesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F466C42608FE6E00C9B4E9 /* CitiesFactory.swift */; };
 		53F466C9260906AF00C9B4E9 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F466C8260906AF00C9B4E9 /* RootCoordinator.swift */; };
 		53F466CC260906FB00C9B4E9 /* RootFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F466CB260906FA00C9B4E9 /* RootFactory.swift */; };
+		53F466CE260907C200C9B4E9 /* AppDelegate+Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F466CD260907C200C9B4E9 /* AppDelegate+Root.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -320,6 +321,7 @@
 		53F466C42608FE6E00C9B4E9 /* CitiesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesFactory.swift; sourceTree = "<group>"; };
 		53F466C8260906AF00C9B4E9 /* RootCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
 		53F466CB260906FA00C9B4E9 /* RootFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootFactory.swift; sourceTree = "<group>"; };
+		53F466CD260907C200C9B4E9 /* AppDelegate+Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Root.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -644,6 +646,7 @@
 			isa = PBXGroup;
 			children = (
 				534177E42567C0D900EB2D11 /* AppDelegate.swift */,
+				53F466CD260907C200C9B4E9 /* AppDelegate+Root.swift */,
 			);
 			path = App_iOS;
 			sourceTree = "<group>";
@@ -1355,6 +1358,7 @@
 				53200C0B2608AB2B0014C048 /* MeasurementsComponentsComposer.swift in Sources */,
 				53200BF9260886610014C048 /* ResourceListViewModel.swift in Sources */,
 				53F466C22608FE4700C9B4E9 /* CitiesCoordinator.swift in Sources */,
+				53F466CE260907C200C9B4E9 /* AppDelegate+Root.swift in Sources */,
 				5397290E2607E7F700519A15 /* ResourceListSwiftUIView.swift in Sources */,
 				5318225025690D0400731A3E /* CityViewModelMapper.swift in Sources */,
 				534177482567314300EB2D11 /* ViewController.swift in Sources */,
