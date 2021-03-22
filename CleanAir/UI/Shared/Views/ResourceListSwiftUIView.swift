@@ -1,27 +1,27 @@
 //
-//  ResourceListSwiftUIView.swift
+//  ResourceListViewModel.swift
 //  CleanAir
 //
-//  Created by Marko Engelman on 27/11/2020.
+//  Created by Marko Engelman on 21/03/2021.
 //
 
 import SwiftUI
 
-struct ResourceListSwiftUIView<Resource, ResourceViewModel, ResourceView>: View where ResourceViewModel: Identifiable, ResourceView: ResourceSwiftUIView {
-  var onAppear: () -> Void
-  var builder: (ResourceViewModel) -> ResourceView
+struct ResourceListSwiftUIView<ResourceViewModel, ResourceView>: ResourceSwiftUIView where ResourceView: ResourceSwiftUIView {
+  var viewModel: ResourceViewModel
+  let selector: () -> Void
+  let builder: (ResourceViewModel) -> ResourceView
   
-  @ObservedObject var viewModel: ResourceListViewModel<Resource, ResourceViewModel>
+  init(viewModel: ResourceViewModel,
+       builder: @escaping (ResourceViewModel) -> ResourceView,
+       selector: @escaping () -> Void) {
+    self.viewModel = viewModel
+    self.builder = builder
+    self.selector = selector
+  }
   
   var body: some View {
-    ScrollView(.vertical, showsIndicators: true, content: {
-      let coloumns = [GridItem(.flexible(maximum: .infinity))]
-      LazyVGrid(columns: coloumns, alignment: .leading) {
-        ForEach(viewModel.resource) { resource in
-          builder(resource)
-        }
-      }
-    })
-    .onAppear(perform: { onAppear() })
+    builder(viewModel)
+      .onTapGesture { selector() }
   }
 }

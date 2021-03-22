@@ -14,7 +14,7 @@ class ResourceLoadingListViewModel<Resource, ResourceViewModel>: ObservableObjec
   let selection: (Resource) -> Void
   let mapper: ViewModelMapper
   
-  @Published var resource: [ResourceViewModel]
+  @Published var resourceViewModels: [ResourceViewModel]
   @Published var isLoading: Bool = false
   @Published var error: String?
   
@@ -22,7 +22,7 @@ class ResourceLoadingListViewModel<Resource, ResourceViewModel>: ObservableObjec
        onSelect: @escaping (_ resource: Resource) -> Void,
        resource: [ResourceViewModel]) where Resource == ResourceViewModel {
     self.onAppear = onAppear
-    self.resource = resource
+    self.resourceViewModels = resource
     self.selection = onSelect
     self.mapper = { $0 }
   }
@@ -32,7 +32,7 @@ class ResourceLoadingListViewModel<Resource, ResourceViewModel>: ObservableObjec
        mapper: @escaping ViewModelMapper,
        resource: [ResourceViewModel] = []) {
     self.onAppear = onAppear
-    self.resource = resource
+    self.resourceViewModels = resource
     self.selection = onSelect
     self.mapper = mapper
   }
@@ -41,7 +41,7 @@ class ResourceLoadingListViewModel<Resource, ResourceViewModel>: ObservableObjec
 // MARK: - ResourceView
 extension ResourceLoadingListViewModel: ResourceView {
   func show(resourceViewModel: [Resource]) {
-    self.resource = resourceViewModel.map { mapper($0) }
+    self.resourceViewModels = resourceViewModel.map { mapper($0) }
   }
 }
 

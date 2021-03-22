@@ -16,7 +16,7 @@ struct ResourceLoadingListSwiftUIView<Resource, ResourceViewModel, ResourceView>
     ScrollView(.vertical, showsIndicators: true, content: {
       let coloumns = [GridItem(.flexible(maximum: .infinity))]
       LazyVGrid(columns: coloumns, alignment: .leading) {
-        ForEach(viewModel.resource) { resource in
+        ForEach(viewModel.resourceViewModels) { resource in
           builder(resource)
         }
       }

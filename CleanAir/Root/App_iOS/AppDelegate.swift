@@ -31,6 +31,12 @@ private extension AppDelegate {
     rootController?.show(citiviesView(for: country), sender: self)
   }
   
+  func openCity(city: City) {
+    let loader = MeasurementsComponentsComposer.measurementsLoader(client: Self.makeHTTPClient(), cityId: city.id)
+    let controller = MeasurementsUIComposer.makeMeasurementsView(with: loader)
+    rootController?.show(controller, sender: self)
+  }
+  
   func showCountries() {
     rootController?.show(countriresView(), sender: self)
   }
@@ -44,7 +50,11 @@ private extension AppDelegate {
   func favouriteCitiesView() -> UIViewController {
     let service = CitiesComponentsComposer.countriesFavouriteService(realm: Self.makeRealm)
     let storage = CitiesComponentsComposer.storage(realm: Self.makeRealm)
-    let controller = CitiesUIComposer.makeFavouritesView(with: storage, service: service, onAdd: { [weak self] in self?.showCountries() })
+    let controller = CitiesUIComposer.makeFavouritesView(
+      with: storage,
+      service: service,
+      onSelect: { [weak self] in self?.openCity(city: $0) },
+      onAdd: { [weak self] in self?.showCountries() })
     return controller
   }
   
@@ -52,7 +62,7 @@ private extension AppDelegate {
     let storage = CitiesComponentsComposer.storage(realm: Self.makeRealm)
     let loader = CitiesComponentsComposer.countriesLoader(client: Self.makeHTTPClient(), storage: storage, countryCode: country.code)
     let service = CitiesComponentsComposer.countriesFavouriteService(realm: Self.makeRealm)
-    let controller = CitiesUIComposer.makeView(with: loader, service: service, selection: { _ in })
+    let controller = CitiesUIComposer.makeView(with: loader, service: service, onSelect: { [weak self] in self?.openCity(city: $0) })
     return controller
   }
   

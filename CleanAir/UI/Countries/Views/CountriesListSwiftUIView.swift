@@ -15,7 +15,7 @@ struct CountriesListSwiftUIView: View {
     if let error = viewModel.error {
       Text(error)
     } else {
-      List(viewModel.resource, id: \.self.name) { country in
+      List(viewModel.resourceViewModels, id: \.self.name) { country in
         VStack(alignment: .leading, spacing: 10, content: {
           Text(country.name)
             .font(.title)

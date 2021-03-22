@@ -2,51 +2,23 @@
 //  ResourceListViewModel.swift
 //  CleanAir
 //
-//  Created by Marko Engelman on 27/11/2020.
+//  Created by Marko Engelman on 22/03/2021.
 //
 
 import Foundation
-import CleanAirPresentation
 
-class ResourceListViewModel<Resource, ResourceViewModel>: ObservableObject {
-  typealias ViewModelMapper = (Resource) -> ResourceViewModel
-  let onAppear: () -> Void
-  let selection: (Resource) -> Void
-  let mapper: ViewModelMapper
+class ResourceListViewModel<Resource, ResourceViewModel>: Identifiable {
+  typealias ViewModelMapper = (_ resource: Resource) -> ResourceViewModel
   
-  @Published var resource: [ResourceViewModel]
-  @Published var error: String?
+  let resource: Resource
+  let viewModelMapper: ViewModelMapper
   
-  init(onAppear: @escaping () -> Void,
-       onSelect: @escaping (_ resource: Resource) -> Void,
-       resource: [ResourceViewModel]) where Resource == ResourceViewModel {
-    self.onAppear = onAppear
+  init(resource: Resource, viewModelMapper: @escaping ViewModelMapper) {
     self.resource = resource
-    self.selection = onSelect
-    self.mapper = { $0 }
+    self.viewModelMapper = viewModelMapper
   }
   
-  init(onAppear: @escaping () -> Void,
-       onSelect: @escaping (_ resource: Resource) -> Void,
-       mapper: @escaping ViewModelMapper,
-       resource: [ResourceViewModel] = []) {
-    self.onAppear = onAppear
-    self.resource = resource
-    self.selection = onSelect
-    self.mapper = mapper
-  }
-}
-
-// MARK: - ResourceView
-extension ResourceListViewModel: ResourceView {
-  func show(resourceViewModel: [Resource]) {
-    self.resource = resourceViewModel.map { mapper($0) }
-  }
-}
-
-// MARK: - ResourceErrorView
-extension ResourceListViewModel: ResourceErrorView {
-  func show(errorViewModel: ResourceErrorViewModel) {
-    error = errorViewModel.error
+  var resourceViewModel: ResourceViewModel {
+    return viewModelMapper(resource)
   }
 }
