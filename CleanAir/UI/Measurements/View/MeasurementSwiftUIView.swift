@@ -15,7 +15,7 @@ struct MeasurementSwiftUIView: ResourceSwiftUIView {
     VStack(alignment: .leading, spacing: 10, content: {
       Text("\(viewModel.measurement)")
       Text("\(viewModel.timeStamp)")
-    })
+    }).padding(.all)
   }
 }
 

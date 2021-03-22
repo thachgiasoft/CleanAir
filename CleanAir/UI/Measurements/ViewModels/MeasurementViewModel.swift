@@ -17,7 +17,8 @@ public class MeasurementViewModel: ObservableObject, Identifiable {
   
   public var timeStamp: String {
     let formatter = DateFormatter()
-    formatter.calendar = .current
+    formatter.dateStyle = .medium
+    formatter.timeStyle = .medium
     return formatter.string(from: caMeasurement.timestamp)
   }
   
