@@ -121,6 +121,7 @@
 		53E558E62578FB02005D872F /* CAMeasurementsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E558E52578FB02005D872F /* CAMeasurementsLoader.swift */; };
 		53E6729125703F6300523795 /* RealmStorageTests+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E6729025703F6300523795 /* RealmStorageTests+Helpers.swift */; };
 		53EAE38A2573B5A200E8809B /* CAMeasurementMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EAE3892573B5A200E8809B /* CAMeasurementMapper.swift */; };
+		53F466B52608F4DE00C9B4E9 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F466B42608F4DE00C9B4E9 /* RootCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -310,6 +311,7 @@
 		53E558E52578FB02005D872F /* CAMeasurementsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAMeasurementsLoader.swift; sourceTree = "<group>"; };
 		53E6729025703F6300523795 /* RealmStorageTests+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealmStorageTests+Helpers.swift"; sourceTree = "<group>"; };
 		53EAE3892573B5A200E8809B /* CAMeasurementMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAMeasurementMapper.swift; sourceTree = "<group>"; };
+		53F466B42608F4DE00C9B4E9 /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -900,6 +902,7 @@
 		5382511C2608C4FB0050D6D2 /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				53F466B62608F4E400C9B4E9 /* AppFlow */,
 				534177C82567447D00EB2D11 /* App_iOS */,
 				534177CD256744C200EB2D11 /* SharedCompositionUtilies */,
 				534177CF256744F100EB2D11 /* CountriesUIComposer.swift */,
@@ -1048,6 +1051,14 @@
 				53EAE3892573B5A200E8809B /* CAMeasurementMapper.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		53F466B62608F4E400C9B4E9 /* AppFlow */ = {
+			isa = PBXGroup;
+			children = (
+				53F466B42608F4DE00C9B4E9 /* RootCoordinator.swift */,
+			);
+			path = AppFlow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1311,6 +1322,7 @@
 				5318225025690D0400731A3E /* CityViewModelMapper.swift in Sources */,
 				534177482567314300EB2D11 /* ViewController.swift in Sources */,
 				534177E52567C0D900EB2D11 /* AppDelegate.swift in Sources */,
+				53F466B52608F4DE00C9B4E9 /* RootCoordinator.swift in Sources */,
 				536ADA0D25717BF600CE436B /* ResourceLoadingListSwiftUIView.swift in Sources */,
 				536ADA1825717DB500CE436B /* ResourceSwiftUIView.swift in Sources */,
 				534178142567E4CA00EB2D11 /* ResourceLoadingListViewModel.swift in Sources */,
