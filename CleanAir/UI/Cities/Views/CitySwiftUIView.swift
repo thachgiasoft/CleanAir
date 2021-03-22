@@ -12,7 +12,7 @@ struct CitySwiftUIView: View, ResourceSwiftUIView {
   
   var body: some View {
     HStack {
-      VStack(alignment: .leading, spacing: 10) {
+      VStack(alignment: .leading, spacing: 5) {
         Text(viewModel.name)
           .font(.title)
         Text(viewModel.country)
@@ -44,6 +44,6 @@ struct CitySwiftUIView_Previews: PreviewProvider {
         isFavourite: true
       )
     )
-    .previewLayout(.sizeThatFits)
+    .previewLayout(.device)
   }
 }
