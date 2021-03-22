@@ -645,19 +645,20 @@
 		534177C82567447D00EB2D11 /* App_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				53F466CF260908DD00C9B4E9 /* Composition */,
 				534177E42567C0D900EB2D11 /* AppDelegate.swift */,
 				53F466CD260907C200C9B4E9 /* AppDelegate+Root.swift */,
 			);
 			path = App_iOS;
 			sourceTree = "<group>";
 		};
-		534177CD256744C200EB2D11 /* SharedCompositionUtilies */ = {
+		534177CD256744C200EB2D11 /* Utilies */ = {
 			isa = PBXGroup;
 			children = (
 				534177CA2567449900EB2D11 /* WeakRef.swift */,
 				5338517F256E6A8F0057C8F1 /* HTTPClientLogger.swift */,
 			);
-			path = SharedCompositionUtilies;
+			path = Utilies;
 			sourceTree = "<group>";
 		};
 		534177EC2567C19D00EB2D11 /* UI */ = {
@@ -915,13 +916,6 @@
 			children = (
 				53F466B62608F4E400C9B4E9 /* AppFlow */,
 				534177C82567447D00EB2D11 /* App_iOS */,
-				534177CD256744C200EB2D11 /* SharedCompositionUtilies */,
-				534177CF256744F100EB2D11 /* CountriesUIComposer.swift */,
-				53C4FF87256F060700716FAE /* CountriesComponentsComposer.swift */,
-				5341782C2567EEC500EB2D11 /* CitiesUIComposer.swift */,
-				53C4FF91256F075D00716FAE /* CitiesComponentsComposer.swift */,
-				53200C082608A9DD0014C048 /* MeasurementsUIComposer.swift */,
-				53200C0A2608AB2B0014C048 /* MeasurementsComponentsComposer.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -1098,6 +1092,44 @@
 				53F466C8260906AF00C9B4E9 /* RootCoordinator.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		53F466CF260908DD00C9B4E9 /* Composition */ = {
+			isa = PBXGroup;
+			children = (
+				534177CD256744C200EB2D11 /* Utilies */,
+				53F466D0260908FD00C9B4E9 /* Countries */,
+				53F466D12609090400C9B4E9 /* Cities */,
+				53F466D22609091700C9B4E9 /* Measurements */,
+			);
+			path = Composition;
+			sourceTree = "<group>";
+		};
+		53F466D0260908FD00C9B4E9 /* Countries */ = {
+			isa = PBXGroup;
+			children = (
+				534177CF256744F100EB2D11 /* CountriesUIComposer.swift */,
+				53C4FF87256F060700716FAE /* CountriesComponentsComposer.swift */,
+			);
+			path = Countries;
+			sourceTree = "<group>";
+		};
+		53F466D12609090400C9B4E9 /* Cities */ = {
+			isa = PBXGroup;
+			children = (
+				5341782C2567EEC500EB2D11 /* CitiesUIComposer.swift */,
+				53C4FF91256F075D00716FAE /* CitiesComponentsComposer.swift */,
+			);
+			path = Cities;
+			sourceTree = "<group>";
+		};
+		53F466D22609091700C9B4E9 /* Measurements */ = {
+			isa = PBXGroup;
+			children = (
+				53200C082608A9DD0014C048 /* MeasurementsUIComposer.swift */,
+				53200C0A2608AB2B0014C048 /* MeasurementsComponentsComposer.swift */,
+			);
+			path = Measurements;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
