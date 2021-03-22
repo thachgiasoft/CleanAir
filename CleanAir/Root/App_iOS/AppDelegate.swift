@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window?.makeKeyAndVisible()
     
     coordinator = RootCoordinator(initialView: rootNavigationController, factory: self)
-    coordinator?.start(with: { self.favouriteCitiesView() })
+    coordinator?.start()
     
     return true
   }

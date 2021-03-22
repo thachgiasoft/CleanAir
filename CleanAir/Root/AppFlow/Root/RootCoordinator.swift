@@ -19,7 +19,8 @@ final class RootCoordinator<RootView, Factory> where RootView: PresentingView, F
     self.factory = factory
   }
   
-  func start(with view: () -> View) {
-    initialView.show(view: view())
+  func start() {
+    citiesCoordinator = CitiesCoordinator(initialView: initialView, factory: factory)
+    citiesCoordinator?.start()
   }
 }
