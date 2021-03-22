@@ -553,7 +553,7 @@
 			isa = PBXGroup;
 			children = (
 				534177EC2567C19D00EB2D11 /* UI */,
-				534177C82567447D00EB2D11 /* App_iOS */,
+				5382511C2608C4FB0050D6D2 /* Root */,
 				534177472567314300EB2D11 /* ViewController.swift */,
 				5341774C2567314400EB2D11 /* Assets.xcassets */,
 				5341774E2567314400EB2D11 /* LaunchScreen.storyboard */,
@@ -638,24 +638,17 @@
 			isa = PBXGroup;
 			children = (
 				534177E42567C0D900EB2D11 /* AppDelegate.swift */,
-				534177CD256744C200EB2D11 /* Helpers */,
-				534177CF256744F100EB2D11 /* CountriesUIComposer.swift */,
-				53C4FF87256F060700716FAE /* CountriesComponentsComposer.swift */,
-				5341782C2567EEC500EB2D11 /* CitiesUIComposer.swift */,
-				53C4FF91256F075D00716FAE /* CitiesComponentsComposer.swift */,
-				53200C082608A9DD0014C048 /* MeasurementsUIComposer.swift */,
-				53200C0A2608AB2B0014C048 /* MeasurementsComponentsComposer.swift */,
 			);
 			path = App_iOS;
 			sourceTree = "<group>";
 		};
-		534177CD256744C200EB2D11 /* Helpers */ = {
+		534177CD256744C200EB2D11 /* SharedCompositionUtilies */ = {
 			isa = PBXGroup;
 			children = (
 				534177CA2567449900EB2D11 /* WeakRef.swift */,
 				5338517F256E6A8F0057C8F1 /* HTTPClientLogger.swift */,
 			);
-			path = Helpers;
+			path = SharedCompositionUtilies;
 			sourceTree = "<group>";
 		};
 		534177EC2567C19D00EB2D11 /* UI */ = {
@@ -906,6 +899,21 @@
 				53BFC7592569BC1800630261 /* FavouriteCityServiceMock.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		5382511C2608C4FB0050D6D2 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				534177C82567447D00EB2D11 /* App_iOS */,
+				534177CD256744C200EB2D11 /* SharedCompositionUtilies */,
+				534177CF256744F100EB2D11 /* CountriesUIComposer.swift */,
+				53C4FF87256F060700716FAE /* CountriesComponentsComposer.swift */,
+				5341782C2567EEC500EB2D11 /* CitiesUIComposer.swift */,
+				53C4FF91256F075D00716FAE /* CitiesComponentsComposer.swift */,
+				53200C082608A9DD0014C048 /* MeasurementsUIComposer.swift */,
+				53200C0A2608AB2B0014C048 /* MeasurementsComponentsComposer.swift */,
+			);
+			path = Root;
 			sourceTree = "<group>";
 		};
 		5399EA7C256AFEE100084C20 /* ResourceCache */ = {
