@@ -7,12 +7,16 @@
 
 import Foundation
 
-final class RootCoordinator<RootView> where RootView: PresentingView {
+final class RootCoordinator<RootView, Factory> where RootView: PresentingView, Factory: RootFactory, Factory.View == RootView.View {
   typealias View = RootView.View
   let initialView: RootView
+  let factory: Factory
   
-  init(initialView: RootView) {
+  var citiesCoordinator: CitiesCoordinator<RootView, Factory>?
+  
+  init(initialView: RootView, factory: Factory) {
     self.initialView = initialView
+    self.factory = factory
   }
   
   func start(with view: () -> View) {
